@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.2" stroke="#fff" stroke-width="1.5">
+    <path d="M40 110 L100 90 L160 110" fill="none"/>
+    <path d="M40 110 L30 100 L40 90 Z" fill="none"/>
+    <path d="M160 110 L170 100 L160 90 Z" fill="none"/>
+  </g>
+  <g opacity="0.15" fill="#fff">
+    <ellipse cx="100" cy="85" rx="25" ry="8"/>
+  </g>
+  <g opacity="0.12" stroke="#fff" stroke-width="1.2">
+    <line x1="100" y1="80" x2="100" y2="50"/>
+    <rect x="94" y="42" width="12" height="12" rx="3"/>
+  </g>
+  <g opacity="0.1" stroke="#fff" stroke-width="1">
+    <path d="M70 130 Q85 145 100 130 Q115 145 130 130" fill="none"/>
+  </g>
+</svg>

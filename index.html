@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aeronica — Drones, built with Purpose! Flying with Precision!</title>
+  <meta name="description" content="Aeronica Advance Technologies — indigenous drone solutions for agriculture, GIS, surveillance, and industrial applications. DGCA certified.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 200 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='20' fill='%23000'/%3E%3Crect x='97' y='25' width='6' height='55' rx='3' fill='%23000' opacity='0.5'/%3E%3Crect x='97' y='120' width='6' height='55' rx='3' fill='%23000' opacity='0.5'/%3E%3Crect x='25' y='97' width='55' height='6' rx='3' fill='%23000' opacity='0.5'/%3E%3Crect x='120' y='97' width='55' height='6' rx='3' fill='%23000' opacity='0.5'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain"></div>
+
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-cube" id="loadingCube">
+      <div class="cube-shape">
+        <div class="cube-face cube-front"></div>
+        <div class="cube-face cube-back"></div>
+        <div class="cube-face cube-right"></div>
+        <div class="cube-face cube-left"></div>
+        <div class="cube-face cube-top"></div>
+        <div class="cube-face cube-bottom"></div>
+      </div>
+    </div>
+    <div class="loading-text">Aeronica</div>
+  </div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <!-- Navigation -->
+  <div class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="Aeronica">
+        <img src="public/assets/img/logo-lite.png" id="navbarLogo" alt="Aeronica Logo" class="navbar-logo-img">
+      </a>
+
+      <nav class="navbar-menu" id="navbarMenu">
+        <a href="/" class="navbar-link active">Home</a>
+        <a href="/services" class="navbar-link">Services</a>
+        <a href="/technology" class="navbar-link">Technology</a>
+        <a href="/about" class="navbar-link">About</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="/contact" class="navbar-cta-button">
+          <span>Get in Touch</span>
+          <svg class="navbar-cta-icon" viewBox="0 0 100 100" fill="none">
+            <g transform="translate(-18.375, 6.125)">
+              <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+            </g>
+          </svg>
+        </a>
+        <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="nav-overlay" id="navOverlay">
+    <nav class="nav-overlay-menu">
+      <a href="/" class="nav-overlay-link active">Home</a>
+      <a href="/services" class="nav-overlay-link">Services</a>
+      <a href="/technology" class="nav-overlay-link">Technology</a>
+      <a href="/about" class="nav-overlay-link">About</a>
+      <a href="/contact" class="nav-overlay-cta">Get in Touch</a>
+    </nav>
+  </div>
+
+  <!-- Bottom Navigation (mobile CTA) -->
+  <!-- Bottom nav removed -->
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero section-hidden" id="hero">
+      <div class="hero-bg parallax-layer" data-parallax-speed="0.35">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="public/assets/video/hero section video background.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-video-overlay"></div>
+      </div>
+      <div class="hero-container parallax-layer" data-parallax-speed="0.15">
+        <span class="section-label">Glazing specialists</span>
+        <h1 class="hero-heading">Drones, built with Purpose.<br>Flying with Precision.</h1>
+        <div class="hero-text">Aeronica Advance Technologies — indigenous UAV solutions for agriculture, GIS, surveillance, and industrial applications.</div>
+      </div>
+      <a href="/services/gis-survey-mapping" class="hero-overlay">
+        <span class="hero-pagination">01 / 03</span>
+        <span class="hero-title">GIS Survey & Mapping</span>
+      </a>
+    </section>
+
+    <!-- ==================== CLIENTS MARQUEE ==================== -->
+    <div class="clients-marquee">
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <!-- Row 1 -->
+          <div class="marquee-row">
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=BASF&background=random&color=fff&size=128" alt="BASF"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=CR&background=random&color=fff&size=128" alt="Central Railway"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=IOCL&background=random&color=fff&size=128" alt="IOCL"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=JSW&background=random&color=fff&size=128" alt="JSW Steel"></div>
+            <!-- Duplicates for seamless loop -->
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=BASF&background=random&color=fff&size=128" alt="BASF"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=CR&background=random&color=fff&size=128" alt="Central Railway"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=IOCL&background=random&color=fff&size=128" alt="IOCL"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=JSW&background=random&color=fff&size=128" alt="JSW Steel"></div>
+          </div>
+          <!-- Row 2 -->
+          <div class="marquee-row">
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=JSW&background=random&color=fff&size=128" alt="JSW Steel"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=IOCL&background=random&color=fff&size=128" alt="IOCL"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=CR&background=random&color=fff&size=128" alt="Central Railway"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=BASF&background=random&color=fff&size=128" alt="BASF"></div>
+            <!-- Duplicates for seamless loop -->
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=JSW&background=random&color=fff&size=128" alt="JSW Steel"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=IOCL&background=random&color=fff&size=128" alt="IOCL"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=CR&background=random&color=fff&size=128" alt="Central Railway"></div>
+            <div class="client-card"><img src="https://ui-avatars.com/api/?name=BASF&background=random&color=fff&size=128" alt="BASF"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="stats section-hidden" id="stats">
+      <div class="stats-container">
+        <div class="stats-text parallax-layer" data-parallax-speed="0.1">
+          <p>Since our inception, Aeronica has been at the forefront of indigenous UAV innovation in India. We combine precision engineering with deep domain expertise to deliver scalable, DGCA-certified drone solutions that redefine efficiency across agriculture, infrastructure, and surveillance.</p>
+          <a href="/about" class="explore-link">Our Story
+            <svg class="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
+              <g transform="translate(-18.375, 6.125)">
+                <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
+                <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
+                <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
+                <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
+                <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="stats-grid parallax-layer" data-parallax-speed="0.2" data-stagger>
+          <div class="stat-box parallax-layer" data-parallax-speed="0.05">
+            <div class="stat-value-container">
+              <span class="stat-number" data-count="120">0</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-label">Cities Covered</div>
+          </div>
+          <div class="stat-box offset-down parallax-layer" data-parallax-speed="0.05">
+            <div class="stat-value-container">
+              <span class="stat-number" data-count="25000">0</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-label">Acres Surveyed</div>
+          </div>
+          <div class="stat-box parallax-layer" data-parallax-speed="0.05">
+            <div class="stat-value-container">
+              <span class="stat-number" data-count="98">0</span>
+              <span class="stat-percent">%</span>
+            </div>
+            <div class="stat-label">Mapping Accuracy</div>
+          </div>
+          <div class="stat-box offset-down parallax-layer" data-parallax-speed="0.05">
+            <div class="stat-value-container">
+              <span class="stat-number" data-count="4">0</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-label">DGCA Certifications</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="services section-hidden" id="services">
+      <div class="section-header centered">
+        <h2 class="section-title"><span></span>Our Services</h2>
+        <p class="section-subtitle">Precision-engineered UAV solutions tailored for industrial scale and operational excellence.</p>
+      </div>
+
+      <div class="services-bento-grid" data-stagger>
+        
+        <a href="/services/gis-survey-mapping" class="bento-item large">
+          <div class="bento-image card-img-gis"></div>
+          <div class="bento-content">
+            <h3>GIS Survey & Mapping</h3>
+            <p>Sub-centimeter accuracy for railway corridors, mining, and infrastructure.</p>
+          </div>
+        </a>
+
+        <a href="/services/agriculture-spraying" class="bento-item medium">
+          <div class="bento-image card-img-agri"></div>
+          <div class="bento-content">
+            <h3>Agriculture Spraying</h3>
+            <p>Precision pesticide application with DGCA-certified drones.</p>
+          </div>
+        </a>
+
+        <a href="/services/multispectral-scanning" class="bento-item medium">
+          <div class="bento-image card-img-spectral"></div>
+          <div class="bento-content">
+            <h3>Multispectral Scanning</h3>
+            <p>Advanced crop health analytics and soil condition insights.</p>
+          </div>
+        </a>
+
+        <a href="/services/security-surveillance" class="bento-item small">
+          <div class="bento-image card-img-surveillance"></div>
+          <div class="bento-content">
+            <h3>Security Surveillance</h3>
+            <p>Real-time monitoring & AI anomaly detection.</p>
+          </div>
+        </a>
+
+        <a href="/products/samrudhhi-10l" class="bento-item small">
+          <div class="bento-image card-img-samrudhhi"></div>
+          <div class="bento-content">
+            <h3>Samrudhhi-10L</h3>
+            <p>The gold standard in agri-drone tech.</p>
+          </div>
+        </a>
+
+        <a href="/solutions/uss" class="bento-item medium">
+          <div class="bento-image card-img-uss"></div>
+          <div class="bento-content">
+            <h3>Unified Surveillance</h3>
+            <p>Integrated command center for critical infrastructure.</p>
+          </div>
+        </a>
+
+        <a href="/solutions/aeroni-ai" class="bento-item small">
+          <div class="bento-image card-img-ai"></div>
+          <div class="bento-content">
+            <h3>Aeronica AI</h3>
+            <p>Smart data processing & reporting.</p>
+          </div>
+        </a>
+
+        <a href="/research" class="bento-item small">
+          <div class="bento-image card-img-rd"></div>
+          <div class="bento-content">
+            <h3>R&D & Custom UAV</h3>
+            <p>Indigenous flight controllers & custom builds.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="section-footer">
+        <a href="/services" class="explore-link">
+          Explore All Services
+          <svg class="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
+            <g transform="translate(-18.375, 6.125)">
+              <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
+              <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
+              <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
+              <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
+              <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== TECHNOLOGY ==================== -->
+    <section class="technology section-hidden" id="technology">
+      <div class="section-header">
+        <h2 class="section-title"><span></span>Our Technology</h2>
+      </div>
+      <div class="tech-content">
+        <div class="tech-text">
+          <p>We combine purpose-driven engineering, indigenous innovation, and cutting-edge drone technology to create bespoke UAV solutions that drive your operational success.</p>
+          <p>Aeronica delivers integrated drone solutions — robust hardware, smart software, and reliable services — tailored to user needs. Supported end-to-end, we help organizations confidently start and scale drone programs, emphasizing reliability, compliance, and Indian manufacturing excellence.</p>
+        </div>
+        <div class="tech-image parallax-layer" data-parallax-speed="0.2">
+          <div class="tech-img-placeholder"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROCESS ==================== -->
+    <section class="process section-hidden" id="process">
+      <div class="section-header">
+        <h2 class="section-title"><span></span>How We Work</h2>
+      </div>
+      <div class="process-steps" data-stagger>
+        <div class="process-step">
+          <span class="step-number">01</span>
+          <div class="step-content">
+            <h3>Consult</h3>
+            <p>We begin with a deep understanding of your operational needs, site conditions, and compliance requirements to define the optimal drone solution.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-number">02</span>
+          <div class="step-content">
+            <h3>Survey</h3>
+            <p>Our certified pilots deploy advanced UAVs with RTK, LiDAR, and multispectral sensors to capture high-fidelity data across your project area.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-number">03</span>
+          <div class="step-content">
+            <h3>Process</h3>
+            <p>Raw data is transformed into actionable insights through photogrammetry, AI analytics, and GIS-integrated workflows tailored to your industry.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-number">04</span>
+          <div class="step-content">
+            <h3>Deliver</h3>
+            <p>You receive comprehensive reports, 3D models, and interactive dashboards with ongoing support to ensure your project's success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRODUCTS ==================== -->
+    <section class="products-sticky-wrapper" id="products">
+      <div class="products-sticky-content">
+        <div class="products-slider">
+          
+          <div class="product-slide">
+            <div class="product-image-container">
+              <div class="product-image product-img-samrudhhi"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-tags">
+                <span>DGCA Certified</span>
+                <span>Agriculture</span>
+              </div>
+              <h2 class="product-title">Samrudhhi-10L</h2>
+              <p class="product-description">Our flagship agricultural UAV, designed for precision spraying and maximum efficiency in Indian farming conditions. Engineered for reliability and ease of use.</p>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Payload</span>
+                  <span class="spec-value">24.9 Kg</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Flight Time</span>
+                  <span class="spec-value">16 min</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Frame</span>
+                  <span class="spec-value">Carbon Fibre</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-slide">
+            <div class="product-image-container">
+              <div class="product-image product-img-samrudhhi-lh"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-tags">
+                <span>Heavy Lift</span>
+                <span>Industrial</span>
+              </div>
+              <h2 class="product-title">Samrudhhi-10LH</h2>
+              <p class="product-description">The heavy-duty sibling of the Samrudhhi series, capable of transporting larger payloads for industrial applications and large-scale agricultural needs.</p>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Payload</span>
+                  <span class="spec-value">30 Kg</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Flight Time</span>
+                  <span class="spec-value">20 min</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Frame</span>
+                  <span class="spec-value">Carbon Fibre</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-slide">
+            <div class="product-image-container">
+              <div class="product-image product-img-flycra"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-tags">
+                <span>Mapping</span>
+                <span>Compact</span>
+              </div>
+              <h2 class="product-title">Flycra 2.0</h2>
+              <p class="product-description">A compact, high-performance mapping drone that delivers sub-centimeter accuracy. Ideal for GIS surveys, construction monitoring, and infrastructure inspection.</p>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Range</span>
+                  <span class="spec-value">7 Km</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Flight Time</span>
+                  <span class="spec-value">45 min</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Weight</span>
+                  <span class="spec-value">9.6 Kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-slide">
+            <div class="product-image-container">
+              <div class="product-image product-img-nitya"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-tags">
+                <span>Flight Controller</span>
+                <span>Made in India</span>
+              </div>
+              <h2 class="product-title">Nitya FC</h2>
+              <p class="product-description">The brain of our UAVs. An indigenous flight controller offering unparalleled stability and integration with our proprietary AI analytics platforms.</p>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Processor</span>
+                  <span class="spec-value">STM32</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Sensors</span>
+                  <span class="spec-value">IMU + GPS</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Firmware</span>
+                  <span class="spec-value">ArduPilot</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="products-footer">
+          <span class="products-footer-label">Our Products</span>
+          <span class="products-footer-count">01 / 04</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO ==================== -->
+    <section class="portfolio section-hidden" id="portfolio">
+      <div class="section-header">
+        <h2 class="section-title"><span></span>Latest Work</h2>
+      </div>
+
+      <div class="portfolio-grid" data-stagger>
+
+        <a href="/portfolio/central-railway-corridor-mapping" class="project-card">
+          <div class="project-image project-img-railway"></div>
+          <div class="project-content">
+            <h3>Central Railway Corridor Mapping</h3>
+            <p>High-resolution corridor mapping along key railway routes using RTK-enabled drones and LiDAR. Sub-centimeter accuracy for track alignment, embankments, drainage systems, and encroachment detection across 200+ km of rail network.</p>
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Maharashtra, India</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Industry</span>
+                <span class="meta-value">Railways</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Services</span>
+                <span class="meta-value">GIS Survey & Mapping</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="/portfolio/jsw-mine-volumetric-survey" class="project-card">
+          <div class="project-image project-img-mine"></div>
+          <div class="project-content">
+            <h3>JSW Steel Mine Volumetric Survey</h3>
+            <p>Drone-based 3D mapping and volumetric analysis for JSW Steel's mining operations. Stockpile volume estimation, pit progression monitoring, and slope stability assessment using photogrammetry and GIS-integrated workflows.</p>
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Karnataka, India</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Industry</span>
+                <span class="meta-value">Mining</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Services</span>
+                <span class="meta-value">GIS Survey & Mapping</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="/portfolio/iocl-pipeline-surveillance" class="project-card">
+          <div class="project-image project-img-pipeline"></div>
+          <div class="project-content">
+            <h3>IOCL Pipeline Surveillance</h3>
+            <p>Deployment of Unified Surveillance System (USS) for IOCL's cross-country pipeline network. EO/IR sensors with AI-assisted anomaly detection for real-time intrusion alerts, leak detection, and right-of-way monitoring.</p>
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Gujarat, India</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Industry</span>
+                <span class="meta-value">Oil & Gas</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Services</span>
+                <span class="meta-value">Security Surveillance</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <a href="/portfolio" class="explore-link">
+        View full portfolio
+        <svg class="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
+          <g transform="translate(-18.375, 6.125)">
+            <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
+          </g>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ==================== INDUSTRIES ==================== -->
+    <section class="industries section-hidden" id="industries">
+      <div class="section-header">
+        <h2 class="section-title"><span></span>Industries We Serve</h2>
+      </div>
+      <div class="industries-grid" data-stagger>
+        <div class="industry-card">
+          <div class="industry-icon industry-icon-railway"></div>
+          <h3>Railways</h3>
+          <p>Corridor mapping, track alignment, encroachment detection</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon industry-icon-mining"></div>
+          <h3>Mining</h3>
+          <p>Volumetric surveys, stockpile analysis, pit monitoring</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon industry-icon-agriculture"></div>
+          <h3>Agriculture</h3>
+          <p>Precision spraying, crop health, yield estimation</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon industry-icon-oilgas"></div>
+          <h3>Oil & Gas</h3>
+          <p>Pipeline surveillance, leak detection, ROW monitoring</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon industry-icon-construction"></div>
+          <h3>Construction</h3>
+          <p>Site surveying, progress tracking, volume calculations</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon industry-icon-power"></div>
+          <h3>Power & Utilities</h3>
+          <p>Transmission line inspection, thermal imaging, vegetation management</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials section-hidden" id="testimonials">
+      <div class="section-header">
+        <h2 class="section-title"><span></span>What our clients say about working with us.</h2>
+      </div>
+
+      <div class="testimonial-carousel" id="testimonialCarousel">
+
+        <div class="testimonial-slide active">
+          <div class="testimonial-content">
+            <svg class="quote-svg" viewBox="0 0 24 18" fill="none">
+              <path d="M0 18V10.5C0 6.5 1.5 3.5 4.5 1.5L7.5 0L9 3C6.5 5 5.5 7 5.5 9H9V18H0ZM14.5 18V10.5C14.5 6.5 16 3.5 19 1.5L22 0L23.5 3C21 5 20 7 20 9H23.5V18H14.5Z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <p class="testimonial-quote">Aeronica delivered exceptional precision in their GIS mapping for our railway corridor project. The sub-centimeter accuracy and detailed terrain analysis exceeded our expectations.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-avatar-1"></div>
+              <div class="author-info">
+                <span class="author-name">Chief Engineer</span>
+                <span class="author-title">Central Railway</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <svg class="quote-svg" viewBox="0 0 24 18" fill="none">
+              <path d="M0 18V10.5C0 6.5 1.5 3.5 4.5 1.5L7.5 0L9 3C6.5 5 5.5 7 5.5 9H9V18H0ZM14.5 18V10.5C14.5 6.5 16 3.5 19 1.5L22 0L23.5 3C21 5 20 7 20 9H23.5V18H14.5Z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <p class="testimonial-quote">The drone spraying service from Aeronica transformed our farming operations. The precision and efficiency of their DGCA-certified Samrudhhi-10L drones reduced our pesticide usage by 30% while improving coverage.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-avatar-2"></div>
+              <div class="author-info">
+                <span class="author-name">Farm Operations Head</span>
+                <span class="author-title">BASF India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <svg class="quote-svg" viewBox="0 0 24 18" fill="none">
+              <path d="M0 18V10.5C0 6.5 1.5 3.5 4.5 1.5L7.5 0L9 3C6.5 5 5.5 7 5.5 9H9V18H0ZM14.5 18V10.5C14.5 6.5 16 3.5 19 1.5L22 0L23.5 3C21 5 20 7 20 9H23.5V18H14.5Z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <p class="testimonial-quote">Aeronica's Unified Surveillance System has been instrumental in securing our pipeline infrastructure. The AI-powered anomaly detection and real-time monitoring capabilities give us unprecedented visibility.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-avatar-3"></div>
+              <div class="author-info">
+                <span class="author-name">Safety & Security Director</span>
+                <span class="author-title">IOCL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <svg class="quote-svg" viewBox="0 0 24 18" fill="none">
+              <path d="M0 18V10.5C0 6.5 1.5 3.5 4.5 1.5L7.5 0L9 3C6.5 5 5.5 7 5.5 9H9V18H0ZM14.5 18V10.5C14.5 6.5 16 3.5 19 1.5L22 0L23.5 3C21 5 20 7 20 9H23.5V18H14.5Z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <p class="testimonial-quote">Working with Aeronica on our mine volumetric survey was a fantastic experience. Their drone-based surveying reduced our measurement time from weeks to days, with far greater accuracy.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-avatar-4"></div>
+              <div class="author-info">
+                <span class="author-name">Mine Operations Manager</span>
+                <span class="author-title">JSW Steel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="carousel-dots" id="carouselDots">
+        <button class="dot active" data-index="0" aria-label="Testimonial 1"></button>
+        <button class="dot" data-index="1" aria-label="Testimonial 2"></button>
+        <button class="dot" data-index="2" aria-label="Testimonial 3"></button>
+        <button class="dot" data-index="3" aria-label="Testimonial 4"></button>
+      </div>
+
+      <a href="/contact" class="explore-link">
+        Let's work together
+        <svg class="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
+          <g transform="translate(-18.375, 6.125)">
+            <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
+          </g>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ==================== NEWS ==================== -->
+    <section class="news section-hidden" id="news">
+      <div class="section-header">
+        <h2 class="section-title"><span></span>Latest News</h2>
+      </div>
+
+      <div class="news-grid" data-stagger>
+
+        <a href="/insights/drone-technology-agriculture-2026" class="news-card">
+          <div class="news-image news-img-1"></div>
+          <div class="news-content">
+            <h3>Precision Agriculture: How Drones Are Transforming Indian Farming</h3>
+            <span class="news-date">June 10</span>
+          </div>
+        </a>
+
+        <a href="/insights/gis-drone-mapping-infrastructure" class="news-card">
+          <div class="news-image news-img-2"></div>
+          <div class="news-content">
+            <h3>GIS and Drone Mapping: The Future of Infrastructure Development</h3>
+            <span class="news-date">May 28</span>
+          </div>
+        </a>
+
+      </div>
+
+      <a href="/insights" class="explore-link">
+        View all news
+        <svg class="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
+          <g transform="translate(-18.375, 6.125)">
+            <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
+            <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
+          </g>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="cta-section section-hidden" id="cta">
+      <div class="cta-container">
+        <span class="section-label cta-eyebrow">Get in touch</span>
+        <h2 class="cta-heading">Ready to transform<br>your operations?</h2>
+        <p class="cta-text">From precision agriculture to industrial surveillance — we build<br>drone solutions that deliver real results.</p>
+        <a href="/contact" class="cta-button-primary">
+          <span>Start a Conversation</span>
+          <svg class="dot-grid-icon cta-btn-icon" viewBox="0 0 100 100" fill="none">
+            <g transform="translate(-18.375, 6.125)">
+              <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+              <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-wordmark">
+      <svg viewBox="0 0 800 120" fill="none">
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="90" letter-spacing="4" fill="currentColor">AERONICA</text>
+      </svg>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-category">Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services/gis-survey-mapping">GIS Survey & Mapping</a></li>
+          <li><a href="/services/agriculture-spraying">Agriculture Spraying</a></li>
+          <li><a href="/services/multispectral-scanning">Multispectral Scanning</a></li>
+          <li><a href="/services/security-surveillance">Security Surveillance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-category">Products</h4>
+        <ul class="footer-links">
+          <li><a href="/products/samrudhhi-10l">Samrudhhi-10L</a></li>
+          <li><a href="/products/samrudhhi-10lh">Samrudhhi-10LH</a></li>
+          <li><a href="/products/flycra-2-0">Flycra 2.0</a></li>
+          <li><a href="/products/nitya-fc">Nitya FC</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-category">Solutions</h4>
+        <ul class="footer-links">
+          <li><a href="/solutions/uss">Unified Surveillance System</a></li>
+          <li><a href="/solutions/aeroni-ai">Aeroni.AI</a></li>
+          <li><a href="/research">R & D</a></li>
+          <li><a href="/partners">Partner Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-category">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/aeronica_at" target="_blank">Instagram</a></li>
+          <li><a href="https://in.linkedin.com/company/aeronica-advance-technologies" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@aeronicaadvancedtechnologi5521" target="_blank">YouTube</a></li>
+          <li><a href="mailto:info@aeronica.in">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-simplified">
+      <div class="simplified-col">
+        <h4>Services</h4>
+        <a href="/services/gis-survey-mapping">GIS Survey & Mapping</a>
+        <a href="/services/agriculture-spraying">Agriculture Spraying</a>
+        <a href="/services/multispectral-scanning">Multispectral Scanning</a>
+        <a href="/services/security-surveillance">Security Surveillance</a>
+      </div>
+      <div class="simplified-col">
+        <h4>Technology</h4>
+        <a href="/products/samrudhhi-10l">Samrudhhi-10L</a>
+        <a href="/solutions/uss">Unified Surveillance</a>
+        <a href="/solutions/aeroni-ai">Aeroni.AI</a>
+        <a href="/research">R & D</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="public/assets/img/logo.png" alt="Aeronica Logo" class="footer-logo-img">
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/aeronica_at" target="_blank" aria-label="Instagram">Instagram</a>
+        <a href="https://in.linkedin.com/company/aeronica-advance-technologies" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://www.youtube.com/@aeronicaadvancedtechnologi5521" target="_blank" aria-label="YouTube">YouTube</a>
+        <a href="mailto:info@aeronica.in" aria-label="Email">Mail</a>
+      </div>
+      <a href="/privacy-policy" class="footer-privacy">Privacy Policy</a>
+    </div>
+
+    <div class="footer-legal">
+      <p>&copy; 2026 Aeronica Advance Technologies Pvt. Ltd.</p>
+      <a href="https://www.aeronica.in" target="_blank">Aeronica.in</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

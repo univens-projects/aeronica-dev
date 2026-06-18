@@ -1,0 +1,21 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.2" stroke="#fff" stroke-width="1.5">
+    <ellipse cx="100" cy="110" rx="60" ry="15"/>
+    <line x1="60" y1="105" x2="60" y2="85"/>
+    <line x1="140" y1="105" x2="140" y2="85"/>
+    <ellipse cx="100" cy="85" rx="40" ry="12"/>
+    <line x1="72" y1="80" x2="72" y2="65"/>
+    <line x1="128" y1="80" x2="128" y2="65"/>
+    <ellipse cx="100" cy="65" rx="28" ry="8"/>
+  </g>
+  <g opacity="0.15" fill="#fff">
+    <rect x="94" y="35" width="12" height="22" rx="6"/>
+    <circle cx="100" cy="48" r="4"/>
+  </g>
+  <g opacity="0.1" stroke="#fff" stroke-width="1">
+    <line x1="40" y1="110" x2="30" y2="115"/>
+    <line x1="160" y1="110" x2="170" y2="115"/>
+    <line x1="40" y1="85" x2="30" y2="80"/>
+    <line x1="160" y1="85" x2="170" y2="80"/>
+  </g>
+</svg>

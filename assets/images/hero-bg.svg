@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="url(#heroGrad)"/>
+  <g opacity="0.08" stroke="#fff" stroke-width="1.5">
+    <line x1="0" y1="300" x2="1440" y2="280"/>
+    <line x1="0" y1="350" x2="1440" y2="330"/>
+    <line x1="0" y1="400" x2="1440" y2="380"/>
+    <line x1="0" y1="450" x2="1440" y2="430"/>
+    <line x1="0" y1="500" x2="1440" y2="480"/>
+    <line x1="0" y1="550" x2="1440" y2="530"/>
+  </g>
+  <g opacity="0.15" stroke="#fff" stroke-width="1">
+    <circle cx="720" cy="380" r="60"/>
+    <circle cx="720" cy="380" r="120"/>
+    <circle cx="720" cy="380" r="180"/>
+    <line x1="720" y1="200" x2="720" y2="200" stroke-width="0"/>
+  </g>
+  <g opacity="0.06" fill="#fff">
+    <path d="M660 420 l60 -30 l60 30 l-60 30 z"/>
+    <line x1="690" y1="400" x2="690" y2="360" stroke="#fff" stroke-width="1.5"/>
+    <line x1="750" y1="400" x2="750" y2="360" stroke="#fff" stroke-width="1.5"/>
+  </g>
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1440" y2="900">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1a3a4a"/>
+      <stop offset="100%" stop-color="#0d2137"/>
+    </linearGradient>
+  </defs>
+</svg>
