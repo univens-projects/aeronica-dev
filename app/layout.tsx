@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import dynamic from 'next/dynamic';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import CinematicEffects from "@/components/CinematicEffects";
+import ClientOnly from "@/components/ClientOnly";
+
+const LoadingScreen = dynamic(() => import("@/components/LoadingScreen"), { ssr: false });
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -23,9 +31,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body>
-        {children}
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <ClientOnly>
+          <>
+            <div className="film-grain"></div>
+            <LoadingScreen />
+            <CinematicEffects>
+              <Navbar />
+              <main>{children}</main>
+              <BackToTop />
+              <Footer />
+            </CinematicEffects>
+          </>
+        </ClientOnly>
       </body>
     </html>
   );

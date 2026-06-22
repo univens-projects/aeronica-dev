@@ -1,0 +1,18 @@
+
+> aeronica-website@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 3.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 7.9s (629 modules)
+ GET / 200 in 8252ms
+ GET / 200 in 74ms
+ GET / 200 in 98ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 1252ms (623 modules)
+ ✓ Compiled /technology in 365ms (649 modules)

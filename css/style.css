@@ -125,7 +125,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .navbar-container {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   max-width: 160rem;
   margin: 0 auto;
@@ -1237,7 +1237,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     align-items: center;
   }
   .product-slide .product-specs {
-    justify-content: center;
+  justify-content: flex-end;
   }
   .product-image-container {
     height: 40vh;

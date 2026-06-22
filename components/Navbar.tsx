@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +20,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const showBackground = pathname !== "/" || isScrolled;
+
   return (
     <>
-      <div className={`navbar ${isScrolled ? "is-scrolled" : ""}`} id="navbar">
+      <div className={`navbar ${showBackground ? "is-scrolled" : ""}`} id="navbar" suppressHydrationWarning>
         <div className="navbar-container">
           <Link href="/" className="navbar-logo" aria-label="Aeronica">
             <Image 
-              src={isScrolled ? "/assets/img/logo1.png" : "/assets/img/logo-lite.png"} 
+              src={showBackground ? "/assets/img/logo1.png" : "/assets/img/logo-lite.png"} 
               alt="Aeronica Logo" 
               width={120} 
               height={48} 
@@ -33,10 +37,10 @@ const Navbar = () => {
           </Link>
 
           <nav className="navbar-menu" id="navbarMenu">
-            <Link href="/" className="navbar-link active">Home</Link>
-            <Link href="/services" className="navbar-link">Services</Link>
-            <Link href="/technology" className="navbar-link">Technology</Link>
-            <Link href="/about" className="navbar-link">About</Link>
+            <Link href="/" className={`navbar-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
+            <Link href="/services" className={`navbar-link ${pathname === "/services" ? "active" : ""}`}>Services</Link>
+            <Link href="/technology" className={`navbar-link ${pathname === "/technology" ? "active" : ""}`}>Technology</Link>
+            <Link href="/about" className={`navbar-link ${pathname === "/about" ? "active" : ""}`}>About</Link>
           </nav>
 
           <div className="navbar-actions">
@@ -66,10 +70,10 @@ const Navbar = () => {
 
       <div className={`nav-overlay ${isMobileMenuOpen ? "is-open" : ""}`} id="navOverlay">
         <nav className="nav-overlay-menu">
-          <Link href="/" className="nav-overlay-link active" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          <Link href="/services" className="nav-overlay-link" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
-          <Link href="/technology" className="nav-overlay-link" onClick={() => setIsMobileMenuOpen(false)}>Technology</Link>
-          <Link href="/about" className="nav-overlay-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+          <Link href="/" className={`nav-overlay-link ${pathname === "/" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link href="/services" className={`nav-overlay-link ${pathname === "/services" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+          <Link href="/technology" className={`nav-overlay-link ${pathname === "/technology" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Technology</Link>
+          <Link href="/about" className={`nav-overlay-link ${pathname === "/about" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" className="nav-overlay-cta" onClick={() => setIsMobileMenuOpen(false)}>Get in Touch</Link>
         </nav>
       </div>

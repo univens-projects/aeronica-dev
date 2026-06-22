@@ -27,6 +27,7 @@ const BackToTop = () => {
       className={`back-to-top ${isVisible ? "is-visible" : ""}`} 
       onClick={scrollToTop}
       aria-label="Back to top"
+      suppressHydrationWarning
     >
       <svg width="2rem" height="2rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="18 15 12 9 6 15"></polyline>

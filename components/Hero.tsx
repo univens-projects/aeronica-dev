@@ -45,11 +45,29 @@ class Particle {
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useSectionObserver();
   const bgRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+      
+      // Initial fast forward to 12s smoothly
+      video.playbackRate = 4.0; 
+      
+      const checkTime = () => {
+        if (video.currentTime >= 12) {
+          video.playbackRate = 0.5; // Seamlessly transition to slow motion
+        } else {
+          requestAnimationFrame(checkTime);
+        }
+      };
+      
+      requestAnimationFrame(checkTime);
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -113,12 +131,12 @@ const Hero = () => {
     };
 
     const handleScroll = () => {
-      if (!sectionRef.current || !bgRef.current || !containerRef.current) return;
+      if (!sectionRef.current || !bgRef.current) return;
       const scrollY = window.scrollY;
       const height = sectionRef.current.offsetHeight;
       const progress = Math.min(scrollY / height, 1);
+      // EFFECT: Parallax shifting for background only
       bgRef.current.style.transform = `translateY(${progress * -60}px)`;
-      containerRef.current.style.transform = `translateY(${progress * 20}px)`;
     };
 
     window.addEventListener("resize", resizeCanvas);
@@ -136,27 +154,44 @@ const Hero = () => {
     };
   }, []);
 
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 12;
+      videoRef.current.playbackRate = 0.5;
+      videoRef.current.play();
+    }
+  };
+
   return (
-    <section className="hero section-hidden" ref={sectionRef} id="hero">
-      <div className="hero-bg parallax-layer" ref={bgRef} data-parallax-speed="0.35">
-        <video autoPlay muted loop playsInline className="hero-video">
-          <source src="/assets/video/hero section video background.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <canvas ref={canvasRef} id="heroCanvas"></canvas>
-        <div className="hero-video-overlay"></div>
-      </div>
-      <div className="hero-container parallax-layer" ref={containerRef} data-parallax-speed="0.15">
-        <span className="section-label">Glazing specialists</span>
-        <h1 className="hero-heading">Drones, built with Purpose.<br />Flying with Precision.</h1>
-        <div className="hero-text">Aeronica Advance Technologies — indigenous UAV solutions for agriculture, GIS, surveillance, and industrial applications.</div>
-      </div>
-      <Link href="/services/gis-survey-mapping" className="hero-overlay">
-        <span className="hero-pagination">01 / 03</span>
-        <span className="hero-title">GIS Survey & Mapping</span>
-      </Link>
-    </section>
-  );
+      <section className="hero" ref={sectionRef} id="hero">
+        {/* Background Layer: Contains cinematic blur-in video and interactive particles */}
+        <div className="hero-bg parallax-layer" ref={bgRef} data-parallax-speed="0.35">
+          <video 
+            ref={videoRef} 
+            autoPlay 
+            muted 
+            playsInline 
+            onEnded={handleVideoEnd} 
+            className="hero-video hero-bg-animate"
+          >
+            <source src="/assets/video/hero section video background.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <canvas ref={canvasRef} id="heroCanvas"></canvas>
+          <div className="hero-video-overlay"></div>
+        </div>
+        {/* Text Layer: Cinematic entry, subtle parallax on scroll */}
+        <div className="hero-container parallax-layer" ref={containerRef} data-parallax-speed="0.1">
+          <span className="section-label">Glazing specialists</span>
+          <h1 className="hero-heading">Drones, built with Purpose.<br />Flying with Precision.</h1>
+          <div className="hero-text">Aeronica Advance Technologies — indigenous UAV solutions for agriculture, GIS, surveillance, and industrial applications.</div>
+        </div>
+        <Link href="/services/gis-survey-mapping" className="hero-overlay">
+          <span className="hero-pagination">01 / 03</span>
+          <span className="hero-title">GIS Survey & Mapping</span>
+        </Link>
+      </section>
+    );
 };
 
 export default Hero;
