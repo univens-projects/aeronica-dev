@@ -9,7 +9,7 @@ export default function AboutPage() {
       {/* Page Header */}
       <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
         <span className="section-title" style={{ justifyContent: "center" }}>
-          <span></span>About Aeronica
+          About Aeronica
         </span>
         <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
           Pioneering Indian UAV Innovation

@@ -17,7 +17,7 @@ export default function ContactPage() {
       {/* Page Header */}
       <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
         <span className="section-title" style={{ justifyContent: "center" }}>
-          <span></span>Contact Us
+          Contact Us
         </span>
         <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
           Let's Build Something Precision-Driven

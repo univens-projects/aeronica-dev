@@ -13,7 +13,7 @@ const Technology = () => {
   return (
     <section className="technology section-hidden" ref={sectionRef} id="technology">
       <div className="section-header">
-        <h2 className="section-title"><span></span>Our Technology</h2>
+        <h2 className="section-title">Our Technology</h2>
       </div>
       <div className="tech-content">
         <div className="tech-text">

@@ -43,7 +43,7 @@ const Services = () => {
   return (
     <section className="services section-hidden" ref={sectionRef} id="services">
       <div className="section-header centered">
-        <h2 className="section-title"><span></span>Our Services</h2>
+        <h2 className="section-title">Our Services</h2>
         <p className="section-subtitle">Precision-engineered UAV solutions tailored for industrial scale and operational excellence.</p>
       </div>
 

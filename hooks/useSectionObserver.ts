@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export const useSectionObserver = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -54,7 +54,7 @@ const Process = () => {
   return (
     <section className="process section-hidden" ref={sectionRef} id="process">
       <div className="section-header">
-        <h2 className="section-title"><span></span>How We Work</h2>
+        <h2 className="section-title">How We Work</h2>
       </div>
       <div className="process-steps" ref={gridRef} data-stagger>
         {processSteps.map((step, index) => (

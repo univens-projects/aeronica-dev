@@ -40,7 +40,7 @@ const Industries = () => {
   return (
     <section className="industries section-hidden" ref={sectionRef} id="industries">
       <div className="section-header">
-        <h2 className="section-title"><span></span>Industries We Serve</h2>
+        <h2 className="section-title">Industries We Serve</h2>
       </div>
       <div className="industries-grid" ref={gridRef} data-stagger>
         {industries.map((industry, index) => (

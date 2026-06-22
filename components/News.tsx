@@ -37,7 +37,7 @@ const News = () => {
   return (
     <section className="news section-hidden" ref={sectionRef} id="news">
       <div className="section-header">
-        <h2 className="section-title"><span></span>Latest News</h2>
+        <h2 className="section-title">Latest News</h2>
       </div>
       <div className="news-grid" ref={gridRef} data-stagger>
         {news.map((item, index) => (

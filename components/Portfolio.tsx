@@ -56,7 +56,7 @@ const Portfolio = () => {
   return (
     <section className="portfolio section-hidden" ref={sectionRef} id="portfolio">
       <div className="section-header">
-        <h2 className="section-title"><span></span>Latest Work</h2>
+        <h2 className="section-title">Latest Work</h2>
       </div>
       <div className="portfolio-grid" ref={gridRef} data-stagger>
         {portfolio.map((project, index) => (

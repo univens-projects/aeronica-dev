@@ -185,6 +185,22 @@ const Hero = () => {
           <span className="section-label">Glazing specialists</span>
           <h1 className="hero-heading">Drones, built with Purpose.<br />Flying with Precision.</h1>
           <div className="hero-text">Aeronica Advance Technologies — indigenous UAV solutions for agriculture, GIS, surveillance, and industrial applications.</div>
+          <div className="hero-ctas">
+            <a href="/contact" className="cta-button hero-cta-btn">
+              <span className="cta-text">Get in Touch</span>
+              <span className="dot-grid-icon">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <g transform="translate(-18.375, 6.125)">
+                    <rect x="51" y="14.25" width="10.25" height="10.25" rx="2" fill="currentColor"/>
+                    <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="2" fill="currentColor"/>
+                    <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="2" fill="currentColor"/>
+                    <rect x="63.25" y="51" width="10.25" height="10.25" rx="2" fill="currentColor"/>
+                    <rect x="51" y="63.25" width="10.25" height="10.25" rx="2" fill="currentColor"/>
+                  </g>
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
         <Link href="/services/gis-survey-mapping" className="hero-overlay">
           <span className="hero-pagination">01 / 03</span>

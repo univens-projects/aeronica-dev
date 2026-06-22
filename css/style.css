@@ -27,9 +27,9 @@
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
   --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-  --radius-sm: 0.5rem;
-  --radius-md: 1rem;
-  --radius-lg: 1vw;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
 
   --transition-fast: 200ms ease;
   --transition-base: 300ms ease;
@@ -167,7 +167,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 1.3rem;
   font-weight: 500;
   padding: 0.6rem 1.2rem;
-  border-radius: 2rem;
+  border-radius: 4px;
   transition: all var(--transition-base);
   opacity: 0.7;
   position: relative;
@@ -470,13 +470,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- Section Shared ---------- */
 .section-hidden {
   opacity: 0;
-  transform: translateY(3rem);
-  transition: opacity 0.8s var(--ease-out-cubic), transform 0.8s var(--ease-out-cubic);
+  transition: opacity 1s var(--ease-out-cubic);
 }
 
 .section-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .section-header {
@@ -524,7 +522,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 0.5vw;
   height: 4.4rem;
   padding: 0 1.5rem;
-  border-radius: 0.75rem;
+  border-radius: 4px;
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(3vw);
   -webkit-backdrop-filter: blur(3vw);
@@ -818,11 +816,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .client-card {
-  background: #f8f8f8;
+  background: transparent;
   border: 1px solid var(--color-border);
-  border-radius: 1.2rem;
-  width: 22rem;
-  height: 8rem;
+  border-radius: 4px;
+  width: 24rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -835,16 +833,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .client-card:hover {
   filter: grayscale(0%);
   opacity: 1;
-  background: #ffffff;
+  background: rgba(255,255,255,0.5);
+  border-color: transparent;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transform: translateY(-0.3rem);
 }
 
 .client-card img {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  object-fit: cover;
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 @keyframes marquee-slide {
@@ -913,14 +912,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: scale(1.05);
 }
 
-.card-img-gis { background: linear-gradient(135deg, #1a365d, #2d5a87), url('https://images.unsplash.com/photo-1508614589041-895b88991772?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-agri { background: linear-gradient(135deg, #1a4731, #2d7a4b), url('../public/assets/img/Agri Spraying.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-spectral { background: linear-gradient(135deg, #2d1b69, #5b3a9e), url('../public/assets/img/Agriculture Farm (Multispectral) Scanning Services for Smart Farming.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-surveillance { background: linear-gradient(135deg, #3d1f1a, #7a3d2d), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-samrudhhi { background: linear-gradient(135deg, #1a3a4a, #2d6a7a), url('../public/assets/img/Samrudhhi-10L.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-uss { background: linear-gradient(135deg, #1a1a3a, #3d3d6a), url('../public/assets/img/USS_Dashboard.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-ai { background: linear-gradient(135deg, #2d1a4a, #5a3a8a), url('https://images.unsplash.com/photo-1560493676-0a730dacT95?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.card-img-rd { background: linear-gradient(135deg, #1a2d2d, #3a5a5a), url('https://images.unsplash.com/photo-1485827404703-89b55f01bcbe?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-gis { background: linear-gradient(135deg, #1a365d, #2d5a87), url('/assets/images/gis survey.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-agri { background: linear-gradient(135deg, #1a4731, #2d7a4b), url('/assets/images/agriculture spraying.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-spectral { background: linear-gradient(135deg, #2d1b69, #5b3a9e), url('/assets/images/multispectral scanning.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-surveillance { background: linear-gradient(135deg, #3d1f1a, #7a3d2d), url('/assets/images/security surveillance.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-samrudhhi { background: linear-gradient(135deg, #1a3a4a, #2d6a7a), url('/assets/img/Samrudhhi-10L.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-uss { background: linear-gradient(135deg, #1a1a3a, #3d3d6a), url('/assets/images/unified surveillance.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-ai { background: linear-gradient(135deg, #2d1a4a, #5a3a8a), url('/assets/images/service - aeronica ai.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.card-img-rd { background: linear-gradient(135deg, #1a2d2d, #3a5a5a), url('/assets/images/R&D & Custom UAV.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
 
 .bento-content {
   position: relative;
@@ -1015,7 +1014,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .tech-img-placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #0a1628, #1a3a4a, #0d2137), url('../public/assets/img/uss Infra-Status.png');
+  background: linear-gradient(135deg, #0a1628, #1a3a4a, #0d2137), url('/assets/images/unified surveillance.jpg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;

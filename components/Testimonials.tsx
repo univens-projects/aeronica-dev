@@ -49,7 +49,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials section-hidden" ref={sectionRef} id="testimonials">
       <div className="section-header">
-        <h2 className="section-title"><span></span>What our clients say about working with us.</h2>
+        <h2 className="section-title">What our clients say about working with us.</h2>
       </div>
 
       <div className="testimonial-carousel" id="testimonialCarousel">
