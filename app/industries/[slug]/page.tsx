@@ -303,7 +303,7 @@ export default function IndustryDetail() {
       <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1000px", margin: "0 auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {data.sections.map((section: any, idx: number) => (
-            <div key={idx} className="card-hover" style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div key={idx} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.5rem" }}>
                 {idx === 0 && (
                   <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -314,7 +314,7 @@ export default function IndustryDetail() {
               </div>
               
               {section.text && (
-                <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: 1.7, marginBottom: section.list ? "2.5rem" : "0" }}>
+                <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, marginBottom: section.list ? "2.5rem" : "0" }}>
                   {section.text}
                 </p>
               )}
@@ -322,7 +322,7 @@ export default function IndustryDetail() {
               {section.list && (
                 <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                   {section.list.map((item: string, lIdx: number) => (
-                    <li key={lIdx} style={{ display: "flex", gap: "1rem", alignItems: "start", fontSize: "1.45rem", color: "#444", lineHeight: 1.6 }}>
+                    <li key={lIdx} style={{ display: "flex", gap: "1rem", alignItems: "start", fontSize: "1.45rem", color: "#555", lineHeight: 1.6 }}>
                       <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#111", flexShrink: 0, marginTop: "0.2rem" }} />
                       <span>{item}</span>
                     </li>

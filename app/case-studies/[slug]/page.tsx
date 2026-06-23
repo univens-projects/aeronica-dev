@@ -249,19 +249,19 @@ export default function CaseStudyDetail() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {data.sections.map((section: any, idx: number) => (
-            <div key={idx} className="card-hover" style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div key={idx} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.5rem" }}>
                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600, letterSpacing: "-0.02em" }}>{section.heading}</h2>
               </div>
 
               {section.text && (
-                <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: 1.7, marginBottom: section.metrics || section.list ? "2.5rem" : "0" }}>
+                <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, marginBottom: section.metrics || section.list ? "2.5rem" : "0" }}>
                   {section.text}
                 </p>
               )}
 
               {section.metrics && (
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1.5rem", marginBottom: "2.5rem", background: "#fff", borderRadius: "1rem", padding: "2rem", border: "1px solid #e5e5e5" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1.5rem", marginBottom: "2.5rem", background: "#fff", borderRadius: "0.4rem", padding: "2rem", border: "1px solid #e5e5e5" }}>
                   {section.metrics.map((m: any, mIdx: number) => (
                     <div key={mIdx} style={{ textAlign: "center" }}>
                       <div style={{ fontSize: "2.4rem", fontWeight: 700, color: "#111", letterSpacing: "-0.02em" }}>{m.value}</div>
@@ -274,7 +274,7 @@ export default function CaseStudyDetail() {
               {section.list && (
                 <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                   {section.list.map((item: string, lIdx: number) => (
-                    <li key={lIdx} style={{ display: "flex", gap: "1rem", alignItems: "start", fontSize: "1.45rem", color: "#444", lineHeight: 1.6 }}>
+                    <li key={lIdx} style={{ display: "flex", gap: "1rem", alignItems: "start", fontSize: "1.45rem", color: "#555", lineHeight: 1.6 }}>
                       <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#111", flexShrink: 0, marginTop: "0.2rem" }} />
                       <span>{item}</span>
                     </li>
@@ -290,7 +290,7 @@ export default function CaseStudyDetail() {
           <Link href="/case-studies/project-gallery" style={{
             display: "inline-flex", alignItems: "center", gap: "1rem",
             padding: "1.4rem 3rem", background: "#111", color: "#fff",
-            borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.5rem",
+            borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
             textDecoration: "none", transition: "all 0.3s ease",
           }}>
             View Project Gallery <ImageIcon style={{ width: "1.6rem", height: "1.6rem" }} />

@@ -36,7 +36,7 @@ const PageHero = ({ title, subtitle, breadcrumbs }: PageHeroProps) => {
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+          background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%)",
           zIndex: 0,
         }}
       />
@@ -75,7 +75,7 @@ const PageHero = ({ title, subtitle, breadcrumbs }: PageHeroProps) => {
         )}
         <h1
           style={{
-            fontSize: "clamp(4rem, 7vw, 7.2rem)",
+            fontSize: "clamp(3.2rem, 6.4vw, 8rem)",
             fontWeight: 700,
             letterSpacing: "-0.04em",
             color: "#fff",

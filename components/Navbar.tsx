@@ -6,34 +6,100 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
-const industryLinks = [
-  { label: "Government & Public Sector", href: "/industries/government" },
-  { label: "Agriculture & Precision Farming", href: "/industries/agriculture" },
-  { label: "Construction & Infrastructure", href: "/industries/construction" },
-  { label: "Mining & Volumetric Analysis", href: "/industries/mining" },
-  { label: "Utilities & Grid Management", href: "/industries/utilities" },
-  { label: "Energy & Renewable Power", href: "/industries/energy" },
-  { label: "Telecommunications", href: "/industries/telecom" },
-  { label: "Transportation & Logistics", href: "/industries/transportation" },
+const solutionCategories = [
+  {
+    title: "Survey & Mapping",
+    links: [
+      { label: "Drone Survey & Mapping", href: "/solutions/drone-survey-mapping" },
+      { label: "GIS & Geospatial Intelligence", href: "/solutions/gis-geospatial-intelligence" },
+    ],
+  },
+  {
+    title: "Industry Applications",
+    links: [
+      { label: "Infrastructure Inspection", href: "/solutions/infrastructure-inspection" },
+      { label: "Disaster & Emergency Response", href: "/solutions/disaster-emergency-response" },
+    ],
+  },
+  {
+    title: "Technology",
+    links: [
+      { label: "AI Drone Intelligence", href: "/solutions/ai-drone-intelligence" },
+    ],
+  },
 ];
 
-const solutionLinks = [
-  { label: "Drone Survey & Mapping", href: "/solutions/drone-survey-mapping" },
-  { label: "GIS & Geospatial Intelligence", href: "/solutions/gis-geospatial-intelligence" },
-  { label: "Infrastructure Inspection", href: "/solutions/infrastructure-inspection" },
-  { label: "AI Drone Intelligence", href: "/solutions/ai-drone-intelligence" },
-  { label: "Disaster & Emergency Response", href: "/solutions/disaster-emergency-response" },
+const industryCategories = [
+  {
+    title: "Industrial & Energy",
+    links: [
+      { label: "Mining & Volumetric Analysis", href: "/industries/mining" },
+      { label: "Energy & Renewable Power", href: "/industries/energy" },
+    ],
+  },
+  {
+    title: "Infrastructure",
+    links: [
+      { label: "Construction & Infrastructure", href: "/industries/construction" },
+      { label: "Utilities & Grid Management", href: "/industries/utilities" },
+      { label: "Transportation & Logistics", href: "/industries/transportation" },
+    ],
+  },
+  {
+    title: "Public Sector & Agriculture",
+    links: [
+      { label: "Government & Public Sector", href: "/industries/government" },
+      { label: "Agriculture & Precision Farming", href: "/industries/agriculture" },
+      { label: "Telecommunications", href: "/industries/telecom" },
+    ],
+  },
 ];
 
-const caseStudyLinks = [
-  { label: "Government Projects", href: "/case-studies/government-projects" },
-  { label: "Infrastructure Projects", href: "/case-studies/infrastructure-projects" },
-  { label: "Agriculture Projects", href: "/case-studies/agriculture-projects" },
-  { label: "Mining Projects", href: "/case-studies/mining-projects" },
-  { label: "Smart City Projects", href: "/case-studies/smart-city-projects" },
-  { label: "Utility Projects", href: "/case-studies/utility-projects" },
-  { label: "Project Gallery", href: "/case-studies/project-gallery" },
+const solutionLinks = solutionCategories.flatMap(c => c.links);
+const industryLinks = industryCategories.flatMap(c => c.links);
+
+const caseStudyCategories = [
+  {
+    title: "By Sector",
+    links: [
+      { label: "Government Projects", href: "/case-studies/government-projects" },
+      { label: "Infrastructure Projects", href: "/case-studies/infrastructure-projects" },
+      { label: "Agriculture Projects", href: "/case-studies/agriculture-projects" },
+      { label: "Mining Projects", href: "/case-studies/mining-projects" },
+      { label: "Utility Projects", href: "/case-studies/utility-projects" },
+    ],
+  },
+  {
+    title: "Featured",
+    links: [
+      { label: "Smart City Projects", href: "/case-studies/smart-city-projects" },
+      { label: "Project Gallery", href: "/case-studies/project-gallery" },
+    ],
+  },
 ];
+
+const caseStudyLinks = caseStudyCategories.flatMap(c => c.links);
+
+const resourceCategories = [
+  {
+    title: "Content",
+    links: [
+      { label: "Blog", href: "/resources/blog" },
+      { label: "Whitepapers", href: "/resources/whitepapers" },
+      { label: "News & Media", href: "/resources/news-media" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { label: "Drone Regulations", href: "/resources/drone-regulations" },
+      { label: "FAQs", href: "/resources/faqs" },
+      { label: "Downloads", href: "/resources/downloads" },
+    ],
+  },
+];
+
+const resourceLinks = resourceCategories.flatMap(c => c.links);
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,6 +130,7 @@ const Navbar = () => {
   const isSolutionsActive = pathname.startsWith("/solutions");
   const isIndustriesActive = pathname.startsWith("/industries");
   const isCaseStudiesActive = pathname.startsWith("/case-studies");
+  const isResourcesActive = pathname.startsWith("/resources");
 
   return (
     <>
@@ -91,11 +158,18 @@ const Navbar = () => {
                 Solutions <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "solutions" ? "is-open" : ""}`}>
-                {solutionLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                    {link.label}
-                  </Link>
-                ))}
+                <div className="navbar-dropdown-grid">
+                  {solutionCategories.map((cat) => (
+                    <div key={cat.title} className="navbar-dropdown-col">
+                      <span className="navbar-dropdown-heading">{cat.title}</span>
+                      {cat.links.map((link) => (
+                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -108,11 +182,18 @@ const Navbar = () => {
                 Industries <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "industries" ? "is-open" : ""}`}>
-                {industryLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                    {link.label}
-                  </Link>
-                ))}
+                <div className="navbar-dropdown-grid">
+                  {industryCategories.map((cat) => (
+                    <div key={cat.title} className="navbar-dropdown-col">
+                      <span className="navbar-dropdown-heading">{cat.title}</span>
+                      {cat.links.map((link) => (
+                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -125,16 +206,44 @@ const Navbar = () => {
                 Case Studies <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "case-studies" ? "is-open" : ""}`}>
-                {caseStudyLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                    {link.label}
-                  </Link>
-                ))}
+                <div className="navbar-dropdown-grid">
+                  {caseStudyCategories.map((cat) => (
+                    <div key={cat.title} className="navbar-dropdown-col">
+                      <span className="navbar-dropdown-heading">{cat.title}</span>
+                      {cat.links.map((link) => (
+                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <Link href="/resources" className={`navbar-link ${pathname.startsWith("/resources") ? "active" : ""}`}>Resources</Link>
-            <Link href="/contact" className={`navbar-link ${pathname.startsWith("/contact") ? "active" : ""}`}>Contact</Link>
+            <div
+              className="navbar-dropdown"
+              onMouseEnter={() => setOpenDropdown("resources")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={`navbar-link navbar-dropdown-trigger ${isResourcesActive ? "active" : ""}`}>
+                Resources <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
+              </button>
+              <div className={`navbar-dropdown-menu ${openDropdown === "resources" ? "is-open" : ""}`}>
+                <div className="navbar-dropdown-grid">
+                  {resourceCategories.map((cat) => (
+                    <div key={cat.title} className="navbar-dropdown-col">
+                      <span className="navbar-dropdown-heading">{cat.title}</span>
+                      {cat.links.map((link) => (
+                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </nav>
 
           <div className="navbar-actions">
@@ -214,7 +323,21 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link href="/resources" className={`nav-overlay-link ${pathname.startsWith("/resources") ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Resources</Link>
+          <div className="nav-overlay-group">
+            <button 
+              className={`nav-overlay-link nav-overlay-group-trigger ${isResourcesActive ? "active" : ""}`}
+              onClick={() => setOpenDropdown(openDropdown === "mobile-resources" ? null : "mobile-resources")}
+            >
+              Resources <ChevronDown style={{ width: "1.2rem", height: "1.2rem" }} />
+            </button>
+            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-resources" ? "is-open" : ""}`}>
+              {resourceLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link href="/contact" className="nav-overlay-cta" onClick={() => setIsMobileMenuOpen(false)}>Get in Touch</Link>
         </nav>
       </div>

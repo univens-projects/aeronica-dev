@@ -4,15 +4,17 @@ import React from "react";
 import Link from "next/link";
 import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu, ArrowRight } from "lucide-react";
 
+const accentColor = "#21389a";
+
 const services = [
-  { title: "GIS Survey & Mapping", desc: "Sub-centimeter accuracy for railway corridors, mining, and infrastructure.", href: "/services/gis-survey-mapping", icon: Map, accent: "#1a365d" },
-  { title: "Agriculture Spraying", desc: "Precision pesticide application with DGCA-certified drones.", href: "/services/agriculture-spraying", icon: Tractor, accent: "#1a4731" },
-  { title: "Multispectral Scanning", desc: "Advanced crop health analytics and soil condition insights.", href: "/services/multispectral-scanning", icon: Scan, accent: "#2d1b69" },
-  { title: "Security Surveillance", desc: "Real-time monitoring & AI-powered anomaly detection.", href: "/services/security-surveillance", icon: Shield, accent: "#3d1f1a" },
-  { title: "Samrudhhi-10L", desc: "The gold standard in agri-drone technology.", href: "/products/samrudhhi-10l", icon: Plane, accent: "#1a3a4a" },
-  { title: "Unified Surveillance", desc: "Integrated command center for critical infrastructure.", href: "/solutions/uss", icon: Monitor, accent: "#1a1a3a" },
-  { title: "Aeroni.AI", desc: "Smart data processing, analytics & automated reporting.", href: "/solutions/aeroni-ai", icon: Brain, accent: "#2d1a4a" },
-  { title: "R&D & Custom UAV", desc: "Indigenous flight controllers & bespoke drone builds.", href: "/research", icon: Cpu, accent: "#1a2d2d" },
+  { title: "GIS Survey & Mapping", desc: "Sub-centimeter accuracy for railway corridors, mining, and infrastructure.", href: "/services/gis-survey-mapping", icon: Map },
+  { title: "Agriculture Spraying", desc: "Precision pesticide application with DGCA-certified drones.", href: "/services/agriculture-spraying", icon: Tractor },
+  { title: "Multispectral Scanning", desc: "Advanced crop health analytics and soil condition insights.", href: "/services/multispectral-scanning", icon: Scan },
+  { title: "Security Surveillance", desc: "Real-time monitoring & AI-powered anomaly detection.", href: "/services/security-surveillance", icon: Shield },
+  { title: "Samrudhhi-10L", desc: "The gold standard in agri-drone technology.", href: "/products/samrudhhi-10l", icon: Plane },
+  { title: "Unified Surveillance", desc: "Integrated command center for critical infrastructure.", href: "/solutions/uss", icon: Monitor },
+  { title: "Aeroni.AI", desc: "Smart data processing, analytics & automated reporting.", href: "/solutions/aeroni-ai", icon: Brain },
+  { title: "R&D & Custom UAV", desc: "Indigenous flight controllers & bespoke drone builds.", href: "/research", icon: Cpu },
 ];
 
 export default function Services() {
@@ -42,25 +44,22 @@ export default function Services() {
                 color: "inherit",
                 background: "#fff",
                 border: "1px solid #e5e5e5",
-                borderLeft: `4px solid ${service.accent}`,
+                borderLeft: `4px solid ${accentColor}`,
                 borderRadius: "0 0.4rem 0.4rem 0",
                 padding: "2.2rem 2.4rem",
-                transition: "all 0.3s ease",
                 display: "flex",
                 flexDirection: "column",
                 position: "relative",
               }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.06)"; e.currentTarget.style.borderColor = service.accent; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "#e5e5e5"; }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.2rem" }}>
-                <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "50%", background: `${service.accent}12`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Icon style={{ width: "1.8rem", height: "1.8rem", color: service.accent }} />
+                <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "50%", background: `${accentColor}12`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Icon style={{ width: "1.8rem", height: "1.8rem", color: accentColor }} />
                 </div>
-                <h3 style={{ fontSize: "1.6rem", fontWeight: 600, lineHeight: 1.3 }}>{service.title}</h3>
+                <h3 style={{ fontSize: "1.8rem", fontWeight: 600, lineHeight: 1.3 }}>{service.title}</h3>
               </div>
-              <p style={{ fontSize: "1.3rem", color: "#666", lineHeight: 1.6, flexGrow: 1, marginBottom: "1.2rem" }}>{service.desc}</p>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: service.accent, fontWeight: 600, fontSize: "1.15rem" }}>
+              <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, flexGrow: 1, marginBottom: "1.2rem" }}>{service.desc}</p>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: accentColor, fontWeight: 600, fontSize: "1.15rem" }}>
                 Learn More <ArrowRight style={{ width: "1.2rem", height: "1.2rem" }} />
               </div>
             </Link>

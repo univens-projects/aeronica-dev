@@ -4,26 +4,25 @@ import React from "react";
 import Link from "next/link";
 import { MapPin, Building2, Activity, ArrowRight } from "lucide-react";
 
+const projectGradient = "linear-gradient(135deg, #21389a 0%, #1a2d3d 50%, #2d5a7a 100%)";
+
 const portfolio = [
   {
     title: "Central Railway Corridor Mapping",
     desc: "High-resolution corridor mapping along key railway routes using RTK-enabled drones and LiDAR. Sub-centimeter accuracy for track alignment, embankments, drainage systems, and encroachment detection across 200+ km of rail network.",
     href: "/portfolio/central-railway-corridor-mapping",
-    gradient: "linear-gradient(135deg, #0c1a2e 0%, #1a365d 50%, #2d5a87 100%)",
     meta: { Location: "Maharashtra, India", Industry: "Railways", Services: "GIS Survey & Mapping" }
   },
   {
     title: "JSW Steel Mine Volumetric Survey",
     desc: "Drone-based 3D mapping and volumetric analysis for JSW Steel's mining operations. Stockpile volume estimation, pit progression monitoring, and slope stability assessment using photogrammetry and GIS-integrated workflows.",
     href: "/portfolio/jsw-mine-volumetric-survey",
-    gradient: "linear-gradient(135deg, #1a0c0c 0%, #3d1f1a 50%, #6a3d2d 100%)",
     meta: { Location: "Karnataka, India", Industry: "Mining", Services: "GIS Survey & Mapping" }
   },
   {
     title: "IOCL Pipeline Surveillance",
     desc: "Deployment of Unified Surveillance System (USS) for IOCL's cross-country pipeline network. EO/IR sensors with AI-assisted anomaly detection for real-time intrusion alerts, leak detection, and right-of-way monitoring.",
     href: "/portfolio/iocl-pipeline-surveillance",
-    gradient: "linear-gradient(135deg, #0c1a1a 0%, #1a3a4a 50%, #2d6a7a 100%)",
     meta: { Location: "Gujarat, India", Industry: "Oil & Gas", Services: "Security Surveillance" }
   },
 ];
@@ -63,16 +62,13 @@ export default function Portfolio() {
               border: "1px solid #e5e5e5",
               borderRadius: "0.4rem",
               overflow: "hidden",
-              transition: "all 0.3s ease",
               minHeight: "220px",
             }}
-            onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.07)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "none"; }}
           >
             <div style={{
               width: "280px",
               minWidth: "200px",
-              background: `${project.gradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
+              background: `${projectGradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundBlendMode: "overlay",
@@ -89,13 +85,13 @@ export default function Portfolio() {
             </div>
             <div style={{ flexGrow: 1, padding: "2.5rem 3rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "1rem", lineHeight: 1.3 }}>{project.title}</h3>
-              <p style={{ fontSize: "1.3rem", color: "#666", lineHeight: 1.7, marginBottom: "1.5rem" }}>{project.desc}</p>
+              <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.7, marginBottom: "1.5rem" }}>{project.desc}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem 2rem" }}>
                 {Object.entries(project.meta).map(([label, value]) => {
                   const MetaIcon = metaIcons[label] || Activity;
                   return (
                     <div key={label} style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "1.15rem", color: "#888" }}>
-                      <MetaIcon style={{ width: "1.3rem", height: "1.3rem", color: "#aaa" }} />
+                      <MetaIcon style={{ width: "1.3rem", height: "1.3rem", color: "#888" }} />
                       <span>{label}: <strong style={{ color: "#555", fontWeight: 500 }}>{value}</strong></span>
                     </div>
                   );

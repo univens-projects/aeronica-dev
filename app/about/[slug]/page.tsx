@@ -178,21 +178,21 @@ export default function AboutDetail() {
         {/* Page Header */}
         <div style={{ marginBottom: "5rem" }}>
           <span style={{ fontSize: "1.2rem", fontFamily: "var(--font-mono)", textTransform: "uppercase", color: "#888", letterSpacing: "0.08em", display: "block", marginBottom: "1rem" }}>{data.category}</span>
-          <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "1.5rem", lineHeight: "1.1" }}>{data.title}</h1>
+          <h1 style={{ fontSize: "clamp(3.2rem, 6.4vw, 8rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "1.5rem", lineHeight: "1.1" }}>{data.title}</h1>
           <p style={{ fontSize: "1.8rem", color: "#555", fontWeight: 300, lineHeight: "1.5", maxWidth: "800px" }}>{data.subtitle}</p>
         </div>
 
         {/* Sections */}
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {data.sections.map((section, idx) => (
-            <div key={idx} className="card-hover" style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div key={idx} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
               <h2 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>{section.heading}</h2>
-              <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: "1.7", marginBottom: section.list ? "2rem" : "0" }}>{section.text}</p>
+              <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: "1.7", marginBottom: section.list ? "2rem" : "0" }}>{section.text}</p>
               
               {section.list && (
                 <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                   {section.list.map((item, lIdx) => (
-                    <li key={lIdx} style={{ display: "flex", gap: "1rem", alignItems: "start", fontSize: "1.45rem", color: "#444", lineHeight: "1.6" }}>
+                    <li key={lIdx} style={{ display: "flex", gap: "1rem", alignItems: "start", fontSize: "1.45rem", color: "#555", lineHeight: "1.6" }}>
                       <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#111", flexShrink: 0, marginTop: "0.2rem" }} />
                       <span>{item}</span>
                     </li>

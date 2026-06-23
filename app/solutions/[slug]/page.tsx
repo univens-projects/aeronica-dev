@@ -19,7 +19,7 @@ const solutions: Record<string, any> = {
     title: "Drone Survey & Mapping",
     subtitle: "High-accuracy topographic surveys, LiDAR data collection, and 3D mapping for engineering and construction projects across India.",
     icon: Map,
-    accent: "linear-gradient(135deg, #1a365d, #2d5a87)",
+    accent: "linear-gradient(135deg, #1a2d3d, #2d5a7a)",
     overview: {
       stat: "500+",
       statLabel: "Acres Surveyed per Day",
@@ -439,59 +439,72 @@ export default function SolutionDetail() {
 
       {/* Section 1 — Overview */}
       <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-          <div className="card-hover" style={{
-              background: `linear-gradient(135deg, #fbfbfb, #f0f0f0), url('/assets/images/pexels/pexels-drone-tech.jpg')`,
-              backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+          <div style={{
+              position: "relative",
               border: "1px solid #e5e5e5",
               borderRadius: "0.4rem",
-              padding: "4rem",
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "4rem",
-              alignItems: "center",
+              overflow: "hidden",
             }}>
-              <div>
-            <div style={{ width: "4.8rem", height: "4.8rem", borderRadius: "0.2rem", background: data.accent, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", marginBottom: "2rem" }}>
-              <Icon style={{ width: "2.4rem", height: "2.4rem" }} />
+              <div style={{
+                position: "absolute", inset: 0,
+                background: `url('/assets/images/pexels/pexels-drone-tech.jpg')`,
+                backgroundSize: "cover", backgroundPosition: "center",
+              }} />
+              <div style={{
+                position: "absolute", inset: 0,
+                background: "linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55))",
+              }} />
+              <div style={{
+                position: "relative", zIndex: 1,
+                padding: "4rem",
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "4rem",
+                alignItems: "center",
+                color: "#fff",
+              }}>
+            <div>
+              <div style={{ width: "4.8rem", height: "4.8rem", borderRadius: "0.2rem", background: data.accent, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", marginBottom: "2rem" }}>
+                <Icon style={{ width: "2.4rem", height: "2.4rem" }} />
+              </div>
+              <span className="section-title" style={{ marginBottom: "1rem" }}>
+                <span></span>Overview
+              </span>
+              <h2 style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.2, marginBottom: "1.5rem" }}>
+                {data.title}
+              </h2>
+              <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7 }}>
+                {data.overview.text}
+              </p>
             </div>
-            <span className="section-title" style={{ marginBottom: "1rem" }}>
-              <span></span>Overview
-            </span>
-            <h2 style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-              {data.title}
-            </h2>
-            <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: 1.7 }}>
-              {data.overview.text}
-            </p>
-          </div>
-          <div className="card-hover" style={{
-            background: data.accent,
-borderRadius: "0.4rem",
-          padding: "4rem",
-          textAlign: "center",
-          color: "#fff",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "24rem",
-        }}>
-            <div style={{ fontSize: "clamp(5rem, 6vw, 7rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1 }}>
-              {data.overview.stat}
+            <div style={{
+              background: "rgba(255,255,255,0.1)",
+              borderRadius: "0.4rem",
+              padding: "4rem",
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: "24rem",
+            }}>
+              <div style={{ fontSize: "clamp(5rem, 6vw, 7rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1 }}>
+                {data.overview.stat}
+              </div>
+              <div style={{ fontSize: "1.8rem", marginTop: "1rem", opacity: 0.8 }}>{data.overview.statLabel}</div>
             </div>
-            <div style={{ fontSize: "1.8rem", marginTop: "1rem", opacity: 0.8 }}>{data.overview.statLabel}</div>
           </div>
         </div>
       </FadeIn>
 
       {/* Section 2 — Core Capabilities */}
-      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "8rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
               <span></span>Capabilities
             </span>
-            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
               What We Deliver
             </h2>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
@@ -527,7 +540,7 @@ borderRadius: "0.4rem",
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Methodology
           </span>
-          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
             How We Deliver Results
           </h2>
           <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
@@ -537,11 +550,11 @@ borderRadius: "0.4rem",
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "2rem" }}>
           {data.methodology.map((phase: any, i: number) => (
             <div key={i} style={{ borderTop: "3px solid #111", paddingTop: "2.5rem" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "3.2rem", fontWeight: 700, color: "#e0e0e0", lineHeight: 1, display: "block", marginBottom: "1.5rem" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "3.2rem", fontWeight: 700, color: "#e5e5e5", lineHeight: 1, display: "block", marginBottom: "1.5rem" }}>
                 {phase.step}
               </span>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{phase.title}</h3>
-              <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6 }}>{phase.desc}</p>
+              <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6 }}>{phase.desc}</p>
             </div>
           ))}
         </div>
@@ -554,7 +567,7 @@ borderRadius: "0.4rem",
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
               Industries
             </span>
-            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
               Who We Serve
             </h2>
             <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
@@ -596,7 +609,7 @@ borderRadius: "0.4rem",
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Impact
           </span>
-          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
             Measurable Results
           </h2>
           <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
@@ -623,7 +636,7 @@ borderRadius: "0.4rem",
         {data.relatedStudies && (
           <div className="card-hover" style={{
             marginTop: "3rem",
-            background: "#fbfbfb",
+            background: "#fff",
             border: "1px solid #e5e5e5",
             borderRadius: "0.4rem",
             padding: "2.5rem 3rem",
@@ -653,9 +666,9 @@ borderRadius: "0.4rem",
         <div style={{ textAlign: "center" }}>
           <Link href="/solutions" style={{
             display: "inline-flex", alignItems: "center", gap: "0.8rem",
-            padding: "1.2rem 2.8rem", border: "1px solid #d0d0d0",
+            padding: "1.2rem 2.8rem", border: "1px solid #e5e5e5",
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
-            color: "#444", textDecoration: "none", transition: "all 0.3s ease",
+            color: "#555", textDecoration: "none", transition: "all 0.3s ease",
           }}>
             <ChevronRight style={{ width: "1.6rem", height: "1.6rem", transform: "rotate(180deg)" }} />
             Back to All Solutions

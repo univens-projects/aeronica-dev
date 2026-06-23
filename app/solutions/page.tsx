@@ -23,7 +23,7 @@ const hardwarePlatforms = [
       { label: "Coverage", value: "2 acres/hr" },
       { label: "Certification", value: "DGCA Type" },
     ],
-    gradient: "linear-gradient(135deg, #1a365d, #2d5a87)",
+    gradient: "linear-gradient(135deg, #1a2d3d, #2d5a7a)",
   },
   {
     name: "Samrudhhi-10LH",
@@ -69,7 +69,7 @@ const solutionCategories = [
     desc: "Topographic surveys, LiDAR data collection, and high-accuracy 3D mapping for engineering and construction projects across India.", 
     href: "/solutions/drone-survey-mapping", 
     icon: Map, 
-    color: "linear-gradient(135deg, #1a365d, #2d5a87)",
+    color: "linear-gradient(135deg, #1a2d3d, #2d5a7a)",
     capabilities: ["Sub-cm accuracy", "LiDAR & photogrammetry", "Up to 500 acres/day"],
   },
   { 
@@ -161,10 +161,10 @@ export default function SolutionsHub() {
                 </span>
               </div>
               <div style={{ padding: "2.5rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
-                <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "2rem", flexGrow: 1 }}>
+                <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "2rem", flexGrow: 1 }}>
                   {platform.desc}
                 </p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", borderTop: "1px solid #eee", paddingTop: "1.5rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", borderTop: "1px solid #e5e5e5", paddingTop: "1.5rem" }}>
                   {platform.specs.map((spec, j) => (
                     <div key={j}>
                       <span style={{ fontSize: "1rem", color: "#888", display: "block" }}>{spec.label}</span>
@@ -179,7 +179,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 2 — Solution Categories */}
-      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -218,7 +218,7 @@ export default function SolutionsHub() {
                     style={{
                       width: "5rem",
                       height: "5rem",
-                      borderRadius: "1rem",
+                      borderRadius: "0.4rem",
                       background: solution.color,
                       display: "flex",
                       alignItems: "center",
@@ -239,8 +239,8 @@ export default function SolutionsHub() {
                         key={j}
                         style={{
                           fontSize: "1.15rem",
-                          color: "#666",
-                          background: "#f1f1f1",
+                          color: "#555",
+                          background: "#f3f0ec",
                           padding: "0.3rem 0.8rem",
                           borderRadius: "100px",
                         }}
@@ -303,7 +303,7 @@ export default function SolutionsHub() {
           ].map((story, i) => {
             const Icon = story.icon;
             return (
-              <div key={i} className="card-hover" style={{ border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", background: "#fbfbfb" }}>
+              <div key={i} className="card-hover" style={{ border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", background: "#fff" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
                   <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Icon style={{ width: "2rem", height: "2rem" }} />
@@ -335,7 +335,7 @@ export default function SolutionsHub() {
               color: "#fff",
               borderRadius: "0.4rem",
               fontWeight: 600,
-              fontSize: "1.5rem",
+              fontSize: "1.4rem",
               textDecoration: "none",
               transition: "all 0.3s ease",
             }}
@@ -387,7 +387,7 @@ export default function SolutionsHub() {
                     <Icon style={{ width: "2rem", height: "2rem" }} />
                   </div>
                   <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{item.title}</h3>
-                  <p style={{ fontSize: "1.35rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>
+                  <p style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>
                 </div>
               );
             })}
@@ -444,21 +444,21 @@ export default function SolutionsHub() {
                 paddingTop: "2.5rem",
               }}
             >
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "3.2rem", fontWeight: 700, color: "#e0e0e0", lineHeight: 1, display: "block", marginBottom: "1rem" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "3.2rem", fontWeight: 700, color: "#e5e5e5", lineHeight: 1, display: "block", marginBottom: "1rem" }}>
                 {phase.step}
               </span>
-              <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "0.4rem", background: "#f1f1f1", display: "flex", alignItems: "center", justifyContent: "center", color: "#111", marginBottom: "1.5rem" }}>
+              <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "0.4rem", background: "#f3f0ec", display: "flex", alignItems: "center", justifyContent: "center", color: "#111", marginBottom: "1.5rem" }}>
                 {React.createElement(phase.icon, { style: { width: "1.8rem", height: "1.8rem" } })}
               </div>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{phase.title}</h3>
-              <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6 }}>{phase.desc}</p>
+              <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6 }}>{phase.desc}</p>
             </div>
           ))}
         </div>
       </FadeIn>
 
       {/* Section 6 — Nationwide Reach */}
-      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "8rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Scale &amp; Reach
@@ -490,7 +490,7 @@ export default function SolutionsHub() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "4rem auto 0" }}>
+          <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "4rem auto 0" }}>
             From our headquarters and manufacturing facility in Pune, we deploy teams across 
             Maharashtra, Madhya Pradesh, Karnataka, Gujarat, Rajasthan, Tamil Nadu, and beyond. 
             Our pilots and analysts are where you need them, when you need them.

@@ -60,7 +60,7 @@ export default function AboutHub() {
             </div>
           </div>
           <div style={{ 
-            background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
+            background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
             backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
             borderRadius: "2rem",
             padding: "5rem",
@@ -80,7 +80,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 2 — Mission & Vision */}
-      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -96,11 +96,10 @@ export default function AboutHub() {
                 <Target style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
-              <p style={{ fontSize: "1.55rem", color: "#555", lineHeight: 1.7 }}>
-                To democratize access to precision aerial intelligence across Indian industry&mdash;from 
-                the largest railway corridor to the smallest farm&mdash;by building indigenous, 
-                DGCA-compliant drone ecosystems that are secure, reliable, and purpose-built for 
-                Indian conditions.
+              <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7 }}>
+                Shaping a future where intelligent drones revolutionize the world—from 
+                the largest railway corridor to the smallest farm—by building indigenous, 
+                DGCA-compliant drone ecosystems that are secure, reliable, and purpose-built.
               </p>
             </div>
             <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
@@ -108,7 +107,7 @@ export default function AboutHub() {
                 <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
-              <p style={{ fontSize: "1.55rem", color: "#555", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7 }}>
                 To lead India&rsquo;s aerial intelligence revolution&mdash;becoming the most trusted name 
                 in indigenous UAV hardware, geospatial analytics, and autonomous flight 
                 operations from the Himalayas to the Indian Ocean.
@@ -153,13 +152,13 @@ export default function AboutHub() {
           ].map((area, i) => (
             <Link key={i} href={area.href} className="card-hover" style={{
               textDecoration: "none", color: "inherit",
-              background: "#fbfbfb", border: "1px solid #e5e5e5",
+              background: "#fff", border: "1px solid #e5e5e5",
               padding: "3rem", borderRadius: "0.4rem",
               transition: "all 0.3s ease",
             }}>
               <div style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#111", marginBottom: "0.8rem" }}>{area.count}</div>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{area.title}</h3>
-              <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6 }}>{area.desc}</p>
+              <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6 }}>{area.desc}</p>
             </Link>
           ))}
         </div>
@@ -205,7 +204,7 @@ export default function AboutHub() {
                     <Icon style={{ width: "1.8rem", height: "1.8rem" }} />
                   </div>
                   <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{item.title}</h3>
-                  <p style={{ fontSize: "1.35rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>
+                  <p style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>
                 </div>
               );
             })}
@@ -225,36 +224,36 @@ export default function AboutHub() {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", marginBottom: "5rem" }}>
-          <Link href="/about/certifications" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+          <Link href="/about/certifications" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <ShieldCheck style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>DGCA Certified</h3>
-            <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
               Our Samrudhhi-10L is fully type-certified by DGCA. Every platform follows AS9100-ready 
               production pipelines with full material traceability.
             </p>
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>View Certifications →</span>
           </Link>
 
-          <Link href="/about/partners-alliances" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+          <Link href="/about/partners-alliances" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <Award style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Trusted Partners</h3>
-            <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
               Partnered with IITs for composite research. Trusted by Central Railway, JSW Steel, 
               BASF, and IOCL for high-stakes spatial campaigns.
             </p>
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>Our Partners →</span>
           </Link>
 
-          <Link href="/about/about-aeronica" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+          <Link href="/about/about-aeronica" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <MapPin style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Made in India</h3>
-            <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
               DIPP-recognized startup. All R&amp;D, manufacturing, and flight operations based in 
               Pune, Maharashtra&mdash;supporting missions across 12 Indian states.
             </p>
@@ -282,7 +281,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 6 — Join the Mission */}
-      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Join Us
@@ -299,7 +298,7 @@ export default function AboutHub() {
             <Link href="/about/careers" style={{
               display: "inline-flex", alignItems: "center", gap: "1rem",
               padding: "1.4rem 3rem", background: "#111", color: "#fff",
-              borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.5rem",
+              borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
               textDecoration: "none", transition: "all 0.3s ease",
             }}>
               <Briefcase style={{ width: "1.8rem", height: "1.8rem" }} />
@@ -308,7 +307,7 @@ export default function AboutHub() {
             <Link href="/contact" style={{
               display: "inline-flex", alignItems: "center", gap: "1rem",
               padding: "1.4rem 3rem", background: "#fff", color: "#111",
-              border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.5rem",
+              border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
               textDecoration: "none", transition: "all 0.3s ease",
             }}>
               <BookOpen style={{ width: "1.8rem", height: "1.8rem" }} />

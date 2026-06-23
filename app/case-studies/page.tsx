@@ -32,25 +32,14 @@ export default function CaseStudiesHub() {
               <Link key={index} href={caseStudy.href} className="card-hover" style={{ 
                 textDecoration: "none", 
                 color: "inherit", 
-                background: "#fbfbfb", 
+                background: "#fff", 
                 border: "1px solid #e5e5e5", 
                 padding: "3.5rem", 
 borderRadius: "0.4rem",
-                transition: "all 0.3s ease",
                 display: "flex", 
                 flexDirection: "column", 
                 gap: "1.5rem" 
               }} 
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#111";
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "#e5e5e5";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
               >
                 <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon style={{ width: "2rem", height: "2rem" }} />
@@ -84,11 +73,8 @@ borderRadius: "0.4rem",
               borderRadius: "0.4rem", 
               fontWeight: "600", 
               fontSize: "1.4rem", 
-              textDecoration: "none",
-              transition: "all 0.3s ease"
+              textDecoration: "none"
             }} 
-            onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"}
-            onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
             >
               View All Gallery <ImageIcon style={{ width: "1.6rem", height: "1.6rem" }} />
             </Link>
@@ -103,11 +89,8 @@ borderRadius: "0.4rem",
               borderRadius: "0.4rem", 
               fontWeight: "600", 
               fontSize: "1.4rem", 
-              textDecoration: "none",
-              transition: "all 0.3s ease"
+              textDecoration: "none"
             }} 
-            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.2)"}
-            onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
             >
               Watch Videos <PlayCircle style={{ width: "1.6rem", height: "1.6rem" }} />
             </Link>

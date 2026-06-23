@@ -66,7 +66,7 @@ const Stats = () => {
 
   return (
     <section ref={sectionRef} id="stats" style={{
-      background: "linear-gradient(135deg, #0b1012 0%, #13181a 50%, #0b1012 100%)",
+      background: "linear-gradient(135deg, #0b1012 0%, #1a1a1a 50%, #0b1012 100%)",
       padding: "8rem var(--section-px)",
       color: "#fff",
       position: "relative",
@@ -82,7 +82,7 @@ const Stats = () => {
             <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, color: "#fff" }}>
               By the Numbers
             </h2>
-            <p style={{ fontSize: "1.5rem", color: "#999", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: "48rem" }}>
+            <p style={{ fontSize: "1.6rem", color: "#888", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: "48rem" }}>
               Since our inception, Aeronica has been at the forefront of indigenous UAV innovation in India. We combine precision engineering with deep domain expertise to deliver scalable, DGCA-certified drone solutions that redefine efficiency across agriculture, infrastructure, and surveillance.
             </p>
             <div style={{ marginTop: "2.5rem" }}>
@@ -91,10 +91,7 @@ const Stats = () => {
                 padding: "1.2rem 2.8rem", background: "transparent", color: "#fff",
                 border: "1px solid rgba(255,255,255,0.2)", borderRadius: "0.4rem",
                 fontWeight: 600, fontSize: "1.4rem", textDecoration: "none",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "#fff"; e.currentTarget.style.background = "rgba(255,255,255,0.06)"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.background = "transparent"; }}>
+              }}>
                 Our Story <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
               </Link>
             </div>

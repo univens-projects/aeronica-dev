@@ -68,7 +68,7 @@ export default function ProjectGallery() {
             <div
               key={i}
               style={{
-                background: "#fbfbfb",
+                background: "#fff",
                 border: "1px solid #e5e5e5",
                 borderRadius: "0.4rem",
                 overflow: "hidden",
@@ -77,7 +77,7 @@ export default function ProjectGallery() {
             >
               <div style={{
                 height: "200px",
-                background: `linear-gradient(135deg, #0a1628, #1a2a3a), url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-solar-farm.jpg","pexels-smart-city.jpg","pexels-drone-agriculture.jpg","pexels-power-lines.jpg","pexels-construction-site.jpg","pexels-mining-site.jpg","pexels-industrial-sunrise.jpg"][i % 9]}')`,
+                background: `linear-gradient(135deg, #1a2d3d, #1a3a4a), url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-solar-farm.jpg","pexels-smart-city.jpg","pexels-drone-agriculture.jpg","pexels-power-lines.jpg","pexels-construction-site.jpg","pexels-mining-site.jpg","pexels-industrial-sunrise.jpg"][i % 9]}')`,
                 backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
                 display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.3)",
               }}>
@@ -88,7 +88,7 @@ export default function ProjectGallery() {
                   <span style={{ fontSize: "1.1rem", color: "#888", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{item.category}</span>
                   <span style={{ fontSize: "1rem", color: "#fff", background: "#111", padding: "0.2rem 0.6rem", borderRadius: "100px" }}>{item.type}</span>
                 </div>
-                <h3 style={{ fontSize: "1.6rem", fontWeight: 600, marginBottom: "0.8rem" }}>{item.title}</h3>
+                <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{item.title}</h3>
                 <p style={{ fontSize: "1.3rem", color: "#555", lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function ProjectGallery() {
           <Link href="/contact" style={{
             display: "inline-flex", alignItems: "center", gap: "1rem",
             padding: "1.2rem 2.8rem", background: "#fff", color: "#111",
-            borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.5rem",
+            borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
             textDecoration: "none",
           }}>
             Request Full Video Portfolio <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
