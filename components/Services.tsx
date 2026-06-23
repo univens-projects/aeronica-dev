@@ -1,80 +1,83 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { useSectionObserver } from "@/hooks/useSectionObserver";
+import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu, ArrowRight } from "lucide-react";
 
 const services = [
-  { title: "GIS Survey & Mapping", desc: "Sub-centimeter accuracy for railway corridors, mining, and infrastructure.", href: "/services/gis-survey-mapping", size: "large", imgClass: "card-img-gis" },
-  { title: "Agriculture Spraying", desc: "Precision pesticide application with DGCA-certified drones.", href: "/services/agriculture-spraying", size: "medium", imgClass: "card-img-agri" },
-  { title: "Multispectral Scanning", desc: "Advanced crop health analytics and soil condition insights.", href: "/services/multispectral-scanning", size: "medium", imgClass: "card-img-spectral" },
-  { title: "Security Surveillance", desc: "Real-time monitoring & AI anomaly detection.", href: "/services/security-surveillance", size: "small", imgClass: "card-img-surveillance" },
-  { title: "Samrudhhi-10L", desc: "The gold standard in agri-drone tech.", href: "/products/samrudhhi-10l", size: "small", imgClass: "card-img-samrudhhi" },
-  { title: "Unified Surveillance", desc: "Integrated command center for critical infrastructure.", href: "/solutions/uss", size: "medium", imgClass: "card-img-uss" },
-  { title: "Aeronica AI", desc: "Smart data processing & reporting.", href: "/solutions/aeroni-ai", size: "small", imgClass: "card-img-ai" },
-  { title: "R&D & Custom UAV", desc: "Indigenous flight controllers & custom builds.", href: "/research", size: "small", imgClass: "card-img-rd" },
+  { title: "GIS Survey & Mapping", desc: "Sub-centimeter accuracy for railway corridors, mining, and infrastructure.", href: "/services/gis-survey-mapping", icon: Map, accent: "#1a365d" },
+  { title: "Agriculture Spraying", desc: "Precision pesticide application with DGCA-certified drones.", href: "/services/agriculture-spraying", icon: Tractor, accent: "#1a4731" },
+  { title: "Multispectral Scanning", desc: "Advanced crop health analytics and soil condition insights.", href: "/services/multispectral-scanning", icon: Scan, accent: "#2d1b69" },
+  { title: "Security Surveillance", desc: "Real-time monitoring & AI-powered anomaly detection.", href: "/services/security-surveillance", icon: Shield, accent: "#3d1f1a" },
+  { title: "Samrudhhi-10L", desc: "The gold standard in agri-drone technology.", href: "/products/samrudhhi-10l", icon: Plane, accent: "#1a3a4a" },
+  { title: "Unified Surveillance", desc: "Integrated command center for critical infrastructure.", href: "/solutions/uss", icon: Monitor, accent: "#1a1a3a" },
+  { title: "Aeroni.AI", desc: "Smart data processing, analytics & automated reporting.", href: "/solutions/aeroni-ai", icon: Brain, accent: "#2d1a4a" },
+  { title: "R&D & Custom UAV", desc: "Indigenous flight controllers & bespoke drone builds.", href: "/research", icon: Cpu, accent: "#1a2d2d" },
 ];
 
-const Services = () => {
-  const sectionRef = useSectionObserver();
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const items = entry.target.children;
-            Array.from(items).forEach((item, index) => {
-              item.classList.add("stagger-item");
-              setTimeout(() => {
-                item.classList.add("is-visible");
-              }, index * 100);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (gridRef.current) observer.observe(gridRef.current);
-    return () => observer.disconnect();
-  }, []);
-
+export default function Services() {
   return (
-    <section className="services section-hidden" ref={sectionRef} id="services">
-      <div className="section-header centered">
-        <h2 className="section-title">Our Services</h2>
-        <p className="section-subtitle">Precision-engineered UAV solutions tailored for industrial scale and operational excellence.</p>
+    <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="services">
+      <div style={{ textAlign: "center", marginBottom: "5rem" }}>
+        <span className="section-title" style={{ justifyContent: "center" }}>
+          <span></span>What We Offer
+        </span>
+        <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+          Our Services
+        </h2>
+        <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
+          Precision-engineered UAV solutions tailored for industrial scale and operational excellence.
+        </p>
       </div>
 
-      <div className="services-bento-grid" ref={gridRef} data-stagger>
-        {services.map((service, index) => (
-          <Link key={index} href={service.href} className={`bento-item ${service.size}`}>
-            <div className={`bento-image ${service.imgClass}`}></div>
-            <div className="bento-content">
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
-            </div>
-          </Link>
-        ))}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
+        {services.map((service, index) => {
+          const Icon = service.icon;
+          return (
+            <Link
+              key={index}
+              href={service.href}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                background: "#fff",
+                border: "1px solid #e5e5e5",
+                borderLeft: `4px solid ${service.accent}`,
+                borderRadius: "0 0.4rem 0.4rem 0",
+                padding: "2.2rem 2.4rem",
+                transition: "all 0.3s ease",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.06)"; e.currentTarget.style.borderColor = service.accent; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "#e5e5e5"; }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.2rem" }}>
+                <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "50%", background: `${service.accent}12`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Icon style={{ width: "1.8rem", height: "1.8rem", color: service.accent }} />
+                </div>
+                <h3 style={{ fontSize: "1.6rem", fontWeight: 600, lineHeight: 1.3 }}>{service.title}</h3>
+              </div>
+              <p style={{ fontSize: "1.3rem", color: "#666", lineHeight: 1.6, flexGrow: 1, marginBottom: "1.2rem" }}>{service.desc}</p>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: service.accent, fontWeight: 600, fontSize: "1.15rem" }}>
+                Learn More <ArrowRight style={{ width: "1.2rem", height: "1.2rem" }} />
+              </div>
+            </Link>
+          );
+        })}
       </div>
 
-      <div className="section-footer">
-        <Link href="/services" className="explore-link">
-          Explore All Services
-          <svg className="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
-            <g transform="translate(-18.375, 6.125)">
-              <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
-            </g>
-          </svg>
+      <div style={{ textAlign: "center", marginTop: "4rem" }}>
+        <Link href="/services" style={{
+          display: "inline-flex", alignItems: "center", gap: "0.8rem",
+          padding: "1.2rem 2.8rem", background: "#111", color: "#fff",
+          borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
+          textDecoration: "none", transition: "all 0.3s ease",
+        }}>
+          Explore All Services <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
         </Link>
       </div>
     </section>
   );
-};
-
-export default Services;
+}

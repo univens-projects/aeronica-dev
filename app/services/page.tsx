@@ -4,25 +4,21 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Cpu, Plane, Compass, MapPin, Database, Sparkles, Tractor, Landmark, HelpCircle } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
+import PageHero from "@/components/PageHero";
+import CTA from "@/components/CTA";
 
 export default function ServicesPage() {
   return (
-    <div className="services-page-wrapper" style={{ paddingTop: "120px", paddingBottom: "80px", color: "#1a1a1a" }}>
-      {/* Page Header */}
-      <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
-        <span className="section-title" style={{ justifyContent: "center" }}>
-          Our Services & Platforms
-        </span>
-        <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
-          UAV Platforms & Specialized Services
-        </h1>
-        <p className="section-subtitle" style={{ maxWidth: "70rem", margin: "1.5rem auto 0" }}>
-          Explore our DGCA-certified drone hardware engineered for Indian conditions, coupled with professional GIS and Drone-as-a-Service (DaaS) solutions.
-        </p>
-      </div>
+    <div className="services-page-wrapper" style={{ paddingTop: "0", paddingBottom: "0", color: "#1a1a1a" }}>
+      <PageHero
+        title="UAV Platforms & Specialized Services"
+        subtitle="Explore our DGCA-certified drone hardware engineered for Indian conditions, coupled with professional GIS and Drone-as-a-Service (DaaS) solutions."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]}
+      />
 
       {/* SECTION 1: DRONE HARDWARE PLATFORMS */}
-      <section style={{ padding: "0 var(--section-px)", marginBottom: "10rem", maxWidth: "1440px", margin: "0 auto 10rem" }}>
+      <FadeIn as="section" style={{ padding: "0 var(--section-px)", marginBottom: "10rem", maxWidth: "1440px", margin: "0 auto 10rem", paddingTop: "8rem" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}>
           <Plane style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
           <h2 style={{ fontSize: "2.8rem", fontWeight: 600, letterSpacing: "-0.02em" }}>UAV Hardware Platforms</h2>
@@ -145,10 +141,10 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeIn>
 
       {/* SECTION 2: SPECIALIZED SERVICES */}
-      <section style={{ background: "#f8f8f8", padding: "8rem var(--section-px)", marginBottom: "10rem" }}>
+      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "8rem var(--section-px)", marginBottom: "10rem" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "5rem" }}>
             <Compass style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
@@ -157,8 +153,8 @@ export default function ServicesPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "4rem" }}>
             {/* GIS Services */}
-            <div style={{ background: "#ffffff", padding: "4rem", borderRadius: "1.5rem", border: "1px solid #e5e5e5", boxShadow: "0 10px 30px rgba(0,0,0,0.02)" }}>
-              <div style={{ width: "5rem", height: "5rem", borderRadius: "1rem", background: "linear-gradient(135deg, #1a365d, #2d5a87)", display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", color: "#fff", marginBottom: "2.5rem" }}>
+            <div className="card-hover" style={{ background: "#ffffff", padding: "4rem", borderRadius: "0.4rem", border: "1px solid #e5e5e5", boxShadow: "0 10px 30px rgba(0,0,0,0.02)" }}>
+              <div style={{ width: "5rem", height: "5rem", borderRadius: "0.2rem", background: "linear-gradient(135deg, #1a365d, #2d5a87)", display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", color: "#fff", marginBottom: "2.5rem" }}>
                 <MapPin style={{ width: "2.4rem", height: "2.4rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem" }}>GIS Surveying & Mapping</h3>
@@ -186,8 +182,8 @@ export default function ServicesPage() {
             </div>
 
             {/* Drone-as-a-Service */}
-            <div style={{ background: "#ffffff", padding: "4rem", borderRadius: "1.5rem", border: "1px solid #e5e5e5", boxShadow: "0 10px 30px rgba(0,0,0,0.02)" }}>
-              <div style={{ width: "5rem", height: "5rem", borderRadius: "1rem", background: "linear-gradient(135deg, #1a4731, #2d7a4b)", display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", color: "#fff", marginBottom: "2.5rem" }}>
+            <div className="card-hover" style={{ background: "#ffffff", padding: "4rem", borderRadius: "0.4rem", border: "1px solid #e5e5e5", boxShadow: "0 10px 30px rgba(0,0,0,0.02)" }}>
+              <div style={{ width: "5rem", height: "5rem", borderRadius: "0.2rem", background: "linear-gradient(135deg, #1a4731, #2d7a4b)", display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", color: "#fff", marginBottom: "2.5rem" }}>
                 <Tractor style={{ width: "2.4rem", height: "2.4rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem" }}>Drone-as-a-Service (DaaS)</h3>
@@ -215,10 +211,10 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeIn>
 
       {/* SECTION 3: THE AERONICA DIFFERENCE (WORKFLOW) */}
-      <section style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "5rem" }}>
           <Sparkles style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
           <h2 style={{ fontSize: "2.8rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Our Deployment Workflow</h2>
@@ -238,7 +234,8 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-      </section>
+      </FadeIn>
+      <CTA />
     </div>
   );
 }

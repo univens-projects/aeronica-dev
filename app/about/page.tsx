@@ -1,124 +1,323 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, Target, Award, Users, Bookmark, FileText } from "lucide-react";
+import Link from "next/link";
+import { 
+  Rocket, Target, Eye, Users, Cpu, ShieldCheck, Award, 
+  BookOpen, Quote, ArrowRight, MapPin, CheckCircle, 
+  Building2, Sparkles, Briefcase
+} from "lucide-react";
+import FadeIn from "@/components/FadeIn";
+import PageHero from "@/components/PageHero";
+import CTA from "@/components/CTA";
 
-export default function AboutPage() {
+export default function AboutHub() {
   return (
-    <div className="about-page-wrapper" style={{ paddingTop: "120px", paddingBottom: "80px", color: "#1a1a1a" }}>
-      {/* Page Header */}
-      <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
-        <span className="section-title" style={{ justifyContent: "center" }}>
-          About Aeronica
-        </span>
-        <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
-          Pioneering Indian UAV Innovation
-        </h1>
-        <p className="section-subtitle" style={{ maxWidth: "70rem", margin: "1.5rem auto 0" }}>
-          Founded in 2020, Aeronica Advance Technologies Pvt. Ltd. has rapidly grown to become a premium Hardware-Software-IoT aerial solutions provider in India.
-        </p>
-      </div>
+    <div className="about-hub-wrapper" style={{ paddingTop: "0", paddingBottom: "0", color: "#1a1a1a" }}>
+      <PageHero
+        title="Pioneering Indian UAV Innovation"
+        subtitle="Founded in 2020, Aeronica Advance Technologies Pvt. Ltd. is a technology startup specializing in indigenous Hardware-Software-IoT based aerial solutions."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]}
+      />
 
-      {/* SECTION 1: WHO WE ARE & MISSION */}
-      <section style={{ padding: "0 var(--section-px)", marginBottom: "10rem", maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "6rem", alignItems: "start", marginBottom: "8rem" }}>
+      {/* Section 1 — The Origin Story */}
+      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center" }}>
           <div>
-            <h2 style={{ fontSize: "2.8rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
-              Drones, Built with Purpose. Flying with Precision.
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                The Origin
+              </span>
+              <div style={{ flex: 1, height: "1px", background: "#e5e5e5" }} />
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "2.4rem", fontWeight: 700, color: "#111" }}>2020</span>
+            </div>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.15, marginBottom: "2rem" }}>
+              Born from a belief that India deserves its own aerial intelligence
             </h2>
-            <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: "1.7", marginBottom: "2rem" }}>
-              Aeronica Advance Technologies Pvt. Ltd. is a DIPP-recognized technology startup that specializes in providing expert UAV and automation solutions. We design, manufacture, and operate industrial-grade unmanned systems tailored to meet Indian infrastructure, security, and agricultural needs.
+            <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+              Aeronica was founded in Pune at a time when India&rsquo;s drone industry was dominated by imported, 
+              generic hardware with zero after-sales support. Critical sectors&mdash;agriculture, railways, 
+              mining&mdash;were forced to adapt foreign solutions to Indian conditions.
             </p>
-            <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: "1.7", marginBottom: "2rem" }}>
-              Supported end-to-end, we help organizations confidently start and scale drone programs, emphasizing reliability, strict regulatory compliance (including DGCA certifications), and manufacturing excellence that fosters strong long-term trust.
+            <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "2rem" }}>
+              We set out to change that. Our founding team of aeronautical engineers and embedded systems 
+              designers committed to one principle: build everything in-house, for Indian conditions, 
+              with Indian talent.
             </p>
-            <p style={{ fontSize: "1.55rem", color: "#444", lineHeight: "1.7" }}>
-              Whether operating our heavy-lift Samrudhhi spraying fleets or deploying Flycra 2.0 mapping units across critical railway segments, our key competencies are powered by innovative, reasonably priced technologies that transform efficiency and safety.
-            </p>
-          </div>
-
-          <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", padding: "4rem", borderRadius: "1.5rem" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-              <Target style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
-              <h3 style={{ fontSize: "2rem", fontWeight: 600 }}>Our Mission</h3>
-            </div>
-            <p style={{ fontSize: "1.45rem", color: "#555", lineHeight: "1.6", marginBottom: "3rem" }}>
-              To create advanced, industry-ready drone technologies that empower organizations with smarter operations, improved efficiency, and safe, scalable UAV ecosystems.
-            </p>
-
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-              <ShieldCheck style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
-              <h3 style={{ fontSize: "2rem", fontWeight: 600 }}>Why Choose Us</h3>
-            </div>
-            <p style={{ fontSize: "1.45rem", color: "#555", lineHeight: "1.6" }}>
-              Aeronica delivers reliable, innovative, and fully compliant drone solutions backed by in-house engineering, quality manufacturing, and dedicated customer support.
-            </p>
-          </div>
-        </div>
-
-        {/* STATS COUNT GRID */}
-        <div style={{ borderTop: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5", padding: "4rem 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "4rem", textAlign: "center" }}>
-          <div>
-            <strong style={{ fontSize: "5rem", fontWeight: 400, color: "#111", letterSpacing: "-0.04em" }}>50,000+</strong>
-            <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: "0.5rem" }}>Area Scanned (Acres)</span>
-          </div>
-          <div>
-            <strong style={{ fontSize: "5rem", fontWeight: 400, color: "#111", letterSpacing: "-0.04em" }}>20,000+</strong>
-            <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: "0.5rem" }}>Area Sprayed (Acres)</span>
-          </div>
-          <div>
-            <strong style={{ fontSize: "5rem", fontWeight: 400, color: "#111", letterSpacing: "-0.04em" }}>15+</strong>
-            <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: "0.5rem" }}>Cumulative Experience (Years)</span>
-          </div>
-          <div>
-            <strong style={{ fontSize: "5rem", fontWeight: 400, color: "#111", letterSpacing: "-0.04em" }}>50+</strong>
-            <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: "0.5rem" }}>Clients Supported</span>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2: CLIENTS & PARTNERS */}
-      <section style={{ background: "#f8f8f8", padding: "8rem var(--section-px)", marginBottom: "10rem" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "5rem" }}>
-            <Users style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
-            <h2 style={{ fontSize: "2.8rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Trusted by Industry Leaders</h2>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "2rem" }}>
-            {[
-              "Central Railway", "JSW Steel", "BASF Chemical", "IOCL (Indian Oil)", "Maharashtra Agriculture Dept",
-              "Maharashtra Forest Dept", "LTIMindtree", "AmazingAerial", "Asian Paints", "Padeco", "UPL",
-              "Inforob Tech", "SagunaBag", "SRV Media", "Infostorm Solutions"
-            ].map((client, index) => (
-              <div key={index} style={{ background: "#ffffff", padding: "2rem", borderRadius: "1rem", border: "1px solid #e5e5e5", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80px" }}>
-                <span style={{ fontSize: "1.45rem", fontWeight: 600, color: "#555" }}>{client}</span>
+            <div style={{ display: "flex", gap: "4rem", paddingTop: "2rem", borderTop: "1px solid #e5e5e5" }}>
+              <div>
+                <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>5+</div>
+                <div style={{ fontSize: "1.3rem", color: "#888", marginTop: "0.3rem" }}>Years of R&amp;D</div>
               </div>
-            ))}
+              <div>
+                <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>100%</div>
+                <div style={{ fontSize: "1.3rem", color: "#888", marginTop: "0.3rem" }}>In-House Design</div>
+              </div>
+              <div>
+                <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>50+</div>
+                <div style={{ fontSize: "1.3rem", color: "#888", marginTop: "0.3rem" }}>Team Members</div>
+              </div>
+            </div>
+          </div>
+          <div style={{ 
+            background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+            borderRadius: "2rem",
+            padding: "5rem",
+            color: "#fff",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            <div style={{ position: "absolute", top: "-40%", right: "-20%", width: "60%", height: "80%", background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)", borderRadius: "50%" }} />
+            <Rocket style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />
+            <blockquote style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.4, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
+              &ldquo;We didn&rsquo;t want to assemble drones. We wanted to invent the Indian way of building them.&rdquo;
+            </blockquote>
+            <div style={{ width: "4rem", height: "2px", background: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }} />
+            <div style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)" }}>Founding Ethos, Aeronica Advance Technologies</div>
           </div>
         </div>
-      </section>
+      </FadeIn>
 
-      {/* SECTION 3: KEY COMPETENCIES */}
-      <section style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "5rem" }}>
-          <Award style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
-          <h2 style={{ fontSize: "2.8rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Key Competencies</h2>
+      {/* Section 2 — Mission & Vision */}
+      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "10rem var(--section-px)" }}>
+        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "6rem" }}>
+            <span className="section-title" style={{ justifyContent: "center" }}>
+              <span></span>Our Compass
+            </span>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+              Purpose that drives every flight
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
+            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "1rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+                <Target style={{ width: "2.2rem", height: "2.2rem" }} />
+              </div>
+              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
+              <p style={{ fontSize: "1.55rem", color: "#555", lineHeight: 1.7 }}>
+                To democratize access to precision aerial intelligence across Indian industry&mdash;from 
+                the largest railway corridor to the smallest farm&mdash;by building indigenous, 
+                DGCA-compliant drone ecosystems that are secure, reliable, and purpose-built for 
+                Indian conditions.
+              </p>
+            </div>
+            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "1rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+                <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
+              </div>
+              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
+              <p style={{ fontSize: "1.55rem", color: "#555", lineHeight: 1.7 }}>
+                To lead India&rsquo;s aerial intelligence revolution&mdash;becoming the most trusted name 
+                in indigenous UAV hardware, geospatial analytics, and autonomous flight 
+                operations from the Himalayas to the Indian Ocean.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* Section 3 — The People */}
+      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem" }}>
+          <div>
+            <span className="section-title">
+              <span></span>The Team
+            </span>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+              Built by engineers,<br />for engineers
+            </h2>
+          </div>
+          <Link href="/about/leadership-team" style={{ 
+            display: "inline-flex", alignItems: "center", gap: "0.8rem",
+            fontSize: "1.4rem", fontWeight: 600, color: "#111", textDecoration: "none",
+            borderBottom: "1px solid #111", paddingBottom: "0.3rem",
+            transition: "opacity 0.2s",
+            whiteSpace: "nowrap",
+          }}>
+            Meet the Leadership <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />
+          </Link>
+        </div>
+        <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "4rem" }}>
+          Our team brings together decades of combined experience across aerospace engineering, 
+          embedded electronics, GIS analytics, and cloud infrastructure&mdash;all under one roof 
+          in Pune, Maharashtra.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
+          {[
+            { title: "Aerospace & Design", count: "12+", desc: "Aeronautical engineers, composite specialists, and structural simulation experts.", href: "/about/technology-stack" },
+            { title: "Embedded Systems", count: "8+", desc: "Firmware engineers building our indigenous Nitya flight controller and sensor fusion stacks.", href: "/about/technology-stack" },
+            { title: "GIS & Data Science", count: "10+", desc: "Spatial analysts and ML engineers processing terabytes of aerial data into actionable intelligence.", href: "/about/technology-stack" },
+            { title: "Field Operations", count: "15+", desc: "DGCA-certified pilots and ground support crews running missions across 12 Indian states.", href: "/about/careers" },
+          ].map((area, i) => (
+            <Link key={i} href={area.href} className="card-hover" style={{
+              textDecoration: "none", color: "inherit",
+              background: "#fbfbfb", border: "1px solid #e5e5e5",
+              padding: "3rem", borderRadius: "0.4rem",
+              transition: "all 0.3s ease",
+            }}>
+              <div style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#111", marginBottom: "0.8rem" }}>{area.count}</div>
+              <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{area.title}</h3>
+              <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6 }}>{area.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </FadeIn>
+
+      {/* Section 4 — The Technology (Full-Stack Mastery) */}
+      <FadeIn as="section" style={{ background: "#111", color: "#fff", padding: "10rem var(--section-px)" }}>
+        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem" }}>
+            <div>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                The Stack
+              </span>
+              <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+                Full-Stack Mastery,&nbsp;<br style={{ display: "none" }} />Ground Up
+              </h2>
+            </div>
+            <Link href="/about/technology-stack" style={{ 
+              display: "inline-flex", alignItems: "center", gap: "0.8rem",
+              fontSize: "1.4rem", fontWeight: 600, color: "#fff", textDecoration: "none",
+              borderBottom: "1px solid rgba(255,255,255,0.5)", paddingBottom: "0.3rem",
+              whiteSpace: "nowrap",
+            }}>
+              Explore Our Tech <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />
+            </Link>
+          </div>
+          <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "5rem" }}>
+            Unlike most drone companies that assemble off-the-shelf components, we own the entire 
+            technology chain&mdash;from the carbon fiber airframe to the cloud analytics dashboard. 
+            This vertical integration is the foundation of our reliability.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "2rem" }}>
+            {[
+              { icon: Cpu, title: "Nitya Flight Controller", desc: "Indigenous STM32-based avionics with triple-redundant IMU and military-grade encrypted telemetry." },
+              { icon: ShieldCheck, title: "DGCA Type-Certified", desc: "Samrudhhi-10L is fully DGCA type-certified. Every platform meets stringent airworthiness standards." },
+              { icon: Building2, title: "Composite Airframes", desc: "High-modulus carbon fiber structures designed in-house using FEA simulation for maximum durability." },
+              { icon: Sparkles, title: "Aeroni.AI Engine", desc: "Cloud-native processing pipeline converting raw aerial data into 3D point clouds and NDVI maps in minutes." },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div key={i} className="card-hover" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.4rem", padding: "3rem" }}>
+                  <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "0.4rem", background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", marginBottom: "2rem" }}>
+                    <Icon style={{ width: "1.8rem", height: "1.8rem" }} />
+                  </div>
+                  <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{item.title}</h3>
+                  <p style={{ fontSize: "1.35rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* Section 5 — Trust & Proof (Clients, Certifications, Partners) */}
+      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "6rem" }}>
+          <span className="section-title" style={{ justifyContent: "center" }}>
+            <span></span>Trust &amp; Recognition
+          </span>
+          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+            Proven in the field, backed by the best
+          </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "4rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", marginBottom: "5rem" }}>
+          <Link href="/about/certifications" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+              <ShieldCheck style={{ width: "2rem", height: "2rem" }} />
+            </div>
+            <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>DGCA Certified</h3>
+            <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+              Our Samrudhhi-10L is fully type-certified by DGCA. Every platform follows AS9100-ready 
+              production pipelines with full material traceability.
+            </p>
+            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>View Certifications →</span>
+          </Link>
+
+          <Link href="/about/partners-alliances" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+              <Award style={{ width: "2rem", height: "2rem" }} />
+            </div>
+            <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Trusted Partners</h3>
+            <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+              Partnered with IITs for composite research. Trusted by Central Railway, JSW Steel, 
+              BASF, and IOCL for high-stakes spatial campaigns.
+            </p>
+            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>Our Partners →</span>
+          </Link>
+
+          <Link href="/about/about-aeronica" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+              <MapPin style={{ width: "2rem", height: "2rem" }} />
+            </div>
+            <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Made in India</h3>
+            <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+              DIPP-recognized startup. All R&amp;D, manufacturing, and flight operations based in 
+              Pune, Maharashtra&mdash;supporting missions across 12 Indian states.
+            </p>
+            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>Company Profile →</span>
+          </Link>
+        </div>
+
+        {/* Stats bar */}
+        <div style={{ 
+          background: "#111", borderRadius: "2rem", padding: "5rem",
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "3rem", textAlign: "center"
+        }}>
           {[
-            { title: "In-House Engineering", desc: "Our in-house aerodynamics and avionics design teams enable rapid custom builds, tight quality control, and deep product understanding." },
-            { title: "DGCA Type-Certified Platforms", desc: "All our commercial UAV platforms adhere strictly to DGCA regulations, guaranteeing legality, safety, and seamless registration processes." },
-            { title: "End-to-End Pilot Support", desc: "We provide comprehensive mission training, active field troubleshooting, and continuous technical maintenance to optimize operational uptime." }
-          ].map((comp, index) => (
-            <div key={index} style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
-              <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "1.5rem" }}>{comp.title}</h3>
-              <p style={{ fontSize: "1.45rem", color: "#555", lineHeight: "1.6" }}>{comp.desc}</p>
+            { value: "50+", label: "Projects Delivered" },
+            { value: "12", label: "Indian States Covered" },
+            { value: "15K+", label: "Flight Hours Logged" },
+            { value: "100%", label: "DGCA Compliant" },
+          ].map((stat, i) => (
+            <div key={i}>
+              <div style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#fff" }}>{stat.value}</div>
+              <div style={{ fontSize: "1.3rem", color: "rgba(255,255,255,0.5)", marginTop: "0.5rem" }}>{stat.label}</div>
             </div>
           ))}
         </div>
-      </section>
+      </FadeIn>
+
+      {/* Section 6 — Join the Mission */}
+      <FadeIn as="section" style={{ background: "#f8f8f8", padding: "10rem var(--section-px)" }}>
+        <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
+          <span className="section-title" style={{ justifyContent: "center" }}>
+            <span></span>Join Us
+          </span>
+          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, marginBottom: "2rem" }}>
+            Be part of India&rsquo;s drone story
+          </h2>
+          <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "0 auto 4rem" }}>
+            We&rsquo;re building the future of Indian aerospace&mdash;and we need the best engineers, 
+            designers, and operators to make it happen. If you want to work on technology that 
+            actually flies, we want to hear from you.
+          </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
+            <Link href="/about/careers" style={{
+              display: "inline-flex", alignItems: "center", gap: "1rem",
+              padding: "1.4rem 3rem", background: "#111", color: "#fff",
+              borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.5rem",
+              textDecoration: "none", transition: "all 0.3s ease",
+            }}>
+              <Briefcase style={{ width: "1.8rem", height: "1.8rem" }} />
+              View Open Positions <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+            </Link>
+            <Link href="/contact" style={{
+              display: "inline-flex", alignItems: "center", gap: "1rem",
+              padding: "1.4rem 3rem", background: "#fff", color: "#111",
+              border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.5rem",
+              textDecoration: "none", transition: "all 0.3s ease",
+            }}>
+              <BookOpen style={{ width: "1.8rem", height: "1.8rem" }} />
+              Partner With Us <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+            </Link>
+          </div>
+        </div>
+      </FadeIn>
+
+      <CTA />
     </div>
   );
 }

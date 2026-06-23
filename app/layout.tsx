@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import dynamic from 'next/dynamic';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import CinematicEffects from "@/components/CinematicEffects";
 import ClientOnly from "@/components/ClientOnly";
-
-const LoadingScreen = dynamic(() => import("@/components/LoadingScreen"), { ssr: false });
+import CustomCursor from "@/components/CustomCursor";
+import LoadingScreenWrapper from "@/components/LoadingScreenWrapper";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -36,7 +35,8 @@ export default function RootLayout({
         <ClientOnly>
           <>
             <div className="film-grain"></div>
-            <LoadingScreen />
+            <CustomCursor />
+            <LoadingScreenWrapper />
             <CinematicEffects>
               <Navbar />
               <main>{children}</main>

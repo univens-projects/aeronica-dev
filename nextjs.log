@@ -7,12 +7,572 @@
   - Local:        http://localhost:3001
 
  ✓ Starting...
- ✓ Ready in 3.6s
+ ✓ Ready in 3.9s
+ ○ Compiling /about ...
+ ✓ Compiled /about in 6.5s (615 modules)
  ○ Compiling / ...
- ✓ Compiled / in 7.9s (629 modules)
- GET / 200 in 8252ms
- GET / 200 in 74ms
- GET / 200 in 98ms
- ○ Compiling /services ...
- ✓ Compiled /services in 1252ms (623 modules)
- ✓ Compiled /technology in 365ms (649 modules)
+ ✓ Compiled / in 8.3s (1425 modules)
+ ○ Compiling /resources ...
+ ✓ Compiled /resources in 558ms (1445 modules)
+ ⨯ ./app/contact/page.tsx
+Error: 
+  [31mx[0m the name `ArrowRight` is defined multiple times
+     ,-[[36;1;4m/home/gaurav/Documents/websites/nextjs-version/app/contact/page.tsx[0m:2:1]
+ [2m  2[0m | 
+ [2m  3[0m | import React, { useState } from "react";
+ [2m  4[0m | import Link from "next/link";
+ [2m  5[0m | import { Mail, Phone, MapPin, Building, Sparkles, MessageSquare, ArrowRight, Calendar, ClipboardList, Zap } from "lucide-react";
+     : [31;1m                                                                 ^^^^^|^^^^[0m
+     :                                                                       [31;1m`-- [31;1mprevious definition of `ArrowRight` here[0m[0m
+ [2m  6[0m | 
+ [2m  7[0m | export default function ContactHub() {
+ [2m  8[0m |   const [formSubmitted, setFormSubmitted] = useState(false);
+ [2m  9[0m | 
+ [2m 10[0m |   const handleSubmit = (e: React.FormEvent) => {
+ [2m 11[0m |     e.preventDefault();
+ [2m 12[0m |     setFormSubmitted(true);
+ [2m 13[0m |     setTimeout(() => setFormSubmitted(false), 3000);
+ [2m 14[0m |   };
+ [2m 15[0m | 
+ [2m 16[0m |   return (
+ [2m 17[0m |     <div className="contact-hub-wrapper" style={{ paddingTop: "120px", paddingBottom: "80px", color: "#1a1a1a" }}>
+ [2m 18[0m |       {/* Page Header */}
+ [2m 19[0m |       <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
+ [2m 20[0m |         <span className="section-title" style={{ justifyContent: "center" }}>
+ [2m 21[0m |           <span></span>Get in Touch
+ [2m 22[0m |         </span>
+ [2m 23[0m |         <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
+ [2m 24[0m |           Connect with Aeronica
+ [2m 25[0m |         </h1>
+ [2m 26[0m |         <p className="section-subtitle" style={{ maxWidth: "70rem", margin: "1.5rem auto 0" }}>
+ [2m 27[0m |           Ready to transform your operations with precision aerial intelligence? Whether you need a custom drone build or a full-scale GIS campaign, we are here to help.
+ [2m 28[0m |         </p>
+ [2m 29[0m |       </div>
+ [2m 30[0m | 
+ [2m 31[0m |       <section style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+ [2m 32[0m |         {/* QUICK ACTION GRID */}
+ [2m 33[0m |         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem", marginBottom: "8rem" }}>
+ [2m 34[0m |           {[
+ [2m 35[0m |             { title: "Request a Demo", desc: "See our platforms in action. Schedule a live demo of Samrudhhi or Flycra.", href: "/contact/request-demo", icon: Zap },
+ [2m 36[0m |             { title: "Get a Quote", desc: "Custom pricing for GIS surveys, DaaS campaigns, or drone hardware purchases.", href: "/contact/get-quote", icon: ClipboardList },
+ [2m 37[0m |             { title: "Book Consultation", desc: "1-on-1 expert consultation for regulatory compliance and mission planning.", href: "/contact/book-consultation", icon: Calendar },
+ [2m 38[0m |           ].map((action, index) => {
+ [2m 39[0m |             const Icon = action.icon;
+ [2m 40[0m |             return (
+ [2m 41[0m |               <Link key={index} href={action.href} style={{ 
+ [2m 42[0m |                 textDecoration: "none", 
+ [2m 43[0m |                 color: "inherit", 
+ [2m 44[0m |                 background: "#fbfbfb", 
+ [2m 45[0m |                 border: "1px solid #e5e5e5", 
+ [2m 46[0m |                 padding: "3rem", 
+ [2m 47[0m |                 borderRadius: "1.5rem", 
+ [2m 48[0m |                 transition: "all 0.3s ease",
+ [2m 49[0m |                 display: "flex", 
+ [2m 50[0m |                 flexDirection: "column", 
+ [2m 51[0m |                 gap: "1.5rem" 
+ [2m 52[0m |               }} 
+ [2m 53[0m |               onMouseEnter={(e) => {
+ [2m 54[0m |                 e.currentTarget.style.borderColor = "#111";
+ [2m 55[0m |                 e.currentTarget.style.transform = "translateY(-5px)";
+ [2m 56[0m |                 e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
+ [2m 57[0m |               }}
+ [2m 58[0m |               onMouseLeave={(e) => {
+ [2m 59[0m |                 e.currentTarget.style.borderColor = "#e5e5e5";
+ [2m 60[0m |                 e.currentTarget.style.transform = "translateY(0)";
+ [2m 61[0m |                 e.currentTarget.style.boxShadow = "none";
+ [2m 62[0m |               }}
+ [2m 63[0m |               >
+ [2m 64[0m |                 <div style={{ width: "4rem", height: "4rem", borderRadius: "0.8rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+ [2m 65[0m |                   <Icon style={{ width: "2rem", height: "2rem" }} />
+ [2m 66[0m |                 </div>
+ [2m 67[0m |                 <div>
+ [2m 68[0m |                   <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>{action.title}</h3>
+ [2m 69[0m |                   <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: "1.6" }}>{action.desc}</p>
+ [2m 70[0m |                 </div>
+ [2m 71[0m |               </Link>
+ [2m 72[0m |             );
+ [2m 73[0m |           })}
+ [2m 74[0m |         </div>
+ [2m 75[0m | 
+ [2m 76[0m |         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "6rem", alignItems: "start" }}>
+ [2m 77[0m |           {/* LEFT SIDE: OFFICE & FACTORY */}
+ [2m 78[0m |           <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+ [2m 79[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
+ [2m 80[0m |               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+ [2m 81[0m |                 <Building style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
+ [2m 82[0m |                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Corporate Headquarters</h2>
+ [2m 83[0m |               </div>
+ [2m 84[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "start", marginBottom: "1.5rem" }}>
+ [2m 85[0m |                 <MapPin style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
+ [2m 86[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>
+ [2m 87[0m |                   101, Sunrise Apartments, Opp. Kamla Nehru Park, Pune, IN 411004
+ [2m 88[0m |                 </span>
+ [2m 89[0m |               </div>
+ [2m 90[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+ [2m 91[0m |                 <Phone style={{ width: "2rem", height: "2rem", color: "#888" }} />
+ [2m 92[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>(+91) 727 646 9160</span>
+ [2m 93[0m |               </div>
+ [2m 94[0m |             </div>
+ [2m 95[0m | 
+ [2m 96[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
+ [2m 97[0m |               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+ [2m 98[0m |                 <Sparkles style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
+ [2m 99[0m |                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Manufacturing Facility</h2>
+ [2m100[0m |               </div>
+ [2m101[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "start" }}>
+ [2m102[0m |                 <MapPin style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
+ [2m103[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>
+ [2m104[0m |                   Gat No.32, Khed Shivapur, Haveli, Pune, IN 412205
+ [2m105[0m |                 </span>
+ [2m106[0m |               </div>
+ [2m107[0m |             </div>
+ [2m108[0m | 
+ [2m109[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem", display: "flex", gap: "2rem", alignItems: "center" }}>
+ [2m110[0m |               <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+ [2m111[0m |                 <Mail style={{ width: "2.2rem", height: "2.2rem" }} />
+ [2m112[0m |               </div>
+ [2m113[0m |               <div>
+ [2m114[0m |                 <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block" }}>General Inquiries</span>
+ [2m115[0m |                 <strong style={{ fontSize: "1.8rem", color: "#111" }}>info@aeronica.in</strong>
+ [2m116[0m |               </div>
+ [2m117[0m |             </div>
+ [2m118[0m |           </div>
+ [2m119[0m | 
+ [2m120[0m |           {/* RIGHT SIDE: MODERN CONTACT FORM */}
+ [2m121[0m |           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "2rem", padding: "5rem", boxShadow: "0 15px 40px rgba(0,0,0,0.01)" }}>
+ [2m122[0m |             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}>
+ [2m123[0m |               <MessageSquare style={{ width: "2.2rem", height: "2.2rem", color: "#111" }} />
+ [2m124[0m |               <h2 style={{ fontSize: "2.4rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Send Us a Message</h2>
+ [2m125[0m |             </div>
+ [2m126[0m | 
+ [2m127[0m |             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+ [2m128[0m |               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+ [2m129[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m130[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Full Name *</label>
+ [2m131[0m |                   <input type="text" placeholder="John Doe" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m132[0m |                 </div>
+ [2m133[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m134[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Email Address *</label>
+ [2m135[0m |                   <input type="email" placeholder="john@example.com" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m136[0m |                 </div>
+ [2m137[0m |               </div>
+ [2m138[0m | 
+ [2m139[0m |               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+ [2m140[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m141[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Phone Number</label>
+ [2m142[0m |                   <input type="tel" placeholder="+91 XXXXX XXXXX" style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m143[0m |                 </div>
+ [2m144[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m145[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Subject *</label>
+ [2m146[0m |                   <select required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem", color: "#555" }}>
+ [2m147[0m |                     <option value="">Select Topic</option>
+ [2m148[0m |                     <option value="demo">Product Demo Request</option>
+ [2m149[0m |                     <option value="gis">GIS Mapping Project</option>
+ [2m150[0m |                     <option value="spray">Agriculture Spraying Service</option>
+ [2m151[0m |                     <option value="custom">Bespoke UAV Design</option>
+ [2m152[0m |                   </select>
+ [2m153[0m |                 </div>
+ [2m154[0m |               </div>
+ [2m155[0m | 
+ [2m156[0m |               <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m157[0m |                 <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Message *</label>
+ [2m158[0m |                 <textarea placeholder="Tell us more about your mission and payload requirements..." required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem", minHeight: "120px", resize: "vertical" }} />
+ [2m159[0m |               </div>
+ [2m160[0m | 
+ [2m161[0m |               <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#111", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.8rem", fontSize: "1.45rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
+ [2m162[0m |                 <span>{formSubmitted ? "Message Sent!" : "Submit Inquiry"}</span>
+ [2m163[0m |                 <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+ [2m164[0m |               </button>
+ [2m165[0m |             </form>
+ [2m166[0m |           </div>
+ [2m167[0m |         </div>
+ [2m168[0m |       </section>
+ [2m169[0m |     </div>
+ [2m170[0m |   );
+ [2m171[0m | }
+ [2m172[0m | 
+ [2m173[0m | function ArrowRight(props: any) {
+     : [33;1m         ^^^^^|^^^^[0m
+     :               [33;1m`-- [33;1m`ArrowRight` redefined here[0m[0m
+ [2m174[0m |   return <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>;
+ [2m175[0m | }
+     `----
+
+Import trace for requested module:
+./app/contact/page.tsx
+ ○ Compiling /_not-found ...
+ ⨯ ./app/contact/page.tsx
+Error: 
+  [31mx[0m the name `ArrowRight` is defined multiple times
+     ,-[[36;1;4m/home/gaurav/Documents/websites/nextjs-version/app/contact/page.tsx[0m:2:1]
+ [2m  2[0m | 
+ [2m  3[0m | import React, { useState } from "react";
+ [2m  4[0m | import Link from "next/link";
+ [2m  5[0m | import { Mail, Phone, MapPin, Building, Sparkles, MessageSquare, ArrowRight, Calendar, ClipboardList, Zap } from "lucide-react";
+     : [31;1m                                                                 ^^^^^|^^^^[0m
+     :                                                                       [31;1m`-- [31;1mprevious definition of `ArrowRight` here[0m[0m
+ [2m  6[0m | 
+ [2m  7[0m | export default function ContactHub() {
+ [2m  8[0m |   const [formSubmitted, setFormSubmitted] = useState(false);
+ [2m  9[0m | 
+ [2m 10[0m |   const handleSubmit = (e: React.FormEvent) => {
+ [2m 11[0m |     e.preventDefault();
+ [2m 12[0m |     setFormSubmitted(true);
+ [2m 13[0m |     setTimeout(() => setFormSubmitted(false), 3000);
+ [2m 14[0m |   };
+ [2m 15[0m | 
+ [2m 16[0m |   return (
+ [2m 17[0m |     <div className="contact-hub-wrapper" style={{ paddingTop: "120px", paddingBottom: "80px", color: "#1a1a1a" }}>
+ [2m 18[0m |       {/* Page Header */}
+ [2m 19[0m |       <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
+ [2m 20[0m |         <span className="section-title" style={{ justifyContent: "center" }}>
+ [2m 21[0m |           <span></span>Get in Touch
+ [2m 22[0m |         </span>
+ [2m 23[0m |         <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
+ [2m 24[0m |           Connect with Aeronica
+ [2m 25[0m |         </h1>
+ [2m 26[0m |         <p className="section-subtitle" style={{ maxWidth: "70rem", margin: "1.5rem auto 0" }}>
+ [2m 27[0m |           Ready to transform your operations with precision aerial intelligence? Whether you need a custom drone build or a full-scale GIS campaign, we are here to help.
+ [2m 28[0m |         </p>
+ [2m 29[0m |       </div>
+ [2m 30[0m | 
+ [2m 31[0m |       <section style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+ [2m 32[0m |         {/* QUICK ACTION GRID */}
+ [2m 33[0m |         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem", marginBottom: "8rem" }}>
+ [2m 34[0m |           {[
+ [2m 35[0m |             { title: "Request a Demo", desc: "See our platforms in action. Schedule a live demo of Samrudhhi or Flycra.", href: "/contact/request-demo", icon: Zap },
+ [2m 36[0m |             { title: "Get a Quote", desc: "Custom pricing for GIS surveys, DaaS campaigns, or drone hardware purchases.", href: "/contact/get-quote", icon: ClipboardList },
+ [2m 37[0m |             { title: "Book Consultation", desc: "1-on-1 expert consultation for regulatory compliance and mission planning.", href: "/contact/book-consultation", icon: Calendar },
+ [2m 38[0m |           ].map((action, index) => {
+ [2m 39[0m |             const Icon = action.icon;
+ [2m 40[0m |             return (
+ [2m 41[0m |               <Link key={index} href={action.href} style={{ 
+ [2m 42[0m |                 textDecoration: "none", 
+ [2m 43[0m |                 color: "inherit", 
+ [2m 44[0m |                 background: "#fbfbfb", 
+ [2m 45[0m |                 border: "1px solid #e5e5e5", 
+ [2m 46[0m |                 padding: "3rem", 
+ [2m 47[0m |                 borderRadius: "1.5rem", 
+ [2m 48[0m |                 transition: "all 0.3s ease",
+ [2m 49[0m |                 display: "flex", 
+ [2m 50[0m |                 flexDirection: "column", 
+ [2m 51[0m |                 gap: "1.5rem" 
+ [2m 52[0m |               }} 
+ [2m 53[0m |               onMouseEnter={(e) => {
+ [2m 54[0m |                 e.currentTarget.style.borderColor = "#111";
+ [2m 55[0m |                 e.currentTarget.style.transform = "translateY(-5px)";
+ [2m 56[0m |                 e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
+ [2m 57[0m |               }}
+ [2m 58[0m |               onMouseLeave={(e) => {
+ [2m 59[0m |                 e.currentTarget.style.borderColor = "#e5e5e5";
+ [2m 60[0m |                 e.currentTarget.style.transform = "translateY(0)";
+ [2m 61[0m |                 e.currentTarget.style.boxShadow = "none";
+ [2m 62[0m |               }}
+ [2m 63[0m |               >
+ [2m 64[0m |                 <div style={{ width: "4rem", height: "4rem", borderRadius: "0.8rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+ [2m 65[0m |                   <Icon style={{ width: "2rem", height: "2rem" }} />
+ [2m 66[0m |                 </div>
+ [2m 67[0m |                 <div>
+ [2m 68[0m |                   <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>{action.title}</h3>
+ [2m 69[0m |                   <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: "1.6" }}>{action.desc}</p>
+ [2m 70[0m |                 </div>
+ [2m 71[0m |               </Link>
+ [2m 72[0m |             );
+ [2m 73[0m |           })}
+ [2m 74[0m |         </div>
+ [2m 75[0m | 
+ [2m 76[0m |         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "6rem", alignItems: "start" }}>
+ [2m 77[0m |           {/* LEFT SIDE: OFFICE & FACTORY */}
+ [2m 78[0m |           <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+ [2m 79[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
+ [2m 80[0m |               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+ [2m 81[0m |                 <Building style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
+ [2m 82[0m |                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Corporate Headquarters</h2>
+ [2m 83[0m |               </div>
+ [2m 84[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "start", marginBottom: "1.5rem" }}>
+ [2m 85[0m |                 <MapPin style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
+ [2m 86[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>
+ [2m 87[0m |                   101, Sunrise Apartments, Opp. Kamla Nehru Park, Pune, IN 411004
+ [2m 88[0m |                 </span>
+ [2m 89[0m |               </div>
+ [2m 90[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+ [2m 91[0m |                 <Phone style={{ width: "2rem", height: "2rem", color: "#888" }} />
+ [2m 92[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>(+91) 727 646 9160</span>
+ [2m 93[0m |               </div>
+ [2m 94[0m |             </div>
+ [2m 95[0m | 
+ [2m 96[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
+ [2m 97[0m |               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+ [2m 98[0m |                 <Sparkles style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
+ [2m 99[0m |                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Manufacturing Facility</h2>
+ [2m100[0m |               </div>
+ [2m101[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "start" }}>
+ [2m102[0m |                 <MapPin style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
+ [2m103[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>
+ [2m104[0m |                   Gat No.32, Khed Shivapur, Haveli, Pune, IN 412205
+ [2m105[0m |                 </span>
+ [2m106[0m |               </div>
+ [2m107[0m |             </div>
+ [2m108[0m | 
+ [2m109[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem", display: "flex", gap: "2rem", alignItems: "center" }}>
+ [2m110[0m |               <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+ [2m111[0m |                 <Mail style={{ width: "2.2rem", height: "2.2rem" }} />
+ [2m112[0m |               </div>
+ [2m113[0m |               <div>
+ [2m114[0m |                 <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block" }}>General Inquiries</span>
+ [2m115[0m |                 <strong style={{ fontSize: "1.8rem", color: "#111" }}>info@aeronica.in</strong>
+ [2m116[0m |               </div>
+ [2m117[0m |             </div>
+ [2m118[0m |           </div>
+ [2m119[0m | 
+ [2m120[0m |           {/* RIGHT SIDE: MODERN CONTACT FORM */}
+ [2m121[0m |           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "2rem", padding: "5rem", boxShadow: "0 15px 40px rgba(0,0,0,0.01)" }}>
+ [2m122[0m |             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}>
+ [2m123[0m |               <MessageSquare style={{ width: "2.2rem", height: "2.2rem", color: "#111" }} />
+ [2m124[0m |               <h2 style={{ fontSize: "2.4rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Send Us a Message</h2>
+ [2m125[0m |             </div>
+ [2m126[0m | 
+ [2m127[0m |             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+ [2m128[0m |               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+ [2m129[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m130[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Full Name *</label>
+ [2m131[0m |                   <input type="text" placeholder="John Doe" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m132[0m |                 </div>
+ [2m133[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m134[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Email Address *</label>
+ [2m135[0m |                   <input type="email" placeholder="john@example.com" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m136[0m |                 </div>
+ [2m137[0m |               </div>
+ [2m138[0m | 
+ [2m139[0m |               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+ [2m140[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m141[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Phone Number</label>
+ [2m142[0m |                   <input type="tel" placeholder="+91 XXXXX XXXXX" style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m143[0m |                 </div>
+ [2m144[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m145[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Subject *</label>
+ [2m146[0m |                   <select required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem", color: "#555" }}>
+ [2m147[0m |                     <option value="">Select Topic</option>
+ [2m148[0m |                     <option value="demo">Product Demo Request</option>
+ [2m149[0m |                     <option value="gis">GIS Mapping Project</option>
+ [2m150[0m |                     <option value="spray">Agriculture Spraying Service</option>
+ [2m151[0m |                     <option value="custom">Bespoke UAV Design</option>
+ [2m152[0m |                   </select>
+ [2m153[0m |                 </div>
+ [2m154[0m |               </div>
+ [2m155[0m | 
+ [2m156[0m |               <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m157[0m |                 <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Message *</label>
+ [2m158[0m |                 <textarea placeholder="Tell us more about your mission and payload requirements..." required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem", minHeight: "120px", resize: "vertical" }} />
+ [2m159[0m |               </div>
+ [2m160[0m | 
+ [2m161[0m |               <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#111", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.8rem", fontSize: "1.45rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
+ [2m162[0m |                 <span>{formSubmitted ? "Message Sent!" : "Submit Inquiry"}</span>
+ [2m163[0m |                 <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+ [2m164[0m |               </button>
+ [2m165[0m |             </form>
+ [2m166[0m |           </div>
+ [2m167[0m |         </div>
+ [2m168[0m |       </section>
+ [2m169[0m |     </div>
+ [2m170[0m |   );
+ [2m171[0m | }
+ [2m172[0m | 
+ [2m173[0m | function ArrowRight(props: any) {
+     : [33;1m         ^^^^^|^^^^[0m
+     :               [33;1m`-- [33;1m`ArrowRight` redefined here[0m[0m
+ [2m174[0m |   return <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>;
+ [2m175[0m | }
+     `----
+
+Import trace for requested module:
+./app/contact/page.tsx
+ ⨯ ./app/contact/page.tsx
+Error: 
+  [31mx[0m the name `ArrowRight` is defined multiple times
+     ,-[[36;1;4m/home/gaurav/Documents/websites/nextjs-version/app/contact/page.tsx[0m:2:1]
+ [2m  2[0m | 
+ [2m  3[0m | import React, { useState } from "react";
+ [2m  4[0m | import Link from "next/link";
+ [2m  5[0m | import { Mail, Phone, MapPin, Building, Sparkles, MessageSquare, ArrowRight, Calendar, ClipboardList, Zap } from "lucide-react";
+     : [31;1m                                                                 ^^^^^|^^^^[0m
+     :                                                                       [31;1m`-- [31;1mprevious definition of `ArrowRight` here[0m[0m
+ [2m  6[0m | 
+ [2m  7[0m | export default function ContactHub() {
+ [2m  8[0m |   const [formSubmitted, setFormSubmitted] = useState(false);
+ [2m  9[0m | 
+ [2m 10[0m |   const handleSubmit = (e: React.FormEvent) => {
+ [2m 11[0m |     e.preventDefault();
+ [2m 12[0m |     setFormSubmitted(true);
+ [2m 13[0m |     setTimeout(() => setFormSubmitted(false), 3000);
+ [2m 14[0m |   };
+ [2m 15[0m | 
+ [2m 16[0m |   return (
+ [2m 17[0m |     <div className="contact-hub-wrapper" style={{ paddingTop: "120px", paddingBottom: "80px", color: "#1a1a1a" }}>
+ [2m 18[0m |       {/* Page Header */}
+ [2m 19[0m |       <div className="section-header centered" style={{ marginBottom: "6rem", padding: "0 var(--section-px)" }}>
+ [2m 20[0m |         <span className="section-title" style={{ justifyContent: "center" }}>
+ [2m 21[0m |           <span></span>Get in Touch
+ [2m 22[0m |         </span>
+ [2m 23[0m |         <h1 style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem" }}>
+ [2m 24[0m |           Connect with Aeronica
+ [2m 25[0m |         </h1>
+ [2m 26[0m |         <p className="section-subtitle" style={{ maxWidth: "70rem", margin: "1.5rem auto 0" }}>
+ [2m 27[0m |           Ready to transform your operations with precision aerial intelligence? Whether you need a custom drone build or a full-scale GIS campaign, we are here to help.
+ [2m 28[0m |         </p>
+ [2m 29[0m |       </div>
+ [2m 30[0m | 
+ [2m 31[0m |       <section style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+ [2m 32[0m |         {/* QUICK ACTION GRID */}
+ [2m 33[0m |         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem", marginBottom: "8rem" }}>
+ [2m 34[0m |           {[
+ [2m 35[0m |             { title: "Request a Demo", desc: "See our platforms in action. Schedule a live demo of Samrudhhi or Flycra.", href: "/contact/request-demo", icon: Zap },
+ [2m 36[0m |             { title: "Get a Quote", desc: "Custom pricing for GIS surveys, DaaS campaigns, or drone hardware purchases.", href: "/contact/get-quote", icon: ClipboardList },
+ [2m 37[0m |             { title: "Book Consultation", desc: "1-on-1 expert consultation for regulatory compliance and mission planning.", href: "/contact/book-consultation", icon: Calendar },
+ [2m 38[0m |           ].map((action, index) => {
+ [2m 39[0m |             const Icon = action.icon;
+ [2m 40[0m |             return (
+ [2m 41[0m |               <Link key={index} href={action.href} style={{ 
+ [2m 42[0m |                 textDecoration: "none", 
+ [2m 43[0m |                 color: "inherit", 
+ [2m 44[0m |                 background: "#fbfbfb", 
+ [2m 45[0m |                 border: "1px solid #e5e5e5", 
+ [2m 46[0m |                 padding: "3rem", 
+ [2m 47[0m |                 borderRadius: "1.5rem", 
+ [2m 48[0m |                 transition: "all 0.3s ease",
+ [2m 49[0m |                 display: "flex", 
+ [2m 50[0m |                 flexDirection: "column", 
+ [2m 51[0m |                 gap: "1.5rem" 
+ [2m 52[0m |               }} 
+ [2m 53[0m |               onMouseEnter={(e) => {
+ [2m 54[0m |                 e.currentTarget.style.borderColor = "#111";
+ [2m 55[0m |                 e.currentTarget.style.transform = "translateY(-5px)";
+ [2m 56[0m |                 e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
+ [2m 57[0m |               }}
+ [2m 58[0m |               onMouseLeave={(e) => {
+ [2m 59[0m |                 e.currentTarget.style.borderColor = "#e5e5e5";
+ [2m 60[0m |                 e.currentTarget.style.transform = "translateY(0)";
+ [2m 61[0m |                 e.currentTarget.style.boxShadow = "none";
+ [2m 62[0m |               }}
+ [2m 63[0m |               >
+ [2m 64[0m |                 <div style={{ width: "4rem", height: "4rem", borderRadius: "0.8rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+ [2m 65[0m |                   <Icon style={{ width: "2rem", height: "2rem" }} />
+ [2m 66[0m |                 </div>
+ [2m 67[0m |                 <div>
+ [2m 68[0m |                   <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>{action.title}</h3>
+ [2m 69[0m |                   <p style={{ fontSize: "1.35rem", color: "#555", lineHeight: "1.6" }}>{action.desc}</p>
+ [2m 70[0m |                 </div>
+ [2m 71[0m |               </Link>
+ [2m 72[0m |             );
+ [2m 73[0m |           })}
+ [2m 74[0m |         </div>
+ [2m 75[0m | 
+ [2m 76[0m |         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "6rem", alignItems: "start" }}>
+ [2m 77[0m |           {/* LEFT SIDE: OFFICE & FACTORY */}
+ [2m 78[0m |           <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+ [2m 79[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
+ [2m 80[0m |               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+ [2m 81[0m |                 <Building style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
+ [2m 82[0m |                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Corporate Headquarters</h2>
+ [2m 83[0m |               </div>
+ [2m 84[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "start", marginBottom: "1.5rem" }}>
+ [2m 85[0m |                 <MapPin style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
+ [2m 86[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>
+ [2m 87[0m |                   101, Sunrise Apartments, Opp. Kamla Nehru Park, Pune, IN 411004
+ [2m 88[0m |                 </span>
+ [2m 89[0m |               </div>
+ [2m 90[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+ [2m 91[0m |                 <Phone style={{ width: "2rem", height: "2rem", color: "#888" }} />
+ [2m 92[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>(+91) 727 646 9160</span>
+ [2m 93[0m |               </div>
+ [2m 94[0m |             </div>
+ [2m 95[0m | 
+ [2m 96[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem" }}>
+ [2m 97[0m |               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+ [2m 98[0m |                 <Sparkles style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
+ [2m 99[0m |                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Manufacturing Facility</h2>
+ [2m100[0m |               </div>
+ [2m101[0m |               <div style={{ display: "flex", gap: "1.5rem", alignItems: "start" }}>
+ [2m102[0m |                 <MapPin style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
+ [2m103[0m |                 <span style={{ fontSize: "1.45rem", color: "#111" }}>
+ [2m104[0m |                   Gat No.32, Khed Shivapur, Haveli, Pune, IN 412205
+ [2m105[0m |                 </span>
+ [2m106[0m |               </div>
+ [2m107[0m |             </div>
+ [2m108[0m | 
+ [2m109[0m |             <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1.5rem", padding: "4rem", display: "flex", gap: "2rem", alignItems: "center" }}>
+ [2m110[0m |               <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+ [2m111[0m |                 <Mail style={{ width: "2.2rem", height: "2.2rem" }} />
+ [2m112[0m |               </div>
+ [2m113[0m |               <div>
+ [2m114[0m |                 <span style={{ fontSize: "1.2rem", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", display: "block" }}>General Inquiries</span>
+ [2m115[0m |                 <strong style={{ fontSize: "1.8rem", color: "#111" }}>info@aeronica.in</strong>
+ [2m116[0m |               </div>
+ [2m117[0m |             </div>
+ [2m118[0m |           </div>
+ [2m119[0m | 
+ [2m120[0m |           {/* RIGHT SIDE: MODERN CONTACT FORM */}
+ [2m121[0m |           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "2rem", padding: "5rem", boxShadow: "0 15px 40px rgba(0,0,0,0.01)" }}>
+ [2m122[0m |             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}>
+ [2m123[0m |               <MessageSquare style={{ width: "2.2rem", height: "2.2rem", color: "#111" }} />
+ [2m124[0m |               <h2 style={{ fontSize: "2.4rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Send Us a Message</h2>
+ [2m125[0m |             </div>
+ [2m126[0m | 
+ [2m127[0m |             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+ [2m128[0m |               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+ [2m129[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m130[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Full Name *</label>
+ [2m131[0m |                   <input type="text" placeholder="John Doe" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m132[0m |                 </div>
+ [2m133[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m134[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Email Address *</label>
+ [2m135[0m |                   <input type="email" placeholder="john@example.com" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m136[0m |                 </div>
+ [2m137[0m |               </div>
+ [2m138[0m | 
+ [2m139[0m |               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+ [2m140[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m141[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Phone Number</label>
+ [2m142[0m |                   <input type="tel" placeholder="+91 XXXXX XXXXX" style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem" }} />
+ [2m143[0m |                 </div>
+ [2m144[0m |                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m145[0m |                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Subject *</label>
+ [2m146[0m |                   <select required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem", color: "#555" }}>
+ [2m147[0m |                     <option value="">Select Topic</option>
+ [2m148[0m |                     <option value="demo">Product Demo Request</option>
+ [2m149[0m |                     <option value="gis">GIS Mapping Project</option>
+ [2m150[0m |                     <option value="spray">Agriculture Spraying Service</option>
+ [2m151[0m |                     <option value="custom">Bespoke UAV Design</option>
+ [2m152[0m |                   </select>
+ [2m153[0m |                 </div>
+ [2m154[0m |               </div>
+ [2m155[0m | 
+ [2m156[0m |               <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+ [2m157[0m |                 <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Message *</label>
+ [2m158[0m |                 <textarea placeholder="Tell us more about your mission and payload requirements..." required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.8rem", outline: "none", fontSize: "1.45rem", minHeight: "120px", resize: "vertical" }} />
+ [2m159[0m |               </div>
+ [2m160[0m | 
+ [2m161[0m |               <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#111", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.8rem", fontSize: "1.45rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
+ [2m162[0m |                 <span>{formSubmitted ? "Message Sent!" : "Submit Inquiry"}</span>
+ [2m163[0m |                 <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+ [2m164[0m |               </button>
+ [2m165[0m |             </form>
+ [2m166[0m |           </div>
+ [2m167[0m |         </div>
+ [2m168[0m |       </section>
+ [2m169[0m |     </div>
+ [2m170[0m |   );
+ [2m171[0m | }
+ [2m172[0m | 
+ [2m173[0m | function ArrowRight(props: any) {
+     : [33;1m         ^^^^^|^^^^[0m
+     :               [33;1m`-- [33;1m`ArrowRight` redefined here[0m[0m
+ [2m174[0m |   return <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>;
+ [2m175[0m | }
+     `----
+
+Import trace for requested module:
+./app/contact/page.tsx
+ GET /contact 500 in 46ms
+ GET /resources 500 in 39ms
+[?25h
