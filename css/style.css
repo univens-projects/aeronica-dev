@@ -1127,10 +1127,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   object-fit: cover;
 }
 
-.product-img-samrudhhi { background: linear-gradient(135deg, #1a3a4a, #2d6a7a), url('../public/assets/img/Samrudhhi-10L.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.product-img-samrudhhi-lh { background: linear-gradient(135deg, #2d4a3a, #4a7a5a), url('../public/assets/img/Samrudhhi-10LH.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.product-img-flycra { background: linear-gradient(135deg, #3a2d4a, #6a4a8a), url('../public/assets/img/Flycra 2.0.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
-.product-img-nitya { background: linear-gradient(135deg, #4a2d2d, #7a4a4a), url('../public/assets/img/Nitya Front.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.product-img-samrudhhi { background: linear-gradient(135deg, #1a3a4a, #2d6a7a), url('/assets/img/Samrudhhi-10L.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.product-img-samrudhhi-lh { background: linear-gradient(135deg, #2d4a3a, #4a7a5a), url('/assets/img/Samrudhhi-10LH.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.product-img-flycra { background: linear-gradient(135deg, #3a2d4a, #6a4a8a), url('/assets/img/Flycra 2.0.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.product-img-nitya { background: linear-gradient(135deg, #4a2d2d, #7a4a4a), url('/assets/img/Nitya Front.png'); background-size: cover; background-position: center; background-blend-mode: overlay; }
 
 .product-info {
   display: flex;
@@ -1455,10 +1455,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: grayscale(100%);
 }
 
-.author-avatar-1 { background: linear-gradient(135deg, #2d5a7a, #4a8aaa); }
-.author-avatar-2 { background: linear-gradient(135deg, #2d7a4b, #4aaa6a); }
-.author-avatar-3 { background: linear-gradient(135deg, #7a4a2d, #aa6a4a); }
-.author-avatar-4 { background: linear-gradient(135deg, #5a2d7a, #8a4aaa); }
+.author-avatar-1 { background: linear-gradient(135deg, #2d5a7a, #4a8aaa), url('/assets/images/pexels/pexels-person-engineer.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.author-avatar-2 { background: linear-gradient(135deg, #2d7a4b, #4aaa6a), url('/assets/images/pexels/pexels-person-business.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.author-avatar-3 { background: linear-gradient(135deg, #7a4a2d, #aa6a4a), url('/assets/images/pexels/pexels-person-farmer.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
+.author-avatar-4 { background: linear-gradient(135deg, #5a2d7a, #8a4aaa), url('/assets/images/pexels/pexels-person-engineer.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; }
 
 .author-info { display: flex; flex-direction: column; gap: 0.2rem; }
 

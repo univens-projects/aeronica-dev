@@ -17,6 +17,14 @@ const industryLinks = [
   { label: "Transportation & Logistics", href: "/industries/transportation" },
 ];
 
+const solutionLinks = [
+  { label: "Drone Survey & Mapping", href: "/solutions/drone-survey-mapping" },
+  { label: "GIS & Geospatial Intelligence", href: "/solutions/gis-geospatial-intelligence" },
+  { label: "Infrastructure Inspection", href: "/solutions/infrastructure-inspection" },
+  { label: "AI Drone Intelligence", href: "/solutions/ai-drone-intelligence" },
+  { label: "Disaster & Emergency Response", href: "/solutions/disaster-emergency-response" },
+];
+
 const caseStudyLinks = [
   { label: "Government Projects", href: "/case-studies/government-projects" },
   { label: "Infrastructure Projects", href: "/case-studies/infrastructure-projects" },
@@ -53,6 +61,7 @@ const Navbar = () => {
   }, []);
 
   const showBackground = pathname !== "/" || isScrolled;
+  const isSolutionsActive = pathname.startsWith("/solutions");
   const isIndustriesActive = pathname.startsWith("/industries");
   const isCaseStudiesActive = pathname.startsWith("/case-studies");
 
@@ -73,7 +82,22 @@ const Navbar = () => {
           <nav className="navbar-menu" id="navbarMenu">
             <Link href="/" className={`navbar-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
             <Link href="/about" className={`navbar-link ${pathname.startsWith("/about") ? "active" : ""}`}>About</Link>
-            <Link href="/solutions" className={`navbar-link ${pathname.startsWith("/solutions") ? "active" : ""}`}>Solutions</Link>
+            <div
+              className="navbar-dropdown"
+              onMouseEnter={() => setOpenDropdown("solutions")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={`navbar-link navbar-dropdown-trigger ${isSolutionsActive ? "active" : ""}`}>
+                Solutions <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
+              </button>
+              <div className={`navbar-dropdown-menu ${openDropdown === "solutions" ? "is-open" : ""}`}>
+                {solutionLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className="navbar-dropdown-link">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             <div
               className="navbar-dropdown"
@@ -142,8 +166,22 @@ const Navbar = () => {
         <nav className="nav-overlay-menu">
           <Link href="/" className={`nav-overlay-link ${pathname === "/" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
           <Link href="/about" className={`nav-overlay-link ${pathname.startsWith("/about") ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-          <Link href="/solutions" className={`nav-overlay-link ${pathname.startsWith("/solutions") ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
-          
+          <div className="nav-overlay-group">
+            <button 
+              className={`nav-overlay-link nav-overlay-group-trigger ${isSolutionsActive ? "active" : ""}`}
+              onClick={() => setOpenDropdown(openDropdown === "mobile-solutions" ? null : "mobile-solutions")}
+            >
+              Solutions <ChevronDown style={{ width: "1.2rem", height: "1.2rem" }} />
+            </button>
+            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-solutions" ? "is-open" : ""}`}>
+              {solutionLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="nav-overlay-group">
             <button 
               className={`nav-overlay-link nav-overlay-group-trigger ${isIndustriesActive ? "active" : ""}`}

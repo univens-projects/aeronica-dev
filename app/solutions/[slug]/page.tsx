@@ -439,17 +439,18 @@ export default function SolutionDetail() {
 
       {/* Section 1 — Overview */}
       <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-        <div className="card-hover" style={{
-          background: "#fbfbfb",
-          border: "1px solid #e5e5e5",
-          borderRadius: "0.4rem",
-          padding: "4rem",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "4rem",
-          alignItems: "center",
-        }}>
-          <div>
+          <div className="card-hover" style={{
+              background: `linear-gradient(135deg, #fbfbfb, #f0f0f0), url('/assets/images/pexels/pexels-drone-tech.jpg')`,
+              backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+              border: "1px solid #e5e5e5",
+              borderRadius: "0.4rem",
+              padding: "4rem",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "4rem",
+              alignItems: "center",
+            }}>
+              <div>
             <div style={{ width: "4.8rem", height: "4.8rem", borderRadius: "0.2rem", background: data.accent, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", marginBottom: "2rem" }}>
               <Icon style={{ width: "2.4rem", height: "2.4rem" }} />
             </div>

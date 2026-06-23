@@ -77,7 +77,8 @@ export default function ProjectGallery() {
             >
               <div style={{
                 height: "200px",
-                background: "linear-gradient(135deg, #0a1628, #1a2a3a)",
+                background: `linear-gradient(135deg, #0a1628, #1a2a3a), url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-solar-farm.jpg","pexels-smart-city.jpg","pexels-drone-agriculture.jpg","pexels-power-lines.jpg","pexels-construction-site.jpg","pexels-mining-site.jpg","pexels-industrial-sunrise.jpg"][i % 9]}')`,
+                backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
                 display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.3)",
               }}>
                 <Camera style={{ width: "4rem", height: "4rem" }} />

@@ -27,7 +27,7 @@ export default function ServicesPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
           {/* Samrudhhi-10L */}
           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1rem", overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
-            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #1a3a4a, #2d6a7a)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #1a3a4a, #2d6a7a), url('/assets/images/pexels/pexels-drone-agriculture.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
               <div style={{ zIndex: 1, textAlign: "center", padding: "2rem" }}>
                 <h3 style={{ fontSize: "2.4rem", fontWeight: 600 }}>Samrudhhi-10L</h3>
                 <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 0.8rem", borderRadius: "100px", display: "inline-block", marginTop: "0.5rem" }}>DGCA Certified</span>
@@ -56,7 +56,7 @@ export default function ServicesPage() {
 
           {/* Samrudhhi-10LH */}
           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1rem", overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
-            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #2d4a3a, #4a7a5a)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #2d4a3a, #4a7a5a), url('/assets/images/pexels/pexels-industrial-sunrise.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
               <div style={{ zIndex: 1, textAlign: "center", padding: "2rem" }}>
                 <h3 style={{ fontSize: "2.4rem", fontWeight: 600 }}>Samrudhhi-10LH</h3>
                 <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 0.8rem", borderRadius: "100px", display: "inline-block", marginTop: "0.5rem" }}>Heavy Lift</span>
@@ -85,7 +85,7 @@ export default function ServicesPage() {
 
           {/* Flycra 2.0 */}
           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1rem", overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
-            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #3a2d4a, #6a4a8a)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #3a2d4a, #6a4a8a), url('/assets/images/pexels/pexels-drone-tech.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
               <div style={{ zIndex: 1, textAlign: "center", padding: "2rem" }}>
                 <h3 style={{ fontSize: "2.4rem", fontWeight: 600 }}>Flycra 2.0</h3>
                 <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 0.8rem", borderRadius: "100px", display: "inline-block", marginTop: "0.5rem" }}>Survey & Mapping</span>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
 
           {/* Nitya FC */}
           <div style={{ background: "#fbfbfb", border: "1px solid #e5e5e5", borderRadius: "1rem", overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
-            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #4a2d2d, #7a4a4a)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+            <div style={{ height: "200px", position: "relative", background: "linear-gradient(135deg, #4a2d2d, #7a4a4a), url('/assets/images/pexels/pexels-circuit-board.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
               <div style={{ zIndex: 1, textAlign: "center", padding: "2rem" }}>
                 <h3 style={{ fontSize: "2.4rem", fontWeight: 600 }}>Nitya FC</h3>
                 <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 0.8rem", borderRadius: "100px", display: "inline-block", marginTop: "0.5rem" }}>Indigenous Avionics</span>

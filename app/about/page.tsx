@@ -60,7 +60,8 @@ export default function AboutHub() {
             </div>
           </div>
           <div style={{ 
-            background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+            background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
+            backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
             borderRadius: "2rem",
             padding: "5rem",
             color: "#fff",

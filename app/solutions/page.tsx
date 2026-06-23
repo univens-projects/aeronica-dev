@@ -133,26 +133,27 @@ export default function SolutionsHub() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
           {hardwarePlatforms.map((platform, i) => (
-            <div
-              key={i}
-              className="card-hover"
-              style={{
-                background: "#fff",
-                border: "1px solid #e5e5e5",
-                borderRadius: "0.4rem",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                style={{
-                  background: platform.gradient,
-                  padding: "3rem",
-                  textAlign: "center",
-                  color: "#fff",
-                }}
-              >
+                <div
+                  key={i}
+                  className="card-hover"
+                  style={{
+                    background: "#fff",
+                    border: "1px solid #e5e5e5",
+                    borderRadius: "0.4rem",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div
+                    style={{
+                      background: `${platform.gradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-industrial-sunrise.jpg","pexels-drone-tech.jpg","pexels-circuit-board.jpg"][i]}')`,
+                      backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                      padding: "3rem",
+                      textAlign: "center",
+                      color: "#fff",
+                    }}
+                  >
                 <Plane style={{ width: "3.2rem", height: "3.2rem", marginBottom: "1.5rem", opacity: 0.9 }} />
                 <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "0.5rem" }}>{platform.name}</h3>
                 <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 1rem", borderRadius: "100px", display: "inline-block" }}>

@@ -36,7 +36,7 @@ export default function TechnologyPage() {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center", marginBottom: "6rem" }}>
-          <div className="card-hover" style={{ background: "#111", borderRadius: "0.4rem", padding: "4rem", color: "#fff", aspectRatio: "1/0.9", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div className="card-hover" style={{ background: "linear-gradient(135deg, #111 0%, #1a1a2e 100%), url('/assets/images/pexels/pexels-circuit-board.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", borderRadius: "0.4rem", padding: "4rem", color: "#fff", aspectRatio: "1/0.9", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <Cpu style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />
             <div style={{ fontSize: "1.2rem", fontFamily: "var(--font-mono)", color: "rgba(255,255,255,0.4)", marginBottom: "1rem" }}>ARCHITECTURE</div>
             <h3 style={{ fontSize: "2.4rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>STM32MP1 Dual-Core</h3>
@@ -333,7 +333,7 @@ export default function TechnologyPage() {
               </div>
             </div>
           </div>
-          <div className="card-hover" style={{ background: "linear-gradient(135deg, #0a1628, #1a3a4a)", borderRadius: "0.4rem", padding: "5rem", color: "#fff", aspectRatio: "1/0.85", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div className="card-hover" style={{ background: "linear-gradient(135deg, #0a1628, #1a3a4a), url('/assets/images/pexels/pexels-industrial-sunrise.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", borderRadius: "0.4rem", padding: "5rem", color: "#fff", aspectRatio: "1/0.85", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <Fan style={{ width: "4rem", height: "4rem", marginBottom: "2.5rem", opacity: 0.7 }} />
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "1.5rem" }}>Composite Manufacturing Facility</h3>
             <p style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: "2rem" }}>

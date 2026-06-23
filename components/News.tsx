@@ -58,7 +58,9 @@ export default function News() {
           >
             <div style={{
               width: "4rem", height: "4rem", borderRadius: "0.2rem",
-              background: item.gradient, display: "flex", alignItems: "center",
+              background: `${item.gradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-smart-city.jpg"][index]}')`,
+              backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+              display: "flex", alignItems: "center",
               justifyContent: "center", flexShrink: 0, fontSize: "1.6rem",
               fontWeight: 700, color: "rgba(255,255,255,0.9)", fontFamily: "var(--font-mono)",
               letterSpacing: "-0.03em",

@@ -72,7 +72,10 @@ export default function Portfolio() {
             <div style={{
               width: "280px",
               minWidth: "200px",
-              background: project.gradient,
+              background: `${project.gradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundBlendMode: "overlay",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
