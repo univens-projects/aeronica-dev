@@ -285,7 +285,7 @@ export default function ResourceSubPage() {
 
       {/* Hero — dark gradient with category badge, title, metadata */}
       <div style={{
-        background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%)",
+        background: "linear-gradient(135deg, #21389A 0%, #1a2d6e 100%)",
         padding: "160px var(--section-px) 60px",
         position: "relative",
         overflow: "hidden",
@@ -365,7 +365,7 @@ export default function ResourceSubPage() {
         <div style={{ padding: "6rem 0 4rem", maxWidth: "72rem", margin: "0 auto" }}>
           {/* Lead paragraph */}
           <p style={{
-            fontSize: "1.8rem", lineHeight: 1.65, color: "#444",
+            fontSize: "1.8rem", lineHeight: 1.65, color: "#555",
             marginBottom: "4rem", fontWeight: 400,
             borderLeft: `3px solid ${meta.accent}`,
             paddingLeft: "2rem",
@@ -418,7 +418,7 @@ export default function ResourceSubPage() {
                 border: `1px solid ${meta.accent}20`,
                 borderRadius: "0.4rem",
                 padding: "3rem",
-                background: "#fafafa",
+                background: "#f3f0ec",
               }}
             >
               <h3 style={{
@@ -442,9 +442,9 @@ export default function ResourceSubPage() {
                     transition={{ duration: 0.35, delay: i * 0.06, ease: "easeOut" }}
                     style={{
                       padding: "0.9rem 0",
-                      fontSize: "1.5rem", color: "#444",
+                      fontSize: "1.5rem", color: "#555",
                       display: "flex", alignItems: "flex-start", gap: "1rem",
-                      borderBottom: i < data.list!.length - 1 ? "1px solid #eee" : "none",
+                      borderBottom: i < data.list!.length - 1 ? "1px solid #e5e5e5" : "none",
                     }}
                   >
                     <span style={{

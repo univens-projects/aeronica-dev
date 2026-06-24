@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
-import { useSectionObserver } from "@/hooks/useSectionObserver";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 interface PageHeroProps {
@@ -12,7 +11,7 @@ interface PageHeroProps {
 }
 
 const PageHero = ({ title, subtitle, breadcrumbs }: PageHeroProps) => {
-  const sectionRef = useSectionObserver();
+  const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -36,7 +35,7 @@ const PageHero = ({ title, subtitle, breadcrumbs }: PageHeroProps) => {
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%)",
+          background: "#21389A",
           zIndex: 0,
         }}
       />

@@ -139,10 +139,10 @@ const Navbar = () => {
         <div className="navbar-container">
           <Link href="/" className="navbar-logo" aria-label="Aeronica">
             <Image 
-              src={showBackground ? "/assets/img/logo1.png" : "/assets/img/logo-lite.png"} 
+              src="/assets/img/aeronica-logo.png" 
               alt="Aeronica Logo" 
-              width={120} 
-              height={48} 
+              width={160} 
+              height={64} 
               className="navbar-logo-img"
             />
           </Link>

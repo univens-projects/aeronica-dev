@@ -1,59 +1,121 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { useSectionObserver } from "@/hooks/useSectionObserver";
+import React from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
-  const sectionRef = useSectionObserver();
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  useEffect(() => {
-    // Logic handled by useSectionObserver for section-visible
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 3000);
-  };
-
   return (
-    <section className="cta-section section-hidden" ref={sectionRef} id="cta">
-      <div className="cta-container">
-        <span className="section-label cta-eyebrow">Get in touch</span>
-        <h2 className="cta-heading">Ready to transform<br />your operations?</h2>
-        <p className="cta-text">From precision agriculture to industrial surveillance — we build<br />drone solutions that deliver real results.</p>
-        
-        <form className="cta-form" onSubmit={handleSubmit}>
-          <div className="form-row">
-            <input type="text" placeholder="Your Name" className="form-input" required />
-            <input type="email" placeholder="Email Address" className="form-input" required />
-          </div>
-          <div className="form-row">
-            <input type="text" placeholder="Company" className="form-input" />
-          <select className="form-input form-select" defaultValue="" required>
-            <option value="" disabled>Select Service</option>
-            <option value="gis">GIS Survey & Mapping</option>
-            <option value="agri">Agriculture Spraying</option>
-            <option value="surveillance">Security Surveillance</option>
-            <option value="other">Other</option>
-          </select>
-          </div>
-          <textarea placeholder="Tell us about your project" className="form-input form-textarea" required></textarea>
-          <button type="submit" className="cta-btn-primary form-submit">
-            <span>{formSubmitted ? "Message Sent!" : "Start a Conversation"}</span>
-            <svg className="dot-grid-icon cta-btn-icon" viewBox="0 0 100 100" fill="none">
-              <g transform="translate(-18.375, 6.125)">
-                <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
-                <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
-                <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
-                <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
-                <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125" fill="currentColor"/>
-              </g>
-            </svg>
-          </button>
-          <p className="form-note">Our team typically responds within 24-48 hours.</p>
-        </form>
+    <section
+      id="cta"
+      style={{
+        background: "#f3f0ec",
+        padding: "var(--section-py) var(--section-px)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1440px",
+          margin: "0 auto",
+          background: "#21389A",
+          borderRadius: "0.8rem",
+          padding: "6rem 7rem",
+          position: "relative",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "4rem",
+        }}
+      >
+        {/* decorative accent */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-50%",
+            right: "-10%",
+            width: "40rem",
+            height: "40rem",
+            borderRadius: "50%",
+            background: "rgba(255,255,255,0.03)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-30%",
+            left: "20%",
+            width: "25rem",
+            height: "25rem",
+            borderRadius: "50%",
+            background: "rgba(0,155,255,0.08)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "56rem" }}>
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "1rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.12em",
+              color: "#009BFF",
+              fontWeight: 500,
+              display: "block",
+              marginBottom: "1rem",
+            }}
+          >
+            Let&apos;s work together
+          </span>
+          <h2
+            style={{
+              fontSize: "clamp(2.8rem, 4vw, 4rem)",
+              fontWeight: 700,
+              lineHeight: 1.15,
+              letterSpacing: "-0.03em",
+              color: "#fff",
+              marginBottom: "1.2rem",
+            }}
+          >
+            Ready to transform your operations?
+          </h2>
+          <p
+            style={{
+              fontSize: "1.5rem",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.7,
+              maxWidth: "44rem",
+            }}
+          >
+            From precision agriculture to industrial surveillance — we build drone solutions that deliver real results.
+          </p>
+        </div>
+
+        <div style={{ position: "relative", zIndex: 1, flexShrink: 0 }}>
+          <Link
+            href="/contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              padding: "1.1rem 2.8rem",
+              background: "#fff",
+              color: "#21389A",
+              borderRadius: "var(--radius-md)",
+              fontSize: "1.5rem",
+              fontWeight: 600,
+              textDecoration: "none",
+              transition: "opacity 0.2s ease",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+          >
+            Start a Conversation <ArrowRight size={20} />
+          </Link>
+        </div>
       </div>
     </section>
   );

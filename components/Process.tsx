@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ClipboardList, Crosshair, Brain, Award } from "lucide-react";
-import GsapReveal from "@/components/GsapReveal";
+import MotionReveal from "@/components/MotionReveal";
 
 const accentColor = "#21389a";
 
@@ -37,19 +37,19 @@ export default function Process() {
   return (
     <section style={{ background: "#f3f0ec", padding: "8rem var(--section-px)", color: "#1a1a1a", overflow: "hidden" }} id="process">
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <span className="section-title" style={{ justifyContent: "center" }}>
+        <div style={{ marginBottom: "5rem" }}>
+          <span className="section-title" style={{ justifyContent: "flex-start" }}>
             <span></span>How We Work
           </span>
           <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
             From Brief to Intelligence
           </h2>
-          <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
+          <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "56rem", marginTop: "2rem" }}>
             A structured four-phase approach that ensures every mission delivers exactly what you need&mdash;on time, in spec, and fully compliant.
           </p>
         </div>
 
-        <GsapReveal as="div" stagger={0.15} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "2.5rem" }}>
+        <MotionReveal as="div" stagger={0.15} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "2.5rem" }}>
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
@@ -67,7 +67,7 @@ export default function Process() {
               </div>
             );
           })}
-        </GsapReveal>
+        </MotionReveal>
       </div>
     </section>
   );

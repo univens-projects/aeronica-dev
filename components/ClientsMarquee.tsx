@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useSectionObserver } from "@/hooks/useSectionObserver";
 
 const clients = [
   { name: "BASF", url: "/assets/img/client logos/basf.jpg" },
@@ -22,40 +21,31 @@ const clients = [
 ];
 
 const ClientsMarquee = () => {
-  const sectionRef = useSectionObserver();
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <div className="clients-marquee section-hidden" ref={sectionRef}>
-      <div className="section-header" style={{ marginBottom: "4rem", textAlign: "center" as const }}>
-        <h2 className="section-title" style={{ justifyContent: "center" }}>
-
-          Trusted by leading organisations
+    <section className="marquee-section">
+      <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center", padding: "0 var(--section-px)" }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "#888", fontWeight: 500, display: "block", marginBottom: "0.8rem" }}>
+          Trusted by
+        </span>
+        <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.15, color: "#1a1a1a", marginBottom: "4rem" }}>
+          Leading Organisations
         </h2>
       </div>
-      <div className="marquee-container">
-        <div className="marquee-track">
-          {/* Row 1 */}
-          <div className="marquee-row">
-            {duplicatedClients.map((client, index) => (
-            <div key={`row1-${index}`} className="client-card">
-              <img src={client.url} alt={client.name} className="client-logo" />
-            </div>
-
-            ))}
-          </div>
-          {/* Row 2 */}
-          <div className="marquee-row">
-            {[...clients].reverse().concat([...clients].reverse()).map((client, index) => (
-            <div key={`row2-${index}`} className="client-card">
-              <img src={client.url} alt={client.name} className="client-logo" />
-            </div>
-
-            ))}
-          </div>
+      <div className="marquee-track">
+        <div className="marquee-row">
+          {duplicatedClients.map((client, index) => (
+            <img key={`row1-${index}`} src={client.url} alt={client.name} className="client-logo" />
+          ))}
+        </div>
+        <div className="marquee-row">
+          {[...clients].reverse().concat([...clients].reverse()).map((client, index) => (
+            <img key={`row2-${index}`} src={client.url} alt={client.name} className="client-logo" />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

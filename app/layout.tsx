@@ -8,6 +8,7 @@ import CinematicEffects from "@/components/CinematicEffects";
 import ClientOnly from "@/components/ClientOnly";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreenWrapper from "@/components/LoadingScreenWrapper";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -52,7 +53,9 @@ export default function RootLayout({
             <LoadingScreenWrapper />
             <CinematicEffects>
               <Navbar />
-              <main>{children}</main>
+              <SmoothScroll>
+                <main>{children}</main>
+              </SmoothScroll>
               <BackToTop />
               <Footer />
             </CinematicEffects>

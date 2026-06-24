@@ -1,43 +1,34 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { useSectionObserver } from "@/hooks/useSectionObserver";
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import MotionReveal from "@/components/MotionReveal";
 
 const testimonials = [
   { 
     quote: "Aeronica delivered exceptional precision in their GIS mapping for our railway corridor project. The sub-centimeter accuracy and detailed terrain analysis exceeded our expectations.", 
     author: "Chief Engineer", 
     title: "Central Railway", 
-    avatarClass: "author-avatar-1" 
   },
   { 
     quote: "The drone spraying service from Aeronica transformed our farming operations. The precision and efficiency of their DGCA-certified Samrudhhi-10L drones reduced our pesticide usage by 30% while improving coverage.", 
     author: "Farm Operations Head", 
     title: "BASF India", 
-    avatarClass: "author-avatar-2" 
   },
   { 
     quote: "Aeronica's Unified Surveillance System has been instrumental in securing our pipeline infrastructure. The AI-powered anomaly detection and real-time monitoring capabilities give us unprecedented visibility.", 
     author: "Safety & Security Director", 
     title: "IOCL", 
-    avatarClass: "author-avatar-3" 
   },
   { 
     quote: "Working with Aeronica on our mine volumetric survey was a fantastic experience. Their drone-based surveying reduced our measurement time from weeks to days, with far greater accuracy.", 
     author: "Mine Operations Manager", 
     title: "JSW Steel", 
-    avatarClass: "author-avatar-4" 
   },
 ];
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const sectionRef = useSectionObserver();
-
-  useEffect(() => {
-    // Logic handled by useSectionObserver for section-visible
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,56 +37,89 @@ const Testimonials = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="testimonials section-hidden" ref={sectionRef} id="testimonials">
-      <div className="section-header">
-        <h2 className="section-title">What our clients say about working with us.</h2>
-      </div>
+  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
 
-      <div className="testimonial-carousel" id="testimonialCarousel">
-        {testimonials.map((t, index) => (
-          <div key={index} className={`testimonial-slide ${index === currentIndex ? "active" : ""}`}>
-            <div className="testimonial-content">
-              <svg className="quote-svg" viewBox="0 0 24 18" fill="none">
-                <path d="M0 18V10.5C0 6.5 1.5 3.5 4.5 1.5L7.5 0L9 3C6.5 5 5.5 7 5.5 9H9V18H0ZM14.5 18V10.5C14.5 6.5 16 3.5 19 1.5L22 0L23.5 3C21 5 20 7 20 9H23.5V18H14.5Z" fill="currentColor" opacity="0.3"/>
-              </svg>
-              <p className="testimonial-quote">{t.quote}</p>
-              <div className="testimonial-author">
-                <div className={`author-avatar ${t.avatarClass}`}></div>
-                <div className="author-info">
-                  <span className="author-name">{t.author}</span>
-                  <span className="author-title">{t.title}</span>
+  const t = testimonials[currentIndex];
+
+  return (
+    <section style={{ padding: "10rem 0", background: "#21389A", color: "#fff", overflow: "hidden" }} id="testimonials">
+      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 var(--section-px)", position: "relative" }}>
+        <span style={{
+          position: "absolute", top: "-6rem", left: "var(--section-px)", fontSize: "clamp(20rem, 30vw, 40rem)",
+          lineHeight: 1, fontWeight: 700, color: "rgba(255,255,255,0.03)", userSelect: "none", pointerEvents: "none",
+          fontFamily: "Georgia, serif",
+        }}>
+          &ldquo;
+        </span>
+
+        <MotionReveal as="div" y={20}>
+          <div style={{ maxWidth: "800px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <div style={{ display: "flex", flexDirection: "column", transition: "opacity 0.5s ease", minHeight: "16rem", justifyContent: "center" }}>
+              <p style={{
+                fontSize: "clamp(1.8rem, 2.6rem, 3.2rem)",
+                lineHeight: 1.4,
+                fontWeight: 350,
+                letterSpacing: "-0.01em",
+                opacity: 0.92,
+              }}>
+                {t.quote}
+              </p>
+            </div>
+
+            <div style={{
+              marginTop: "3.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "2rem",
+              borderTop: "1px solid rgba(255,255,255,0.12)",
+              paddingTop: "2.5rem",
+            }}>
+              <div>
+                <div style={{ fontSize: "1.4rem", fontWeight: 600, lineHeight: 1.3 }}>{t.author}</div>
+                <div style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "0.15rem" }}>{t.title}</div>
+              </div>
+
+              <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
+                <button onClick={prev} aria-label="Previous testimonial" style={{
+                  width: "3.2rem", height: "3.2rem", borderRadius: "50%",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  background: "transparent", color: "#fff", cursor: "pointer",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  transition: "all 0.2s ease",
+                }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}>
+                  <ChevronLeft size={16} />
+                </button>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  {testimonials.map((_, i) => (
+                    <button key={i} onClick={() => setCurrentIndex(i)} aria-label={`Testimonial ${i + 1}`} style={{
+                      width: i === currentIndex ? "1.8rem" : "0.5rem",
+                      height: "0.5rem",
+                      borderRadius: "0.25rem",
+                      background: i === currentIndex ? "#fff" : "rgba(255,255,255,0.25)",
+                      border: "none", cursor: "pointer",
+                      transition: "all 0.3s ease",
+                    }} />
+                  ))}
                 </div>
+                <button onClick={next} aria-label="Next testimonial" style={{
+                  width: "3.2rem", height: "3.2rem", borderRadius: "50%",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  background: "transparent", color: "#fff", cursor: "pointer",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  transition: "all 0.2s ease",
+                }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}>
+                  <ChevronRight size={16} />
+                </button>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="carousel-dots" id="carouselDots">
-        {testimonials.map((_, index) => (
-          <button 
-            key={index} 
-            className={`dot ${index === currentIndex ? "active" : ""}`} 
-            onClick={() => setCurrentIndex(index)}
-            aria-label={`Testimonial ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      <div className="section-footer">
-        <Link href="/contact" className="explore-link">
-          Let's work together
-          <svg className="dot-grid-icon explore-icon" viewBox="0 0 100 100" fill="none">
-            <g transform="translate(-18.375, 6.125)">
-              <rect x="51" y="14.25" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="63.25" y="51" width="10.25" height="10.25" rx="5.125"/>
-              <rect x="51" y="63.25" width="10.25" height="10.25" rx="5.125"/>
-            </g>
-          </svg>
-        </Link>
+        </MotionReveal>
       </div>
     </section>
   );

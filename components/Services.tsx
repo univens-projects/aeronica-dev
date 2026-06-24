@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu, ArrowRight } from "lucide-react";
-import GsapReveal from "@/components/GsapReveal";
+import MotionReveal from "@/components/MotionReveal";
 
 const accentColor = "#21389a";
 
@@ -21,19 +21,33 @@ const services = [
 export default function Services() {
   return (
     <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="services">
-      <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-        <span className="section-title" style={{ justifyContent: "center" }}>
+      <div style={{ marginBottom: "5rem" }}>
+        <span className="section-title" style={{ justifyContent: "flex-start" }}>
           <span></span>What We Offer
         </span>
-        <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
-          Our Services
-        </h2>
-        <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-          Precision-engineered UAV solutions tailored for industrial scale and operational excellence.
-        </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "2rem" }}>
+          <div>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+              Our Services
+            </h2>
+            <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "56rem", marginTop: "2rem" }}>
+              Precision-engineered UAV solutions tailored for industrial scale and operational excellence.
+            </p>
+          </div>
+          <Link href="/services" style={{
+            display: "inline-flex", alignItems: "center", gap: "0.6rem",
+            fontSize: "1.4rem", fontWeight: 600, color: "#21389A",
+            textDecoration: "none", borderBottom: "1px solid #21389A", paddingBottom: "0.2rem",
+            transition: "opacity 0.2s ease", flexShrink: 0, marginBottom: "0.2rem",
+          }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
+            Explore All Services <ArrowRight size={16} />
+          </Link>
+        </div>
       </div>
 
-      <GsapReveal as="div" stagger={0.1} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
+      <MotionReveal as="div" stagger={0.1} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
@@ -66,18 +80,7 @@ export default function Services() {
             </Link>
           );
         })}
-      </GsapReveal>
-
-      <div style={{ textAlign: "center", marginTop: "4rem" }}>
-        <Link href="/services" style={{
-          display: "inline-flex", alignItems: "center", gap: "0.8rem",
-          padding: "1.2rem 2.8rem", background: "#111", color: "#fff",
-          borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
-          textDecoration: "none", transition: "all 0.3s ease",
-        }}>
-          Explore All Services <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
-        </Link>
-      </div>
+      </MotionReveal>
     </section>
   );
 }

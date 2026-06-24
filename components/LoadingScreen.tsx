@@ -40,7 +40,7 @@ const LoadingScreen = () => {
     <div className={`loading-screen ${stage === "cinematic-transition" ? "cinematic-transition" : ""}`} id="loadingScreen">
       <div className={`loading-logo-container ${stage !== "loading" ? "logo-exit" : ""}`}>
         <Image 
-          src="/assets/img/logo-lite.png" 
+          src="/assets/img/aeronica-logo.png" 
           alt="Aeronica Logo" 
           width={300} 
           height={100} 

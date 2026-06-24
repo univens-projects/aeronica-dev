@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import GsapReveal from "@/components/GsapReveal";
+import MotionReveal from "@/components/MotionReveal";
 
 const StatNumber = ({ target, animated }: { target: number; animated: boolean }) => {
   const [count, setCount] = useState(0);
@@ -11,9 +9,8 @@ const StatNumber = ({ target, animated }: { target: number; animated: boolean })
   useEffect(() => {
     if (animated) {
       let start = 0;
-      const duration = 2000;
+      const duration = 2200;
       const startTime = performance.now();
-
       const update = (now: number) => {
         const progress = Math.min((now - startTime) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
@@ -34,22 +31,6 @@ const stats = [
   { value: 4, suffix: "+", label: "DGCA Certifications" },
 ];
 
-const StatBox = ({ value, suffix, label, animated }: { value: number; suffix: string; label: string; animated: boolean }) => (
-  <div style={{ textAlign: "center" }}>
-    <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.2rem" }}>
-      <span style={{ fontSize: "clamp(3.6rem, 5vw, 5.6rem)", fontWeight: 700, lineHeight: 1, color: "#fff", fontFamily: "var(--font-mono)", letterSpacing: "-0.03em" }}>
-        <StatNumber target={value} animated={animated} />
-      </span>
-      <span style={{ fontSize: "clamp(2rem, 2.5vw, 2.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.5)", lineHeight: 1 }}>
-        {suffix}
-      </span>
-    </div>
-    <div style={{ fontSize: "1.3rem", color: "rgba(255,255,255,0.5)", fontWeight: 500, marginTop: "0.6rem", letterSpacing: "0.02em" }}>
-      {label}
-    </div>
-  </div>
-);
-
 const Stats = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [animated, setAnimated] = useState(false);
@@ -67,51 +48,105 @@ const Stats = () => {
 
   return (
     <section ref={sectionRef} id="stats" style={{
-      background: "linear-gradient(135deg, #0b1012 0%, #1a1a1a 50%, #0b1012 100%)",
-      padding: "8rem var(--section-px)",
+      background: "#21389A",
+      padding: "10rem var(--section-px)",
       color: "#fff",
-      position: "relative",
       overflow: "hidden",
+      position: "relative",
     }}>
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 70% 50%, rgba(45,90,135,0.08) 0%, transparent 60%)" }} />
-      <GsapReveal as="div" y={40} style={{ maxWidth: "1440px", margin: "0 auto", position: "relative" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <span className="section-title" style={{ justifyContent: "flex-start", color: "#888" }}>
-              <span></span>Our Impact
+      <div style={{
+        position: "absolute", inset: 0,
+        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.025) 1px, transparent 0)",
+        backgroundSize: "32px 32px",
+      }} />
+      <div style={{
+        position: "absolute", top: "-30%", right: "-10%",
+        width: "50rem", height: "50rem",
+        borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(0,155,255,0.06) 0%, transparent 70%)",
+      }} />
+      <div style={{
+        position: "absolute", bottom: "-20%", left: "-5%",
+        width: "40rem", height: "40rem",
+        borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(0,155,255,0.04) 0%, transparent 70%)",
+      }} />
+      <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
+        <MotionReveal as="div" y={15}>
+          <div style={{ textAlign: "center", marginBottom: "5rem" }}>
+            <span style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "1.2rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: "rgba(255,255,255,0.4)",
+              fontWeight: 500,
+            }}>
+              Our Impact
             </span>
-            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, color: "#fff" }}>
+            <h2 style={{
+              fontSize: "clamp(2.8rem, 4vw, 4rem)",
+              fontWeight: 600,
+              letterSpacing: "-0.03em",
+              marginTop: "1.5rem",
+              lineHeight: 1.15,
+              color: "#fff",
+            }}>
               By the Numbers
             </h2>
-            <p style={{ fontSize: "1.6rem", color: "#888", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: "48rem" }}>
-              Since our inception, Aeronica has been at the forefront of indigenous UAV innovation in India. We combine precision engineering with deep domain expertise to deliver scalable, DGCA-certified drone solutions that redefine efficiency across agriculture, infrastructure, and surveillance.
+            <p style={{
+              fontSize: "1.6rem",
+              color: "rgba(255,255,255,0.6)",
+              lineHeight: 1.7,
+              marginTop: "2rem",
+              maxWidth: "56rem",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}>
+              DGCA-certified drone solutions across agriculture, infrastructure, and surveillance.
             </p>
-            <div style={{ marginTop: "2.5rem" }}>
-              <Link href="/about" style={{
-                display: "inline-flex", alignItems: "center", gap: "0.8rem",
-                padding: "1.2rem 2.8rem", background: "transparent", color: "#fff",
-                border: "1px solid rgba(255,255,255,0.2)", borderRadius: "0.4rem",
-                fontWeight: 600, fontSize: "1.4rem", textDecoration: "none",
+          </div>
+        </MotionReveal>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "1px",
+          background: "rgba(255,255,255,0.04)",
+          borderRadius: "0.4rem",
+          overflow: "hidden",
+        }}>
+          {stats.map((stat, i) => (
+            <MotionReveal key={i} as="div" y={25} delay={i * 0.1}>
+              <div style={{
+                textAlign: "center",
+                padding: "4rem 2rem 3.5rem",
+                background: "rgba(255,255,255,0.02)",
+                backdropFilter: "blur(4px)",
+                cursor: "default",
               }}>
-                Our Story <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
-              </Link>
-            </div>
-          </div>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "3rem 2rem",
-            padding: "2rem",
-            background: "rgba(255,255,255,0.03)",
-            borderRadius: "0.4rem",
-            border: "1px solid rgba(255,255,255,0.06)",
-          }}>
-            {stats.map((stat, i) => (
-              <StatBox key={i} {...stat} animated={animated} />
-            ))}
-          </div>
+                <div style={{
+                  width: "2.5rem", height: "2px",
+                  background: "linear-gradient(90deg, rgba(0,155,255,0.5), rgba(0,155,255,0.1))",
+                  borderRadius: "1px",
+                  margin: "0 auto 2rem",
+                }} />
+                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.15rem" }}>
+                  <span style={{ fontSize: "clamp(3.6rem, 5vw, 6rem)", fontWeight: 600, lineHeight: 1, color: "#fff", fontFamily: "var(--font-mono)", letterSpacing: "-0.04em" }}>
+                    <StatNumber target={stat.value} animated={animated} />
+                  </span>
+                  <span style={{ fontSize: "clamp(1.8rem, 2.5vw, 3rem)", fontWeight: 300, color: "rgba(255,255,255,0.25)", lineHeight: 1 }}>
+                    {stat.suffix}
+                  </span>
+                </div>
+                <div style={{ fontSize: "1.2rem", color: "rgba(255,255,255,0.45)", fontWeight: 500, marginTop: "0.8rem", letterSpacing: "0.06em", fontFamily: "var(--font-mono)", textTransform: "uppercase" }}>
+                  {stat.label}
+                </div>
+              </div>
+            </MotionReveal>
+          ))}
         </div>
-      </GsapReveal>
+      </div>
     </section>
   );
 };

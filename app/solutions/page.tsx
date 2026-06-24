@@ -11,7 +11,7 @@ import {
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
-import GsapParallax from "@/components/GsapParallax";
+import MotionParallax from "@/components/MotionParallax";
 
 const hardwarePlatforms = [
   {
@@ -24,7 +24,7 @@ const hardwarePlatforms = [
       { label: "Coverage", value: "2 acres/hr" },
       { label: "Certification", value: "DGCA Type" },
     ],
-    gradient: "linear-gradient(135deg, #1a2d3d, #2d5a7a)",
+    gradient: "linear-gradient(135deg, #0CC820, #32620E)",
   },
   {
     name: "Samrudhhi-10LH",
@@ -36,7 +36,7 @@ const hardwarePlatforms = [
       { label: "Propulsion", value: "Hybrid" },
       { label: "Frame", value: "Carbon Fibre" },
     ],
-    gradient: "linear-gradient(135deg, #1a4731, #2d7a4b)",
+    gradient: "linear-gradient(135deg, #0CC820, #32620E)",
   },
   {
     name: "Flycra 2.0",
@@ -48,7 +48,7 @@ const hardwarePlatforms = [
       { label: "Accuracy", value: "Sub-cm" },
       { label: "Weight", value: "9.6 Kg" },
     ],
-    gradient: "linear-gradient(135deg, #2d1b69, #5b3a9e)",
+    gradient: "linear-gradient(135deg, #009BFF, #21389A)",
   },
   {
     name: "Nitya FC",
@@ -60,7 +60,7 @@ const hardwarePlatforms = [
       { label: "Security", value: "256-bit AES" },
       { label: "Firmware", value: "Custom PX4" },
     ],
-    gradient: "linear-gradient(135deg, #3d1f1a, #7a3d2d)",
+    gradient: "linear-gradient(135deg, #009BFF, #21389A)",
   },
 ];
 
@@ -70,7 +70,7 @@ const solutionCategories = [
     desc: "Topographic surveys, LiDAR data collection, and high-accuracy 3D mapping for engineering and construction projects across India.", 
     href: "/solutions/drone-survey-mapping", 
     icon: Map, 
-    color: "linear-gradient(135deg, #1a2d3d, #2d5a7a)",
+    color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["Sub-cm accuracy", "LiDAR & photogrammetry", "Up to 500 acres/day"],
   },
   { 
@@ -78,7 +78,7 @@ const solutionCategories = [
     desc: "Advanced spatial analytics, digital twin creation, and custom GIS development for urban planning, utilities, and natural resource management.", 
     href: "/solutions/gis-geospatial-intelligence", 
     icon: Globe, 
-    color: "linear-gradient(135deg, #1a4731, #2d7a4b)",
+    color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["Web GIS dashboards", "Spatial ML models", "Digital twin integration"],
   },
   { 
@@ -86,7 +86,7 @@ const solutionCategories = [
     desc: "Automated aerial inspection of roads, bridges, solar plants, power lines, and railway corridors to reduce risk, downtime, and maintenance costs.", 
     href: "/solutions/infrastructure-inspection", 
     icon: Eye, 
-    color: "linear-gradient(135deg, #3d1f1a, #7a3d2d)",
+    color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["AI defect detection", "Real-time streaming", "Regulatory reporting"],
   },
   { 
@@ -94,7 +94,7 @@ const solutionCategories = [
     desc: "Deep learning pipelines for automated defect detection, change analysis, crop health assessment, and predictive maintenance across industrial assets.", 
     href: "/solutions/ai-drone-intelligence", 
     icon: Brain, 
-    color: "linear-gradient(135deg, #2d1b69, #5b3a9e)",
+    color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["95%+ detection accuracy", "NDVI/NDRE analytics", "Automated reporting"],
   },
   { 
@@ -102,7 +102,7 @@ const solutionCategories = [
     desc: "Rapid deployment for flood mapping, structural damage assessment, search-and-rescue operations, and real-time situational intelligence during crises.", 
     href: "/solutions/disaster-emergency-response", 
     icon: LifeBuoy, 
-    color: "linear-gradient(135deg, #1a3a4a, #2d6a7a)",
+    color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["< 30 min deployment", "Thermal imaging", "Multi-agency data share"],
   },
 ];
@@ -155,13 +155,13 @@ export default function SolutionsHub() {
                       color: "#fff",
                     }}
                   >
-                    <GsapParallax speed={0.2} style={{ position: "absolute", inset: "-30% 0" }}>
+                    <MotionParallax speed={0.2} style={{ position: "absolute", inset: "-30% 0" }}>
                       <div style={{
                         width: "100%", height: "100%",
                         background: `${platform.gradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-industrial-sunrise.jpg","pexels-drone-tech.jpg","pexels-circuit-board.jpg"][i]}')`,
                         backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
                       }} />
-                    </GsapParallax>
+                    </MotionParallax>
                     <div style={{ position: "relative", zIndex: 1 }}>
                       <Plane style={{ width: "3.2rem", height: "3.2rem", marginBottom: "1.5rem", opacity: 0.9 }} />
                       <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "0.5rem" }}>{platform.name}</h3>

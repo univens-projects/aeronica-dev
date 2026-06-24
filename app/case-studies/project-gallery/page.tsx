@@ -6,7 +6,7 @@ import { Image as ImageIcon, PlayCircle, ArrowRight, Camera, Map as MapIcon, Eye
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
-import GsapParallax from "@/components/GsapParallax";
+import MotionParallax from "@/components/MotionParallax";
 
 const galleryItems = [
   { title: "Railway Corridor Orthomosaic", category: "Infrastructure", type: "Orthomosaic", desc: "Sub-centimeter orthomosaic of 15 km railway corridor used for alignment verification and drainage assessment." },
@@ -82,13 +82,13 @@ export default function ProjectGallery() {
                 overflow: "hidden",
                 display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.3)",
               }}>
-                <GsapParallax speed={0.15} style={{ position: "absolute", inset: "-30% 0" }}>
+                <MotionParallax speed={0.15} style={{ position: "absolute", inset: "-30% 0" }}>
                   <div style={{
                     width: "100%", height: "100%",
-                    background: `linear-gradient(135deg, #1a2d3d, #1a3a4a), url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-solar-farm.jpg","pexels-smart-city.jpg","pexels-drone-agriculture.jpg","pexels-power-lines.jpg","pexels-construction-site.jpg","pexels-mining-site.jpg","pexels-industrial-sunrise.jpg"][i % 9]}')`,
-                    backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                    background: `linear-gradient(135deg, #21389A, #009BFF)`,
+                    backgroundSize: "cover", backgroundPosition: "center",
                   }} />
-                </GsapParallax>
+                </MotionParallax>
                 <Camera style={{ width: "4rem", height: "4rem", position: "relative", zIndex: 1 }} />
               </div>
               <div style={{ padding: "2rem" }}>

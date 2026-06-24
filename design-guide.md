@@ -62,50 +62,255 @@ The root font size scales with viewport width:
 
 ---
 
-## 2. Color Palette
+## 2. Color System
 
-### Core Tokens
+The Aeronica color system is designed around aerospace technology, precision engineering, innovation, and trust. The primary identity is built using a blue color palette, while agriculture-focused communication introduces a complementary green palette.
 
-| Token | Value | Usage |
-| --- | --- | --- |
-| `--color-bg` | #ffffff | Main background |
-| `--color-text` | #1a1a1a | Primary text |
-| `--color-text-soft` | #555555 | Secondary text |
-| `--color-text-muted` | #888888 | Muted/labels |
-| `--color-cream` | #f3f0ec | Alternate section bg |
-| `--color-taupe` | #d4cec6 | (Reserved) |
-| `--color-border` | #e5e5e5 | Borders, dividers |
-| `--color-accent` | #111111 | Accent (near-black) |
-| `--color-black` | #0b1012 | Footer bg |
-| Navbar initial | #ffffff | Text on dark hero |
-| Navbar scrolled | `--color-text` | Text on glass bg |
+---
 
-### Brand Identity System (HEX Codes)
+### Primary Brand Colors
 
-* **White**: #FFFFFF
-* **Black**: #000000
-* **Light Blue**: #009BFF (Official Post Color)
-* **Dark Blue**: #21389A (Official Post Color)
-* **Light Green**: #0CC820 (Agriculture Post Color)
-* **Dark Green**: #32620E (Agriculture Post Color)
+#### Light Blue
 
-### Gradient Palette (Card Overlays)
+Primary brand color used for logos, call-to-actions, highlights, links, icons, and key interface elements.
 
-Card images use a linear-gradient + image blend pattern:
+```css
+--color-primary: #009BFF;
+```
 
-`background: linear-gradient(135deg, <color-1>, <color-2>), url(...);`
+| Format | Value       |
+| ------ | ----------- |
+| HEX    | #009BFF     |
+| RGB    | 0, 155, 255 |
 
-`background-blend-mode: overlay;`
+---
 
-| Theme | Color 1 | Color 2 |
-| --- | --- | --- |
-| Maritime / Railway | #1a2d3d | #2d5a7a |
-| Mining / Earth | #3d2d1a | #6a4a2d |
-| Agriculture | #1a4731 | #2d7a4b |
-| Surveillance / Purple | #2d1b69 | #5b3a9e |
-| Oil & Gas | #3d1f1a | #7a3d2d |
-| Power / Teal | #1a3a3a | #2d6a6a |
-| Tech / Dark Blue | #1a3a4a | #2d6a7a |
+#### Dark Blue
+
+Secondary brand color used for headings, navigation, supporting elements, and premium brand applications.
+
+```css
+--color-primary-dark: #21389A;
+```
+
+| Format | Value       |
+| ------ | ----------- |
+| HEX    | #21389A     |
+| RGB    | 33, 56, 154 |
+
+---
+
+#### White
+
+Primary background color and negative space.
+
+```css
+--color-white: #FFFFFF;
+```
+
+| Format | Value         |
+| ------ | ------------- |
+| HEX    | #FFFFFF       |
+| RGB    | 255, 255, 255 |
+
+---
+
+#### Black
+
+Used for typography, dark surfaces, overlays, and monochrome logo applications.
+
+```css
+--color-black: #000000;
+```
+
+| Format | Value   |
+| ------ | ------- |
+| HEX    | #000000 |
+| RGB    | 0, 0, 0 |
+
+---
+
+### Agriculture Color Palette
+
+The agriculture palette is reserved for farming, agri-tech, crop monitoring, spraying solutions, and agriculture-specific campaigns.
+
+#### Dark Green
+
+```css
+--color-agri-dark: #32620E;
+```
+
+| Format | Value      |
+| ------ | ---------- |
+| HEX    | #32620E    |
+| RGB    | 50, 98, 14 |
+
+---
+
+#### Light Green
+
+```css
+--color-agri-light: #0CC820;
+```
+
+| Format | Value       |
+| ------ | ----------- |
+| HEX    | #0CC820     |
+| RGB    | 12, 200, 32 |
+
+---
+
+### Color Usage Rules
+
+#### Corporate & Technology Communication
+
+Use:
+
+* Light Blue (#009BFF)
+* Dark Blue (#21389A)
+* White (#FFFFFF)
+* Black (#000000)
+
+Recommended ratio:
+
+```text
+60% White
+25% Dark Blue
+10% Light Blue
+5% Black
+```
+
+---
+
+#### Agriculture Communication
+
+Use:
+
+* Dark Green (#32620E)
+* Light Green (#0CC820)
+* White (#FFFFFF)
+* Black (#000000)
+
+Recommended ratio:
+
+```text
+50% White
+25% Dark Green
+15% Light Green
+10% Black
+```
+
+---
+
+### Gradient System
+
+#### Primary Brand Gradient
+
+Used for hero sections, banners, illustrations, and premium brand assets.
+
+```css
+background: linear-gradient(
+  135deg,
+  #009BFF 0%,
+  #21389A 100%
+);
+```
+
+---
+
+#### Extended Technology Gradient
+
+Used for cinematic website backgrounds and digital interfaces.
+
+```css
+background: linear-gradient(
+  135deg,
+  #009BFF 0%,
+  #2A5BFF 50%,
+  #21389A 100%
+);
+```
+
+---
+
+#### Agriculture Gradient
+
+Used for agriculture product pages, campaigns, and drone spraying solutions.
+
+```css
+background: linear-gradient(
+  135deg,
+  #0CC820 0%,
+  #32620E 100%
+);
+```
+
+---
+
+### CSS Variables
+
+```css
+:root {
+
+  /* Primary Brand */
+
+  --color-primary: #009BFF;
+  --color-primary-dark: #21389A;
+
+  /* Neutral */
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Agriculture */
+
+  --color-agri-dark: #32620E;
+  --color-agri-light: #0CC820;
+
+}
+```
+
+---
+
+### Logo Color Specifications
+
+#### Primary Logo
+
+| Element       | Color   |
+| ------------- | ------- |
+| Aircraft Mark | #009BFF |
+| Location Pin  | #21389A |
+| Wordmark      | #009BFF |
+| Tagline       | #21389A |
+
+---
+
+### Accessibility
+
+#### Preferred Text Colors
+
+| Background | Text Color         |
+| ---------- | ------------------ |
+| White      | #21389A or #000000 |
+| Light Blue | #FFFFFF            |
+| Dark Blue  | #FFFFFF            |
+| Dark Green | #FFFFFF            |
+| Black      | #FFFFFF            |
+
+---
+
+### Brand Meaning
+
+| Color   | Represents                                        |
+| ------- | ------------------------------------------------- |
+| #009BFF | Innovation, Technology, UAV Systems, Intelligence |
+| #21389A | Precision, Reliability, Aerospace Engineering     |
+| #32620E | Agriculture, Sustainability, Growth               |
+| #0CC820 | Productivity, Smart Farming, Efficiency           |
+| #FFFFFF | Clarity, Simplicity, Transparency                 |
+| #000000 | Authority, Strength, Professionalism              |
+
+The blue palette should remain the dominant identity across all Aeronica corporate, industrial, GIS, mapping, drone manufacturing, automation, and enterprise communication. Green should only be introduced for agriculture-focused products and campaigns.
 
 ---
 

@@ -13,14 +13,14 @@ import {
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
-import GsapParallax from "@/components/GsapParallax";
+import MotionParallax from "@/components/MotionParallax";
 
 const solutions: Record<string, any> = {
   "drone-survey-mapping": {
     title: "Drone Survey & Mapping",
     subtitle: "High-accuracy topographic surveys, LiDAR data collection, and 3D mapping for engineering and construction projects across India.",
     icon: Map,
-    accent: "linear-gradient(135deg, #1a2d3d, #2d5a7a)",
+    accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
       stat: "500+",
       statLabel: "Acres Surveyed per Day",
@@ -99,7 +99,7 @@ const solutions: Record<string, any> = {
     title: "GIS & Geospatial Intelligence",
     subtitle: "Advanced spatial analytics, digital twin creation, and custom GIS development for urban planning, utilities, and natural resource management.",
     icon: Globe,
-    accent: "linear-gradient(135deg, #1a4731, #2d7a4b)",
+    accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
       stat: "15K+",
       statLabel: "Flight Hours Processed",
@@ -179,7 +179,7 @@ const solutions: Record<string, any> = {
     title: "Infrastructure Inspection",
     subtitle: "Automated aerial inspection of roads, bridges, solar plants, power lines, and railway corridors to reduce risk, downtime, and maintenance costs.",
     icon: Eye,
-    accent: "linear-gradient(135deg, #3d1f1a, #7a3d2d)",
+    accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
       stat: "50+",
       statLabel: "Km Inspected per Day",
@@ -258,7 +258,7 @@ const solutions: Record<string, any> = {
     title: "AI Drone Intelligence",
     subtitle: "Deep learning pipelines for automated defect detection, change analysis, crop health assessment, and predictive maintenance across industrial assets.",
     icon: Brain,
-    accent: "linear-gradient(135deg, #2d1b69, #5b3a9e)",
+    accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
       stat: "100K+",
       statLabel: "AI Model Training Images",
@@ -338,7 +338,7 @@ const solutions: Record<string, any> = {
     title: "Disaster & Emergency Response",
     subtitle: "Rapid deployment for flood mapping, structural damage assessment, search-and-rescue, and real-time situational intelligence during crises.",
     icon: LifeBuoy,
-    accent: "linear-gradient(135deg, #1a3a4a, #2d6a7a)",
+    accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
       stat: "< 30",
       statLabel: "Minutes to Deploy",
@@ -446,13 +446,13 @@ export default function SolutionDetail() {
               borderRadius: "0.4rem",
               overflow: "hidden",
             }}>
-              <GsapParallax speed={0.25} style={{ position: "absolute", inset: "-25% 0" }}>
+              <MotionParallax speed={0.25} style={{ position: "absolute", inset: "-25% 0" }}>
                 <div style={{
                   width: "100%", height: "100%",
                   background: `url('/assets/images/pexels/pexels-drone-tech.jpg')`,
                   backgroundSize: "cover", backgroundPosition: "center",
                 }} />
-              </GsapParallax>
+              </MotionParallax>
               <div style={{
                 position: "absolute", inset: 0,
                 background: "linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55))",

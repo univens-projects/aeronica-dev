@@ -8,7 +8,7 @@ import {
   Building2, Sparkles, Briefcase
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import GsapParallax from "@/components/GsapParallax";
+import MotionParallax from "@/components/MotionParallax";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 
@@ -67,13 +67,13 @@ export default function AboutHub() {
             position: "relative",
             overflow: "hidden",
           }}>
-            <GsapParallax speed={0.2} style={{ position: "absolute", inset: "-25% 0" }}>
+            <MotionParallax speed={0.2} style={{ position: "absolute", inset: "-25% 0" }}>
               <div style={{
                 width: "100%", height: "100%",
-                background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
+                background: "linear-gradient(135deg, #21389A 0%, #1a2d6e 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
                 backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
               }} />
-            </GsapParallax>
+            </MotionParallax>
             <div style={{ position: "absolute", top: "-40%", right: "-20%", width: "60%", height: "80%", background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)", borderRadius: "50%" }} />
             <div style={{ position: "relative", zIndex: 1 }}>
               <Rocket style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />

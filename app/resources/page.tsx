@@ -81,7 +81,7 @@ export default function ResourcesHub() {
       <FadeIn>
         <div style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "6rem auto 0" }}>
           <div style={{
-            background: "linear-gradient(135deg, #0b1012 0%, #1a1a1a 100%)", borderRadius: "0.4rem",
+            background: "#21389A", borderRadius: "0.4rem",
             padding: "3.5rem 4rem", display: "flex", alignItems: "center", justifyContent: "space-between",
             gap: "3rem", flexWrap: "wrap", position: "relative", overflow: "hidden",
           }}>
@@ -146,7 +146,7 @@ export default function ResourcesHub() {
                       </div>
                       <p style={{ fontSize: "1.3rem", color: "#555", lineHeight: 1.6, flexGrow: 1 }}>{item.desc}</p>
                       <div style={{ marginTop: "1.2rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#aaa" }}>{item.count}</span>
+                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888" }}>{item.count}</span>
                         <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "1.15rem", fontWeight: 600, color: section.color }}>
                           Explore <ArrowRight style={{ width: "1.1rem", height: "1.1rem" }} />
                         </span>

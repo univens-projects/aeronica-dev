@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import FadeIn from "./FadeIn";
-import GsapParallax from "./GsapParallax";
+import MotionParallax from "./MotionParallax";
 
 const products = [
   {
@@ -112,7 +112,7 @@ const Products = () => {
               onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
               style={{
                 width: "4rem", height: "4rem", borderRadius: "50%", border: "1px solid #e5e5e5",
-                background: activeIndex === 0 ? "#f3f0ec" : "#fff", color: activeIndex === 0 ? "#aaa" : "#111",
+                background: activeIndex === 0 ? "#f3f0ec" : "#fff", color: activeIndex === 0 ? "#888" : "#111",
                 display: "flex", alignItems: "center", justifyContent: "center", cursor: activeIndex === 0 ? "default" : "pointer",
                 transition: "all 0.2s ease",
               }}
@@ -124,7 +124,7 @@ const Products = () => {
               onClick={() => scrollTo(Math.min(products.length - 1, activeIndex + 1))}
               style={{
                 width: "4rem", height: "4rem", borderRadius: "50%", border: "1px solid #e5e5e5",
-                background: activeIndex === products.length - 1 ? "#f3f0ec" : "#fff", color: activeIndex === products.length - 1 ? "#aaa" : "#111",
+                background: activeIndex === products.length - 1 ? "#f3f0ec" : "#fff", color: activeIndex === products.length - 1 ? "#888" : "#111",
                 display: "flex", alignItems: "center", justifyContent: "center", cursor: activeIndex === products.length - 1 ? "default" : "pointer",
                 transition: "all 0.2s ease",
               }}
@@ -164,14 +164,14 @@ const Products = () => {
               }}
             >
               <div style={{
-                height: "24rem", background: `linear-gradient(135deg, ${accentColor} 0%, #1a2d3d 100%)`,
+                height: "24rem", background: `linear-gradient(135deg, ${accentColor} 0%, #009BFF 100%)`,
                 display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden",
               }}>
                 <div style={{
                   position: "absolute", inset: 0,
                   background: "radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08) 0%, transparent 60%)",
                 }} />
-                <GsapParallax speed={0.25} style={{ position: "relative", zIndex: 1, width: "70%", height: "70%" }}>
+                <MotionParallax speed={0.25} style={{ position: "relative", zIndex: 1, width: "70%", height: "70%" }}>
                   <Image
                     src={product.img}
                     alt={product.title}
@@ -183,7 +183,7 @@ const Products = () => {
                     }}
                     priority={index < 2}
                   />
-                </GsapParallax>
+                </MotionParallax>
                 <span style={{
                   fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase",
                   letterSpacing: "0.12em", color: "rgba(255,255,255,0.6)", position: "absolute", top: "1.6rem", left: "1.6rem",
@@ -237,7 +237,7 @@ const Products = () => {
             onClick={() => scrollTo(index)}
             style={{
               width: index === activeIndex ? "2.4rem" : "0.8rem", height: "0.8rem", borderRadius: "0.4rem",
-              background: index === activeIndex ? accentColor : "#d0d0d0", border: "none", cursor: "pointer",
+              background: index === activeIndex ? accentColor : "#888", border: "none", cursor: "pointer",
               transition: "all 0.3s ease", padding: 0,
             }}
           />

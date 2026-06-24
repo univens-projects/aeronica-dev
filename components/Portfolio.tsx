@@ -3,10 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { MapPin, Building2, Activity, ArrowRight } from "lucide-react";
-import GsapParallax from "@/components/GsapParallax";
-import GsapReveal from "@/components/GsapReveal";
+import MotionReveal from "@/components/MotionReveal";
+import MotionParallax from "@/components/MotionParallax";
+import SectionHeader from "@/components/SectionHeader";
 
-const projectGradient = "linear-gradient(135deg, #21389a 0%, #1a2d3d 50%, #2d5a7a 100%)";
+const projectGradient = "linear-gradient(135deg, #21389A 0%, #009BFF 100%)";
 
 const portfolio = [
   {
@@ -38,19 +39,25 @@ const metaIcons: Record<string, React.ElementType> = {
 export default function Portfolio() {
   return (
     <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="portfolio">
-      <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-        <span className="section-title" style={{ justifyContent: "center" }}>
-          <span></span>Our Work
-        </span>
-        <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
-          Featured Projects
-        </h2>
-        <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-          Real-world impact across industries — from railway corridors to mining operations and pipeline surveillance.
-        </p>
-      </div>
+      <SectionHeader
+        eyebrow="Our Work"
+        title="Featured Projects"
+        description="Real-world impact across industries — from railway corridors to mining operations and pipeline surveillance."
+        action={
+          <Link href="/portfolio" style={{
+            display: "inline-flex", alignItems: "center", gap: "0.6rem",
+            fontSize: "1.4rem", fontWeight: 600, color: "#21389A",
+            textDecoration: "none", borderBottom: "1px solid #21389A", paddingBottom: "0.2rem",
+            transition: "opacity 0.2s ease",
+          }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
+            View Full Portfolio <ArrowRight size={16} />
+          </Link>
+        }
+      />
 
-      <GsapReveal as="div" stagger={0.15} y={40} style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+      <MotionReveal as="div" stagger={0.15} y={40} style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
         {portfolio.map((project, index) => (
           <Link
             key={index}
@@ -76,7 +83,7 @@ export default function Portfolio() {
               position: "relative",
               overflow: "hidden",
             }}>
-              <GsapParallax speed={0.3} style={{ position: "absolute", inset: "-30% 0" }}>
+              <MotionParallax speed={0.3} style={{ position: "absolute", inset: "-30% 0" }}>
                 <div style={{
                   width: "100%", height: "100%",
                   background: `${projectGradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
@@ -84,7 +91,7 @@ export default function Portfolio() {
                   backgroundPosition: "center",
                   backgroundBlendMode: "overlay",
                 }} />
-              </GsapParallax>
+              </MotionParallax>
               <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)" }} />
               <div style={{ color: "rgba(255,255,255,0.15)", fontSize: "8rem", fontWeight: 800, fontFamily: "var(--font-mono)", letterSpacing: "-0.06em", userSelect: "none", position: "relative", zIndex: 1 }}>
                 {String(index + 1).padStart(2, "0")}
@@ -107,18 +114,7 @@ export default function Portfolio() {
             </div>
           </Link>
         ))}
-      </GsapReveal>
-
-      <div style={{ textAlign: "center", marginTop: "4rem" }}>
-        <Link href="/portfolio" style={{
-          display: "inline-flex", alignItems: "center", gap: "0.8rem",
-          padding: "1.2rem 2.8rem", background: "#111", color: "#fff",
-          borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
-          textDecoration: "none", transition: "all 0.3s ease",
-        }}>
-          View Full Portfolio <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
-        </Link>
-      </div>
+      </MotionReveal>
     </section>
   );
 }

@@ -3,7 +3,7 @@
 import React from "react";
 import { Cpu, ShieldCheck, Wifi, Combine, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import GsapReveal from "@/components/GsapReveal";
+import MotionReveal from "@/components/MotionReveal";
 
 const accentColor = "#009bff";
 
@@ -36,28 +36,42 @@ const techPillars = [
 
 export default function Technology() {
   return (
-    <section style={{ background: "#0b1012", padding: "8rem var(--section-px)", color: "#fff" }} id="technology">
+    <section style={{ background: "#21389A", padding: "8rem var(--section-px)", color: "#fff" }} id="technology">
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <span className="section-title" style={{ justifyContent: "center", color: "#888" }}>
+        <div style={{ marginBottom: "5rem" }}>
+          <span className="section-title" style={{ justifyContent: "flex-start", color: "rgba(255,255,255,0.6)" }}>
             <span></span>Our Technology
           </span>
-          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, color: "#fff" }}>
-            Built in India, Built for Impact
-          </h2>
-          <p style={{ fontSize: "1.6rem", color: "#888", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-            Purpose-driven engineering meets indigenous innovation. Every system is designed, tested, and manufactured in-house to deliver uncompromising performance.
-          </p>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "2rem" }}>
+            <div>
+              <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, color: "#fff" }}>
+                Built in India, Built for Impact
+              </h2>
+              <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.7, maxWidth: "56rem", marginTop: "2rem" }}>
+                Purpose-driven engineering meets indigenous innovation. Every system is designed, tested, and manufactured in-house to deliver uncompromising performance.
+              </p>
+            </div>
+            <Link href="/technology" style={{
+              display: "inline-flex", alignItems: "center", gap: "0.6rem",
+              fontSize: "1.4rem", fontWeight: 600, color: "#fff",
+              textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.5)", paddingBottom: "0.2rem",
+              transition: "opacity 0.2s ease", flexShrink: 0, marginBottom: "0.2rem",
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.7"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
+              Explore Our Technology <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
-        <GsapReveal as="div" stagger={0.12} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
+        <MotionReveal as="div" stagger={0.12} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
           {techPillars.map((pillar, i) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={i}
                 style={{
-                  background: "#0b1012",
+                  background: "#21389A",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: "0.4rem",
                   overflow: "hidden",
@@ -75,14 +89,14 @@ export default function Technology() {
                 <div style={{ height: "2px", background: `linear-gradient(90deg, ${accentColor}, transparent)`, margin: "0 2.5rem" }}></div>
 
                 <div style={{ padding: "1.5rem 2.5rem 2.5rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
-                  <p style={{ fontSize: "1.4rem", color: "#888", lineHeight: 1.7, flexGrow: 1, marginBottom: "2rem" }}>
+                  <p style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, flexGrow: 1, marginBottom: "2rem" }}>
                     {pillar.desc}
                   </p>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                     {pillar.specs.map((spec, j) => (
                       <div key={j} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                         <span style={{ width: "0.4rem", height: "0.4rem", borderRadius: "50%", background: accentColor, flexShrink: 0 }}></span>
-                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.15rem", color: "#888", letterSpacing: "-0.01em" }}>{spec}</span>
+                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.15rem", color: "rgba(255,255,255,0.65)", letterSpacing: "-0.01em" }}>{spec}</span>
                       </div>
                     ))}
                   </div>
@@ -90,18 +104,7 @@ export default function Technology() {
               </div>
             );
           })}
-        </GsapReveal>
-
-        <div style={{ textAlign: "center", marginTop: "4rem" }}>
-          <Link href="/technology" style={{
-            display: "inline-flex", alignItems: "center", gap: "0.8rem",
-            padding: "1.2rem 2.8rem", background: "transparent", color: "#fff",
-            border: "1px solid rgba(255,255,255,0.2)", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
-            textDecoration: "none",
-          }}>
-            Explore Our Technology <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
-          </Link>
-        </div>
+        </MotionReveal>
       </div>
     </section>
   );

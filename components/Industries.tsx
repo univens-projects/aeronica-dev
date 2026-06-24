@@ -3,7 +3,7 @@
 import React from "react";
 import { Train, Pickaxe, Sprout, Fuel, HardHat, Zap } from "lucide-react";
 import Link from "next/link";
-import GsapReveal from "@/components/GsapReveal";
+import MotionReveal from "@/components/MotionReveal";
 
 const accentColor = "#21389a";
 
@@ -19,19 +19,19 @@ const industries = [
 export default function Industries() {
   return (
     <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="industries">
-      <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-        <span className="section-title" style={{ justifyContent: "center" }}>
+      <div style={{ marginBottom: "5rem" }}>
+        <span className="section-title" style={{ justifyContent: "flex-start" }}>
           <span></span>Who We Serve
         </span>
         <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
           Industries We Serve
         </h2>
-        <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
+        <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "56rem", marginTop: "2rem" }}>
           Domain expertise across six key sectors — delivering tailored drone solutions where precision matters most.
         </p>
       </div>
 
-      <GsapReveal as="div" stagger={0.08} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.2rem" }}>
+      <MotionReveal as="div" stagger={0.08} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.2rem" }}>
         {industries.map((industry, index) => {
           const Icon = industry.icon;
           return (
@@ -64,7 +64,7 @@ export default function Industries() {
             </Link>
           );
         })}
-      </GsapReveal>
+      </MotionReveal>
     </section>
   );
 }
