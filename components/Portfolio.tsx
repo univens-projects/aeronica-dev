@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { MapPin, Building2, Activity, ArrowRight } from "lucide-react";
+import GsapParallax from "@/components/GsapParallax";
+import GsapReveal from "@/components/GsapReveal";
 
 const projectGradient = "linear-gradient(135deg, #21389a 0%, #1a2d3d 50%, #2d5a7a 100%)";
 
@@ -48,7 +50,7 @@ export default function Portfolio() {
         </p>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+      <GsapReveal as="div" stagger={0.15} y={40} style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
         {portfolio.map((project, index) => (
           <Link
             key={index}
@@ -68,18 +70,23 @@ export default function Portfolio() {
             <div style={{
               width: "280px",
               minWidth: "200px",
-              background: `${projectGradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundBlendMode: "overlay",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               position: "relative",
               overflow: "hidden",
             }}>
+              <GsapParallax speed={0.3} style={{ position: "absolute", inset: "-30% 0" }}>
+                <div style={{
+                  width: "100%", height: "100%",
+                  background: `${projectGradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundBlendMode: "overlay",
+                }} />
+              </GsapParallax>
               <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)" }} />
-              <div style={{ color: "rgba(255,255,255,0.15)", fontSize: "8rem", fontWeight: 800, fontFamily: "var(--font-mono)", letterSpacing: "-0.06em", userSelect: "none" }}>
+              <div style={{ color: "rgba(255,255,255,0.15)", fontSize: "8rem", fontWeight: 800, fontFamily: "var(--font-mono)", letterSpacing: "-0.06em", userSelect: "none", position: "relative", zIndex: 1 }}>
                 {String(index + 1).padStart(2, "0")}
               </div>
             </div>
@@ -100,7 +107,7 @@ export default function Portfolio() {
             </div>
           </Link>
         ))}
-      </div>
+      </GsapReveal>
 
       <div style={{ textAlign: "center", marginTop: "4rem" }}>
         <Link href="/portfolio" style={{

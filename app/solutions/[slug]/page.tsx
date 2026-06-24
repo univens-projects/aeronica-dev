@@ -13,6 +13,7 @@ import {
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
+import GsapParallax from "@/components/GsapParallax";
 
 const solutions: Record<string, any> = {
   "drone-survey-mapping": {
@@ -445,11 +446,13 @@ export default function SolutionDetail() {
               borderRadius: "0.4rem",
               overflow: "hidden",
             }}>
-              <div style={{
-                position: "absolute", inset: 0,
-                background: `url('/assets/images/pexels/pexels-drone-tech.jpg')`,
-                backgroundSize: "cover", backgroundPosition: "center",
-              }} />
+              <GsapParallax speed={0.25} style={{ position: "absolute", inset: "-25% 0" }}>
+                <div style={{
+                  width: "100%", height: "100%",
+                  background: `url('/assets/images/pexels/pexels-drone-tech.jpg')`,
+                  backgroundSize: "cover", backgroundPosition: "center",
+                }} />
+              </GsapParallax>
               <div style={{
                 position: "absolute", inset: 0,
                 background: "linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55))",
@@ -618,7 +621,7 @@ export default function SolutionDetail() {
         </div>
         <div style={{
           background: data.accent,
-          borderRadius: "2rem",
+          borderRadius: "0.4rem",
           padding: "5rem",
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",

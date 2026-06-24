@@ -3,6 +3,7 @@
 import React from "react";
 import { Cpu, ShieldCheck, Wifi, Combine, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import GsapReveal from "@/components/GsapReveal";
 
 const accentColor = "#009bff";
 
@@ -49,7 +50,7 @@ export default function Technology() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
+        <GsapReveal as="div" stagger={0.12} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
           {techPillars.map((pillar, i) => {
             const Icon = pillar.icon;
             return (
@@ -89,7 +90,7 @@ export default function Technology() {
               </div>
             );
           })}
-        </div>
+        </GsapReveal>
 
         <div style={{ textAlign: "center", marginTop: "4rem" }}>
           <Link href="/technology" style={{

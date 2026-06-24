@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
-import { ArrowRight, ChevronRight, Calendar, Book, FileText, Newspaper, Scale, HelpCircle, Download } from "lucide-react";
-import PageHero from "@/components/PageHero";
+import { motion } from "framer-motion";
+import { ChevronRight, Book, FileText, Newspaper, Scale, HelpCircle, Download, Clock, ArrowLeft } from "lucide-react";
 import CTA from "@/components/CTA";
-import FadeIn from "@/components/FadeIn";
 
 function toSlug(text: string) {
   return text.toLowerCase().replace(/[–—,()]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -233,6 +232,17 @@ const contentMap: Record<string, SubContent> = {
   },
 };
 
+function estimateReadTime(text: string): number {
+  return Math.max(1, Math.ceil(text.split(/\s+/).length / 200));
+}
+
+function getTotalReadTime(sections: Array<{ heading: string; text: string }> | undefined, content?: string, list?: string[]): number {
+  let total = content || "";
+  sections?.forEach(s => total += " " + s.text);
+  list?.forEach(l => total += " " + l);
+  return estimateReadTime(total);
+}
+
 export default function ResourceSubPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -245,65 +255,236 @@ export default function ResourceSubPage() {
   if (!data) notFound();
 
   const Icon = meta.icon;
+  const readTime = getTotalReadTime(data.sections, data.content, data.list);
+
+  const [scrollProgress, setScrollProgress] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div style={{ color: "#1a1a1a" }}>
-      <PageHero
-        title={data.title}
-        subtitle={data.content}
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
-          { label: data.category, href: `/resources/${slug}` },
-          { label: data.title, href: `/resources/${slug}/${subslug}` },
-        ]}
-      />
+      {/* Reading Progress Bar */}
+      <div style={{
+        position: "fixed", top: 0, left: 0, right: 0, height: "3px", zIndex: 9999,
+        background: "#e5e5e5",
+      }}>
+        <div style={{
+          height: "100%",
+          width: `${scrollProgress * 100}%`,
+          background: `linear-gradient(90deg, ${meta.accent}, ${meta.accent}dd)`,
+          transition: "width 0.05s linear",
+        }} />
+      </div>
 
-      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ padding: "8rem 0 4rem" }}>
-          <div style={{ maxWidth: "80rem", margin: "0 auto" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
-              <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "0.4rem", background: meta.accent, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <Icon style={{ width: "1.8rem", height: "1.8rem" }} />
-              </div>
-              <div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: meta.accent, marginBottom: "0.2rem" }}>{data.category}</div>
-                <h1 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.15 }}>{data.title}</h1>
-              </div>
-            </div>
+      {/* Hero — dark gradient with category badge, title, metadata */}
+      <div style={{
+        background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%)",
+        padding: "160px var(--section-px) 60px",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div style={{
+          position: "absolute", inset: 0,
+          background: `radial-gradient(circle at 30% 50%, ${meta.accent}08 0%, transparent 70%)`,
+        }} />
+        <div style={{
+          maxWidth: "1440px", margin: "0 auto", position: "relative", zIndex: 1,
+        }}>
+          {/* Breadcrumbs */}
+          <div style={{
+            display: "flex", alignItems: "center", gap: "0.6rem",
+            marginBottom: "3rem", fontSize: "1.3rem",
+            color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)",
+          }}>
+            <Link href="/" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Home</Link>
+            <ChevronRight style={{ width: "1.2rem", height: "1.2rem" }} />
+            <Link href="/resources" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Resources</Link>
+            <ChevronRight style={{ width: "1.2rem", height: "1.2rem" }} />
+            <Link href={`/resources/${slug}`} style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
+              {slug === "news-media" ? "News & Media" : slug.charAt(0).toUpperCase() + slug.slice(1)}
+            </Link>
+          </div>
 
-            {data.sections && data.sections.map((section, i) => (
-              <div key={i} style={{ marginBottom: "3rem" }}>
-                <h2 style={{ fontSize: "1.8rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1rem", lineHeight: 1.2 }}>{section.heading}</h2>
-                <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7 }}>{section.text}</p>
-              </div>
-            ))}
+          {/* Category badge */}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: "0.6rem",
+            background: `${meta.accent}1a`, color: meta.accent,
+            padding: "0.4rem 1.2rem", borderRadius: "0.4rem",
+            fontSize: "1.2rem", fontWeight: 600, fontFamily: "var(--font-mono)",
+            textTransform: "uppercase", letterSpacing: "0.06em",
+            marginBottom: "2rem",
+            border: `1px solid ${meta.accent}30`,
+          }}>
+            <Icon style={{ width: "1.4rem", height: "1.4rem" }} />
+            {data.category}
+          </div>
 
-            {data.list && (
-              <div style={{ background: "#f3f0ec", borderRadius: "0.4rem", padding: "2.5rem" }}>
-                <h3 style={{ fontSize: "1.4rem", fontWeight: 600, marginBottom: "1.2rem" }}>Key Topics</h3>
-                <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-                  {data.list.map((item, i) => (
-                    <li key={i} style={{ padding: "0.4rem 0", fontSize: "1.4rem", color: "#555", display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                      <span style={{ width: "0.4rem", height: "0.4rem", borderRadius: "50%", background: meta.accent, flexShrink: 0 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          {/* Title */}
+          <h1 style={{
+            fontSize: "clamp(2.8rem, 4vw, 4.8rem)",
+            fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.1,
+            color: "#fff", maxWidth: "90rem",
+          }}>
+            {data.title}
+          </h1>
+
+          {/* Metadata */}
+          <div style={{
+            display: "flex", alignItems: "center", gap: "1.5rem",
+            marginTop: "2rem", fontSize: "1.3rem", color: "rgba(255,255,255,0.5)",
+            fontFamily: "var(--font-mono)",
+          }}>
+            <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+              <Clock style={{ width: "1.4rem", height: "1.4rem" }} />
+              {readTime} min read
+            </span>
           </div>
         </div>
-      </FadeIn>
 
-      <div style={{ padding: "2rem var(--section-px) 6rem", maxWidth: "1440px", margin: "0 auto" }}>
-        <Link href={`/resources/${slug}`} style={{
-          display: "inline-flex", alignItems: "center", gap: "0.6rem",
-          fontSize: "1.4rem", fontWeight: 600, color: "#555", textDecoration: "none",
-        }}>
-          <ChevronRight style={{ width: "1.4rem", height: "1.4rem", transform: "rotate(180deg)" }} />
-          Back to {slug === "news-media" ? "News & Media" : slug.charAt(0).toUpperCase() + slug.slice(1)}
-        </Link>
+        <div style={{
+          position: "absolute", bottom: 0, left: 0, right: 0, height: "1px",
+          background: `linear-gradient(90deg, transparent, ${meta.accent}30, transparent)`,
+        }} />
+      </div>
+
+      {/* Article Content */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+        style={{ padding: "0 var(--section-px)" }}
+      >
+        <div style={{ padding: "6rem 0 4rem", maxWidth: "72rem", margin: "0 auto" }}>
+          {/* Lead paragraph */}
+          <p style={{
+            fontSize: "1.8rem", lineHeight: 1.65, color: "#444",
+            marginBottom: "4rem", fontWeight: 400,
+            borderLeft: `3px solid ${meta.accent}`,
+            paddingLeft: "2rem",
+            fontStyle: "italic",
+          }}>
+            {data.content}
+          </p>
+
+          {/* Sections */}
+          {data.sections && data.sections.map((section, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+              style={{ marginBottom: i < data.sections!.length - 1 ? "5rem" : "0" }}
+            >
+              <h2 style={{
+                fontSize: "2rem", fontWeight: 600,
+                letterSpacing: "-0.02em", lineHeight: 1.25,
+                marginBottom: "1.2rem",
+                display: "flex", alignItems: "center", gap: "1rem",
+              }}>
+                <span style={{
+                  width: "4px", height: "2rem",
+                  background: meta.accent, borderRadius: "2px",
+                  flexShrink: 0,
+                }} />
+                {section.heading}
+              </h2>
+              <p style={{
+                fontSize: "1.6rem", color: "#555",
+                lineHeight: 1.8, marginBottom: "1.5rem",
+              }}>
+                {section.text}
+              </p>
+            </motion.div>
+          ))}
+
+          {/* Key Topics / List */}
+          {data.list && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={{
+                marginTop: "5rem",
+                border: `1px solid ${meta.accent}20`,
+                borderRadius: "0.4rem",
+                padding: "3rem",
+                background: "#fafafa",
+              }}
+            >
+              <h3 style={{
+                fontSize: "1.3rem", fontWeight: 600,
+                marginBottom: "2rem",
+                color: meta.accent,
+                fontFamily: "var(--font-mono)",
+                textTransform: "uppercase", letterSpacing: "0.06em",
+                display: "flex", alignItems: "center", gap: "0.6rem",
+              }}>
+                <span style={{ width: "1.6rem", height: "2px", background: meta.accent, borderRadius: "0.2rem" }} />
+                Key Topics
+              </h3>
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                {data.list.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: i * 0.06, ease: "easeOut" }}
+                    style={{
+                      padding: "0.9rem 0",
+                      fontSize: "1.5rem", color: "#444",
+                      display: "flex", alignItems: "flex-start", gap: "1rem",
+                      borderBottom: i < data.list!.length - 1 ? "1px solid #eee" : "none",
+                    }}
+                  >
+                    <span style={{
+                      width: "2.2rem", height: "2.2rem",
+                      borderRadius: "50%",
+                      background: `${meta.accent}0d`,
+                      color: meta.accent,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: "1.1rem", fontWeight: 600,
+                      flexShrink: 0, marginTop: "0.1rem",
+                    }}>
+                      {i + 1}
+                    </span>
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </div>
+      </motion.section>
+
+      {/* Back Navigation */}
+      <div style={{
+        padding: "0 var(--section-px) 6rem",
+        maxWidth: "72rem", margin: "0 auto",
+      }}>
+        <div style={{ borderTop: "1px solid #e5e5e5", paddingTop: "3rem" }}>
+          <Link href={`/resources/${slug}`} style={{
+            display: "inline-flex", alignItems: "center", gap: "0.6rem",
+            fontSize: "1.4rem", fontWeight: 500,
+            color: meta.accent, textDecoration: "none",
+            padding: "0.8rem 1.6rem",
+            border: `1px solid ${meta.accent}30`,
+            borderRadius: "0.4rem",
+          }}>
+            <ArrowLeft style={{ width: "1.4rem", height: "1.4rem" }} />
+            Back to {slug === "news-media" ? "News & Media" : slug.charAt(0).toUpperCase() + slug.slice(1)}
+          </Link>
+        </div>
       </div>
 
       <CTA />

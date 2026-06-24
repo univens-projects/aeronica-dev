@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu, ArrowRight } from "lucide-react";
+import GsapReveal from "@/components/GsapReveal";
 
 const accentColor = "#21389a";
 
@@ -32,7 +33,7 @@ export default function Services() {
         </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
+      <GsapReveal as="div" stagger={0.1} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.6rem" }}>
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
@@ -65,7 +66,7 @@ export default function Services() {
             </Link>
           );
         })}
-      </div>
+      </GsapReveal>
 
       <div style={{ textAlign: "center", marginTop: "4rem" }}>
         <Link href="/services" style={{

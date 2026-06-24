@@ -6,6 +6,7 @@ import { Image as ImageIcon, PlayCircle, ArrowRight, Camera, Map as MapIcon, Eye
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
+import GsapParallax from "@/components/GsapParallax";
 
 const galleryItems = [
   { title: "Railway Corridor Orthomosaic", category: "Infrastructure", type: "Orthomosaic", desc: "Sub-centimeter orthomosaic of 15 km railway corridor used for alignment verification and drainage assessment." },
@@ -47,7 +48,7 @@ export default function ProjectGallery() {
               onClick={() => setActiveCategory(cat)}
               style={{
                 padding: "0.6rem 1.6rem",
-                borderRadius: "100px",
+                borderRadius: "0.4rem",
                 border: "1px solid #e5e5e5",
                 background: activeCategory === cat ? "#111" : "#fff",
                 color: activeCategory === cat ? "#fff" : "#555",
@@ -77,11 +78,18 @@ export default function ProjectGallery() {
             >
               <div style={{
                 height: "200px",
-                background: `linear-gradient(135deg, #1a2d3d, #1a3a4a), url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-solar-farm.jpg","pexels-smart-city.jpg","pexels-drone-agriculture.jpg","pexels-power-lines.jpg","pexels-construction-site.jpg","pexels-mining-site.jpg","pexels-industrial-sunrise.jpg"][i % 9]}')`,
-                backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                position: "relative",
+                overflow: "hidden",
                 display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.3)",
               }}>
-                <Camera style={{ width: "4rem", height: "4rem" }} />
+                <GsapParallax speed={0.15} style={{ position: "absolute", inset: "-30% 0" }}>
+                  <div style={{
+                    width: "100%", height: "100%",
+                    background: `linear-gradient(135deg, #1a2d3d, #1a3a4a), url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-solar-farm.jpg","pexels-smart-city.jpg","pexels-drone-agriculture.jpg","pexels-power-lines.jpg","pexels-construction-site.jpg","pexels-mining-site.jpg","pexels-industrial-sunrise.jpg"][i % 9]}')`,
+                    backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                  }} />
+                </GsapParallax>
+                <Camera style={{ width: "4rem", height: "4rem", position: "relative", zIndex: 1 }} />
               </div>
               <div style={{ padding: "2rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "1rem" }}>
@@ -96,7 +104,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Video section */}
-        <div style={{ marginTop: "8rem", background: "#111", color: "#fff", borderRadius: "2rem", padding: "6rem", textAlign: "center" }}>
+        <div style={{ marginTop: "8rem", background: "#111", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
           <PlayCircle style={{ width: "4rem", height: "4rem", marginBottom: "2rem", opacity: 0.8 }} />
           <h2 style={{ fontSize: "2.8rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Cinematic Flight Footage</h2>
           <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.6)", maxWidth: "50rem", margin: "0 auto 3rem", lineHeight: 1.6 }}>

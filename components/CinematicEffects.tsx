@@ -55,7 +55,7 @@ const CinematicEffects = ({ children }: { children: React.ReactNode }) => {
     };
 
     // ─── Smooth Anchor Scroll ───
-    const onAnchorClick = (e: MouseEvent) => {
+      const onAnchorClick = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement).closest('a');
       if (anchor?.getAttribute('href')?.startsWith('#')) {
         const id = anchor.getAttribute('href')!;

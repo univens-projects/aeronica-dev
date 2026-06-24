@@ -8,6 +8,7 @@ import {
   Building2, Sparkles, Briefcase
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import GsapParallax from "@/components/GsapParallax";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 
@@ -59,23 +60,30 @@ export default function AboutHub() {
               </div>
             </div>
           </div>
-          <div style={{ 
-            background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
-            backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
-            borderRadius: "2rem",
+          <div style={{
+            borderRadius: "0.4rem",
             padding: "5rem",
             color: "#fff",
             position: "relative",
             overflow: "hidden",
           }}>
+            <GsapParallax speed={0.2} style={{ position: "absolute", inset: "-25% 0" }}>
+              <div style={{
+                width: "100%", height: "100%",
+                background: "linear-gradient(135deg, #0b1012 0%, #111111 50%, #1a1a1a 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
+                backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+              }} />
+            </GsapParallax>
             <div style={{ position: "absolute", top: "-40%", right: "-20%", width: "60%", height: "80%", background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)", borderRadius: "50%" }} />
-            <Rocket style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <Rocket style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />
             <blockquote style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.4, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
               &ldquo;We didn&rsquo;t want to assemble drones. We wanted to invent the Indian way of building them.&rdquo;
             </blockquote>
             <div style={{ width: "4rem", height: "2px", background: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }} />
             <div style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)" }}>Founding Ethos, Aeronica Advance Technologies</div>
           </div>
+        </div>
         </div>
       </FadeIn>
 
@@ -92,7 +100,7 @@ export default function AboutHub() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
             <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
-              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "1rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Target style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
@@ -103,7 +111,7 @@ export default function AboutHub() {
               </p>
             </div>
             <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
-              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "1rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
@@ -263,7 +271,7 @@ export default function AboutHub() {
 
         {/* Stats bar */}
         <div style={{ 
-          background: "#111", borderRadius: "2rem", padding: "5rem",
+          background: "#111", borderRadius: "0.4rem", padding: "5rem",
           display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "3rem", textAlign: "center"
         }}>
           {[

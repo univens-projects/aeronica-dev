@@ -11,6 +11,7 @@ import {
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
+import GsapParallax from "@/components/GsapParallax";
 
 const hardwarePlatforms = [
   {
@@ -147,18 +148,27 @@ export default function SolutionsHub() {
                 >
                   <div
                     style={{
-                      background: `${platform.gradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-industrial-sunrise.jpg","pexels-drone-tech.jpg","pexels-circuit-board.jpg"][i]}')`,
-                      backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                      position: "relative",
+                      overflow: "hidden",
                       padding: "3rem",
                       textAlign: "center",
                       color: "#fff",
                     }}
                   >
-                <Plane style={{ width: "3.2rem", height: "3.2rem", marginBottom: "1.5rem", opacity: 0.9 }} />
-                <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "0.5rem" }}>{platform.name}</h3>
-                <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 1rem", borderRadius: "100px", display: "inline-block" }}>
-                  {platform.tag}
-                </span>
+                    <GsapParallax speed={0.2} style={{ position: "absolute", inset: "-30% 0" }}>
+                      <div style={{
+                        width: "100%", height: "100%",
+                        background: `${platform.gradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-industrial-sunrise.jpg","pexels-drone-tech.jpg","pexels-circuit-board.jpg"][i]}')`,
+                        backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                      }} />
+                    </GsapParallax>
+                    <div style={{ position: "relative", zIndex: 1 }}>
+                      <Plane style={{ width: "3.2rem", height: "3.2rem", marginBottom: "1.5rem", opacity: 0.9 }} />
+                      <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "0.5rem" }}>{platform.name}</h3>
+                      <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 1rem", borderRadius: "0.4rem", display: "inline-block" }}>
+                        {platform.tag}
+                      </span>
+                    </div>
               </div>
               <div style={{ padding: "2.5rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
                 <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "2rem", flexGrow: 1 }}>
@@ -242,7 +252,7 @@ export default function SolutionsHub() {
                           color: "#555",
                           background: "#f3f0ec",
                           padding: "0.3rem 0.8rem",
-                          borderRadius: "100px",
+                          borderRadius: "0.4rem",
                         }}
                       >
                         {cap}
@@ -469,7 +479,7 @@ export default function SolutionsHub() {
           <div
             style={{
               background: "#111",
-              borderRadius: "2rem",
+              borderRadius: "0.4rem",
               padding: "5rem",
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",

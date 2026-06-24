@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import FadeIn from "./FadeIn";
+import GsapParallax from "./GsapParallax";
 
 const products = [
   {
@@ -170,21 +171,23 @@ const Products = () => {
                   position: "absolute", inset: 0,
                   background: "radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08) 0%, transparent 60%)",
                 }} />
-                <Image
-                  src={product.img}
-                  alt={product.title}
-                  width={280}
-                  height={200}
-                  style={{
-                    width: "auto", height: "70%", objectFit: "contain",
-                    position: "relative", zIndex: 1, filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.3))",
-                  }}
-                  priority={index < 2}
-                />
+                <GsapParallax speed={0.25} style={{ position: "relative", zIndex: 1, width: "70%", height: "70%" }}>
+                  <Image
+                    src={product.img}
+                    alt={product.title}
+                    width={280}
+                    height={200}
+                    style={{
+                      width: "100%", height: "100%", objectFit: "contain",
+                      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.3))",
+                    }}
+                    priority={index < 2}
+                  />
+                </GsapParallax>
                 <span style={{
                   fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase",
                   letterSpacing: "0.12em", color: "rgba(255,255,255,0.6)", position: "absolute", top: "1.6rem", left: "1.6rem",
-                  background: "rgba(255,255,255,0.1)", padding: "0.3rem 1rem", borderRadius: "100px",
+                  background: "rgba(255,255,255,0.1)", padding: "0.3rem 1rem", borderRadius: "0.4rem",
                 }}>
                   {product.tag}
                 </span>
@@ -233,7 +236,7 @@ const Products = () => {
             key={index}
             onClick={() => scrollTo(index)}
             style={{
-              width: index === activeIndex ? "2.4rem" : "0.8rem", height: "0.8rem", borderRadius: "100px",
+              width: index === activeIndex ? "2.4rem" : "0.8rem", height: "0.8rem", borderRadius: "0.4rem",
               background: index === activeIndex ? accentColor : "#d0d0d0", border: "none", cursor: "pointer",
               transition: "all 0.3s ease", padding: 0,
             }}

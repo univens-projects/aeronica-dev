@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ClipboardList, Crosshair, Brain, Award } from "lucide-react";
-import FadeIn from "@/components/FadeIn";
+import GsapReveal from "@/components/GsapReveal";
 
 const accentColor = "#21389a";
 
@@ -49,11 +49,11 @@ export default function Process() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "2.5rem" }}>
+        <GsapReveal as="div" stagger={0.15} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "2.5rem" }}>
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
-              <FadeIn key={i} as="div" style={{ position: "relative", width: "100%", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3rem 2rem 2.5rem", textAlign: "center" }}>
+              <div key={i} style={{ position: "relative", width: "100%", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3rem 2rem 2.5rem", textAlign: "center" }}>
                 <div style={{ position: "absolute", top: "-1.6rem", left: "50%", transform: "translateX(-50%)", width: "3.6rem", height: "3.6rem", borderRadius: "50%", background: accentColor, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", boxShadow: "0 4px 14px rgba(0,0,0,0.12)" }}>
                   <Icon style={{ width: "1.6rem", height: "1.6rem" }} />
                 </div>
@@ -64,10 +64,10 @@ export default function Process() {
 
                 <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem", color: "#111" }}>{step.title}</h3>
                 <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6 }}>{step.desc}</p>
-              </FadeIn>
+              </div>
             );
           })}
-        </div>
+        </GsapReveal>
       </div>
     </section>
   );

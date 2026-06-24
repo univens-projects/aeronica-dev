@@ -73,7 +73,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-logo">
-          <Image src="/assets/img/logo.png" alt="Aeronica Logo" width={140} height={40} className="footer-logo-img" />
+          <Image src="/assets/img/logo.png" alt="Aeronica Logo" width={280} height={80} className="footer-logo-img" />
         </div>
         <div className="footer-social">
           <a href="https://www.instagram.com/aeronica_at" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>

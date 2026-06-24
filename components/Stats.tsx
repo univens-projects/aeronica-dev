@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import GsapReveal from "@/components/GsapReveal";
 
 const StatNumber = ({ target, animated }: { target: number; animated: boolean }) => {
   const [count, setCount] = useState(0);
@@ -73,7 +74,7 @@ const Stats = () => {
       overflow: "hidden",
     }}>
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 70% 50%, rgba(45,90,135,0.08) 0%, transparent 60%)" }} />
-      <div style={{ maxWidth: "1440px", margin: "0 auto", position: "relative" }}>
+      <GsapReveal as="div" y={40} style={{ maxWidth: "1440px", margin: "0 auto", position: "relative" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
           <div>
             <span className="section-title" style={{ justifyContent: "flex-start", color: "#888" }}>
@@ -110,7 +111,7 @@ const Stats = () => {
             ))}
           </div>
         </div>
-      </div>
+      </GsapReveal>
     </section>
   );
 };

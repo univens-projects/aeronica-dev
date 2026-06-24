@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { Calendar, ArrowRight } from "lucide-react";
+import GsapReveal from "@/components/GsapReveal";
+import GsapParallax from "@/components/GsapParallax";
 
 const newsGradient = "linear-gradient(135deg, #21389a, #009bff)";
 
@@ -36,7 +38,7 @@ export default function News() {
         </p>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "1.6rem" }}>
+      <GsapReveal as="div" stagger={0.15} y={30} style={{ display: "flex", flexDirection: "column", gap: "1.6rem" }}>
         {news.map((item, index) => (
           <Link
             key={index}
@@ -55,14 +57,21 @@ export default function News() {
           >
             <div style={{
               width: "4rem", height: "4rem", borderRadius: "0.2rem",
-              background: `${newsGradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-smart-city.jpg"][index]}')`,
-              backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+              position: "relative",
+              overflow: "hidden",
               display: "flex", alignItems: "center",
               justifyContent: "center", flexShrink: 0, fontSize: "1.6rem",
               fontWeight: 700, color: "rgba(255,255,255,0.9)", fontFamily: "var(--font-mono)",
               letterSpacing: "-0.03em",
             }}>
-              {index + 1}
+              <GsapParallax speed={0.15} style={{ position: "absolute", inset: "-30% 0" }}>
+                <div style={{
+                  width: "100%", height: "100%",
+                  background: `${newsGradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-smart-city.jpg"][index]}')`,
+                  backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
+                }} />
+              </GsapParallax>
+              <span style={{ position: "relative", zIndex: 1 }}>{index + 1}</span>
             </div>
             <div style={{ flexGrow: 1 }}>
               <h3 style={{ fontSize: "1.5rem", fontWeight: 600, marginBottom: "0.3rem", lineHeight: 1.3 }}>{item.title}</h3>
@@ -78,7 +87,7 @@ export default function News() {
             </div>
           </Link>
         ))}
-      </div>
+      </GsapReveal>
 
       <div style={{ textAlign: "center", marginTop: "4rem" }}>
         <Link href="/insights" style={{

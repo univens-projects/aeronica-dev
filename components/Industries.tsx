@@ -3,6 +3,7 @@
 import React from "react";
 import { Train, Pickaxe, Sprout, Fuel, HardHat, Zap } from "lucide-react";
 import Link from "next/link";
+import GsapReveal from "@/components/GsapReveal";
 
 const accentColor = "#21389a";
 
@@ -30,7 +31,7 @@ export default function Industries() {
         </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.2rem" }}>
+      <GsapReveal as="div" stagger={0.08} y={40} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.2rem" }}>
         {industries.map((industry, index) => {
           const Icon = industry.icon;
           return (
@@ -63,7 +64,7 @@ export default function Industries() {
             </Link>
           );
         })}
-      </div>
+      </GsapReveal>
     </section>
   );
 }

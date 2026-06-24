@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
 const solutionCategories = [
@@ -106,6 +106,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -154,7 +155,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown("solutions")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`navbar-link navbar-dropdown-trigger ${isSolutionsActive ? "active" : ""}`}>
+              <button className={`navbar-link navbar-dropdown-trigger ${isSolutionsActive ? "active" : ""}`} onClick={() => router.push("/solutions")}>
                 Solutions <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "solutions" ? "is-open" : ""}`}>
@@ -178,7 +179,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown("industries")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`navbar-link navbar-dropdown-trigger ${isIndustriesActive ? "active" : ""}`}>
+              <button className={`navbar-link navbar-dropdown-trigger ${isIndustriesActive ? "active" : ""}`} onClick={() => router.push("/industries")}>
                 Industries <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "industries" ? "is-open" : ""}`}>
@@ -202,7 +203,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown("case-studies")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`navbar-link navbar-dropdown-trigger ${isCaseStudiesActive ? "active" : ""}`}>
+              <button className={`navbar-link navbar-dropdown-trigger ${isCaseStudiesActive ? "active" : ""}`} onClick={() => router.push("/case-studies")}>
                 Case Studies <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "case-studies" ? "is-open" : ""}`}>
@@ -226,7 +227,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown("resources")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`navbar-link navbar-dropdown-trigger ${isResourcesActive ? "active" : ""}`}>
+              <button className={`navbar-link navbar-dropdown-trigger ${isResourcesActive ? "active" : ""}`} onClick={() => router.push("/resources")}>
                 Resources <ChevronDown style={{ width: "1.2rem", height: "1.2rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "resources" ? "is-open" : ""}`}>

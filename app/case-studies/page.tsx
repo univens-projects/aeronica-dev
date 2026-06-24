@@ -54,7 +54,7 @@ borderRadius: "0.4rem",
         </div>
 
         {/* PROJECT GALLERY SECTION */}
-        <div style={{ background: "#111", color: "#fff", borderRadius: "2rem", padding: "6rem", textAlign: "center" }}>
+        <div style={{ background: "#111", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "2rem" }}>
             <ImageIcon style={{ width: "2.4rem", height: "2.4rem" }} />
             <h2 style={{ fontSize: "3.2rem", fontWeight: 600 }}>Project Gallery</h2>
