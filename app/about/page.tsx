@@ -2,9 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
+import { DotArrowRight } from "@/components/DotIcons";
 import { 
   Rocket, Target, Eye, Users, Cpu, ShieldCheck, Award, 
-  BookOpen, Quote, ArrowRight, MapPin, CheckCircle, 
+  BookOpen, Quote, MapPin, CheckCircle, 
   Building2, Sparkles, Briefcase
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
@@ -88,7 +89,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 2 — Mission & Vision */}
-      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#ffffff", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -143,7 +144,7 @@ export default function AboutHub() {
             transition: "opacity 0.2s",
             whiteSpace: "nowrap",
           }}>
-            Meet the Leadership <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />
+            Meet the Leadership <DotArrowRight size={14} />
           </Link>
         </div>
         <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "4rem" }}>
@@ -190,7 +191,7 @@ export default function AboutHub() {
               borderBottom: "1px solid rgba(255,255,255,0.5)", paddingBottom: "0.3rem",
               whiteSpace: "nowrap",
             }}>
-              Explore Our Tech <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />
+              Explore Our Tech <DotArrowRight size={14} />
             </Link>
           </div>
           <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "5rem" }}>
@@ -289,7 +290,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 6 — Join the Mission */}
-      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#ffffff", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Join Us
@@ -310,7 +311,7 @@ export default function AboutHub() {
               textDecoration: "none", transition: "all 0.3s ease",
             }}>
               <Briefcase style={{ width: "1.8rem", height: "1.8rem" }} />
-              View Open Positions <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+              View Open Positions <DotArrowRight size={16} />
             </Link>
             <Link href="/contact" style={{
               display: "inline-flex", alignItems: "center", gap: "1rem",
@@ -319,7 +320,7 @@ export default function AboutHub() {
               textDecoration: "none", transition: "all 0.3s ease",
             }}>
               <BookOpen style={{ width: "1.8rem", height: "1.8rem" }} />
-              Partner With Us <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+              Partner With Us <DotArrowRight size={16} />
             </Link>
           </div>
         </div>

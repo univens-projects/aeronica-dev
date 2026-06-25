@@ -41,11 +41,11 @@ export default function Industries() {
               style={{
                 textDecoration: "none",
                 color: "inherit",
-                background: "#f3f0ec",
+                background: "#ffffff",
                 borderRadius: "0.4rem",
                 padding: "2rem 2.4rem",
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: "1.6rem",
                 border: `1px solid transparent`,
               }}

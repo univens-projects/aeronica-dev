@@ -43,7 +43,7 @@ const Footer = () => {
         }}>
           <div>
             <Image src="/assets/img/aeronica-logo.png" alt="Aeronica" width={200} height={50} style={{ width: "16rem", height: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem" }} />
-            <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "28rem" }}>
+            <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.7, maxWidth: "28rem" }}>
               Indigenous drone solutions for agriculture, GIS, surveillance, and industrial applications. DGCA certified.
             </p>
             <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
@@ -52,12 +52,12 @@ const Footer = () => {
                   width: "3.2rem", height: "3.2rem", borderRadius: "50%",
                   border: "1px solid rgba(255,255,255,0.1)",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.7)",
                   transition: "all 0.2s ease",
                   textDecoration: "none",
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "rgba(255,255,255,0.5)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; }}>
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "rgba(255,255,255,0.7)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; }}>
                   <SocialIcon name={s.icon} />
                 </a>
               ))}
@@ -65,16 +65,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.4)", marginBottom: "1.5rem" }}>Services</h4>
+            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Services</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
               {["Drone Survey & Mapping", "GIS & Geospatial Intelligence", "Infrastructure Inspection", "AI Drone Intelligence", "Disaster & Emergency Response"].map((item) => (
                 <li key={item}>
                   <Link href={`/solutions/${item.toLowerCase().replace(/[& ]/g, "-").replace(/--/g, "-")}`} style={{
-                    fontSize: "1.3rem", color: "rgba(255,255,255,0.55)", textDecoration: "none",
+                    fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.55)"; }}>
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}>
                     {item}
                   </Link>
                 </li>
@@ -83,16 +83,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.4)", marginBottom: "1.5rem" }}>Industries</h4>
+            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Industries</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
               {["Agriculture", "Mining", "Construction", "Energy", "Transportation"].map((item) => (
                 <li key={item}>
                   <Link href={`/industries/${item.toLowerCase()}`} style={{
-                    fontSize: "1.3rem", color: "rgba(255,255,255,0.55)", textDecoration: "none",
+                    fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.55)"; }}>
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}>
                     {item}
                   </Link>
                 </li>
@@ -101,7 +101,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.4)", marginBottom: "1.5rem" }}>Company</h4>
+            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Company</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
               {[
                 { label: "About Us", href: "/about/about-aeronica" },
@@ -112,11 +112,11 @@ const Footer = () => {
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} style={{
-                    fontSize: "1.3rem", color: "rgba(255,255,255,0.55)", textDecoration: "none",
+                    fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.55)"; }}>
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}>
                     {item.label}
                   </Link>
                 </li>
@@ -133,7 +133,7 @@ const Footer = () => {
           gap: "1rem",
           padding: "2rem 0",
         }}>
-          <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.3)", margin: 0 }}>
+          <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.5)", margin: 0 }}>
             &copy; {new Date().getFullYear()} Aeronica Advance Technologies Pvt. Ltd.
           </p>
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
@@ -144,11 +144,11 @@ const Footer = () => {
               { label: "Cookie Policy", href: "/legal/cookie-policy" },
             ].map((item) => (
               <Link key={item.label} href={item.href} style={{
-                fontSize: "1.15rem", color: "rgba(255,255,255,0.3)", textDecoration: "none",
+                fontSize: "1.15rem", color: "rgba(255,255,255,0.5)", textDecoration: "none",
                 transition: "color 0.2s ease",
               }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.6)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.3)"; }}>
+                onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}>
                 {item.label}
               </Link>
             ))}

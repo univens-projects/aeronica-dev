@@ -3,9 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
+import { DotArrowRight } from "@/components/DotIcons";
 import { 
   Landmark, Building2, Tractor, HardHat, Mountain, Zap, Flame, 
-  Radio, Truck, Home, ArrowRight, CheckCircle, Map, Users, Cpu, Award, Globe
+  Radio, Truck, Home, CheckCircle, Map, Users, Cpu, Award, Globe
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";

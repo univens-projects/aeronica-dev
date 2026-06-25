@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { DotArrowLeft, DotArrowRight } from "@/components/DotIcons";
 import FadeIn from "./FadeIn";
 import MotionParallax from "./MotionParallax";
 
@@ -74,7 +74,14 @@ const Products = () => {
 
   const scrollTo = (index: number) => {
     setActiveIndex(index);
-    containerRef.current?.children[index]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+    const container = containerRef.current;
+    if (!container) return;
+    const children = Array.from(container.children);
+    let targetScroll = 0;
+    for (let i = 0; i < index; i++) {
+      targetScroll += (children[i] as HTMLElement).offsetWidth + 24;
+    }
+    container.scrollTo({ left: targetScroll, behavior: "smooth" });
   };
 
   const handleScroll = () => {
@@ -112,25 +119,25 @@ const Products = () => {
               onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
               style={{
                 width: "4rem", height: "4rem", borderRadius: "50%", border: "1px solid #e5e5e5",
-                background: activeIndex === 0 ? "#f3f0ec" : "#fff", color: activeIndex === 0 ? "#888" : "#111",
+                background: activeIndex === 0 ? "#ffffff" : "#fff", color: activeIndex === 0 ? "#888" : "#111",
                 display: "flex", alignItems: "center", justifyContent: "center", cursor: activeIndex === 0 ? "default" : "pointer",
                 transition: "all 0.2s ease",
               }}
               disabled={activeIndex === 0}
             >
-              <ChevronLeft style={{ width: "1.8rem", height: "1.8rem" }} />
+              <DotArrowLeft size={18} />
             </button>
             <button
               onClick={() => scrollTo(Math.min(products.length - 1, activeIndex + 1))}
               style={{
                 width: "4rem", height: "4rem", borderRadius: "50%", border: "1px solid #e5e5e5",
-                background: activeIndex === products.length - 1 ? "#f3f0ec" : "#fff", color: activeIndex === products.length - 1 ? "#888" : "#111",
+                background: activeIndex === products.length - 1 ? "#ffffff" : "#fff", color: activeIndex === products.length - 1 ? "#888" : "#111",
                 display: "flex", alignItems: "center", justifyContent: "center", cursor: activeIndex === products.length - 1 ? "default" : "pointer",
                 transition: "all 0.2s ease",
               }}
               disabled={activeIndex === products.length - 1}
             >
-              <ChevronRight style={{ width: "1.8rem", height: "1.8rem" }} />
+              <DotArrowRight size={18} />
             </button>
           </div>
         </div>
@@ -146,6 +153,7 @@ const Products = () => {
         <div
           ref={containerRef}
           onScroll={handleScroll}
+          className="horizontal-scroll"
           style={{
             display: "flex", gap: "2.4rem", overflowX: "auto", scrollSnapType: "x mandatory",
             WebkitOverflowScrolling: "touch", scrollbarWidth: "none", msOverflowStyle: "none", paddingBottom: "0.4rem",
@@ -216,7 +224,7 @@ const Products = () => {
                   display: "inline-flex", alignItems: "center", gap: "0.6rem", alignSelf: "flex-start",
                   fontSize: "1.3rem", fontWeight: 600, color: accentColor, textDecoration: "none", padding: "0.6rem 0",
                 }}>
-                  View Details <ArrowRight style={{ width: "1.3rem", height: "1.3rem" }} />
+                  View Details <DotArrowRight size={13} />
                 </Link>
               </div>
             </motion.div>

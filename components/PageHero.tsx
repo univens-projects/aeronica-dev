@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { DotArrowLeft } from "@/components/DotIcons";
 
 interface PageHeroProps {
   title: string;
@@ -20,14 +20,14 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%)", zIndex: 1 }} />
       <div style={{ position: "relative", zIndex: 2, padding: variant === "child" ? "140px var(--section-px) 60px" : "180px var(--section-px) 100px", maxWidth: "1440px", margin: "0 auto" }}>
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: variant === "child" ? "1.5rem" : "2.5rem", fontSize: "1.3rem", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)" }}>
+          <nav style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: variant === "child" ? "1.5rem" : "2.5rem", fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-mono)" }}>
             {breadcrumbs.map((crumb, i) => (
               <React.Fragment key={i}>
                 {i > 0 && <span style={{ opacity: 0.4 }}>/</span>}
                 {i === breadcrumbs.length - 1 ? (
                   <span style={{ color: "rgba(255,255,255,0.8)" }}>{crumb.label}</span>
                 ) : (
-                  <Link href={crumb.href} style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }}>
+                  <Link href={crumb.href} style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", transition: "color 0.2s" }}>
                     {crumb.label}
                   </Link>
                 )}
@@ -43,8 +43,8 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
         {variant === "child" && (
           <div style={{ display: "flex", alignItems: "flex-start", gap: "1.2rem" }}>
             {breadcrumbs && breadcrumbs.length >= 2 && (
-              <Link href={breadcrumbs[breadcrumbs.length - 2].href} style={{ display: "flex", alignItems: "center", color: "rgba(255,255,255,0.5)", marginTop: "0.4rem", flexShrink: 0 }}>
-                <ArrowLeft style={{ width: "2rem", height: "2rem" }} />
+              <Link href={breadcrumbs[breadcrumbs.length - 2].href} style={{ display: "flex", alignItems: "center", color: "rgba(255,255,255,0.7)", marginTop: "0.4rem", flexShrink: 0 }}>
+                <DotArrowLeft size={20} />
               </Link>
             )}
             <h1 style={{ fontSize: "clamp(2.4rem, 3.5vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#fff", lineHeight: 1.15, maxWidth: "70rem" }}>
@@ -53,7 +53,7 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
           </div>
         )}
         {variant === "parent" && subtitle && (
-          <p style={{ fontSize: "clamp(1.6rem, 2vw, 2rem)", color: "rgba(255,255,255,0.6)", lineHeight: 1.6, maxWidth: "60rem" }}>
+          <p style={{ fontSize: "clamp(1.6rem, 2vw, 2rem)", color: "rgba(255,255,255,0.8)", lineHeight: 1.6, maxWidth: "60rem" }}>
             {subtitle}
           </p>
         )}

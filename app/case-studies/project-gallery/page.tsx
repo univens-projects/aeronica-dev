@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Image as ImageIcon, PlayCircle, ArrowRight, Camera, Map as MapIcon, Eye } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
+import { Image as ImageIcon, PlayCircle, Camera, Map as MapIcon, Eye } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
@@ -117,7 +118,7 @@ export default function ProjectGallery() {
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
             textDecoration: "none",
           }}>
-            Request Full Video Portfolio <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+            Request Full Video Portfolio <DotArrowRight size={16} />
           </Link>
         </div>
       </FadeIn>

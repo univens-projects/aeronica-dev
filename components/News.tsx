@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
 import MotionReveal from "@/components/MotionReveal";
 import MotionParallax from "@/components/MotionParallax";
 import SectionHeader from "@/components/SectionHeader";
@@ -40,7 +41,7 @@ export default function News() {
           }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-            View All Articles <ArrowRight size={16} />
+            View All Articles <DotArrowRight size={16} />
           </Link>
         }
       />
@@ -88,7 +89,7 @@ export default function News() {
                 <Calendar style={{ width: "1.4rem", height: "1.4rem" }} /> {item.date}
               </span>
               <span style={{ fontSize: "1.3rem", color: "#111", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.3rem" }}>
-                Read <ArrowRight style={{ width: "1.3rem", height: "1.3rem" }} />
+                Read <DotArrowRight size={13} />
               </span>
             </div>
           </Link>

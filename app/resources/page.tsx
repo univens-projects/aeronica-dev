@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
+import { DotArrowRight } from "@/components/DotIcons";
 import {
   Book, FileText, Newspaper, Scale, HelpCircle, Download,
-  ArrowRight,
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
@@ -104,7 +104,7 @@ export default function ResourcesHub() {
               padding: "1rem 2rem", background: featured.color, color: "#fff", borderRadius: "0.4rem",
               fontWeight: 600, fontSize: "1.3rem", textDecoration: "none",
             }}>
-              Read Guide <ArrowRight style={{ width: "1.3rem", height: "1.3rem" }} />
+              Read Guide <DotArrowRight size={13} />
             </Link>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function ResourcesHub() {
                       <div style={{ marginTop: "1.2rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                         <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888" }}>{item.count}</span>
                         <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "1.15rem", fontWeight: 600, color: section.color }}>
-                          Explore <ArrowRight style={{ width: "1.1rem", height: "1.1rem" }} />
+                          Explore <DotArrowRight size={11} />
                         </span>
                       </div>
                     </div>
@@ -163,7 +163,7 @@ export default function ResourcesHub() {
       {/* CTA Banner */}
       <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{
-          marginTop: "6rem", background: "#f3f0ec", borderRadius: "0.4rem",
+          marginTop: "6rem", background: "#ffffff", borderRadius: "0.4rem",
           padding: "4rem", display: "flex", alignItems: "center",
           justifyContent: "space-between", gap: "3rem", flexWrap: "wrap",
           position: "relative", overflow: "hidden",
@@ -180,7 +180,7 @@ export default function ResourcesHub() {
             padding: "1.2rem 2.4rem", background: "#21389A", color: "#fff",
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none", flexShrink: 0,
           }}>
-            Contact Support <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />
+            Contact Support <DotArrowRight size={14} />
           </Link>
         </div>
       </FadeIn>

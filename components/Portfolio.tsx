@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { MapPin, Building2, Activity, ArrowRight } from "lucide-react";
+import { MapPin, Building2, Activity } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
 import MotionReveal from "@/components/MotionReveal";
 import MotionParallax from "@/components/MotionParallax";
 import SectionHeader from "@/components/SectionHeader";
@@ -52,7 +53,7 @@ export default function Portfolio() {
           }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-            View Full Portfolio <ArrowRight size={16} />
+            View Full Portfolio <DotArrowRight size={16} />
           </Link>
         }
       />

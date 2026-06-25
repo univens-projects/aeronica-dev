@@ -12,7 +12,7 @@
   --color-text: #1a1a1a;
   --color-text-soft: #555555;
   --color-text-muted: #888888;
-  --color-cream: #f3f0ec;
+  --color-cream: #ffffff;
   --color-taupe: #d4cec6;
   --color-border: #e5e5e5;
   --color-accent: #111111;
@@ -118,6 +118,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: #21389A;
   z-index: 10000;
   margin: -4px 0 0 -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-cursor-ring {
@@ -167,6 +170,87 @@ html.cursor-on-text .custom-cursor-dot {
 html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
   border-left-color: #fff;
   box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
+}
+
+/* ---------- Horizontal Scroll Cursor ---------- */
+.cursor-dot-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+  color: #21389A;
+  pointer-events: none;
+}
+
+html.cursor-h-scroll .custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: transparent;
+}
+
+html.cursor-h-scroll .cursor-dot-arrow {
+  opacity: 1;
+  width: 34px;
+  height: 34px;
+}
+
+html.cursor-h-scroll-left .cursor-dot-arrow {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+html.cursor-h-scroll-right .cursor-dot-arrow {
+  transform: translate(-50%, -50%);
+}
+
+html.cursor-h-scroll .custom-cursor-ring {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  background: rgba(33, 56, 154, 0.08);
+  border-color: #21389A;
+}
+
+html.cursor-dark-bg.cursor-h-scroll .cursor-dot-arrow {
+  color: #fff;
+}
+
+html.cursor-dark-bg.cursor-h-scroll .custom-cursor-ring {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Keep arrow visible even when hovering links/text inside h-scroll */
+html.cursor-h-scroll.cursor-on-link .custom-cursor-dot,
+html.cursor-h-scroll.cursor-on-text .custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: transparent;
+  opacity: 1;
+  border-left: none;
+  box-shadow: none;
+}
+
+html.cursor-h-scroll.cursor-on-link .cursor-dot-arrow {
+  opacity: 1;
+  width: 34px;
+  height: 34px;
+}
+
+html.cursor-dark-bg.cursor-h-scroll.cursor-on-link .cursor-dot-arrow {
+  color: #fff;
+}
+
+html.cursor-h-scroll.cursor-on-link .custom-cursor-ring {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  background: rgba(33, 56, 154, 0.08);
 }
 
 

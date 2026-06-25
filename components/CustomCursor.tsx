@@ -64,6 +64,7 @@ const CustomCursor = () => {
   const mouse = useRef({ x: -100, y: -100 });
   const lastCheck = useRef(0);
   const lastEl = useRef<Element | null>(null);
+  const hScrollRef = useRef<HTMLElement | null>(null);
 
   const onMouseMove = useCallback((e: MouseEvent) => {
     mouse.current = { x: e.clientX, y: e.clientY };
@@ -76,15 +77,32 @@ const CustomCursor = () => {
     const isClickable = target.closest("a, button, [role=button], input, select, textarea, label");
     document.documentElement.classList.toggle("cursor-on-link", !!isClickable);
 
-    // Detect text elements for selection mode
     const isText = target.closest("p, h1, h2, h3, h4, h5, h6, li, blockquote, td, th, figcaption, cite, em, strong, label");
     document.documentElement.classList.toggle("cursor-on-text", !!isText);
+
+    const hScroll = (e.target as HTMLElement).closest(".horizontal-scroll") as HTMLElement | null;
+    hScrollRef.current = hScroll;
+    document.documentElement.classList.toggle("cursor-h-scroll", !!hScroll);
+  }, []);
+
+  const onClick = useCallback((e: MouseEvent) => {
+    const el = hScrollRef.current;
+    if (!el) return;
+    const target = e.target as HTMLElement;
+    if (target.closest("a, button, [role=button], input, select, textarea, label")) return;
+    const rect = el.getBoundingClientRect();
+    const midX = rect.left + rect.width / 2;
+    const scrollAmount = el.clientWidth * 0.75;
+    if (e.clientX < midX) {
+      el.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
   }, []);
 
   useEffect(() => {
     document.body.style.cursor = "none";
 
-    // Override default cursors on interactive elements
     const style = document.createElement("style");
     style.textContent = "input, textarea, select, [contenteditable] { cursor: none !important; }";
     document.head.appendChild(style);
@@ -105,6 +123,14 @@ const CustomCursor = () => {
         ringRef.current.style.transform = `translate(${ring.current.x}px, ${ring.current.y}px)`;
       }
 
+      if (hScrollRef.current) {
+        const rect = hScrollRef.current.getBoundingClientRect();
+        const midX = rect.left + rect.width / 2;
+        const isLeft = mouse.current.x < midX;
+        document.documentElement.classList.toggle("cursor-h-scroll-left", isLeft);
+        document.documentElement.classList.toggle("cursor-h-scroll-right", !isLeft);
+      }
+
       const now = performance.now();
       if (now - lastCheck.current > 50) {
         lastCheck.current = now;
@@ -122,19 +148,33 @@ const CustomCursor = () => {
     rafRef.current = requestAnimationFrame(loop);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseover", onMouseOver, true);
+    window.addEventListener("click", onClick);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseover", onMouseOver, true);
+      window.removeEventListener("click", onClick);
       document.body.style.cursor = "";
       style.remove();
     };
-  }, [onMouseMove, onMouseOver]);
+  }, [onMouseMove, onMouseOver, onClick]);
 
   return (
     <>
-      <div ref={dotRef} className="custom-cursor-dot" />
+      <div ref={dotRef} className="custom-cursor-dot">
+        <svg className="cursor-dot-arrow" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="5" cy="2" r="1.0" />
+          <circle cx="8.5" cy="4.5" r="1.0" />
+          <circle cx="12" cy="7" r="1.0" />
+          <circle cx="15.5" cy="9.5" r="1.0" />
+          <circle cx="19" cy="12" r="1.0" />
+          <circle cx="15.5" cy="14.5" r="1.0" />
+          <circle cx="12" cy="17" r="1.0" />
+          <circle cx="8.5" cy="19.5" r="1.0" />
+          <circle cx="5" cy="22" r="1.0" />
+        </svg>
+      </div>
       <div ref={ringRef} className="custom-cursor-ring" />
     </>
   );

@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Building, Sparkles, MessageSquare, ArrowRight, Calendar, ClipboardList, Zap } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
+import { Mail, Phone, MapPin, Building, Sparkles, MessageSquare, Calendar, ClipboardList, Zap } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
 // import CTA from "@/components/CTA";
@@ -145,7 +146,7 @@ borderRadius: "0.4rem",
 
               <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#21389A", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.4rem", fontSize: "1.4rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
                 <span>{formSubmitted ? "Message Sent!" : "Submit Inquiry"}</span>
-                <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+                <DotArrowRight size={16} />
               </button>
             </form>
           </div>

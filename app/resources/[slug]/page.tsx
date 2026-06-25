@@ -3,9 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
+import { DotArrowRight, DotArrowLeft } from "@/components/DotIcons";
 import {
   Book, FileText, Newspaper, Scale, HelpCircle, Download,
-  ArrowRight, Calendar, ChevronRight,
+  Calendar,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
@@ -251,7 +252,7 @@ export default function ResourcePage() {
                               display: "inline-flex", alignItems: "center", gap: "0.4rem",
                               fontSize: "1.2rem", fontWeight: 600, color: "#21389a",
                             }}>
-                              Read More <ArrowRight style={{ width: "1.2rem", height: "1.2rem" }} />
+                              Read More <DotArrowRight size={12} />
                             </span>
                           </div>
                         </div>
@@ -271,7 +272,7 @@ export default function ResourcePage() {
             display: "inline-flex", alignItems: "center", gap: "0.6rem",
             fontSize: "1.4rem", fontWeight: 600, color: "#555", textDecoration: "none",
           }}>
-            <ChevronRight style={{ width: "1.4rem", height: "1.4rem", transform: "rotate(180deg)" }} />
+            <DotArrowLeft size={14} />
             Back to Resources
           </Link>
         </FadeIn>

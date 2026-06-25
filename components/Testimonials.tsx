@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { DotArrowLeft, DotArrowRight } from "@/components/DotIcons";
 import MotionReveal from "@/components/MotionReveal";
 
 const testimonials = [
@@ -91,7 +91,7 @@ const Testimonials = () => {
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}>
-                  <ChevronLeft size={16} />
+                  <DotArrowLeft size={16} />
                 </button>
                 <div style={{ display: "flex", gap: "0.5rem" }}>
                   {testimonials.map((_, i) => (
@@ -114,7 +114,7 @@ const Testimonials = () => {
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}>
-                  <ChevronRight size={16} />
+                  <DotArrowRight size={16} />
                 </button>
               </div>
             </div>

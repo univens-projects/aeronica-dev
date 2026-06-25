@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { DotCross } from "@/components/DotIcons";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -81,15 +82,7 @@ const Hero = () => {
         <div style={{ display: "flex", justifyContent: "center", gap: "1.6rem", flexWrap: "wrap" }}>
           <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "0.8rem", fontSize: "1.5rem", fontWeight: 600, padding: "1.2rem 2.8rem", borderRadius: "4px", background: "#fff", color: "#21389A", boxShadow: "0 4px 15px rgba(0,0,0,0.2)", transition: "all 0.3s ease" }}>
             <span>Get in Touch</span>
-            <svg viewBox="0 0 100 100" fill="none" style={{ width: "1.6rem", height: "1.6rem" }}>
-              <g transform="translate(-18.375, 6.125)">
-                <rect x="51" y="14.25" width="10.25" height="10.25" rx="2" fill="currentColor"/>
-                <rect x="63.25" y="26.5" width="10.25" height="10.25" rx="2" fill="currentColor"/>
-                <rect x="75.5" y="38.75" width="10.25" height="10.25" rx="2" fill="currentColor"/>
-                <rect x="63.25" y="51" width="10.25" height="10.25" rx="2" fill="currentColor"/>
-                <rect x="51" y="63.25" width="10.25" height="10.25" rx="2" fill="currentColor"/>
-              </g>
-            </svg>
+            <DotCross size={16} />
           </Link>
         </div>
       </div>

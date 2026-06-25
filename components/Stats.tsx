@@ -62,7 +62,7 @@ const Stats = () => {
               fontSize: "1.2rem",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(255,255,255,0.7)",
               fontWeight: 600,
               display: "block",
               marginBottom: "1.2rem",
@@ -100,11 +100,11 @@ const Stats = () => {
                   <span style={{ fontSize: "clamp(3.2rem, 4vw, 4.8rem)", fontWeight: 500, lineHeight: 1, color: "#fff", fontFamily: "var(--font-mono)", letterSpacing: "-0.03em" }}>
                     <StatNumber target={stat.value} animated={animated} />
                   </span>
-                  <span style={{ fontSize: "clamp(1.6rem, 2vw, 2.4rem)", fontWeight: 300, color: "rgba(255,255,255,0.2)", lineHeight: 1 }}>
+                  <span style={{ fontSize: "clamp(1.6rem, 2vw, 2.4rem)", fontWeight: 300, color: "rgba(255,255,255,0.5)", lineHeight: 1 }}>
                     {stat.suffix}
                   </span>
                 </div>
-                <div style={{ fontSize: "1rem", color: "rgba(255,255,255,0.3)", fontWeight: 500, marginTop: "0.6rem", letterSpacing: "0.08em", fontFamily: "var(--font-mono)", textTransform: "uppercase" }}>
+                <div style={{ fontSize: "1rem", color: "rgba(255,255,255,0.6)", fontWeight: 500, marginTop: "0.6rem", letterSpacing: "0.08em", fontFamily: "var(--font-mono)", textTransform: "uppercase" }}>
                   {stat.label}
                 </div>
               </div>

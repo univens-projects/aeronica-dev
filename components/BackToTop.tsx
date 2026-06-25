@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { DotArrowUp } from "@/components/DotIcons";
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,9 +30,7 @@ const BackToTop = () => {
       aria-label="Back to top"
       suppressHydrationWarning
     >
-      <svg width="2rem" height="2rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
+      <DotArrowUp size={20} />
     </button>
   );
 };

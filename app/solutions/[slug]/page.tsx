@@ -3,11 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
+import { DotArrowRight, DotArrowLeft } from "@/components/DotIcons";
 import {
-  Map, Globe, Eye, Brain, LifeBuoy, ArrowRight,
+  Map, Globe, Eye, Brain, LifeBuoy,
   Ruler, Cpu, ShieldCheck, Sparkles, Layers, Crosshair, Timer,
   Award, HardHat, Tractor, Building2, Mountain, Zap, Radio, Truck,
-  Home, ChevronRight, BarChart3, ScanLine, Box, Cloud, Sun,
+  Home, BarChart3, ScanLine, Box, Cloud, Sun,
   Landmark, Flame,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
@@ -502,7 +503,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 2 — Core Capabilities */}
-      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#ffffff", padding: "8rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -592,7 +593,7 @@ export default function SolutionDetail() {
                     <IndIcon style={{ width: "1.6rem", height: "1.6rem", color: "rgba(255,255,255,0.8)" }} />
                   </div>}
                   <span style={{ fontSize: "1.5rem", fontWeight: 500 }}>{ind.name}</span>
-                  {ind.href && <ChevronRight style={{ width: "1.6rem", height: "1.6rem", color: "rgba(255,255,255,0.4)", flexShrink: 0 }} />}
+                  {ind.href && <DotArrowRight size={16} style={{ color: "rgba(255,255,255,0.4)", flexShrink: 0 }} />}
                 </div>
               );
               return ind.href ? (
@@ -659,7 +660,7 @@ export default function SolutionDetail() {
               borderRadius: "0.2rem", fontWeight: 600, fontSize: "1.3rem",
               textDecoration: "none", whiteSpace: "nowrap",
             }}>
-              View Study <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />
+              View Study <DotArrowRight size={14} />
             </Link>
           </div>
         )}
@@ -674,7 +675,7 @@ export default function SolutionDetail() {
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
             color: "#555", textDecoration: "none", transition: "all 0.3s ease",
           }}>
-            <ChevronRight style={{ width: "1.6rem", height: "1.6rem", transform: "rotate(180deg)" }} />
+            <DotArrowLeft size={16} />
             Back to All Solutions
           </Link>
         </div>

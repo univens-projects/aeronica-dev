@@ -2,8 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
+import { DotArrowRight } from "@/components/DotIcons";
 import { 
-  Map, Globe, Eye, Brain, LifeBuoy, ArrowRight, 
+  Map, Globe, Eye, Brain, LifeBuoy,
   Plane, Cpu, Ruler, ShieldCheck, Sparkles, 
   Combine, Timer, Crosshair, Tractor, Landmark,
   Users, Award
@@ -189,7 +190,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 2 — Solution Categories */}
-      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#ffffff", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -250,7 +251,7 @@ export default function SolutionsHub() {
                         style={{
                           fontSize: "1.15rem",
                           color: "#555",
-                          background: "#f3f0ec",
+                          background: "#ffffff",
                           padding: "0.3rem 0.8rem",
                           borderRadius: "0.4rem",
                         }}
@@ -260,7 +261,7 @@ export default function SolutionsHub() {
                     ))}
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "#111", fontWeight: 600, fontSize: "1.3rem" }}>
-                    Explore Solution <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+                    Explore Solution <DotArrowRight size={16} />
                   </div>
                 </Link>
               );
@@ -350,7 +351,7 @@ export default function SolutionsHub() {
               transition: "all 0.3s ease",
             }}
           >
-            View All Case Studies <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
+            View All Case Studies <DotArrowRight size={16} />
           </Link>
         </div>
       </FadeIn>
@@ -457,7 +458,7 @@ export default function SolutionsHub() {
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "3.2rem", fontWeight: 700, color: "#e5e5e5", lineHeight: 1, display: "block", marginBottom: "1rem" }}>
                 {phase.step}
               </span>
-              <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "0.4rem", background: "#f3f0ec", display: "flex", alignItems: "center", justifyContent: "center", color: "#111", marginBottom: "1.5rem" }}>
+              <div style={{ width: "3.6rem", height: "3.6rem", borderRadius: "0.4rem", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", color: "#111", marginBottom: "1.5rem" }}>
                 {React.createElement(phase.icon, { style: { width: "1.8rem", height: "1.8rem" } })}
               </div>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{phase.title}</h3>
@@ -468,7 +469,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 6 — Nationwide Reach */}
-      <FadeIn as="section" style={{ background: "#f3f0ec", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#ffffff", padding: "8rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Scale &amp; Reach

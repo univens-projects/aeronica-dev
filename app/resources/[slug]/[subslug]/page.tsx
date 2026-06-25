@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { motion } from "framer-motion";
-import { ChevronRight, Book, FileText, Newspaper, Scale, HelpCircle, Download, Clock, ArrowLeft } from "lucide-react";
+import { DotArrowLeft, DotArrowRight } from "@/components/DotIcons";
+import { Book, FileText, Newspaper, Scale, HelpCircle, Download, Clock } from "lucide-react";
 import CTA from "@/components/CTA";
 
 function toSlug(text: string) {
@@ -304,9 +305,9 @@ export default function ResourceSubPage() {
             color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)",
           }}>
             <Link href="/" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Home</Link>
-            <ChevronRight style={{ width: "1.2rem", height: "1.2rem" }} />
+            <DotArrowRight size={12} />
             <Link href="/resources" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Resources</Link>
-            <ChevronRight style={{ width: "1.2rem", height: "1.2rem" }} />
+            <DotArrowRight size={12} />
             <Link href={`/resources/${slug}`} style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
               {slug === "news-media" ? "News & Media" : slug.charAt(0).toUpperCase() + slug.slice(1)}
             </Link>
@@ -418,7 +419,7 @@ export default function ResourceSubPage() {
                 border: `1px solid ${meta.accent}20`,
                 borderRadius: "0.4rem",
                 padding: "3rem",
-                background: "#f3f0ec",
+                background: "#ffffff",
               }}
             >
               <h3 style={{
@@ -481,7 +482,7 @@ export default function ResourceSubPage() {
             border: `1px solid ${meta.accent}30`,
             borderRadius: "0.4rem",
           }}>
-            <ArrowLeft style={{ width: "1.4rem", height: "1.4rem" }} />
+            <DotArrowLeft size={14} />
             Back to {slug === "news-media" ? "News & Media" : slug.charAt(0).toUpperCase() + slug.slice(1)}
           </Link>
         </div>

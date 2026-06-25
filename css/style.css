@@ -12,7 +12,7 @@
   --color-text: #1a1a1a;
   --color-text-soft: #555555;
   --color-text-muted: #888888;
-  --color-cream: #f3f0ec;
+  --color-cream: #ffffff;
   --color-taupe: #d4cec6;
   --color-border: #e5e5e5;
   --color-accent: #111111;
@@ -705,7 +705,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .bento-item {
   position: relative;
-  background: #fbfbfb;
+  background: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;

@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu, ArrowRight } from "lucide-react";
+import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
 import MotionReveal from "@/components/MotionReveal";
 
 const accentColor = "#21389a";
@@ -42,7 +43,7 @@ export default function Services() {
           }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-            Explore All Services <ArrowRight size={16} />
+            Explore All Services <DotArrowRight size={16} />
           </Link>
         </div>
       </div>
@@ -75,7 +76,7 @@ export default function Services() {
               </div>
               <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, flexGrow: 1, marginBottom: "1.2rem" }}>{service.desc}</p>
               <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: accentColor, fontWeight: 600, fontSize: "1.15rem" }}>
-                Learn More <ArrowRight style={{ width: "1.2rem", height: "1.2rem" }} />
+                Learn More <DotArrowRight size={12} />
               </div>
             </Link>
           );

@@ -3,8 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
+import { DotArrowRight } from "@/components/DotIcons";
 import { 
-  FileText, Image as ImageIcon, CheckCircle, ArrowRight, 
+  FileText, Image as ImageIcon, CheckCircle,
   Map, BarChart, Shield, Users, Target, Award
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";

@@ -542,6 +542,65 @@ backgroundSize: "cover"
 * **Client logos**: From `/assets/img/client-logos/`, `mix-blend-mode: multiply`.
 * **Asset Constraint**: Never hotlink external images. All assets must be local.
 
+### Dot‑Grid Arrow Technique (Custom Cursor)
+
+The horizontal‑scroll cursor uses a chevron arrow formed from evenly spaced dots. This technique generalizes to any shape made of straight segments.
+
+**Method (SVG `<circle>` approach — pixel‑perfect alignment):**
+
+1. **Decompose** the shape into straight line segments (each `(x1,y1) → (x2,y2)`).
+2. For each segment, choose a dot count `n` (≥2).
+3. Compute step increments:
+   ```
+   dx = (x2 - x1) / (n - 1)
+   dy = (y2 - y1) / (n - 1)
+   ```
+4. Generate `n` `<circle cx="…" cy="…" r="…" />` elements along the segment.
+5. The vertex (shared endpoint of two segments) naturally gets two overlapping dots — this is intended and sharpens the corner.
+
+**Example — 2‑segment chevron (right‑pointing arrow):**
+
+| Segment | Start | End | n | dx | dy |
+| --- | --- | | --- | --- | --- | --- |
+| 1 | (5, 3) | (19, 12) | 5 | 3.5 | 2.25 |
+| 2 | (19, 12) | (5, 21) | 5 | −3.5 | 2.25 |
+
+| Dot | cx | cy |
+| --- | --- | --- |
+| 1 | 5 | 3 |
+| 2 | 8.5 | 5.25 |
+| 3 | 12 | 7.5 |
+| 4 | 15.5 | 9.75 |
+| 5 | **19** | **12** (vertex) |
+| 6 | 15.5 | 14.25 |
+| 7 | 12 | 16.5 |
+| 8 | 8.5 | 18.75 |
+| 9 | 5 | 21 |
+
+```tsx
+<svg viewBox="0 0 24 24" fill="currentColor">
+  {dots.map((d, i) => (
+    <circle key={i} cx={d.x} cy={d.y} r={1.0} />
+  ))}
+</svg>
+```
+
+**Sizing & styling:**
+
+- `r="1.0"` produces clean 2px dots (scales with viewBox).
+- Use `fill="currentColor"` and control via CSS `color` (auto‑switches on dark backgrounds).
+- Set rendered size via CSS: `width: 34px; height: 34px`.
+- For a left‑pointing arrow, apply `transform: rotate(180deg)` via CSS class.
+- The circle approach supersedes SVG `strokeDasharray` — dashes drift at path corners and can't guarantee vertex alignment.
+
+**To adapt for any shape:**
+
+1. Draw the shape on a 24×24 (or any) grid.
+2. Record vertex coordinates.
+3. Pick a dot count per segment (5 works well for segments 10–18px long).
+4. Apply the step formula above.
+5. Merge all `<circle>` elements into one `<svg>`.
+
 ### Icons
 
 * **Lucide React** for most UI icons (`ArrowRight`, `ChevronDown`, `Menu`, `X`, etc.).

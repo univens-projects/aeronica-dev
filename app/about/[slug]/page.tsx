@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
-import { Users, Target, ShieldCheck, Award, BookOpen, Briefcase, ChevronRight, CheckCircle } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
+import { Users, Target, ShieldCheck, Award, BookOpen, Briefcase, CheckCircle } from "lucide-react";
 
 const contentMap: Record<string, {
   title: string;
@@ -169,9 +170,9 @@ export default function AboutDetail() {
         {/* Breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "1.2rem", color: "#888", marginBottom: "3rem", textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: "var(--font-mono)" }}>
           <Link href="/" style={{ color: "inherit" }}>Home</Link>
-          <ChevronRight style={{ width: "1.2rem", height: "1.2rem" }} />
+          <DotArrowRight size={12} />
           <Link href="/about" style={{ color: "inherit" }}>About Us</Link>
-          <ChevronRight style={{ width: "1.2rem", height: "1.2rem" }} />
+          <DotArrowRight size={12} />
           <span style={{ color: "#111" }}>{data.title}</span>
         </div>
 

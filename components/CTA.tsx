@@ -2,14 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
 
 const CTA = () => {
   return (
     <section
       id="cta"
       style={{
-        background: "#f3f0ec",
+        background: "#ffffff",
         padding: "var(--section-py) var(--section-px)",
       }}
     >
@@ -113,7 +113,7 @@ const CTA = () => {
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
           >
-            Start a Conversation <ArrowRight size={20} />
+            Start a Conversation <DotArrowRight size={20} />
           </Link>
         </div>
       </div>
