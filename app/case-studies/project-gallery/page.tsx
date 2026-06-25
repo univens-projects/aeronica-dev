@@ -50,7 +50,7 @@ export default function ProjectGallery() {
                 padding: "0.6rem 1.6rem",
                 borderRadius: "0.4rem",
                 border: "1px solid #e5e5e5",
-                background: activeCategory === cat ? "#111" : "#fff",
+                background: activeCategory === cat ? "#21389A" : "#fff",
                 color: activeCategory === cat ? "#fff" : "#555",
                 fontSize: "1.3rem",
                 fontWeight: 500,
@@ -94,7 +94,7 @@ export default function ProjectGallery() {
               <div style={{ padding: "2rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "1rem" }}>
                   <span style={{ fontSize: "1.1rem", color: "#888", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{item.category}</span>
-                  <span style={{ fontSize: "1rem", color: "#fff", background: "#111", padding: "0.2rem 0.6rem", borderRadius: "100px" }}>{item.type}</span>
+                  <span style={{ fontSize: "1rem", color: "#fff", background: "#21389A", padding: "0.2rem 0.6rem", borderRadius: "100px" }}>{item.type}</span>
                 </div>
                 <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.8rem" }}>{item.title}</h3>
                 <p style={{ fontSize: "1.3rem", color: "#555", lineHeight: 1.6 }}>{item.desc}</p>
@@ -104,7 +104,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Video section */}
-        <div style={{ marginTop: "8rem", background: "#111", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
+        <div style={{ marginTop: "8rem", background: "#21389A", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
           <PlayCircle style={{ width: "4rem", height: "4rem", marginBottom: "2rem", opacity: 0.8 }} />
           <h2 style={{ fontSize: "2.8rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Cinematic Flight Footage</h2>
           <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.6)", maxWidth: "50rem", margin: "0 auto 3rem", lineHeight: 1.6 }}>

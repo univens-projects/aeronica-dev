@@ -49,62 +49,35 @@ const Stats = () => {
   return (
     <section ref={sectionRef} id="stats" style={{
       background: "#21389A",
-      padding: "10rem var(--section-px)",
+      padding: "8rem var(--section-px)",
       color: "#fff",
       overflow: "hidden",
       position: "relative",
     }}>
-      <div style={{
-        position: "absolute", inset: 0,
-        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.025) 1px, transparent 0)",
-        backgroundSize: "32px 32px",
-      }} />
-      <div style={{
-        position: "absolute", top: "-30%", right: "-10%",
-        width: "50rem", height: "50rem",
-        borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(0,155,255,0.06) 0%, transparent 70%)",
-      }} />
-      <div style={{
-        position: "absolute", bottom: "-20%", left: "-5%",
-        width: "40rem", height: "40rem",
-        borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(0,155,255,0.04) 0%, transparent 70%)",
-      }} />
       <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
         <MotionReveal as="div" y={15}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "1.2rem",
+              fontSize: "1rem",
               textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              color: "rgba(255,255,255,0.4)",
+              letterSpacing: "0.12em",
+              color: "rgba(255,255,255,0.35)",
               fontWeight: 500,
+              display: "block",
+              marginBottom: "1.2rem",
             }}>
               Our Impact
             </span>
             <h2 style={{
-              fontSize: "clamp(2.8rem, 4vw, 4rem)",
-              fontWeight: 600,
-              letterSpacing: "-0.03em",
-              marginTop: "1.5rem",
+              fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)",
+              fontWeight: 500,
+              letterSpacing: "-0.02em",
               lineHeight: 1.15,
               color: "#fff",
             }}>
               By the Numbers
             </h2>
-            <p style={{
-              fontSize: "1.6rem",
-              color: "rgba(255,255,255,0.6)",
-              lineHeight: 1.7,
-              marginTop: "2rem",
-              maxWidth: "56rem",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}>
-              DGCA-certified drone solutions across agriculture, infrastructure, and surveillance.
-            </p>
           </div>
         </MotionReveal>
 
@@ -112,34 +85,26 @@ const Stats = () => {
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
           gap: "1px",
-          background: "rgba(255,255,255,0.04)",
+          background: "rgba(255,255,255,0.06)",
           borderRadius: "0.4rem",
           overflow: "hidden",
         }}>
           {stats.map((stat, i) => (
-            <MotionReveal key={i} as="div" y={25} delay={i * 0.1}>
+            <MotionReveal key={i} as="div" y={15} delay={i * 0.1}>
               <div style={{
                 textAlign: "center",
-                padding: "4rem 2rem 3.5rem",
-                background: "rgba(255,255,255,0.02)",
-                backdropFilter: "blur(4px)",
-                cursor: "default",
+                padding: "3.5rem 2rem",
+                background: "#21389A",
               }}>
-                <div style={{
-                  width: "2.5rem", height: "2px",
-                  background: "linear-gradient(90deg, rgba(0,155,255,0.5), rgba(0,155,255,0.1))",
-                  borderRadius: "1px",
-                  margin: "0 auto 2rem",
-                }} />
                 <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.15rem" }}>
-                  <span style={{ fontSize: "clamp(3.6rem, 5vw, 6rem)", fontWeight: 600, lineHeight: 1, color: "#fff", fontFamily: "var(--font-mono)", letterSpacing: "-0.04em" }}>
+                  <span style={{ fontSize: "clamp(3.2rem, 4vw, 4.8rem)", fontWeight: 500, lineHeight: 1, color: "#fff", fontFamily: "var(--font-mono)", letterSpacing: "-0.03em" }}>
                     <StatNumber target={stat.value} animated={animated} />
                   </span>
-                  <span style={{ fontSize: "clamp(1.8rem, 2.5vw, 3rem)", fontWeight: 300, color: "rgba(255,255,255,0.25)", lineHeight: 1 }}>
+                  <span style={{ fontSize: "clamp(1.6rem, 2vw, 2.4rem)", fontWeight: 300, color: "rgba(255,255,255,0.2)", lineHeight: 1 }}>
                     {stat.suffix}
                   </span>
                 </div>
-                <div style={{ fontSize: "1.2rem", color: "rgba(255,255,255,0.45)", fontWeight: 500, marginTop: "0.8rem", letterSpacing: "0.06em", fontFamily: "var(--font-mono)", textTransform: "uppercase" }}>
+                <div style={{ fontSize: "1rem", color: "rgba(255,255,255,0.3)", fontWeight: 500, marginTop: "0.6rem", letterSpacing: "0.08em", fontFamily: "var(--font-mono)", textTransform: "uppercase" }}>
                   {stat.label}
                 </div>
               </div>

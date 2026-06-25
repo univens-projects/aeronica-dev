@@ -26,12 +26,9 @@ const ClientsMarquee = () => {
   return (
     <section className="marquee-section">
       <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center", padding: "0 var(--section-px)" }}>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "#888", fontWeight: 500, display: "block", marginBottom: "0.8rem" }}>
-          Trusted by
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "#888", fontWeight: 500, display: "block", marginBottom: "5rem" }}>
+          Trusted by Leading Organisations
         </span>
-        <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.15, color: "#1a1a1a", marginBottom: "4rem" }}>
-          Leading Organisations
-        </h2>
       </div>
       <div className="marquee-track">
         <div className="marquee-row">

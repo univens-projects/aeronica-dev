@@ -41,7 +41,7 @@ borderRadius: "0.4rem",
                 gap: "1.5rem" 
               }} 
               >
-                <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon style={{ width: "2rem", height: "2rem" }} />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ borderRadius: "0.4rem",
         </div>
 
         {/* PROJECT GALLERY SECTION */}
-        <div style={{ background: "#111", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
+        <div style={{ background: "#21389A", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "2rem" }}>
             <ImageIcon style={{ width: "2.4rem", height: "2.4rem" }} />
             <h2 style={{ fontSize: "3.2rem", fontWeight: 600 }}>Project Gallery</h2>

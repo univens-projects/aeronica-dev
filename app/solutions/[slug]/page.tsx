@@ -455,7 +455,7 @@ export default function SolutionDetail() {
               </MotionParallax>
               <div style={{
                 position: "absolute", inset: 0,
-                background: "linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55))",
+                background: "linear-gradient(135deg, rgba(33,56,154,0.85), rgba(33,56,154,0.65))",
               }} />
               <div style={{
                 position: "relative", zIndex: 1,
@@ -564,7 +564,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 4 — Industries Served */}
-      <FadeIn as="section" style={{ background: "#111", color: "#fff", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#21389A", color: "#fff", padding: "8rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -654,7 +654,7 @@ export default function SolutionDetail() {
             </p>
             <Link href="/case-studies" style={{
               display: "inline-flex", alignItems: "center", gap: "0.6rem",
-              padding: "0.8rem 1.8rem", background: "#111", color: "#fff",
+              padding: "0.8rem 1.8rem", background: "#21389A", color: "#fff",
               borderRadius: "0.2rem", fontWeight: 600, fontSize: "1.3rem",
               textDecoration: "none", whiteSpace: "nowrap",
             }}>

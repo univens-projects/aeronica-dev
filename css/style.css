@@ -134,7 +134,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .navbar-logo-img {
   width: auto;
-  height: 6.4rem;
+  height: 3.8rem;
   object-fit: contain;
 }
 
@@ -655,7 +655,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .client-logo {
-  height: 6.4rem;
+  height: 8rem;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);

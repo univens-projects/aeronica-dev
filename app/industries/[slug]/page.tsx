@@ -306,7 +306,7 @@ export default function IndustryDetail() {
             <div key={idx} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.5rem" }}>
                 {idx === 0 && (
-                  <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <Icon style={{ width: "2rem", height: "2rem" }} />
                   </div>
                 )}

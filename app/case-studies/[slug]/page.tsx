@@ -241,7 +241,7 @@ export default function CaseStudyDetail() {
       <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1000px", margin: "0 auto" }}>
         {/* Stat highlight */}
         {data.stats && (
-          <div className="card-hover" style={{ background: "#111", borderRadius: "0.4rem", padding: "3rem", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "4rem", textAlign: "center" }}>
+          <div className="card-hover" style={{ background: "#21389A", borderRadius: "0.4rem", padding: "3rem", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "4rem", textAlign: "center" }}>
             <span style={{ fontSize: "4.8rem", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1 }}>{data.stats.value}</span>
             <span style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.6)", maxWidth: "20rem", lineHeight: 1.3, textAlign: "left" }}>{data.stats.label}</span>
           </div>
@@ -289,7 +289,7 @@ export default function CaseStudyDetail() {
         <div style={{ marginTop: "6rem", textAlign: "center" }}>
           <Link href="/case-studies/project-gallery" style={{
             display: "inline-flex", alignItems: "center", gap: "1rem",
-            padding: "1.4rem 3rem", background: "#111", color: "#fff",
+            padding: "1.4rem 3rem", background: "#21389A", color: "#fff",
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
             textDecoration: "none", transition: "all 0.3s ease",
           }}>

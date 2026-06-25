@@ -285,7 +285,7 @@ export default function ResourceSubPage() {
 
       {/* Hero — dark gradient with category badge, title, metadata */}
       <div style={{
-        background: "linear-gradient(135deg, #21389A 0%, #1a2d6e 100%)",
+        background: "linear-gradient(135deg, #21389A 0%, #21389A 100%)",
         padding: "160px var(--section-px) 60px",
         position: "relative",
         overflow: "hidden",

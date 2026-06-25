@@ -70,7 +70,7 @@ export default function AboutHub() {
             <MotionParallax speed={0.2} style={{ position: "absolute", inset: "-25% 0" }}>
               <div style={{
                 width: "100%", height: "100%",
-                background: "linear-gradient(135deg, #21389A 0%, #1a2d6e 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
+                background: "linear-gradient(135deg, #21389A 0%, #21389A 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
                 backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
               }} />
             </MotionParallax>
@@ -100,7 +100,7 @@ export default function AboutHub() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
             <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
-              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Target style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
@@ -111,7 +111,7 @@ export default function AboutHub() {
               </p>
             </div>
             <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
-              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
@@ -173,7 +173,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 4 — The Technology (Full-Stack Mastery) */}
-      <FadeIn as="section" style={{ background: "#111", color: "#fff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#21389A", color: "#fff", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem" }}>
             <div>
@@ -233,7 +233,7 @@ export default function AboutHub() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", marginBottom: "5rem" }}>
           <Link href="/about/certifications" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
-            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <ShieldCheck style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>DGCA Certified</h3>
@@ -245,7 +245,7 @@ export default function AboutHub() {
           </Link>
 
           <Link href="/about/partners-alliances" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
-            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <Award style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Trusted Partners</h3>
@@ -257,7 +257,7 @@ export default function AboutHub() {
           </Link>
 
           <Link href="/about/about-aeronica" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
-            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+            <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <MapPin style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Made in India</h3>
@@ -271,7 +271,7 @@ export default function AboutHub() {
 
         {/* Stats bar */}
         <div style={{ 
-          background: "#111", borderRadius: "0.4rem", padding: "5rem",
+          background: "#21389A", borderRadius: "0.4rem", padding: "5rem",
           display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "3rem", textAlign: "center"
         }}>
           {[
@@ -305,7 +305,7 @@ export default function AboutHub() {
           <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
             <Link href="/about/careers" style={{
               display: "inline-flex", alignItems: "center", gap: "1rem",
-              padding: "1.4rem 3rem", background: "#111", color: "#fff",
+              padding: "1.4rem 3rem", background: "#21389A", color: "#fff",
               borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
               textDecoration: "none", transition: "all 0.3s ease",
             }}>

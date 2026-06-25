@@ -45,7 +45,7 @@ borderRadius: "0.4rem",
                 gap: "1.5rem" 
               }} 
               >
-                <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon style={{ width: "2rem", height: "2rem" }} />
                 </div>
                 <div>

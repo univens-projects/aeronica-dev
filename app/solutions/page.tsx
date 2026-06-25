@@ -315,7 +315,7 @@ export default function SolutionsHub() {
             return (
               <div key={i} className="card-hover" style={{ border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", background: "#fff" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-                  <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Icon style={{ width: "2rem", height: "2rem" }} />
                   </div>
                   <div>
@@ -341,7 +341,7 @@ export default function SolutionsHub() {
               alignItems: "center",
               gap: "1rem",
               padding: "1.4rem 3rem",
-              background: "#111",
+              background: "#21389A",
               color: "#fff",
               borderRadius: "0.4rem",
               fontWeight: 600,
@@ -356,7 +356,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 4 — The Aeronica Difference */}
-      <FadeIn as="section" style={{ background: "#111", color: "#fff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" style={{ background: "#21389A", color: "#fff", padding: "10rem var(--section-px)" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -478,7 +478,7 @@ export default function SolutionsHub() {
           </h2>
           <div
             style={{
-              background: "#111",
+              background: "#21389A",
               borderRadius: "0.4rem",
               padding: "5rem",
               display: "grid",

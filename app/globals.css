@@ -169,26 +169,7 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
   box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
 }
 
-@media (max-width: 1024px) {
-  .custom-cursor-dot,
-  .custom-cursor-ring {
-    display: none;
-  }
-}
 
-@media (max-width: 1024px) {
-  .custom-cursor-dot,
-  .custom-cursor-ring {
-    display: none;
-  }
-}
-
-@media (max-width: 1024px) {
-  .custom-cursor-dot,
-  .custom-cursor-ring {
-    display: none;
-  }
-}
 
 /* ---------- Navigation ---------- */
 .navbar {
@@ -197,13 +178,13 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
   left: 0;
   right: 0;
   z-index: 2000;
-  padding: 0.6rem 0;
+  padding: 1.2rem 0;
   transition: all 0.4s var(--ease-out-cubic);
   color: #ffffff;
 }
 
 .navbar.is-scrolled {
-  padding: 0.4rem 0;
+  padding: 0.8rem 0;
   background: #fff;
   color: var(--color-text);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
@@ -221,7 +202,7 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
 
 .navbar-logo-img {
   width: auto;
-  height: 6.4rem;
+  height: 3.8rem;
   object-fit: contain;
 }
 
@@ -508,7 +489,7 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
   position: fixed;
   inset: 0;
   z-index: 99;
-  background: rgba(0, 0, 0, 0.96);
+  background: #21389A;
   backdrop-filter: blur(3rem);
   -webkit-backdrop-filter: blur(3rem);
   display: flex;
@@ -728,6 +709,16 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ---------- Card Hover ---------- */
+.card-hover {
+  transition: box-shadow 0.3s var(--ease-out-cubic), transform 0.3s var(--ease-out-cubic);
+}
+
+.card-hover:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
 /* ---------- Section Title (mono + diamond) ---------- */
 .section-title {
   display: flex;
@@ -796,7 +787,7 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
 }
 
 .client-logo {
-  height: 6.4rem;
+  height: 8rem;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);
@@ -861,7 +852,7 @@ html.cursor-dark-bg.cursor-on-text .custom-cursor-dot {
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 50%;
-  background: var(--color-text);
+  background: var(--color-primary-dark);
   color: #ffffff;
   display: flex;
   align-items: center;

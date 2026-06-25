@@ -177,7 +177,7 @@ export default function ResourcesHub() {
           </div>
           <Link href="/contact" style={{
             display: "inline-flex", alignItems: "center", gap: "0.6rem", position: "relative", zIndex: 1,
-            padding: "1.2rem 2.4rem", background: "#111", color: "#fff",
+            padding: "1.2rem 2.4rem", background: "#21389A", color: "#fff",
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none", flexShrink: 0,
           }}>
             Contact Support <ArrowRight style={{ width: "1.4rem", height: "1.4rem" }} />

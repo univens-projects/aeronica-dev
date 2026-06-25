@@ -46,7 +46,7 @@ borderRadius: "0.4rem",
                 gap: "1.5rem" 
               }} 
               >
-                <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon style={{ width: "2rem", height: "2rem" }} />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ borderRadius: "0.4rem",
             </div>
 
             <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem", display: "flex", gap: "2rem", alignItems: "center" }}>
-              <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "#111", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                 <Mail style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <div>
@@ -143,7 +143,7 @@ borderRadius: "0.4rem",
                 <textarea placeholder="Tell us more about your mission and payload requirements..." required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", outline: "none", fontSize: "1.4rem", minHeight: "120px", resize: "vertical" }} />
               </div>
 
-              <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#111", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.4rem", fontSize: "1.4rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
+              <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#21389A", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.4rem", fontSize: "1.4rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
                 <span>{formSubmitted ? "Message Sent!" : "Submit Inquiry"}</span>
                 <ArrowRight style={{ width: "1.6rem", height: "1.6rem" }} />
               </button>
