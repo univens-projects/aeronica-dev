@@ -1,6 +1,6 @@
 # Aeronica Brand Guidelines
 
-Inspired by Fluid Glass & Lesse Studio — Light Mode | Fluid Typography | Glassmorphism
+Inspired by DJI & Lesse Studio — Light Mode | Fluid Typography | Minimal Aesthetic
 
 ---
 
@@ -169,7 +169,7 @@ Use:
 * Light Blue (#009BFF)
 * Dark Blue (#21389A)
 * White (#FFFFFF)
-* Black (#000000)
+* Black (#000000 — typography only)
 
 Recommended ratio:
 
@@ -177,8 +177,16 @@ Recommended ratio:
 60% White
 25% Dark Blue
 10% Light Blue
-5% Black
+5% Black (typography only)
 ```
+
+#### Critical Constraints
+
+* **Black must never be used as a background color.** All dark backgrounds use `--color-primary-dark` (#21389A).
+* **Black is reserved for typography only** (`color: #000000` or `color: #111`).
+* **Agriculture greens** (`#32620E`, `#0CC820`) must only appear in agriculture-specific sections.
+* **Green gradients** must never appear outside agriculture sections.
+* **Hero overlay gradients** are the sole exception — they may use `rgba(0,0,0,α)` for video readability.
 
 ---
 
@@ -346,13 +354,15 @@ The blue palette should remain the dominant identity across all Aeronica corpora
 
 | Token | Value (globals.css) | Usage |
 | --- | --- | --- |
-| `--radius-sm` | 6px | Buttons, inputs |
-| `--radius-md` | 12px | Cards, containers |
-| `--radius-lg` | 20px | Bento items, images |
-| `--radius-xl` | 24px | Large containers |
+| Token | Value | Usage |
+| --- | --- | --- |
+| `--radius-sm` | 2px | Small UI elements |
+| `--radius-md` | 4px | Cards, containers, buttons, inputs |
+| `--radius-lg` | 4px | Bento items, images |
+| `--radius-xl` | 4px | Large containers |
 | `--radius-full` | 9999px | Avatars, dots |
 
-> **Note**: `css/style.css` (legacy) uses 2px/4px; `app/globals.css` (active) uses larger radii.
+> All radii are intentionally small (2–4px) for a modern, professional look (DJI-inspired).
 
 ---
 
@@ -430,24 +440,28 @@ The blue palette should remain the dominant identity across all Aeronica corpora
 
 ### Navigation
 
-| State | Background | Text Color | Height |
+| State | Background | Text Color | Padding |
 | --- | --- | --- | --- |
-| Default (top) | Transparent | White | 1.5rem padding |
-| Scrolled | rgba(255,255,255,0.82) + blur(2rem) | `--color-text` | 0.8rem padding |
+| Default (top) | Transparent | White | 1.2rem 0 |
+| Scrolled | #ffffff + border-bottom | `--color-text` | 0.8rem 0 |
 
 * **Desktop**: Horizontal menu with dropdown support (`navbar-dropdown`).
-* **Mobile ($\le 1024\text{px}$)**: Full-screen overlay (`nav-overlay`) with accordion submenus.
+* **Mobile ($\le 1024\text{px}$)**: Full-screen overlay (`nav-overlay` with `#21389A` background) with accordion submenus.
 * **Dropdown**: White panel, 220px min-width, `box-shadow: 0 12px 40px rgba(0,0,0,0.08)`.
-* **CTA button**: Inverted on scroll (white bg $\rightarrow$ dark bg).
+* **CTA button**: Inverted on scroll (white bg → `#21389A` bg).
+* **Logo height**: `3.8rem` (controlled via `.navbar-logo-img` CSS).
+* **Active link color**: `#21389A` when scrolled.
 
 ### Hero
 
-* Full viewport (100vh), cinematic video background.
+* Full viewport (100vh), cinematic video background with `.navbar-logo-img` CSS.
 * Video starts at 4× speed, transitions to 0.5× slow-motion at 12s.
-* Gradient overlay (rgba(0,0,0,0.4–0.8)) for readability.
-* 4 staggered text entries via `preloader-finished` class.
-* Scroll-based blur via Framer Motion (0px $\rightarrow$ 10px).
-* Parallax shift on background (`translateY` up to 60px).
+* Black gradient overlay (`rgba(0,0,0,0.32)` → `rgba(0,0,0,0.63)`) for video readability. This is the **only** place black is used as a background overlay.
+* Centered text layout with mono eyebrow label, heading, and description.
+* CTA button: white background, `#21389A` text, dot-grid arrow SVG icon.
+* Parallax shift on background (`translateY` up to 60px). Background div extends `bottom: -60px` to prevent exposing the section background during scroll.
+* Background section color: `#21389A`.
+* **No scroll blur effect** (removed).
 
 ### Loading Screen
 
@@ -455,6 +469,25 @@ The blue palette should remain the dominant identity across all Aeronica corpora
 * **Current**: Logo cinematic zoom + glow pulse + light sweep.
 * **Legacy**: 3D spinning cube (Cube-shape).
 * Hidden via `.hidden` class after delay.
+
+### Clients Marquee
+
+* Full-width section with top/bottom borders.
+* Heading: single mono label "Trusted by Leading Organisations" (small, uppercase).
+* Two rows of client logos in infinite horizontal scroll (`marquee-slide` 60s).
+* Even row reverses direction.
+* Logo height: `8rem`, grayscale + 0.5 opacity, full color on hover.
+* Edge fade gradients via `::before`/`::after` pseudo-elements.
+* No card backgrounds — logos float on white.
+
+### Stats (Our Impact)
+
+* Dark blue section background (`#21389A`).
+* Minimal header: mono "Our Impact" label + "By the Numbers" heading (weight 500).
+* 4-column grid with subtle hairline separators (`1px` gap with `rgba(255,255,255,0.06)`).
+* Animated number counters (eased, 2.2s duration) via `IntersectionObserver`.
+* Mono font for numbers, uppercase mono for labels.
+* No decorative elements (no dot grid, no gradient blobs, no dividers).
 
 ### Products Carousel
 
@@ -478,15 +511,15 @@ The blue palette should remain the dominant identity across all Aeronica corpora
 
 ### Footer
 
-* Dark background (`--color-black` = #0b1012).
+* Dark blue background (`--color-primary-dark` = #21389A).
 * 4-column grid (2 on mobile, simplified on tablet).
-* Hover underline animation (`scaleX` from right to left).
-* Newsletter form with dark input styling.
+* All styles inline (no separate CSS classes). SVG social icons.
 * Wordmark watermark at 6% opacity.
 
 ### PageHero (Inner Pages)
 
-* Same layout as Hero: parallax, blur on scroll, breadcrumbs.
+* Solid `#21389A` background (no gradient).
+* No scroll blur, no parallax.
 * Gradient/radial backgrounds with z-index layering.
 
 ---
@@ -538,8 +571,8 @@ Legacy HTML (`index.html`) used Unsplash hotlinked images. Current Next.js app u
 | Effect | Element | Description |
 | --- | --- | --- |
 | Film grain | `.film-grain` | Fixed overlay, SVG noise pattern, 1.5% opacity, hidden on mobile |
-| Custom cursor | `.custom-cursor-dot` / `.custom-cursor-ring` | `mix-blend-mode: difference`, expands on links, hidden on tablet |
-| Blur on scroll | Hero | `filter: blur()` driven by scroll progress |
+| Custom cursor | `.custom-cursor-dot` / `.custom-cursor-ring` | Luminance-based dark/light switching, expands on links, I-beam on text. Always active on all pages (no responsive hide). |
+| Blur on scroll | Hero | Removed — no scroll blur on hero |
 | Page transitions | `.page-overlay` | White flash overlay for route changes |
 | 3D card tilt | `.tilt-element` | Perspective + mouse-follow rotation (Framer Motion) |
 | Parallax | `.parallax-layer` | `will-change: transform`, manual or Framer Motion |
@@ -559,7 +592,9 @@ Legacy HTML (`index.html`) used Unsplash hotlinked images. Current Next.js app u
 * **Client components**: `"use client"` for interactivity (Framer Motion, scroll handlers, state).
 * **Server components**: Static content sections.
 * **Wrapper pattern**: `ClientOnly` wraps interactive children to prevent hydration mismatch.
-* **Layout**: `CinematicEffects` wraps main content; `CustomCursor` and `LoadingScreen` are siblings.
+* **Layout**: `CinematicEffects` wraps Navbar + SmoothScroll + Footer + BackToTop; `CustomCursor` and `LoadingScreen` are siblings.
+* **Smooth scroll**: Lenis v1 via `SmoothScroll` provider wrapping `<main>`.
+* **Animations**: `MotionReveal` (whileInView), `MotionParallax` (useScroll/useTransform), `SectionHeader` (stagger variants) — all framer-motion, no GSAP.
 
 ### Image Paths
 
@@ -577,6 +612,7 @@ Legacy HTML (`index.html`) used Unsplash hotlinked images. Current Next.js app u
 | `react` / `react-dom` | ^18 | UI |
 | `framer-motion` | ^12.40.0 | Animations, scroll, parallax |
 | `lucide-react` | ^0.378.0 | Icons |
+| `lenis` | ^1.3.24 | Smooth scrolling |
 | `tailwindcss` | ^3.4.1 | Utility CSS (minimal, custom CSS primary) |
 | `postcss` / `autoprefixer` | — | PostCSS pipeline |
 | `typescript` | ^5 | Type safety |
