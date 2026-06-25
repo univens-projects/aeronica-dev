@@ -429,6 +429,7 @@ export default function SolutionDetail() {
   return (
     <div className="solution-detail-wrapper" style={{ paddingTop: "0", paddingBottom: "0", color: "#1a1a1a" }}>
       <PageHero
+        variant="child"
         title={data.title}
         subtitle={data.subtitle}
         breadcrumbs={[

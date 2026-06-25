@@ -59,7 +59,7 @@ const Testimonials = () => {
               <p style={{
                 fontSize: "clamp(1.8rem, 2.6rem, 3.2rem)",
                 lineHeight: 1.4,
-                fontWeight: 350,
+                fontWeight: 300,
                 letterSpacing: "-0.01em",
                 opacity: 0.92,
               }}>

@@ -30,6 +30,7 @@ export default function ProjectGallery() {
   return (
     <div className="project-gallery-wrapper" style={{ paddingTop: "0", paddingBottom: "0", color: "#1a1a1a" }}>
       <PageHero
+        variant="child"
         title="Project Gallery"
         subtitle="Explore our visual portfolio of high-resolution orthomosaics, 3D point clouds, and cinematic flight footage from across our project sites."
         breadcrumbs={[
@@ -106,7 +107,7 @@ export default function ProjectGallery() {
         {/* Video section */}
         <div style={{ marginTop: "8rem", background: "#21389A", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
           <PlayCircle style={{ width: "4rem", height: "4rem", marginBottom: "2rem", opacity: 0.8 }} />
-          <h2 style={{ fontSize: "2.8rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Cinematic Flight Footage</h2>
+          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.03em" }}>Cinematic Flight Footage</h2>
           <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.6)", maxWidth: "50rem", margin: "0 auto 3rem", lineHeight: 1.6 }}>
             Watch our drone cinematography reels showcasing aerial surveys, agricultural spraying operations, and infrastructure inspection flights across India.
           </p>

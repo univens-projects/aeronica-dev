@@ -58,11 +58,11 @@ const CTA = () => {
           <span
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "1rem",
+              fontSize: "1.2rem",
               textTransform: "uppercase",
-              letterSpacing: "0.12em",
+              letterSpacing: "0.1em",
               color: "#009BFF",
-              fontWeight: 500,
+              fontWeight: 600,
               display: "block",
               marginBottom: "1rem",
             }}
@@ -72,7 +72,7 @@ const CTA = () => {
           <h2
             style={{
               fontSize: "clamp(2.8rem, 4vw, 4rem)",
-              fontWeight: 700,
+              fontWeight: 600,
               lineHeight: 1.15,
               letterSpacing: "-0.03em",
               color: "#fff",

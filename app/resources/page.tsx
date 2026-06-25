@@ -141,7 +141,7 @@ export default function ResourcesHub() {
                           <Icon style={{ width: "1.8rem", height: "1.8rem" }} />
                         </div>
                         <div>
-                          <h3 style={{ fontSize: "1.6rem", fontWeight: 600, lineHeight: 1.2 }}>{item.title}</h3>
+                          <h3 style={{ fontSize: "1.8rem", fontWeight: 600, lineHeight: 1.2 }}>{item.title}</h3>
                         </div>
                       </div>
                       <p style={{ fontSize: "1.3rem", color: "#555", lineHeight: 1.6, flexGrow: 1 }}>{item.desc}</p>

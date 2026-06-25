@@ -207,6 +207,7 @@ export default function ResourcePage() {
   return (
     <div style={{ color: "#1a1a1a" }}>
       <PageHero
+        variant="child"
         title={data.title}
         subtitle={data.subtitle}
         breadcrumbs={[

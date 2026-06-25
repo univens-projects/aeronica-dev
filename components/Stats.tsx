@@ -59,20 +59,20 @@ const Stats = () => {
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "1rem",
+              fontSize: "1.2rem",
               textTransform: "uppercase",
-              letterSpacing: "0.12em",
+              letterSpacing: "0.1em",
               color: "rgba(255,255,255,0.35)",
-              fontWeight: 500,
+              fontWeight: 600,
               display: "block",
               marginBottom: "1.2rem",
             }}>
               Our Impact
             </span>
             <h2 style={{
-              fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)",
-              fontWeight: 500,
-              letterSpacing: "-0.02em",
+              fontSize: "clamp(2.8rem, 4vw, 4rem)",
+              fontWeight: 600,
+              letterSpacing: "-0.03em",
               lineHeight: 1.15,
               color: "#fff",
             }}>
