@@ -100,9 +100,9 @@ const Products = () => {
   const accentColor = "#21389a";
 
   return (
-    <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="products">
+    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="products">
       <FadeIn>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem", flexWrap: "wrap", gap: "2rem" }}>
+        <div className="responsive-header" style={{ marginBottom: "4rem" }}>
           <div>
             <span className="section-title" style={{ justifyContent: "flex-start" }}>
               <span></span>Products
@@ -114,9 +114,10 @@ const Products = () => {
               DGCA-certified UAV platforms engineered for Indian conditions, from precision agriculture to industrial inspection.
             </p>
           </div>
-          <div style={{ display: "flex", gap: "0.8rem", flexShrink: 0 }}>
+          <div className="prod-header-arrows" style={{ display: "flex", gap: "0.8rem", flexShrink: 0 }}>
             <button
               onClick={() => scrollTo(Math.max(0, activeIndex - 1))}
+              className="prod-nav-arrow"
               style={{
                 width: "4rem", height: "4rem", borderRadius: "50%", border: "1px solid #e5e5e5",
                 background: activeIndex === 0 ? "#ffffff" : "#fff", color: activeIndex === 0 ? "#888" : "#111",
@@ -129,6 +130,7 @@ const Products = () => {
             </button>
             <button
               onClick={() => scrollTo(Math.min(products.length - 1, activeIndex + 1))}
+              className="prod-nav-arrow"
               style={{
                 width: "4rem", height: "4rem", borderRadius: "50%", border: "1px solid #e5e5e5",
                 background: activeIndex === products.length - 1 ? "#ffffff" : "#fff", color: activeIndex === products.length - 1 ? "#888" : "#111",
@@ -143,6 +145,18 @@ const Products = () => {
         </div>
       </FadeIn>
 
+      <div className="prod-tabs">
+        {products.map((product, index) => (
+          <button
+            key={index}
+            className={`prod-tab ${index === activeIndex ? "is-active" : ""}`}
+            onClick={() => scrollTo(index)}
+          >
+            {product.title}
+          </button>
+        ))}
+      </div>
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -152,7 +166,7 @@ const Products = () => {
       >
         <div
           ref={containerRef}
-          onScroll={handleScroll}
+          onScroll={() => handleScroll()}
           className="horizontal-scroll"
           style={{
             display: "flex", gap: "2.4rem", overflowX: "auto", scrollSnapType: "x mandatory",
@@ -171,8 +185,8 @@ const Products = () => {
                 display: "flex", flexDirection: "column",
               }}
             >
-              <div style={{
-                height: "24rem", background: `linear-gradient(135deg, ${accentColor} 0%, #009BFF 100%)`,
+              <div className="prod-card-hero" style={{
+                background: `linear-gradient(135deg, ${accentColor} 0%, #009BFF 100%)`,
                 display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden",
               }}>
                 <div style={{
@@ -207,11 +221,11 @@ const Products = () => {
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
-              <div style={{ padding: "2.4rem", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+              <div className="prod-card-body" style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
                 <h3 style={{ fontSize: "2.2rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "0.8rem", lineHeight: 1.2 }}>{product.title}</h3>
                 <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, flexGrow: 1, marginBottom: "2rem" }}>{product.desc}</p>
                 <div style={{ borderTop: "1px solid #e5e5e5", paddingTop: "1.6rem", marginBottom: "2rem" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.8rem" }}>
+                  <div className="prod-specs">
                     {product.specs.map((spec) => (
                       <div key={spec.label}>
                         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.2rem" }}>{spec.label}</div>
@@ -243,8 +257,9 @@ const Products = () => {
           <button
             key={index}
             onClick={() => scrollTo(index)}
+            className="prod-pagination-btn"
             style={{
-              background: "none", border: "none", cursor: "pointer", padding: 0,
+              background: "none", border: "none", cursor: "pointer",
               color: index === activeIndex ? accentColor : "#888",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}

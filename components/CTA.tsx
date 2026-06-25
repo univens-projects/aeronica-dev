@@ -13,19 +13,14 @@ const CTA = () => {
         padding: "var(--section-py) var(--section-px)",
       }}
     >
-      <div
+      <div className="cta-inner"
         style={{
           maxWidth: "1440px",
           margin: "0 auto",
           background: "#21389A",
           borderRadius: "0.8rem",
-          padding: "6rem 7rem",
           position: "relative",
           overflow: "hidden",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "4rem",
         }}
       >
         {/* decorative accent */}
@@ -108,7 +103,6 @@ const CTA = () => {
               fontWeight: 600,
               textDecoration: "none",
               transition: "opacity 0.2s ease",
-              whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}

@@ -23,8 +23,8 @@ export default function AboutHub() {
       />
 
       {/* Section 1 — The Origin Story */}
-      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+        <div className="ab-split">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -46,7 +46,7 @@ export default function AboutHub() {
               designers committed to one principle: build everything in-house, for Indian conditions, 
               with Indian talent.
             </p>
-            <div style={{ display: "flex", gap: "4rem", paddingTop: "2rem", borderTop: "1px solid #e5e5e5" }}>
+            <div className="gap-4" style={{ display: "flex", paddingTop: "2rem", borderTop: "1px solid #e5e5e5", flexWrap: "wrap" }}>
               <div>
                 <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>5+</div>
                 <div style={{ fontSize: "1.3rem", color: "#888", marginTop: "0.3rem" }}>Years of R&amp;D</div>
@@ -61,9 +61,8 @@ export default function AboutHub() {
               </div>
             </div>
           </div>
-          <div style={{
+          <div className="responsive-padding" style={{
             borderRadius: "0.4rem",
-            padding: "5rem",
             color: "#fff",
             position: "relative",
             overflow: "hidden",
@@ -89,7 +88,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 2 — Mission & Vision */}
-      <FadeIn as="section" style={{ background: "#ffffff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -99,8 +98,8 @@ export default function AboutHub() {
               Purpose that drives every flight
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
-            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+          <div className="mv-split">
+            <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Target style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
@@ -111,7 +110,7 @@ export default function AboutHub() {
                 DGCA-compliant drone ecosystems that are secure, reliable, and purpose-built.
               </p>
             </div>
-            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
@@ -127,8 +126,8 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 3 — The People */}
-      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+        <div className="responsive-header" style={{ marginBottom: "4rem" }}>
           <div>
             <span className="section-title">
               <span></span>The Team
@@ -152,17 +151,17 @@ export default function AboutHub() {
           embedded electronics, GIS analytics, and cloud infrastructure&mdash;all under one roof 
           in Pune, Maharashtra.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
+        <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           {[
             { title: "Aerospace & Design", count: "12+", desc: "Aeronautical engineers, composite specialists, and structural simulation experts.", href: "/about/technology-stack" },
             { title: "Embedded Systems", count: "8+", desc: "Firmware engineers building our indigenous Nitya flight controller and sensor fusion stacks.", href: "/about/technology-stack" },
             { title: "GIS & Data Science", count: "10+", desc: "Spatial analysts and ML engineers processing terabytes of aerial data into actionable intelligence.", href: "/about/technology-stack" },
             { title: "Field Operations", count: "15+", desc: "DGCA-certified pilots and ground support crews running missions across 12 Indian states.", href: "/about/careers" },
           ].map((area, i) => (
-            <Link key={i} href={area.href} className="card-hover" style={{
+            <Link key={i} href={area.href} className="card-hover p-3" style={{
               textDecoration: "none", color: "inherit",
               background: "#fff", border: "1px solid #e5e5e5",
-              padding: "3rem", borderRadius: "0.4rem",
+              borderRadius: "0.4rem",
               transition: "all 0.3s ease",
             }}>
               <div style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#111", marginBottom: "0.8rem" }}>{area.count}</div>
@@ -174,9 +173,9 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 4 — The Technology (Full-Stack Mastery) */}
-      <FadeIn as="section" style={{ background: "#21389A", color: "#fff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#21389A", color: "#fff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem" }}>
+          <div className="responsive-header" style={{ marginBottom: "4rem" }}>
             <div>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 The Stack
@@ -199,7 +198,7 @@ export default function AboutHub() {
             technology chain&mdash;from the carbon fiber airframe to the cloud analytics dashboard. 
             This vertical integration is the foundation of our reliability.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "2rem" }}>
+          <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
             {[
               { icon: Cpu, title: "Nitya Flight Controller", desc: "Indigenous STM32-based avionics with triple-redundant IMU and military-grade encrypted telemetry." },
               { icon: ShieldCheck, title: "DGCA Type-Certified", desc: "Samrudhhi-10L is fully DGCA type-certified. Every platform meets stringent airworthiness standards." },
@@ -222,7 +221,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 5 — Trust & Proof (Clients, Certifications, Partners) */}
-      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Trust &amp; Recognition
@@ -232,8 +231,8 @@ export default function AboutHub() {
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", marginBottom: "5rem" }}>
-          <Link href="/about/certifications" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+        <div className="gap-25" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", marginBottom: "5rem" }}>
+          <Link href="/about/certifications" className="card-hover p-35" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <ShieldCheck style={{ width: "2rem", height: "2rem" }} />
             </div>
@@ -245,7 +244,7 @@ export default function AboutHub() {
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>View Certifications →</span>
           </Link>
 
-          <Link href="/about/partners-alliances" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+          <Link href="/about/partners-alliances" className="card-hover p-35" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <Award style={{ width: "2rem", height: "2rem" }} />
             </div>
@@ -257,7 +256,7 @@ export default function AboutHub() {
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>Our Partners →</span>
           </Link>
 
-          <Link href="/about/about-aeronica" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
+          <Link href="/about/about-aeronica" className="card-hover p-35" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <MapPin style={{ width: "2rem", height: "2rem" }} />
             </div>
@@ -271,9 +270,9 @@ export default function AboutHub() {
         </div>
 
         {/* Stats bar */}
-        <div style={{ 
-          background: "#21389A", borderRadius: "0.4rem", padding: "5rem",
-          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "3rem", textAlign: "center"
+        <div className="responsive-padding gap-3" style={{ 
+          background: "#21389A", borderRadius: "0.4rem",
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", textAlign: "center"
         }}>
           {[
             { value: "50+", label: "Projects Delivered" },
@@ -290,7 +289,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 6 — Join the Mission */}
-      <FadeIn as="section" style={{ background: "#ffffff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Join Us

@@ -441,7 +441,7 @@ export default function SolutionDetail() {
       />
 
       {/* Section 1 — Overview */}
-      <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{
               position: "relative",
               border: "1px solid #e5e5e5",
@@ -459,13 +459,8 @@ export default function SolutionDetail() {
                 position: "absolute", inset: 0,
                 background: "linear-gradient(135deg, rgba(33,56,154,0.85), rgba(33,56,154,0.65))",
               }} />
-              <div style={{
+              <div className="hero-overview p-4" style={{
                 position: "relative", zIndex: 1,
-                padding: "4rem",
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "4rem",
-                alignItems: "center",
                 color: "#fff",
               }}>
             <div>
@@ -482,10 +477,9 @@ export default function SolutionDetail() {
                 {data.overview.text}
               </p>
             </div>
-            <div style={{
+            <div className="p-4" style={{
               background: "rgba(255,255,255,0.1)",
               borderRadius: "0.4rem",
-              padding: "4rem",
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
@@ -503,7 +497,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 2 — Core Capabilities */}
-      <FadeIn as="section" style={{ background: "#ffffff", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py" style={{ background: "#ffffff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -516,15 +510,14 @@ export default function SolutionDetail() {
               A comprehensive set of capabilities powered by indigenous hardware and AI-driven analytics.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem" }}>
+          <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
             {data.capabilities.map((cap: any, i: number) => {
               const CapIcon = cap.icon;
               return (
-                <div key={i} className="card-hover" style={{
+                <div key={i} className="card-hover p-3" style={{
                   background: "#fff",
                   border: "1px solid #e5e5e5",
                   borderRadius: "0.4rem",
-                  padding: "3rem",
                   transition: "all 0.3s ease",
                 }}>
                   <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: data.accent, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", marginBottom: "1.5rem" }}>
@@ -540,7 +533,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 3 — How We Deliver / Methodology */}
-      <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Methodology
@@ -566,7 +559,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 4 — Industries Served */}
-      <FadeIn as="section" style={{ background: "#21389A", color: "#fff", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py" style={{ background: "#21389A", color: "#fff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -609,7 +602,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 5 — Impact */}
-      <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Impact
@@ -624,13 +617,12 @@ export default function SolutionDetail() {
         <div style={{
           background: data.accent,
           borderRadius: "0.4rem",
-          padding: "5rem",
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
           gap: "3rem",
           textAlign: "center",
           color: "#fff",
-        }}>
+        }} className="responsive-padding gap-3">
           {data.impact.map((stat: any, i: number) => (
             <div key={i}>
               <div style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 700, letterSpacing: "-0.03em" }}>{stat.value}</div>
@@ -658,7 +650,7 @@ export default function SolutionDetail() {
               display: "inline-flex", alignItems: "center", gap: "0.6rem",
               padding: "0.8rem 1.8rem", background: "#21389A", color: "#fff",
               borderRadius: "0.2rem", fontWeight: 600, fontSize: "1.3rem",
-              textDecoration: "none", whiteSpace: "nowrap",
+              textDecoration: "none",
             }}>
               View Study <DotArrowRight size={12} />
             </Link>

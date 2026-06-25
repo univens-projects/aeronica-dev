@@ -118,7 +118,7 @@ export default function SolutionsHub() {
       />
 
       {/* Section 1 — Hardware Platforms */}
-      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Built in India
@@ -151,10 +151,10 @@ export default function SolutionsHub() {
                     style={{
                       position: "relative",
                       overflow: "hidden",
-                      padding: "3rem",
                       textAlign: "center",
                       color: "#fff",
                     }}
+                    className="p-3"
                   >
                     <MotionParallax speed={0.2} style={{ position: "absolute", inset: "-30% 0" }}>
                       <div style={{
@@ -175,7 +175,7 @@ export default function SolutionsHub() {
                 <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "2rem", flexGrow: 1 }}>
                   {platform.desc}
                 </p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", borderTop: "1px solid #e5e5e5", paddingTop: "1.5rem" }}>
+                <div className="specs-2col" style={{ borderTop: "1px solid #e5e5e5", paddingTop: "1.5rem" }}>
                   {platform.specs.map((spec, j) => (
                     <div key={j}>
                       <span style={{ fontSize: "1rem", color: "#888", display: "block" }}>{spec.label}</span>
@@ -190,7 +190,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 2 — Solution Categories */}
-      <FadeIn as="section" style={{ background: "#ffffff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
@@ -205,21 +205,20 @@ export default function SolutionsHub() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2.5rem" }}>
+          <div className="gap-25" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
             {solutionCategories.map((solution, index) => {
               const Icon = solution.icon;
               return (
                 <Link
                   key={index}
                   href={solution.href}
-                  className="card-hover"
+                  className="card-hover p-35"
                   style={{
                     textDecoration: "none",
                     color: "inherit",
                     background: "#fff",
                     border: "1px solid #e5e5e5",
                     borderRadius: "0.4rem",
-                    padding: "3.5rem",
                     transition: "all 0.3s ease",
                     display: "flex",
                     flexDirection: "column",
@@ -271,7 +270,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 3 — Real-World Impact */}
-      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Proven Impact
@@ -285,7 +284,7 @@ export default function SolutionsHub() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "2.5rem", marginBottom: "6rem" }}>
+        <div className="gap-25" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", marginBottom: "6rem" }}>
           {[
             {
               icon: Tractor,
@@ -314,7 +313,7 @@ export default function SolutionsHub() {
           ].map((story, i) => {
             const Icon = story.icon;
             return (
-              <div key={i} className="card-hover" style={{ border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", background: "#fff" }}>
+              <div key={i} className="card-hover p-35" style={{ border: "1px solid #e5e5e5", borderRadius: "0.4rem", background: "#fff" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
                   <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Icon style={{ width: "2rem", height: "2rem" }} />
@@ -357,7 +356,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 4 — The Aeronica Difference */}
-      <FadeIn as="section" style={{ background: "#21389A", color: "#fff", padding: "10rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#21389A", color: "#fff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -368,7 +367,7 @@ export default function SolutionsHub() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
+          <div className="gap-25" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
             {[
               {
                 icon: Cpu,
@@ -407,7 +406,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 5 — How We Deliver */}
-      <FadeIn as="section" style={{ padding: "10rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Delivery Model
@@ -421,7 +420,7 @@ export default function SolutionsHub() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "2rem" }}>
+        <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
           {[
             {
               step: "01",
@@ -469,7 +468,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 6 — Nationwide Reach */}
-      <FadeIn as="section" style={{ background: "#ffffff", padding: "8rem var(--section-px)" }}>
+      <FadeIn as="section" className="section-py" style={{ background: "#ffffff" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Scale &amp; Reach
@@ -478,13 +477,12 @@ export default function SolutionsHub() {
             Operating Across India
           </h2>
           <div
+            className="responsive-padding gap-3"
             style={{
               background: "#21389A",
               borderRadius: "0.4rem",
-              padding: "5rem",
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: "3rem",
               textAlign: "center",
             }}
           >

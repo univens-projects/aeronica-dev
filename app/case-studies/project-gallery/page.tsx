@@ -41,7 +41,7 @@ export default function ProjectGallery() {
         ]}
       />
 
-      <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* Category filter */}
         <div style={{ display: "flex", gap: "1rem", marginBottom: "4rem", flexWrap: "wrap" }}>
           {categories.map(cat => (
@@ -66,7 +66,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Gallery grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "2rem" }}>
+        <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))" }}>
           {filtered.map((item, i) => (
             <div
               key={i}
@@ -106,7 +106,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Video section */}
-        <div style={{ marginTop: "8rem", background: "#21389A", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
+        <div className="card-padding-xl" style={{ marginTop: "8rem", background: "#21389A", color: "#fff", borderRadius: "0.4rem", textAlign: "center" }}>
           <PlayCircle style={{ width: "4rem", height: "4rem", marginBottom: "2rem", opacity: 0.8 }} />
           <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.03em" }}>Cinematic Flight Footage</h2>
           <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.6)", maxWidth: "50rem", margin: "0 auto 3rem", lineHeight: 1.6 }}>

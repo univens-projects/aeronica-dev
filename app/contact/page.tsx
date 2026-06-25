@@ -25,7 +25,7 @@ export default function ContactHub() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]}
       />
 
-      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto", paddingTop: "8rem" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* QUICK ACTION GRID */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem", marginBottom: "8rem" }}>
           {[
@@ -59,10 +59,10 @@ borderRadius: "0.4rem",
           })}
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "6rem", alignItems: "start" }}>
+        <div className="contact-grid">
           {/* LEFT SIDE: OFFICE & FACTORY */}
           <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
-            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
                 <Building style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Corporate Headquarters</h2>
@@ -79,7 +79,7 @@ borderRadius: "0.4rem",
               </div>
             </div>
 
-            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
                 <Sparkles style={{ width: "2.4rem", height: "2.4rem", color: "#111" }} />
                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600 }}>Manufacturing Facility</h2>
@@ -92,7 +92,7 @@ borderRadius: "0.4rem",
               </div>
             </div>
 
-            <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem", display: "flex", gap: "2rem", alignItems: "center" }}>
+            <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", display: "flex", gap: "2rem", alignItems: "center", flexWrap: "wrap" }}>
               <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                 <Mail style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
@@ -104,14 +104,14 @@ borderRadius: "0.4rem",
           </div>
 
           {/* RIGHT SIDE: MODERN CONTACT FORM */}
-          <div style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "5rem", boxShadow: "0 15px 40px rgba(0,0,0,0.01)" }}>
+          <div className="card-padding-xl" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", boxShadow: "0 15px 40px rgba(0,0,0,0.01)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "3rem" }}>
               <MessageSquare style={{ width: "2.2rem", height: "2.2rem", color: "#111" }} />
               <h2 style={{ fontSize: "2.4rem", fontWeight: 600, letterSpacing: "-0.02em" }}>Send Us a Message</h2>
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+              <div className="form-row">
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Full Name *</label>
                   <input type="text" placeholder="John Doe" required style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", outline: "none", fontSize: "1.4rem" }} />
@@ -122,7 +122,7 @@ borderRadius: "0.4rem",
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+              <div className="form-row">
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                   <label style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#888" }}>Phone Number</label>
                   <input type="tel" placeholder="+91 XXXXX XXXXX" style={{ width: "100%", padding: "1.4rem", background: "#ffffff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", outline: "none", fontSize: "1.4rem" }} />

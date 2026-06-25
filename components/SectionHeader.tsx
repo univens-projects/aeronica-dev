@@ -101,7 +101,7 @@ export default function SectionHeader({
         </motion.p>
       )}
       {action && (
-        <motion.div variants={childVariants} style={{ textAlign: "right", marginTop: "2rem" }}>
+        <motion.div variants={childVariants} className="section-header-action" style={{ textAlign: "right", marginTop: "2rem" }}>
           {action}
         </motion.div>
       )}

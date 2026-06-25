@@ -17,7 +17,7 @@ export default function IndustriesHub() {
       />
 
       {/* Industries Grid */}
-      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto", paddingTop: "8rem" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
           {[
             { title: "Government", icon: Landmark, href: "/industries/government", desc: "Policy support, national security, and strategic asset mapping." },

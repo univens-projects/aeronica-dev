@@ -21,12 +21,12 @@ const services = [
 
 export default function Services() {
   return (
-    <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="services">
+    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="services">
       <div style={{ marginBottom: "5rem" }}>
         <span className="section-title" style={{ justifyContent: "flex-start" }}>
           <span></span>What We Offer
         </span>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "2rem" }}>
+        <div className="responsive-header" style={{ marginBottom: "4rem" }}>
           <div>
             <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
               Our Services

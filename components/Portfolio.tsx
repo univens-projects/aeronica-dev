@@ -39,7 +39,7 @@ const metaIcons: Record<string, React.ElementType> = {
 
 export default function Portfolio() {
   return (
-    <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="portfolio">
+    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="portfolio">
       <SectionHeader
         eyebrow="Our Work"
         title="Featured Projects"
@@ -63,27 +63,24 @@ export default function Portfolio() {
           <Link
             key={index}
             href={project.href}
+            className="portfolio-card"
             style={{
               textDecoration: "none",
               color: "inherit",
-              display: "flex",
-              flexDirection: "row",
               background: "#fff",
               border: "1px solid #e5e5e5",
               borderRadius: "0.4rem",
               overflow: "hidden",
-              minHeight: "220px",
             }}
           >
-            <div style={{
-              width: "280px",
-              minWidth: "200px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-              overflow: "hidden",
-            }}>
+            <div className="portfolio-card-image"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+                overflow: "hidden",
+              }}>
               <MotionParallax speed={0.3} style={{ position: "absolute", inset: "-30% 0" }}>
                 <div style={{
                   width: "100%", height: "100%",

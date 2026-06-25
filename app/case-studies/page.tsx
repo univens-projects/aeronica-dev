@@ -17,7 +17,7 @@ export default function CaseStudiesHub() {
       />
 
       {/* Case Study Categories Grid */}
-      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto", paddingTop: "8rem" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", marginBottom: "10rem" }}>
           {[
             { title: "Government Projects", desc: "National security and strategic asset mapping for central and state agencies.", href: "/case-studies/government-projects", icon: FileText },
@@ -54,7 +54,7 @@ borderRadius: "0.4rem",
         </div>
 
         {/* PROJECT GALLERY SECTION */}
-        <div style={{ background: "#21389A", color: "#fff", borderRadius: "0.4rem", padding: "6rem", textAlign: "center" }}>
+        <div className="card-padding-xl" style={{ background: "#21389A", color: "#fff", borderRadius: "0.4rem", textAlign: "center" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "2rem" }}>
             <ImageIcon style={{ width: "2.4rem", height: "2.4rem" }} />
             <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em" }}>Project Gallery</h2>
@@ -62,7 +62,7 @@ borderRadius: "0.4rem",
           <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.7)", maxWidth: "60rem", margin: "0 auto 4rem", lineHeight: "1.6" }}>
             Explore our visual portfolio of high-resolution orthomosaics, 3D point clouds, and cinematic flight footage from across our project sites.
           </p>
-          <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
             <Link href="/case-studies/project-gallery" style={{ 
               display: "flex", 
               alignItems: "center", 

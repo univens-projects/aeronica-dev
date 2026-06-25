@@ -35,13 +35,13 @@ const techPillars = [
 
 export default function Technology() {
   return (
-    <section className="dot-watermark" style={{ background: "#21389A", padding: "8rem var(--section-px)" }} id="technology">
+    <section className="dot-watermark section-py" style={{ background: "#21389A" }} id="technology">
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "flex-start", color: "rgba(255,255,255,0.8)" }}>
             <span></span>Our Technology
           </span>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "2rem" }}>
+          <div className="responsive-header" style={{ marginBottom: "4rem" }}>
             <div>
               <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.1, color: "#fff" }}>
                 Built in India, Built for Impact

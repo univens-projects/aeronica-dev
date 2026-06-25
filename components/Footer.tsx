@@ -34,13 +34,11 @@ const Footer = () => {
   return (
     <footer style={{ background: "#21389A", color: "#fff", overflow: "hidden" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "6rem var(--section-px) 0" }}>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1.5fr 1fr 1fr 1fr",
-          gap: "3rem",
-          paddingBottom: "4rem",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-        }}>
+        <div className="footer-grid"
+          style={{
+            paddingBottom: "4rem",
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
+          }}>
           <div>
             <Image src="/assets/img/aeronica-logo.png" alt="Aeronica" width={200} height={50} style={{ width: "16rem", height: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem" }} />
             <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.7, maxWidth: "28rem" }}>

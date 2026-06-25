@@ -27,7 +27,7 @@ const news = [
 
 export default function News() {
   return (
-    <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="news">
+    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="news">
       <SectionHeader
         eyebrow="Latest News"
         title="Insights & Updates"
@@ -51,16 +51,13 @@ export default function News() {
           <Link
             key={index}
             href={item.href}
+            className="news-card"
             style={{
               textDecoration: "none",
               color: "inherit",
-              display: "flex",
-              alignItems: "center",
-              gap: "3rem",
               background: "#fff",
               border: "1px solid #e5e5e5",
               borderRadius: "0.4rem",
-              padding: "3rem 3.5rem",
             }}
           >
             <div style={{
@@ -80,11 +77,11 @@ export default function News() {
               </MotionParallax>
               <span style={{ position: "relative", zIndex: 1 }}>{index + 1}</span>
             </div>
-            <div style={{ flexGrow: 1 }}>
+            <div className="news-card-content" style={{ flexGrow: 1 }}>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "0.4rem", lineHeight: 1.3 }}>{item.title}</h3>
               <p style={{ fontSize: "1.4rem", color: "#888", lineHeight: 1.6 }}>{item.excerpt}</p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.6rem", flexShrink: 0 }}>
+            <div className="news-card-meta" style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.6rem", flexShrink: 0 }}>
               <span style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "1.3rem", color: "#888" }}>
                 <Calendar style={{ width: "1.4rem", height: "1.4rem" }} /> {item.date}
               </span>

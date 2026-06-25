@@ -128,6 +128,22 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleScroll = () => setIsMobileMenuOpen(false);
+    window.addEventListener("scroll", handleScroll, { passive: true, once: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isMobileMenuOpen]);
+
   const showBackground = pathname !== "/" || isScrolled;
   const isSolutionsActive = pathname.startsWith("/solutions");
   const isIndustriesActive = pathname.startsWith("/industries");
@@ -136,7 +152,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`navbar ${showBackground ? "is-scrolled" : ""}`} id="navbar" suppressHydrationWarning>
+      <div className={`navbar ${showBackground ? "is-scrolled" : ""} ${isMobileMenuOpen ? "overlay-open" : ""}`} id="navbar" suppressHydrationWarning>
         <div className="navbar-container">
           <Link href="/" className="navbar-logo" aria-label="Aeronica">
             <Image 
@@ -265,70 +281,106 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`nav-overlay ${isMobileMenuOpen ? "is-open" : ""}`} id="navOverlay">
+      <div className={`nav-overlay ${isMobileMenuOpen ? "is-open" : ""}`} id="navOverlay" onClick={(e) => { const t = e.target as HTMLElement; if (t === e.currentTarget || t.classList.contains("nav-overlay-menu")) setIsMobileMenuOpen(false); }}>
         <nav className="nav-overlay-menu">
           <Link href="/" className={`nav-overlay-link ${pathname === "/" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
           <Link href="/about" className={`nav-overlay-link ${pathname.startsWith("/about") ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
           <div className="nav-overlay-group">
-            <button 
-              className={`nav-overlay-link nav-overlay-group-trigger ${isSolutionsActive ? "active" : ""}`}
-              onClick={() => setOpenDropdown(openDropdown === "mobile-solutions" ? null : "mobile-solutions")}
-            >
-              Solutions <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-            </button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+              <Link href="/solutions" className={`nav-overlay-link ${isSolutionsActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
+              <button 
+                className={`nav-overlay-group-trigger ${openDropdown === "mobile-solutions" ? "is-open" : ""}`}
+                onClick={() => setOpenDropdown(openDropdown === "mobile-solutions" ? null : "mobile-solutions")}
+                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
+              >
+                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
+              </button>
+            </div>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-solutions" ? "is-open" : ""}`}>
-              {solutionLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                  {link.label}
-                </Link>
+              {solutionCategories.map((cat) => (
+                <div key={cat.title}>
+                  <span className="nav-overlay-subheading">{cat.title}</span>
+                  {cat.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
 
           <div className="nav-overlay-group">
-            <button 
-              className={`nav-overlay-link nav-overlay-group-trigger ${isIndustriesActive ? "active" : ""}`}
-              onClick={() => setOpenDropdown(openDropdown === "mobile-industries" ? null : "mobile-industries")}
-            >
-              Industries <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-            </button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+              <Link href="/industries" className={`nav-overlay-link ${isIndustriesActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
+              <button 
+                className={`nav-overlay-group-trigger ${openDropdown === "mobile-industries" ? "is-open" : ""}`}
+                onClick={() => setOpenDropdown(openDropdown === "mobile-industries" ? null : "mobile-industries")}
+                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
+              >
+                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
+              </button>
+            </div>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-industries" ? "is-open" : ""}`}>
-              {industryLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                  {link.label}
-                </Link>
+              {industryCategories.map((cat) => (
+                <div key={cat.title}>
+                  <span className="nav-overlay-subheading">{cat.title}</span>
+                  {cat.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
 
           <div className="nav-overlay-group">
-            <button 
-              className={`nav-overlay-link nav-overlay-group-trigger ${isCaseStudiesActive ? "active" : ""}`}
-              onClick={() => setOpenDropdown(openDropdown === "mobile-case-studies" ? null : "mobile-case-studies")}
-            >
-              Case Studies <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-            </button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+              <Link href="/case-studies" className={`nav-overlay-link ${isCaseStudiesActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
+              <button 
+                className={`nav-overlay-group-trigger ${openDropdown === "mobile-case-studies" ? "is-open" : ""}`}
+                onClick={() => setOpenDropdown(openDropdown === "mobile-case-studies" ? null : "mobile-case-studies")}
+                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
+              >
+                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
+              </button>
+            </div>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-case-studies" ? "is-open" : ""}`}>
-              {caseStudyLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                  {link.label}
-                </Link>
+              {caseStudyCategories.map((cat) => (
+                <div key={cat.title}>
+                  <span className="nav-overlay-subheading">{cat.title}</span>
+                  {cat.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
 
           <div className="nav-overlay-group">
-            <button 
-              className={`nav-overlay-link nav-overlay-group-trigger ${isResourcesActive ? "active" : ""}`}
-              onClick={() => setOpenDropdown(openDropdown === "mobile-resources" ? null : "mobile-resources")}
-            >
-              Resources <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-            </button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+              <Link href="/resources" className={`nav-overlay-link ${isResourcesActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Resources</Link>
+              <button 
+                className={`nav-overlay-group-trigger ${openDropdown === "mobile-resources" ? "is-open" : ""}`}
+                onClick={() => setOpenDropdown(openDropdown === "mobile-resources" ? null : "mobile-resources")}
+                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
+              >
+                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
+              </button>
+            </div>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-resources" ? "is-open" : ""}`}>
-              {resourceLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                  {link.label}
-                </Link>
+              {resourceCategories.map((cat) => (
+                <div key={cat.title}>
+                  <span className="nav-overlay-subheading">{cat.title}</span>
+                  {cat.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           </div>

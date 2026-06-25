@@ -62,9 +62,7 @@ export default function ResourcesHub() {
       {/* Stats Bar */}
       <FadeIn>
         <div style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px",
-            background: "#e5e5e5", borderRadius: "0.4rem", overflow: "hidden",
+          <div className="resources-stats" style={{
             marginTop: "-3rem", position: "relative", zIndex: 3,
           }}>
             {stats.map((stat, i) => (
@@ -80,9 +78,9 @@ export default function ResourcesHub() {
       {/* Featured Resource */}
       <FadeIn>
         <div style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "6rem auto 0" }}>
-          <div style={{
+          <div className="p-35" style={{
             background: "#21389A", borderRadius: "0.4rem",
-            padding: "3.5rem 4rem", display: "flex", alignItems: "center", justifyContent: "space-between",
+            display: "flex", alignItems: "center", justifyContent: "space-between",
             gap: "3rem", flexWrap: "wrap", position: "relative", overflow: "hidden",
           }}>
             <div style={{
@@ -162,9 +160,9 @@ export default function ResourcesHub() {
 
       {/* CTA Banner */}
       <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{
+        <div className="p-4" style={{
           marginTop: "6rem", background: "#ffffff", borderRadius: "0.4rem",
-          padding: "4rem", display: "flex", alignItems: "center",
+          display: "flex", alignItems: "center",
           justifyContent: "space-between", gap: "3rem", flexWrap: "wrap",
           position: "relative", overflow: "hidden",
         }}>

@@ -47,9 +47,8 @@ const Stats = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="stats" className="dot-watermark" style={{
+    <section ref={sectionRef} id="stats" className="dot-watermark section-py" style={{
       background: "#21389A",
-      padding: "8rem var(--section-px)",
       color: "#fff",
       overflow: "hidden",
       position: "relative",
@@ -81,14 +80,7 @@ const Stats = () => {
           </div>
         </MotionReveal>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "1px",
-          background: "rgba(255,255,255,0.06)",
-          borderRadius: "0.4rem",
-          overflow: "hidden",
-        }}>
+        <div className="stats-4col">
           {stats.map((stat, i) => (
             <MotionReveal key={i} as="div" y={15} delay={i * 0.1}>
               <div style={{

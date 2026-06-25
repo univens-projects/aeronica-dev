@@ -15,7 +15,7 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} style={{ position: "relative" }}>
+    <section ref={sectionRef} className="page-hero" style={{ position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, background: "#21389A", zIndex: 0 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%)", zIndex: 1 }} />
       <div style={{ position: "relative", zIndex: 2, padding: variant === "child" ? "140px var(--section-px) 60px" : "180px var(--section-px) 100px", maxWidth: "1440px", margin: "0 auto" }}>

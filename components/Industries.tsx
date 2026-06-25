@@ -18,7 +18,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section style={{ padding: "8rem var(--section-px)", maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="industries">
+    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="industries">
       <div style={{ marginBottom: "5rem" }}>
         <span className="section-title" style={{ justifyContent: "flex-start" }}>
           <span></span>Who We Serve

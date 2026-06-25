@@ -29,7 +29,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="dot-watermark" style={{ background: "#ffffff", padding: "8rem var(--section-px)", overflow: "hidden" }} id="process">
+    <section className="dot-watermark section-py" style={{ background: "#ffffff", overflow: "hidden" }} id="process">
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "flex-start" }}>
@@ -43,7 +43,7 @@ export default function Process() {
           </p>
         </div>
 
-        <MotionReveal as="div" stagger={0.1} y={15} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }} className="process-grid">
+        <MotionReveal as="div" stagger={0.1} y={15} className="process-grid">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
@@ -68,15 +68,6 @@ export default function Process() {
             );
           })}
         </MotionReveal>
-
-        <style>{`
-          @media (max-width: 1024px) {
-            .process-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          }
-          @media (max-width: 640px) {
-            .process-grid { grid-template-columns: 1fr !important; }
-          }
-        `}</style>
       </div>
     </section>
   );

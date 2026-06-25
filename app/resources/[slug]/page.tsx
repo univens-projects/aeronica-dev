@@ -235,12 +235,12 @@ export default function ResourcePage() {
                           background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem",
                           padding: "2rem", height: "100%", display: "flex", flexDirection: "column",
                         }}>
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.6rem" }}>
+                          <div className="responsive-header" style={{ marginBottom: "0.6rem" }}>
                             <h3 style={{ fontSize: "1.5rem", fontWeight: 600, lineHeight: 1.3, color: "#111" }}>{item.label}</h3>
                             {item.date && (
                               <span style={{
                                 fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase",
-                                letterSpacing: "0.05em", color: "#888", whiteSpace: "nowrap", flexShrink: 0, marginTop: "0.1rem",
+                                letterSpacing: "0.05em", color: "#888", flexShrink: 0, marginTop: "0.1rem",
                               }}>
                                 {item.date}
                               </span>

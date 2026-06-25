@@ -186,7 +186,7 @@ export default function AboutDetail() {
         {/* Sections */}
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {data.sections.map((section, idx) => (
-            <div key={idx} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div key={idx} className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <h2 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>{section.heading}</h2>
               <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: "1.7", marginBottom: section.list ? "2rem" : "0" }}>{section.text}</p>
               

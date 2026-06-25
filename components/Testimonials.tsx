@@ -43,7 +43,7 @@ const Testimonials = () => {
   const t = testimonials[currentIndex];
 
   return (
-    <section style={{ padding: "10rem 0", background: "#21389A", color: "#fff", overflow: "hidden" }} id="testimonials">
+    <section className="section-py-lg" style={{ background: "#21389A", color: "#fff", overflow: "hidden" }} id="testimonials">
       <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 var(--section-px)", position: "relative" }}>
         <span style={{
           position: "absolute", top: "-6rem", left: "var(--section-px)", fontSize: "clamp(20rem, 30vw, 40rem)",
@@ -57,7 +57,7 @@ const Testimonials = () => {
           <div style={{ maxWidth: "800px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <div style={{ display: "flex", flexDirection: "column", transition: "opacity 0.5s ease", minHeight: "16rem", justifyContent: "center" }}>
               <p style={{
-                fontSize: "clamp(1.8rem, 2.6rem, 3.2rem)",
+                fontSize: "clamp(1.6rem, 4.5vw, 2.8rem)",
                 lineHeight: 1.4,
                 fontWeight: 300,
                 letterSpacing: "-0.01em",
@@ -67,15 +67,7 @@ const Testimonials = () => {
               </p>
             </div>
 
-            <div style={{
-              marginTop: "3.5rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "2rem",
-              borderTop: "1px solid rgba(255,255,255,0.12)",
-              paddingTop: "2.5rem",
-            }}>
+            <div className="testimonials-footer">
               <div>
                 <div style={{ fontSize: "1.4rem", fontWeight: 600, lineHeight: 1.3 }}>{t.author}</div>
                 <div style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "0.15rem" }}>{t.title}</div>

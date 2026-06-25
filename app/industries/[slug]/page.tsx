@@ -301,10 +301,10 @@ export default function IndustryDetail() {
         ]}
       />
 
-      <FadeIn as="section" style={{ padding: "8rem var(--section-px)", maxWidth: "1000px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "1000px", margin: "0 auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {data.sections.map((section: any, idx: number) => (
-            <div key={idx} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "4rem" }}>
+            <div key={idx} className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.5rem" }}>
                 {idx === 0 && (
                   <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
