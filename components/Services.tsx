@@ -43,7 +43,7 @@ export default function Services() {
           }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-            Explore All Services <DotArrowRight size={16} />
+            Explore All Services <DotArrowRight size={12} />
           </Link>
         </div>
       </div>

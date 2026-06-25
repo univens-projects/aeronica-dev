@@ -4,7 +4,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { DotArrowDown, DotCross } from "@/components/DotIcons";
+import { ChevronDown } from "lucide-react";
+import { DotArrowRight } from "@/components/DotIcons";
 
 const solutionCategories = [
   {
@@ -156,7 +157,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className={`navbar-link navbar-dropdown-trigger ${isSolutionsActive ? "active" : ""}`} onClick={() => router.push("/solutions")}>
-                Solutions <DotArrowDown size={12} style={{ marginLeft: "0.2rem" }} />
+                Solutions <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "solutions" ? "is-open" : ""}`}>
                 <div className="navbar-dropdown-grid">
@@ -180,7 +181,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className={`navbar-link navbar-dropdown-trigger ${isIndustriesActive ? "active" : ""}`} onClick={() => router.push("/industries")}>
-                Industries <DotArrowDown size={12} style={{ marginLeft: "0.2rem" }} />
+                Industries <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "industries" ? "is-open" : ""}`}>
                 <div className="navbar-dropdown-grid">
@@ -204,7 +205,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className={`navbar-link navbar-dropdown-trigger ${isCaseStudiesActive ? "active" : ""}`} onClick={() => router.push("/case-studies")}>
-                Case Studies <DotArrowDown size={12} style={{ marginLeft: "0.2rem" }} />
+                Case Studies <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "case-studies" ? "is-open" : ""}`}>
                 <div className="navbar-dropdown-grid">
@@ -228,7 +229,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className={`navbar-link navbar-dropdown-trigger ${isResourcesActive ? "active" : ""}`} onClick={() => router.push("/resources")}>
-                Resources <DotArrowDown size={12} style={{ marginLeft: "0.2rem" }} />
+                Resources <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
               </button>
               <div className={`navbar-dropdown-menu ${openDropdown === "resources" ? "is-open" : ""}`}>
                 <div className="navbar-dropdown-grid">
@@ -250,7 +251,7 @@ const Navbar = () => {
           <div className="navbar-actions">
             <Link href="/contact" className="navbar-cta-button">
               <span>Get in Touch</span>
-              <DotCross size={14} className="navbar-cta-icon" />
+              <DotArrowRight size={14} className="navbar-cta-icon" />
             </Link>
             <button 
               className={`navbar-toggle ${isMobileMenuOpen ? "is-active" : ""}`} 
@@ -273,7 +274,7 @@ const Navbar = () => {
               className={`nav-overlay-link nav-overlay-group-trigger ${isSolutionsActive ? "active" : ""}`}
               onClick={() => setOpenDropdown(openDropdown === "mobile-solutions" ? null : "mobile-solutions")}
             >
-              Solutions <DotArrowDown size={12} />
+              Solutions <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
             </button>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-solutions" ? "is-open" : ""}`}>
               {solutionLinks.map((link) => (
@@ -289,7 +290,7 @@ const Navbar = () => {
               className={`nav-overlay-link nav-overlay-group-trigger ${isIndustriesActive ? "active" : ""}`}
               onClick={() => setOpenDropdown(openDropdown === "mobile-industries" ? null : "mobile-industries")}
             >
-              Industries <DotArrowDown size={12} />
+              Industries <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
             </button>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-industries" ? "is-open" : ""}`}>
               {industryLinks.map((link) => (
@@ -305,7 +306,7 @@ const Navbar = () => {
               className={`nav-overlay-link nav-overlay-group-trigger ${isCaseStudiesActive ? "active" : ""}`}
               onClick={() => setOpenDropdown(openDropdown === "mobile-case-studies" ? null : "mobile-case-studies")}
             >
-              Case Studies <DotArrowDown size={12} />
+              Case Studies <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
             </button>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-case-studies" ? "is-open" : ""}`}>
               {caseStudyLinks.map((link) => (
@@ -321,7 +322,7 @@ const Navbar = () => {
               className={`nav-overlay-link nav-overlay-group-trigger ${isResourcesActive ? "active" : ""}`}
               onClick={() => setOpenDropdown(openDropdown === "mobile-resources" ? null : "mobile-resources")}
             >
-              Resources <DotArrowDown size={12} />
+              Resources <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
             </button>
             <div className={`nav-overlay-sublinks ${openDropdown === "mobile-resources" ? "is-open" : ""}`}>
               {resourceLinks.map((link) => (

@@ -270,9 +270,9 @@ export default function ResourcePage() {
         <FadeIn>
           <Link href="/resources" style={{
             display: "inline-flex", alignItems: "center", gap: "0.6rem",
-            fontSize: "1.4rem", fontWeight: 600, color: "#555", textDecoration: "none",
+            fontSize: "1.4rem", fontWeight: 600, color: "#009BFF", textDecoration: "none",
           }}>
-            <DotArrowLeft size={14} />
+            <DotArrowLeft size={12} />
             Back to Resources
           </Link>
         </FadeIn>

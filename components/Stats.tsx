@@ -47,7 +47,7 @@ const Stats = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="stats" style={{
+    <section ref={sectionRef} id="stats" className="dot-watermark" style={{
       background: "#21389A",
       padding: "8rem var(--section-px)",
       color: "#fff",

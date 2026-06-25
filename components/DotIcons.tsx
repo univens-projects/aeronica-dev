@@ -27,7 +27,7 @@ export const DotChevron = ({ size = 16, color, className, style, direction = "ri
     style={{ transform: `rotate(${rotations[direction]}deg)`, ...style }}
   >
     {dots.map((d, i) => (
-      <circle key={i} cx={d.x} cy={d.y} r="1.0" />
+      <circle key={i} cx={d.x} cy={d.y} r="1.3" />
     ))}
   </svg>
 );
@@ -51,7 +51,65 @@ export const DotCross = ({ size = 16, color, className, style }: ArrowProps) => 
     style={style}
   >
     {crossDots.map((d, i) => (
-      <circle key={i} cx={d.x} cy={d.y} r="0.9" />
+      <circle key={i} cx={d.x} cy={d.y} r="1.1" />
     ))}
+  </svg>
+);
+
+/* ---------- Dot Divider (horizontal separator) ---------- */
+const dividerDots = [
+  { x: 3, y: 4 }, { x: 6, y: 8 }, { x: 9, y: 12 }, { x: 12, y: 16 }, { x: 15, y: 20 },
+  { x: 18, y: 16 }, { x: 21, y: 12 }, { x: 24, y: 8 }, { x: 27, y: 4 },
+];
+
+export const DotDivider = ({ size = 80, color, className, style }: ArrowProps) => (
+  <svg
+    viewBox="0 0 30 24"
+    fill={color || "currentColor"}
+    width={size}
+    height={size * 0.8}
+    className={className}
+    style={style}
+  >
+    {dividerDots.map((d, i) => (
+      <circle key={i} cx={d.x} cy={d.y} r="1.0" />
+    ))}
+  </svg>
+);
+
+/* ---------- Dot Bullet (single dot for list items) ---------- */
+export const DotBullet = ({ size = 6, color, className, style }: ArrowProps) => (
+  <svg
+    viewBox="0 0 8 8"
+    fill={color || "currentColor"}
+    width={size}
+    height={size}
+    className={className}
+    style={style}
+  >
+    <circle cx={4} cy={4} r="1.2" />
+  </svg>
+);
+
+/* ---------- Dot Indicator (single dot for carousel pagination) ---------- */
+type DotIndicatorProps = { active?: boolean; size?: number; color?: string; activeColor?: string; className?: string; style?: React.CSSProperties };
+
+export const DotIndicator = ({ active = false, size = 12, color, activeColor, className, style }: DotIndicatorProps) => (
+  <svg
+    viewBox="0 0 12 12"
+    fill="currentColor"
+    width={size}
+    height={size}
+    className={className}
+    style={style}
+  >
+    {active ? (
+      <>
+        <circle cx={6} cy={6} r="1.6" fill={activeColor || color || "currentColor"} />
+        <circle cx={6} cy={6} r="0.7" fill={color || "currentColor"} opacity="0.3" />
+      </>
+    ) : (
+      <circle cx={6} cy={6} r="0.7" fill={color || "currentColor"} opacity="0.25" />
+    )}
   </svg>
 );

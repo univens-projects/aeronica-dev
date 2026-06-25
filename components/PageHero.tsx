@@ -44,7 +44,7 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
           <div style={{ display: "flex", alignItems: "flex-start", gap: "1.2rem" }}>
             {breadcrumbs && breadcrumbs.length >= 2 && (
               <Link href={breadcrumbs[breadcrumbs.length - 2].href} style={{ display: "flex", alignItems: "center", color: "rgba(255,255,255,0.7)", marginTop: "0.4rem", flexShrink: 0 }}>
-                <DotArrowLeft size={20} />
+                <DotArrowLeft size={12} />
               </Link>
             )}
             <h1 style={{ fontSize: "clamp(2.4rem, 3.5vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#fff", lineHeight: 1.15, maxWidth: "70rem" }}>

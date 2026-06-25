@@ -53,7 +53,7 @@ export default function Portfolio() {
           }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.6"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-            View Full Portfolio <DotArrowRight size={16} />
+            View Full Portfolio <DotArrowRight size={12} />
           </Link>
         }
       />

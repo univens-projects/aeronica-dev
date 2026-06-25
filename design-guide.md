@@ -580,14 +580,14 @@ The horizontal‑scroll cursor uses a chevron arrow formed from evenly spaced do
 ```tsx
 <svg viewBox="0 0 24 24" fill="currentColor">
   {dots.map((d, i) => (
-    <circle key={i} cx={d.x} cy={d.y} r={1.0} />
+    <circle key={i} cx={d.x} cy={d.y} r={0.7} />
   ))}
 </svg>
 ```
 
 **Sizing & styling:**
 
-- `r="1.0"` produces clean 2px dots (scales with viewBox).
+- `r="0.5"` produces clean 1.4px dots (scales with viewBox).
 - Use `fill="currentColor"` and control via CSS `color` (auto‑switches on dark backgrounds).
 - Set rendered size via CSS: `width: 34px; height: 34px`.
 - For a left‑pointing arrow, apply `transform: rotate(180deg)` via CSS class.

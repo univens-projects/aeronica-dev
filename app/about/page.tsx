@@ -139,12 +139,12 @@ export default function AboutHub() {
           </div>
           <Link href="/about/leadership-team" style={{ 
             display: "inline-flex", alignItems: "center", gap: "0.8rem",
-            fontSize: "1.4rem", fontWeight: 600, color: "#111", textDecoration: "none",
-            borderBottom: "1px solid #111", paddingBottom: "0.3rem",
+            fontSize: "1.4rem", fontWeight: 600, color: "#009BFF", textDecoration: "none",
+            borderBottom: "1px solid #009BFF", paddingBottom: "0.3rem",
             transition: "opacity 0.2s",
             whiteSpace: "nowrap",
           }}>
-            Meet the Leadership <DotArrowRight size={14} />
+            Meet the Leadership <DotArrowRight size={12} />
           </Link>
         </div>
         <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "4rem" }}>
@@ -191,7 +191,7 @@ export default function AboutHub() {
               borderBottom: "1px solid rgba(255,255,255,0.5)", paddingBottom: "0.3rem",
               whiteSpace: "nowrap",
             }}>
-              Explore Our Tech <DotArrowRight size={14} />
+              Explore Our Tech <DotArrowRight size={12} />
             </Link>
           </div>
           <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "5rem" }}>
@@ -242,7 +242,7 @@ export default function AboutHub() {
               Our Samrudhhi-10L is fully type-certified by DGCA. Every platform follows AS9100-ready 
               production pipelines with full material traceability.
             </p>
-            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>View Certifications →</span>
+            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>View Certifications →</span>
           </Link>
 
           <Link href="/about/partners-alliances" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
@@ -254,7 +254,7 @@ export default function AboutHub() {
               Partnered with IITs for composite research. Trusted by Central Railway, JSW Steel, 
               BASF, and IOCL for high-stakes spatial campaigns.
             </p>
-            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>Our Partners →</span>
+            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>Our Partners →</span>
           </Link>
 
           <Link href="/about/about-aeronica" className="card-hover" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "3.5rem", transition: "all 0.3s ease" }}>
@@ -266,7 +266,7 @@ export default function AboutHub() {
               DIPP-recognized startup. All R&amp;D, manufacturing, and flight operations based in 
               Pune, Maharashtra&mdash;supporting missions across 12 Indian states.
             </p>
-            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#111" }}>Company Profile →</span>
+            <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>Company Profile →</span>
           </Link>
         </div>
 
@@ -311,16 +311,16 @@ export default function AboutHub() {
               textDecoration: "none", transition: "all 0.3s ease",
             }}>
               <Briefcase style={{ width: "1.8rem", height: "1.8rem" }} />
-              View Open Positions <DotArrowRight size={16} />
+              View Open Positions <DotArrowRight size={12} />
             </Link>
             <Link href="/contact" style={{
               display: "inline-flex", alignItems: "center", gap: "1rem",
-              padding: "1.4rem 3rem", background: "#fff", color: "#111",
-              border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
+              padding: "1.4rem 3rem", background: "#fff", color: "#009BFF",
+              border: "1px solid #009BFF", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
               textDecoration: "none", transition: "all 0.3s ease",
             }}>
               <BookOpen style={{ width: "1.8rem", height: "1.8rem" }} />
-              Partner With Us <DotArrowRight size={16} />
+              Partner With Us <DotArrowRight size={12} />
             </Link>
           </div>
         </div>

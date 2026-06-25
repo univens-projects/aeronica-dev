@@ -146,7 +146,7 @@ borderRadius: "0.4rem",
 
               <button type="submit" style={{ display: "flex", alignItems: "center", justifySelf: "start", justifyContent: "center", gap: "1rem", background: "#21389A", color: "#fff", border: "none", padding: "1.4rem 3rem", borderRadius: "0.4rem", fontSize: "1.4rem", fontWeight: "600", cursor: "pointer", transition: "all 0.3s ease" }}>
                 <span>{formSubmitted ? "Message Sent!" : "Submit Inquiry"}</span>
-                <DotArrowRight size={16} />
+                <DotArrowRight size={12} />
               </button>
             </form>
           </div>

@@ -29,7 +29,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section style={{ background: "#ffffff", padding: "8rem var(--section-px)", overflow: "hidden" }} id="process">
+    <section className="dot-watermark" style={{ background: "#ffffff", padding: "8rem var(--section-px)", overflow: "hidden" }} id="process">
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "flex-start" }}>

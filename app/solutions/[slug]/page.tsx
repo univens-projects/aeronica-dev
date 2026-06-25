@@ -593,7 +593,7 @@ export default function SolutionDetail() {
                     <IndIcon style={{ width: "1.6rem", height: "1.6rem", color: "rgba(255,255,255,0.8)" }} />
                   </div>}
                   <span style={{ fontSize: "1.5rem", fontWeight: 500 }}>{ind.name}</span>
-                  {ind.href && <DotArrowRight size={16} style={{ color: "rgba(255,255,255,0.4)", flexShrink: 0 }} />}
+                  {ind.href && <DotArrowRight size={12} style={{ color: "rgba(255,255,255,0.4)", flexShrink: 0 }} />}
                 </div>
               );
               return ind.href ? (
@@ -660,7 +660,7 @@ export default function SolutionDetail() {
               borderRadius: "0.2rem", fontWeight: 600, fontSize: "1.3rem",
               textDecoration: "none", whiteSpace: "nowrap",
             }}>
-              View Study <DotArrowRight size={14} />
+              View Study <DotArrowRight size={12} />
             </Link>
           </div>
         )}
@@ -673,9 +673,9 @@ export default function SolutionDetail() {
             display: "inline-flex", alignItems: "center", gap: "0.8rem",
             padding: "1.2rem 2.8rem", border: "1px solid #e5e5e5",
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
-            color: "#555", textDecoration: "none", transition: "all 0.3s ease",
+            color: "#009BFF", textDecoration: "none", transition: "all 0.3s ease",
           }}>
-            <DotArrowLeft size={16} />
+            <DotArrowLeft size={12} />
             Back to All Solutions
           </Link>
         </div>

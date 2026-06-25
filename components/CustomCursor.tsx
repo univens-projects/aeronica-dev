@@ -164,15 +164,15 @@ const CustomCursor = () => {
     <>
       <div ref={dotRef} className="custom-cursor-dot">
         <svg className="cursor-dot-arrow" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="5" cy="2" r="1.0" />
-          <circle cx="8.5" cy="4.5" r="1.0" />
-          <circle cx="12" cy="7" r="1.0" />
-          <circle cx="15.5" cy="9.5" r="1.0" />
-          <circle cx="19" cy="12" r="1.0" />
-          <circle cx="15.5" cy="14.5" r="1.0" />
-          <circle cx="12" cy="17" r="1.0" />
-          <circle cx="8.5" cy="19.5" r="1.0" />
-          <circle cx="5" cy="22" r="1.0" />
+          <circle cx="5" cy="2" r="1.3" />
+          <circle cx="8.5" cy="4.5" r="1.3" />
+          <circle cx="12" cy="7" r="1.3" />
+          <circle cx="15.5" cy="9.5" r="1.3" />
+          <circle cx="19" cy="12" r="1.3" />
+          <circle cx="15.5" cy="14.5" r="1.3" />
+          <circle cx="12" cy="17" r="1.3" />
+          <circle cx="8.5" cy="19.5" r="1.3" />
+          <circle cx="5" cy="22" r="1.3" />
         </svg>
       </div>
       <div ref={ringRef} className="custom-cursor-ring" />

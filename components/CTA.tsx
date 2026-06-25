@@ -61,7 +61,7 @@ const CTA = () => {
               fontSize: "1.2rem",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
-              color: "#009BFF",
+              color: "rgba(255,255,255,0.7)",
               fontWeight: 600,
               display: "block",
               marginBottom: "1rem",
@@ -113,7 +113,7 @@ const CTA = () => {
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
           >
-            Start a Conversation <DotArrowRight size={20} />
+            Start a Conversation <DotArrowRight size={14} />
           </Link>
         </div>
       </div>

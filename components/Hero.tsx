@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { DotCross } from "@/components/DotIcons";
+import { DotArrowRight } from "@/components/DotIcons";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -82,7 +82,7 @@ const Hero = () => {
         <div style={{ display: "flex", justifyContent: "center", gap: "1.6rem", flexWrap: "wrap" }}>
           <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "0.8rem", fontSize: "1.5rem", fontWeight: 600, padding: "1.2rem 2.8rem", borderRadius: "4px", background: "#fff", color: "#21389A", boxShadow: "0 4px 15px rgba(0,0,0,0.2)", transition: "all 0.3s ease" }}>
             <span>Get in Touch</span>
-            <DotCross size={16} />
+            <DotArrowRight size={14} />
           </Link>
         </div>
       </div>

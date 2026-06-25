@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { DotArrowLeft, DotArrowRight } from "@/components/DotIcons";
+import { DotArrowLeft, DotArrowRight, DotIndicator } from "@/components/DotIcons";
 import MotionReveal from "@/components/MotionReveal";
 
 const testimonials = [
@@ -93,16 +93,14 @@ const Testimonials = () => {
                   onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}>
                   <DotArrowLeft size={16} />
                 </button>
-                <div style={{ display: "flex", gap: "0.5rem" }}>
+                <div style={{ display: "flex", gap: "0.8rem", alignItems: "center" }}>
                   {testimonials.map((_, i) => (
                     <button key={i} onClick={() => setCurrentIndex(i)} aria-label={`Testimonial ${i + 1}`} style={{
-                      width: i === currentIndex ? "1.8rem" : "0.5rem",
-                      height: "0.5rem",
-                      borderRadius: "0.25rem",
-                      background: i === currentIndex ? "#fff" : "rgba(255,255,255,0.25)",
-                      border: "none", cursor: "pointer",
-                      transition: "all 0.3s ease",
-                    }} />
+                      background: "none", border: "none", cursor: "pointer", padding: 0,
+                      color: "#fff", display: "flex", alignItems: "center", justifyContent: "center",
+                    }}>
+                      <DotIndicator active={i === currentIndex} size={14} />
+                    </button>
                   ))}
                 </div>
                 <button onClick={next} aria-label="Next testimonial" style={{

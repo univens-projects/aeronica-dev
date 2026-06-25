@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { DotArrowLeft, DotArrowRight } from "@/components/DotIcons";
+import { DotArrowLeft, DotArrowRight, DotIndicator } from "@/components/DotIcons";
 import FadeIn from "./FadeIn";
 import MotionParallax from "./MotionParallax";
 
@@ -125,7 +125,7 @@ const Products = () => {
               }}
               disabled={activeIndex === 0}
             >
-              <DotArrowLeft size={18} />
+              <DotArrowLeft size={16} />
             </button>
             <button
               onClick={() => scrollTo(Math.min(products.length - 1, activeIndex + 1))}
@@ -137,7 +137,7 @@ const Products = () => {
               }}
               disabled={activeIndex === products.length - 1}
             >
-              <DotArrowRight size={18} />
+              <DotArrowRight size={16} />
             </button>
           </div>
         </div>
@@ -224,7 +224,7 @@ const Products = () => {
                   display: "inline-flex", alignItems: "center", gap: "0.6rem", alignSelf: "flex-start",
                   fontSize: "1.3rem", fontWeight: 600, color: accentColor, textDecoration: "none", padding: "0.6rem 0",
                 }}>
-                  View Details <DotArrowRight size={13} />
+                  View Details <DotArrowRight size={12} />
                 </Link>
               </div>
             </motion.div>
@@ -244,11 +244,13 @@ const Products = () => {
             key={index}
             onClick={() => scrollTo(index)}
             style={{
-              width: index === activeIndex ? "2.4rem" : "0.8rem", height: "0.8rem", borderRadius: "0.4rem",
-              background: index === activeIndex ? accentColor : "#888", border: "none", cursor: "pointer",
-              transition: "all 0.3s ease", padding: 0,
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+              color: index === activeIndex ? accentColor : "#888",
+              display: "flex", alignItems: "center", justifyContent: "center",
             }}
-          />
+          >
+            <DotIndicator active={index === activeIndex} size={14} color={index === activeIndex ? accentColor : "#888"} />
+          </button>
         ))}
       </motion.div>
     </section>

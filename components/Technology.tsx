@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Cpu, ShieldCheck, Wifi, Combine } from "lucide-react";
-import { DotArrowRight } from "@/components/DotIcons";
+import { DotArrowRight, DotBullet } from "@/components/DotIcons";
 import Link from "next/link";
 import MotionReveal from "@/components/MotionReveal";
 
@@ -35,7 +35,7 @@ const techPillars = [
 
 export default function Technology() {
   return (
-    <section style={{ background: "#21389A", padding: "8rem var(--section-px)" }} id="technology">
+    <section className="dot-watermark" style={{ background: "#21389A", padding: "8rem var(--section-px)" }} id="technology">
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         <div style={{ marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "flex-start", color: "rgba(255,255,255,0.8)" }}>
@@ -58,7 +58,7 @@ export default function Technology() {
             }}
               onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.65"; }}
               onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-              Explore Technology <DotArrowRight size={16} />
+              Explore Technology <DotArrowRight size={12} />
             </Link>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Technology() {
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                     {pillar.specs.map((spec, j) => (
                       <div key={j} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                        <span style={{ width: "0.35rem", height: "0.35rem", borderRadius: "50%", background: "#009BFF", flexShrink: 0 }}></span>
+                        <DotBullet size={5} color="#009BFF" />
                         <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", color: "#888", letterSpacing: "-0.01em" }}>{spec}</span>
                       </div>
                     ))}

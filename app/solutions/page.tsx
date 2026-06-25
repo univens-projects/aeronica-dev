@@ -261,7 +261,7 @@ export default function SolutionsHub() {
                     ))}
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "#111", fontWeight: 600, fontSize: "1.3rem" }}>
-                    Explore Solution <DotArrowRight size={16} />
+                    Explore Solution <DotArrowRight size={12} />
                   </div>
                 </Link>
               );
@@ -351,7 +351,7 @@ export default function SolutionsHub() {
               transition: "all 0.3s ease",
             }}
           >
-            View All Case Studies <DotArrowRight size={16} />
+            View All Case Studies <DotArrowRight size={12} />
           </Link>
         </div>
       </FadeIn>

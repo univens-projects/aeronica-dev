@@ -94,17 +94,17 @@ export default function ResourcesHub() {
                 <FeaturedIcon style={{ width: "2.4rem", height: "2.4rem", color: "#fff" }} />
               </div>
               <div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: featured.color, marginBottom: "0.4rem" }}>Featured Resource</div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "0.4rem" }}>Featured Resource</div>
                 <h3 style={{ fontSize: "1.8rem", fontWeight: 600, color: "#fff", lineHeight: 1.2, marginBottom: "0.4rem" }}>{featured.title}</h3>
                 <p style={{ fontSize: "1.35rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6, maxWidth: "48rem" }}>{featured.desc}</p>
               </div>
             </div>
             <Link href={featured.href} style={{
               display: "inline-flex", alignItems: "center", gap: "0.6rem", flexShrink: 0, position: "relative", zIndex: 1,
-              padding: "1rem 2rem", background: featured.color, color: "#fff", borderRadius: "0.4rem",
+              padding: "1rem 2rem", background: "#fff", color: "#21389A", borderRadius: "0.4rem",
               fontWeight: 600, fontSize: "1.3rem", textDecoration: "none",
             }}>
-              Read Guide <DotArrowRight size={13} />
+              Read Guide <DotArrowRight size={12} />
             </Link>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function ResourcesHub() {
                       <div style={{ marginTop: "1.2rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                         <span style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888" }}>{item.count}</span>
                         <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "1.15rem", fontWeight: 600, color: section.color }}>
-                          Explore <DotArrowRight size={11} />
+                          Explore <DotArrowRight size={12} />
                         </span>
                       </div>
                     </div>
@@ -180,7 +180,7 @@ export default function ResourcesHub() {
             padding: "1.2rem 2.4rem", background: "#21389A", color: "#fff",
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none", flexShrink: 0,
           }}>
-            Contact Support <DotArrowRight size={14} />
+            Contact Support <DotArrowRight size={12} />
           </Link>
         </div>
       </FadeIn>

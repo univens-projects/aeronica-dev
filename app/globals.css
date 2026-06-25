@@ -208,9 +208,9 @@ html.cursor-h-scroll-right .cursor-dot-arrow {
 }
 
 html.cursor-h-scroll .custom-cursor-ring {
-  width: 48px;
-  height: 48px;
-  margin: -24px 0 0 -24px;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
   background: rgba(33, 56, 154, 0.08);
   border-color: #21389A;
 }
@@ -793,14 +793,51 @@ html.cursor-h-scroll.cursor-on-link .custom-cursor-ring {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ---------- Dot Watermark Background ---------- */
+.dot-watermark {
+  position: relative;
+}
+
+.dot-watermark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, currentColor 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ---------- Card Hover ---------- */
 .card-hover {
+  position: relative;
   transition: box-shadow 0.3s var(--ease-out-cubic), transform 0.3s var(--ease-out-cubic);
+}
+
+.card-hover::after {
+  content: '';
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 0;
+  height: 0;
+  background-image: radial-gradient(circle, #009BFF 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  pointer-events: none;
 }
 
 .card-hover:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
+}
+
+.card-hover:hover::after {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
 }
 
 /* ---------- Section Title (mono + diamond) ---------- */

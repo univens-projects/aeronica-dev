@@ -118,7 +118,7 @@ export default function ProjectGallery() {
             borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem",
             textDecoration: "none",
           }}>
-            Request Full Video Portfolio <DotArrowRight size={16} />
+            Request Full Video Portfolio <DotArrowRight size={12} />
           </Link>
         </div>
       </FadeIn>

@@ -482,7 +482,7 @@ export default function ResourceSubPage() {
             border: `1px solid ${meta.accent}30`,
             borderRadius: "0.4rem",
           }}>
-            <DotArrowLeft size={14} />
+            <DotArrowLeft size={12} />
             Back to {slug === "news-media" ? "News & Media" : slug.charAt(0).toUpperCase() + slug.slice(1)}
           </Link>
         </div>

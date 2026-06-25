@@ -30,7 +30,7 @@ const BackToTop = () => {
       aria-label="Back to top"
       suppressHydrationWarning
     >
-      <DotArrowUp size={20} />
+      <DotArrowUp size={14} />
     </button>
   );
 };
