@@ -29,8 +29,8 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="dot-watermark section-py" style={{ background: "#ffffff", overflow: "hidden" }} id="process">
-      <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+    <section className="dot-watermark section-py" style={{ background: "#ffffff", overflow: "hidden", paddingLeft: 0, paddingRight: 0 }} id="process">
+      <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
         <div style={{ marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "flex-start" }}>
             <span></span>How We Work

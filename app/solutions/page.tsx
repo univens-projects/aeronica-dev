@@ -3,106 +3,54 @@
 import React from "react";
 import Link from "next/link";
 import { DotArrowRight } from "@/components/DotIcons";
-import { 
+import {
   Map, Globe, Eye, Brain, LifeBuoy,
-  Plane, Cpu, Ruler, ShieldCheck, Sparkles, 
+  Cpu, Ruler, ShieldCheck, Sparkles,
   Combine, Timer, Crosshair, Tractor, Landmark,
   Users, Award
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
-import MotionParallax from "@/components/MotionParallax";
-
-const hardwarePlatforms = [
-  {
-    name: "Samrudhhi-10L",
-    tag: "DGCA Certified",
-    desc: "Our flagship agricultural UAV built for precision spraying in Indian farming conditions. Features a high-efficiency centrifugal atomization system and 10L payload capacity.",
-    specs: [
-      { label: "Payload", value: "24.9 Kg" },
-      { label: "Flight Time", value: "16 min" },
-      { label: "Coverage", value: "2 acres/hr" },
-      { label: "Certification", value: "DGCA Type" },
-    ],
-    gradient: "linear-gradient(135deg, #0CC820, #32620E)",
-  },
-  {
-    name: "Samrudhhi-10LH",
-    tag: "Heavy Lift",
-    desc: "The heavy-duty sibling engineered for large-scale industrial logistics and extended agricultural campaigns. Hybrid propulsion enables longer endurance.",
-    specs: [
-      { label: "Payload", value: "30 Kg" },
-      { label: "Flight Time", value: "20 min" },
-      { label: "Propulsion", value: "Hybrid" },
-      { label: "Frame", value: "Carbon Fibre" },
-    ],
-    gradient: "linear-gradient(135deg, #0CC820, #32620E)",
-  },
-  {
-    name: "Flycra 2.0",
-    tag: "Survey & Mapping",
-    desc: "A compact high-precision mapping drone delivering sub-centimeter accuracy. Optimized for GIS surveys, corridor mapping, and volumetric analysis.",
-    specs: [
-      { label: "Range", value: "7 Km" },
-      { label: "Flight Time", value: "45 min" },
-      { label: "Accuracy", value: "Sub-cm" },
-      { label: "Weight", value: "9.6 Kg" },
-    ],
-    gradient: "linear-gradient(135deg, #009BFF, #21389A)",
-  },
-  {
-    name: "Nitya FC",
-    tag: "Flight Controller",
-    desc: "The indigenous brain of every Aeronica UAV. A fully Indian-designed flight controller with triple-redundant IMU, 256-bit encrypted telemetry, and secure boot.",
-    specs: [
-      { label: "Processor", value: "STM32MP1" },
-      { label: "Sensors", value: "Triple IMU" },
-      { label: "Security", value: "256-bit AES" },
-      { label: "Firmware", value: "Custom PX4" },
-    ],
-    gradient: "linear-gradient(135deg, #009BFF, #21389A)",
-  },
-];
 
 const solutionCategories = [
-  { 
-    title: "Drone Survey & Mapping", 
-    desc: "Topographic surveys, LiDAR data collection, and high-accuracy 3D mapping for engineering and construction projects across India.", 
-    href: "/solutions/drone-survey-mapping", 
-    icon: Map, 
+  {
+    title: "Drone Survey & Mapping",
+    desc: "Topographic surveys, LiDAR data collection, and high-accuracy 3D mapping for engineering and construction projects across India.",
+    href: "/solutions/drone-survey-mapping",
+    icon: Map,
     color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["Sub-cm accuracy", "LiDAR & photogrammetry", "Up to 500 acres/day"],
   },
-  { 
-    title: "GIS & Geospatial Intelligence", 
-    desc: "Advanced spatial analytics, digital twin creation, and custom GIS development for urban planning, utilities, and natural resource management.", 
-    href: "/solutions/gis-geospatial-intelligence", 
-    icon: Globe, 
+  {
+    title: "GIS & Geospatial Intelligence",
+    desc: "Advanced spatial analytics, digital twin creation, and custom GIS development for urban planning, utilities, and natural resource management.",
+    href: "/solutions/gis-geospatial-intelligence",
+    icon: Globe,
     color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["Web GIS dashboards", "Spatial ML models", "Digital twin integration"],
   },
-  { 
-    title: "Infrastructure Inspection", 
-    desc: "Automated aerial inspection of roads, bridges, solar plants, power lines, and railway corridors to reduce risk, downtime, and maintenance costs.", 
-    href: "/solutions/infrastructure-inspection", 
-    icon: Eye, 
+  {
+    title: "Infrastructure Inspection",
+    desc: "Automated aerial inspection of roads, bridges, solar plants, power lines, and railway corridors to reduce risk, downtime, and maintenance costs.",
+    href: "/solutions/infrastructure-inspection",
+    icon: Eye,
     color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["AI defect detection", "Real-time streaming", "Regulatory reporting"],
   },
-  { 
-    title: "AI Drone Intelligence", 
-    desc: "Deep learning pipelines for automated defect detection, change analysis, crop health assessment, and predictive maintenance across industrial assets.", 
-    href: "/solutions/ai-drone-intelligence", 
-    icon: Brain, 
+  {
+    title: "AI Drone Intelligence",
+    desc: "Deep learning pipelines for automated defect detection, change analysis, crop health assessment, and predictive maintenance across industrial assets.",
+    href: "/solutions/ai-drone-intelligence",
+    icon: Brain,
     color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["95%+ detection accuracy", "NDVI/NDRE analytics", "Automated reporting"],
   },
-  { 
-    title: "Disaster & Emergency Response", 
-    desc: "Rapid deployment for flood mapping, structural damage assessment, search-and-rescue operations, and real-time situational intelligence during crises.", 
-    href: "/solutions/disaster-emergency-response", 
-    icon: LifeBuoy, 
+  {
+    title: "Disaster & Emergency Response",
+    desc: "Rapid deployment for flood mapping, structural damage assessment, search-and-rescue operations, and real-time situational intelligence during crises.",
+    href: "/solutions/disaster-emergency-response",
+    icon: LifeBuoy,
     color: "linear-gradient(135deg, #009BFF, #21389A)",
     capabilities: ["< 30 min deployment", "Thermal imaging", "Multi-agency data share"],
   },
@@ -117,81 +65,24 @@ export default function SolutionsHub() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }]}
       />
 
-      {/* Section 1 — Hardware Platforms */}
-      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "6rem" }}>
-          <span className="section-title" style={{ justifyContent: "center" }}>
-            <span></span>Built in India
-          </span>
-          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
-            The Hardware Behind the Mission
-          </h2>
-          <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-            Every solution we deliver is powered by indigenously designed and manufactured 
-            UAV platforms. From agricultural spraying to industrial inspection, the hardware 
-            is built for Indian conditions, by Indian engineers.
-          </p>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
-          {hardwarePlatforms.map((platform, i) => (
-                <div
-                  key={i}
-                  className="card-hover"
-                  style={{
-                    background: "#fff",
-                    border: "1px solid #e5e5e5",
-                    borderRadius: "0.4rem",
-                    overflow: "hidden",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      overflow: "hidden",
-                      textAlign: "center",
-                      color: "#fff",
-                    }}
-                    className="p-3"
-                  >
-                    <MotionParallax speed={0.2} style={{ position: "absolute", inset: "-30% 0" }}>
-                      <div style={{
-                        width: "100%", height: "100%",
-                        background: `${platform.gradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-industrial-sunrise.jpg","pexels-drone-tech.jpg","pexels-circuit-board.jpg"][i]}')`,
-                        backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
-                      }} />
-                    </MotionParallax>
-                    <div style={{ position: "relative", zIndex: 1 }}>
-                      <Plane style={{ width: "3.2rem", height: "3.2rem", marginBottom: "1.5rem", opacity: 0.9 }} />
-                      <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "0.5rem" }}>{platform.name}</h3>
-                      <span style={{ fontSize: "1.2rem", background: "rgba(255,255,255,0.2)", padding: "0.3rem 1rem", borderRadius: "0.4rem", display: "inline-block" }}>
-                        {platform.tag}
-                      </span>
-                    </div>
-              </div>
-              <div style={{ padding: "2.5rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
-                <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "2rem", flexGrow: 1 }}>
-                  {platform.desc}
-                </p>
-                <div className="specs-2col" style={{ borderTop: "1px solid #e5e5e5", paddingTop: "1.5rem" }}>
-                  {platform.specs.map((spec, j) => (
-                    <div key={j}>
-                      <span style={{ fontSize: "1rem", color: "#888", display: "block" }}>{spec.label}</span>
-                      <strong style={{ fontSize: "1.4rem", color: "#111" }}>{spec.value}</strong>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+      {/* Section 1 — Link to Products */}
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
+        <div style={{ background: "#21389A", borderRadius: "0.4rem", padding: "4rem", color: "#fff", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", alignItems: "center", gap: "2.5rem" }}>
+          <div>
+            <h2 style={{ fontSize: "2.4rem", fontWeight: 600, color: "#fff", marginBottom: "1rem" }}>Looking for our drone hardware?</h2>
+            <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.6 }}>We design and manufacture agricultural UAVs, survey fixed-wings, and indigenous avionics entirely in India. View our complete hardware specifications.</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "md-flex-end" }}>
+            <Link href="/products" style={{ display: "inline-flex", alignItems: "center", gap: "1rem", padding: "1.4rem 3rem", background: "#fff", color: "#21389A", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none" }}>
+              Explore Products <DotArrowRight size={12} />
+            </Link>
+          </div>
         </div>
       </FadeIn>
 
       {/* Section 2 — Solution Categories */}
-      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
               <span></span>What We Deliver
@@ -200,7 +91,7 @@ export default function SolutionsHub() {
               Five Solution Pillars
             </h2>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-              Our expertise spans the full spectrum of aerial intelligence&mdash;from raw data 
+              Our expertise spans the full spectrum of aerial intelligence&mdash;from raw data
               capture to AI-powered decision support.
             </p>
           </div>
@@ -270,7 +161,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 3 — Real-World Impact */}
-      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Proven Impact
@@ -279,7 +170,7 @@ export default function SolutionsHub() {
             Results That Speak for Themselves
           </h2>
           <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-            From the farms of Maharashtra to the railway corridors of Central India, our 
+            From the farms of Maharashtra to the railway corridors of Central India, our
             solutions are delivering measurable outcomes for clients who demand precision.
           </p>
         </div>
@@ -356,8 +247,8 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 4 — The Aeronica Difference */}
-      <FadeIn as="section" className="section-py-lg" style={{ background: "#21389A", color: "#fff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#21389A", color: "#fff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
               The Edge
@@ -406,7 +297,7 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 5 — How We Deliver */}
-      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Delivery Model
@@ -415,7 +306,7 @@ export default function SolutionsHub() {
             From Brief to Intelligence
           </h2>
           <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "2rem auto 0" }}>
-            A structured, repeatable process that ensures every mission delivers exactly what 
+            A structured, repeatable process that ensures every mission delivers exactly what
             you need&mdash;on time, in spec, and fully compliant.
           </p>
         </div>
@@ -468,8 +359,8 @@ export default function SolutionsHub() {
       </FadeIn>
 
       {/* Section 6 — Nationwide Reach */}
-      <FadeIn as="section" className="section-py" style={{ background: "#ffffff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
+      <FadeIn as="section" className="section-py" style={{ background: "#ffffff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Scale &amp; Reach
           </span>
@@ -500,8 +391,8 @@ export default function SolutionsHub() {
             ))}
           </div>
           <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "4rem auto 0" }}>
-            From our headquarters and manufacturing facility in Pune, we deploy teams across 
-            Maharashtra, Madhya Pradesh, Karnataka, Gujarat, Rajasthan, Tamil Nadu, and beyond. 
+            From our headquarters and manufacturing facility in Pune, we deploy teams across
+            Maharashtra, Madhya Pradesh, Karnataka, Gujarat, Rajasthan, Tamil Nadu, and beyond.
             Our pilots and analysts are where you need them, when you need them.
           </p>
         </div>

@@ -220,7 +220,7 @@ export default function ResourcePage() {
 
       {data.sections.map((section, sectionIdx) => {
         return (
-          <FadeIn key={sectionIdx} as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+          <FadeIn key={sectionIdx} as="section" style={{ padding: "0 var(--section-px)", maxWidth: "160rem", margin: "0 auto" }}>
             <div style={{ padding: sectionIdx === 0 ? "8rem 0 0" : "6rem 0 0" }}>
               <h2 style={{ fontSize: "2rem", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.2, marginBottom: "0.5rem" }}>{section.heading}</h2>
               <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, maxWidth: "64rem", marginBottom: "3rem" }}>{section.text}</p>
@@ -266,7 +266,7 @@ export default function ResourcePage() {
         );
       })}
 
-      <div style={{ padding: "6rem var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <div style={{ padding: "6rem var(--section-px)", maxWidth: "160rem", margin: "0 auto" }}>
         <FadeIn>
           <Link href="/resources" style={{
             display: "inline-flex", alignItems: "center", gap: "0.6rem",

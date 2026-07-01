@@ -441,28 +441,28 @@ export default function SolutionDetail() {
       />
 
       {/* Section 1 — Overview */}
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
+        <div style={{
+          position: "relative",
+          border: "1px solid #e5e5e5",
+          borderRadius: "0.4rem",
+          overflow: "hidden",
+        }}>
+          <MotionParallax speed={0.25} style={{ position: "absolute", inset: "-25% 0" }}>
+            <div style={{
+              width: "100%", height: "100%",
+              background: `url('/assets/images/pexels/pexels-drone-tech.jpg')`,
+              backgroundSize: "cover", backgroundPosition: "center",
+            }} />
+          </MotionParallax>
           <div style={{
-              position: "relative",
-              border: "1px solid #e5e5e5",
-              borderRadius: "0.4rem",
-              overflow: "hidden",
-            }}>
-              <MotionParallax speed={0.25} style={{ position: "absolute", inset: "-25% 0" }}>
-                <div style={{
-                  width: "100%", height: "100%",
-                  background: `url('/assets/images/pexels/pexels-drone-tech.jpg')`,
-                  backgroundSize: "cover", backgroundPosition: "center",
-                }} />
-              </MotionParallax>
-              <div style={{
-                position: "absolute", inset: 0,
-                background: "linear-gradient(135deg, rgba(33,56,154,0.85), rgba(33,56,154,0.65))",
-              }} />
-              <div className="hero-overview p-4" style={{
-                position: "relative", zIndex: 1,
-                color: "#fff",
-              }}>
+            position: "absolute", inset: 0,
+            background: "linear-gradient(135deg, rgba(33,56,154,0.85), rgba(33,56,154,0.65))",
+          }} />
+          <div className="hero-overview p-4" style={{
+            position: "relative", zIndex: 1,
+            color: "#fff",
+          }}>
             <div>
               <div style={{ width: "4.8rem", height: "4.8rem", borderRadius: "0.2rem", background: data.accent, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", marginBottom: "2rem" }}>
                 <Icon style={{ width: "2.4rem", height: "2.4rem" }} />
@@ -497,8 +497,8 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 2 — Core Capabilities */}
-      <FadeIn as="section" className="section-py" style={{ background: "#ffffff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ background: "#ffffff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
               <span></span>Capabilities
@@ -533,7 +533,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 3 — How We Deliver / Methodology */}
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Methodology
@@ -559,8 +559,8 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 4 — Industries Served */}
-      <FadeIn as="section" className="section-py" style={{ background: "#21389A", color: "#fff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ background: "#21389A", color: "#fff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
               Industries
@@ -572,7 +572,7 @@ export default function SolutionDetail() {
               Our {data.title.toLowerCase()} solutions deliver value across multiple industry verticals.
             </p>
           </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "space-between" }}>
             {data.industries.map((ind: any, i: number) => {
               const IndIcon = ind.icon;
               const content = (
@@ -602,7 +602,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Section 5 — Impact */}
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Impact
@@ -659,7 +659,7 @@ export default function SolutionDetail() {
       </FadeIn>
 
       {/* Back to Solutions + CTA */}
-      <FadeIn as="section" style={{ padding: "0 var(--section-px) 8rem", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" style={{ padding: "0 var(--section-px) 8rem", maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ textAlign: "center" }}>
           <Link href="/solutions" style={{
             display: "inline-flex", alignItems: "center", gap: "0.8rem",

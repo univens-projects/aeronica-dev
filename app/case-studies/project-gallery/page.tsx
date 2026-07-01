@@ -41,7 +41,7 @@ export default function ProjectGallery() {
         ]}
       />
 
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         {/* Category filter */}
         <div style={{ display: "flex", gap: "1rem", marginBottom: "4rem", flexWrap: "wrap" }}>
           {categories.map(cat => (

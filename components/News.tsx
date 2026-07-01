@@ -27,7 +27,7 @@ const news = [
 
 export default function News() {
   return (
-    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="news">
+    <section className="section-py" style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", color: "#1a1a1a" }} id="news">
       <SectionHeader
         eyebrow="Latest News"
         title="Insights & Updates"
@@ -71,7 +71,7 @@ export default function News() {
               <MotionParallax speed={0.15} style={{ position: "absolute", inset: "-30% 0" }}>
                 <div style={{
                   width: "100%", height: "100%",
-                  background: `${newsGradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg","pexels-smart-city.jpg"][index]}')`,
+                  background: `${newsGradient}, url('/assets/images/pexels/${["pexels-drone-agriculture.jpg", "pexels-smart-city.jpg"][index]}')`,
                   backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
                 }} />
               </MotionParallax>

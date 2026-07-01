@@ -239,7 +239,7 @@ export default function CaseStudyDetail() {
         ]}
       />
 
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1000px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         {/* Stat highlight */}
         {data.stats && (
           <div className="card-hover" style={{ background: "#21389A", borderRadius: "0.4rem", padding: "3rem", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "4rem", textAlign: "center" }}>

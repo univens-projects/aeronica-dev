@@ -52,8 +52,10 @@ const Stats = () => {
       color: "#fff",
       overflow: "hidden",
       position: "relative",
+      paddingLeft: 0,
+      paddingRight: 0,
     }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
+      <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", position: "relative" }}>
         <MotionReveal as="div" y={15}>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span style={{

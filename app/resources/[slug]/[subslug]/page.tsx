@@ -296,7 +296,7 @@ export default function ResourceSubPage() {
           background: `radial-gradient(circle at 30% 50%, ${meta.accent}08 0%, transparent 70%)`,
         }} />
         <div style={{
-          maxWidth: "1440px", margin: "0 auto", position: "relative", zIndex: 1,
+          maxWidth: "160rem", margin: "0 auto", position: "relative", zIndex: 1,
         }}>
           {/* Breadcrumbs */}
           <div style={{

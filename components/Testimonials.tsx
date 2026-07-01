@@ -44,7 +44,7 @@ const Testimonials = () => {
 
   return (
     <section className="section-py-lg" style={{ background: "#21389A", color: "#fff", overflow: "hidden" }} id="testimonials">
-      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 var(--section-px)", position: "relative" }}>
+      <div style={{ maxWidth: "160rem", margin: "0 auto", padding: "0 var(--section-px)", position: "relative" }}>
         <span style={{
           position: "absolute", top: "-6rem", left: "var(--section-px)", fontSize: "clamp(20rem, 30vw, 40rem)",
           lineHeight: 1, fontWeight: 700, color: "rgba(255,255,255,0.03)", userSelect: "none", pointerEvents: "none",

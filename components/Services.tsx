@@ -21,7 +21,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="services">
+    <section className="section-py" style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", color: "#1a1a1a" }} id="services">
       <div style={{ marginBottom: "5rem" }}>
         <span className="section-title" style={{ justifyContent: "flex-start" }}>
           <span></span>What We Offer

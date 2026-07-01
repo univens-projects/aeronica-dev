@@ -17,7 +17,7 @@ export default function IndustriesHub() {
       />
 
       {/* Industries Grid */}
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
           {[
             { title: "Government", icon: Landmark, href: "/industries/government", desc: "Policy support, national security, and strategic asset mapping." },
@@ -30,20 +30,20 @@ export default function IndustriesHub() {
             { title: "Telecom", icon: Radio, href: "/industries/telecom", desc: "Tower structural audits, LOS analysis, and rapid site deployment." },
             { title: "Transportation", icon: Truck, href: "/industries/transportation", desc: "Railway corridor mapping, highway alignment, and logistics optimization." },
             { title: "Real Estate", icon: Home, href: "/industries/real-estate", desc: "Land surveying, topographic mapping, and architectural visualization." },
-            ].map((industry, index) => {
-              const Icon = industry.icon || (() => <div style={{ width: '2rem', height: '2rem', background: '#555' }} />);
-              return (
-                <Link key={index} href={industry.href} style={{ 
-                textDecoration: "none", 
-                color: "inherit", 
-                background: "#fff", 
-                border: "1px solid #e5e5e5", 
-                padding: "3rem", 
-borderRadius: "0.4rem",
-                display: "flex", 
-                flexDirection: "column", 
-                gap: "1.5rem" 
-              }} 
+          ].map((industry, index) => {
+            const Icon = industry.icon || (() => <div style={{ width: '2rem', height: '2rem', background: '#555' }} />);
+            return (
+              <Link key={index} href={industry.href} style={{
+                textDecoration: "none",
+                color: "inherit",
+                background: "#fff",
+                border: "1px solid #e5e5e5",
+                padding: "3rem",
+                borderRadius: "0.4rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.5rem"
+              }}
               >
                 <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon style={{ width: "2rem", height: "2rem" }} />

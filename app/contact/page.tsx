@@ -25,7 +25,7 @@ export default function ContactHub() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]}
       />
 
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         {/* QUICK ACTION GRID */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem", marginBottom: "8rem" }}>
           {[
@@ -35,17 +35,17 @@ export default function ContactHub() {
           ].map((action, index) => {
             const Icon = action.icon;
             return (
-              <Link key={index} href={action.href} className="card-hover" style={{ 
-                textDecoration: "none", 
-                color: "inherit", 
-                background: "#fff", 
-                border: "1px solid #e5e5e5", 
-                padding: "3rem", 
-borderRadius: "0.4rem",
-                display: "flex", 
-                flexDirection: "column", 
-                gap: "1.5rem" 
-              }} 
+              <Link key={index} href={action.href} className="card-hover" style={{
+                textDecoration: "none",
+                color: "inherit",
+                background: "#fff",
+                border: "1px solid #e5e5e5",
+                padding: "3rem",
+                borderRadius: "0.4rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.5rem"
+              }}
               >
                 <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon style={{ width: "2rem", height: "2rem" }} />
@@ -152,7 +152,7 @@ borderRadius: "0.4rem",
           </div>
         </div>
       </FadeIn>
-      
+
     </div>
   );
 }

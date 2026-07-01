@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ShieldCheck, Award, ShieldAlert, FileText, CheckCircle } from "lucide-react";
 
 const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/aeronica_at", icon: "instagram" },
@@ -30,10 +31,24 @@ const SocialIcon = ({ name }: { name: string }) => {
   }
 };
 
+const seoLandingPages = [
+  { label: "Drone Survey Company Pune", href: "/seo/drone-survey-company-pune" },
+  { label: "Drone Survey Maharashtra", href: "/seo/drone-survey-maharashtra" },
+  { label: "LiDAR Survey Services India", href: "/seo/lidar-survey-services-india" },
+  { label: "GIS Solutions India", href: "/seo/gis-solutions-india" },
+  { label: "Drone Inspection Services", href: "/seo/drone-inspection-services" },
+  { label: "Digital Twin Services", href: "/seo/digital-twin-services" },
+  { label: "Solar Plant Inspection", href: "/seo/solar-plant-inspection" },
+  { label: "Mining Drone Survey", href: "/seo/mining-drone-survey" },
+  { label: "Highway Mapping Services", href: "/seo/highway-mapping-services" },
+];
+
 const Footer = () => {
   return (
     <footer style={{ background: "#21389A", color: "#fff", overflow: "hidden" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "6rem var(--section-px) 0" }}>
+      <div style={{ maxWidth: "160rem", margin: "0 auto", padding: "6rem var(--section-px) 0" }}>
+        
+        {/* Main Footer Directory */}
         <div className="footer-grid"
           style={{
             paddingBottom: "4rem",
@@ -42,9 +57,9 @@ const Footer = () => {
           <div>
             <Image src="/assets/img/aeronica-logo.png" alt="Aeronica" width={200} height={50} style={{ width: "16rem", height: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem" }} />
             <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.7, maxWidth: "28rem" }}>
-              Indigenous drone solutions for agriculture, GIS, surveillance, and industrial applications. DGCA certified.
+              Indigenous drone hardware, avionics, and GIS software solutions for agriculture, surveillance, and industrial applications.
             </p>
-            <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
+            <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", marginBottom: "2.5rem" }}>
               {socialLinks.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
                   width: "3.2rem", height: "3.2rem", borderRadius: "50%",
@@ -60,20 +75,48 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            <a href="https://partners.aeronica.in/login" style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1.3rem 2.8rem",
+              background: "#ffffff",
+              color: "#21389A",
+              fontFamily: "var(--font-mono)",
+              fontSize: "1.1rem",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              textDecoration: "none",
+              transition: "all 0.3s ease",
+              border: "1px solid #ffffff",
+              width: "18rem",
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#ffffff"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#21389A"; }}
+            >
+              Partner Login
+            </a>
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Services</h4>
+            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Solutions</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-              {["Drone Survey & Mapping", "GIS & Geospatial Intelligence", "Infrastructure Inspection", "AI Drone Intelligence", "Disaster & Emergency Response"].map((item) => (
-                <li key={item}>
-                  <Link href={`/solutions/${item.toLowerCase().replace(/[& ]/g, "-").replace(/--/g, "-")}`} style={{
+              {[
+                { label: "Drone Survey & Mapping", href: "/solutions/drone-survey-mapping" },
+                { label: "GIS & Spatial Intelligence", href: "/solutions/gis-geospatial-intelligence" },
+                { label: "Infrastructure Inspection", href: "/solutions/infrastructure-inspection" },
+                { label: "AI Drone Intelligence", href: "/solutions/ai-drone-intelligence" },
+                { label: "Disaster Response", href: "/solutions/disaster-emergency-response" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} style={{
                     fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
                     onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}>
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -81,17 +124,22 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Industries</h4>
+            <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Products</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-              {["Agriculture", "Mining", "Construction", "Energy", "Transportation"].map((item) => (
-                <li key={item}>
-                  <Link href={`/industries/${item.toLowerCase()}`} style={{
+              {[
+                { label: "Samrudhhi-10L", href: "/products/samrudhhi-10l" },
+                { label: "Samrudhhi-10LH", href: "/products/samrudhhi-10lh" },
+                { label: "Flycra 2.0", href: "/products/flycra-20" },
+                { label: "Nitya FC Module", href: "/products/nitya-fc" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} style={{
                     fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
                     onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}>
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -102,11 +150,14 @@ const Footer = () => {
             <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Company</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
               {[
-                { label: "About Us", href: "/about/about-aeronica" },
-                { label: "Case Studies", href: "/case-studies" },
-                { label: "Blog", href: "/resources/blog" },
-                { label: "Drone Regulations", href: "/resources/drone-regulations" },
-                { label: "Careers", href: "/contact/careers" },
+                { label: "About Aeronica", href: "/about" },
+                { label: "Leadership Team", href: "/about/leadership-team" },
+                { label: "Technology Stack", href: "/about/technology-stack" },
+                { label: "Certifications", href: "/about/certifications" },
+                { label: "Partners & Alliances", href: "/about/partners-alliances" },
+                { label: "Research & R&D", href: "/research" },
+                { label: "Become a Partner", href: "https://partners.aeronica.in" },
+                { label: "Careers", href: "/about/careers" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} style={{
@@ -123,33 +174,92 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* SEO Landing Pages footer links */}
         <div style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "1rem",
-          padding: "2rem 0",
+          padding: "4rem 0",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}>
-          <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.5)", margin: 0 }}>
-            &copy; {new Date().getFullYear()} Aeronica Advance Technologies Pvt. Ltd.
-          </p>
-          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-            {[
-              { label: "Privacy Policy", href: "/legal/privacy-policy" },
-              { label: "Terms & Conditions", href: "/legal/terms-conditions" },
-              { label: "Refund Policy", href: "/legal/refund-policy" },
-              { label: "Cookie Policy", href: "/legal/cookie-policy" },
-            ].map((item) => (
-              <Link key={item.label} href={item.href} style={{
-                fontSize: "1.15rem", color: "rgba(255,255,255,0.5)", textDecoration: "none",
+          <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "2.5rem" }}>SEO Landing Pages</h4>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+            gap: "1.5rem",
+          }}>
+            {seoLandingPages.map((page) => (
+              <Link key={page.label} href={page.href} style={{
+                fontSize: "1.25rem",
+                color: "rgba(255,255,255,0.5)",
+                textDecoration: "none",
                 transition: "color 0.2s ease",
               }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}>
-                {item.label}
+                {page.label}
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* Legal, Compliance Badges, Copyright */}
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2.5rem",
+          padding: "4rem 0",
+        }}>
+          {/* Compliance badges row */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "3rem",
+            flexWrap: "wrap",
+            justifyContent: "flex-start",
+            borderBottom: "1px solid rgba(255,255,255,0.04)",
+            paddingBottom: "2rem",
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "rgba(255,255,255,0.7)" }}>
+              <ShieldCheck style={{ width: "2rem", height: "2rem", color: "#0CC820" }} />
+              <span style={{ fontSize: "1.3rem", fontWeight: 600 }}>DGCA Compliant</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "rgba(255,255,255,0.7)" }}>
+              <CheckCircle style={{ width: "2rem", height: "2rem", color: "#009BFF" }} />
+              <span style={{ fontSize: "1.3rem", fontWeight: 600 }}>ISO Certified</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "rgba(255,255,255,0.7)" }}>
+              <Award style={{ width: "2rem", height: "2rem", color: "#fff" }} />
+              <span style={{ fontSize: "1.3rem", fontWeight: 600 }}>Data Security Guaranteed</span>
+            </div>
+          </div>
+
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "1.5rem",
+          }}>
+            <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
+              &copy; {new Date().getFullYear()} Aeronica Advance Technologies Pvt. Ltd. All rights reserved. 
+              DIPP Recognized Startup. Drone operations fully compliant with DGCA regulations. Data processed under ISO standards.
+            </p>
+            <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+              {[
+                { label: "Privacy Policy", href: "/legal/privacy-policy" },
+                { label: "Terms & Conditions", href: "/legal/terms-conditions" },
+                { label: "Refund Policy", href: "/legal/refund-policy" },
+                { label: "Sitemap", href: "/sitemap" },
+                { label: "Cookie Policy", href: "/legal/cookie-policy" },
+              ].map((item) => (
+                <Link key={item.label} href={item.href} style={{
+                  fontSize: "1.15rem", color: "rgba(255,255,255,0.5)", textDecoration: "none",
+                  transition: "color 0.2s ease",
+                }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.8)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

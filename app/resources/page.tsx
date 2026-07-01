@@ -61,7 +61,7 @@ export default function ResourcesHub() {
 
       {/* Stats Bar */}
       <FadeIn>
-        <div style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+        <div style={{ padding: "0 var(--section-px)", maxWidth: "160rem", margin: "0 auto" }}>
           <div className="resources-stats" style={{
             marginTop: "-3rem", position: "relative", zIndex: 3,
           }}>
@@ -77,7 +77,7 @@ export default function ResourcesHub() {
 
       {/* Featured Resource */}
       <FadeIn>
-        <div style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "6rem auto 0" }}>
+        <div style={{ padding: "0 var(--section-px)", maxWidth: "160rem", margin: "6rem auto 0" }}>
           <div className="p-35" style={{
             background: "#21389A", borderRadius: "0.4rem",
             display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -110,7 +110,7 @@ export default function ResourcesHub() {
 
       {/* Resource Sections */}
       {sections.map((section, si) => (
-        <FadeIn key={si} as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+        <FadeIn key={si} as="section" style={{ padding: "0 var(--section-px)", maxWidth: "160rem", margin: "0 auto" }}>
           <div style={{ padding: si === 0 ? "6rem 0 0" : "5rem 0 0" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "0.5rem" }}>
               <span style={{ width: "0.3rem", height: "1.6rem", background: section.color, borderRadius: "2px" }} />
@@ -159,7 +159,7 @@ export default function ResourcesHub() {
       ))}
 
       {/* CTA Banner */}
-      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" style={{ padding: "0 var(--section-px)", maxWidth: "160rem", margin: "0 auto" }}>
         <div className="p-4" style={{
           marginTop: "6rem", background: "#ffffff", borderRadius: "0.4rem",
           display: "flex", alignItems: "center",

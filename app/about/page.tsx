@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { DotArrowRight } from "@/components/DotIcons";
-import { 
-  Rocket, Target, Eye, Users, Cpu, ShieldCheck, Award, 
-  BookOpen, Quote, MapPin, CheckCircle, 
+import {
+  Rocket, Target, Eye, Users, Cpu, ShieldCheck, Award,
+  BookOpen, Quote, MapPin, CheckCircle,
   Building2, Sparkles, Briefcase
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
@@ -23,7 +23,7 @@ export default function AboutHub() {
       />
 
       {/* Section 1 — The Origin Story */}
-      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div className="ab-split">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
@@ -37,13 +37,13 @@ export default function AboutHub() {
               Born from a belief that India deserves its own aerial intelligence
             </h2>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Aeronica was founded in Pune at a time when India&rsquo;s drone industry was dominated by imported, 
-              generic hardware with zero after-sales support. Critical sectors&mdash;agriculture, railways, 
+              Aeronica was founded in Pune at a time when India&rsquo;s drone industry was dominated by imported,
+              generic hardware with zero after-sales support. Critical sectors&mdash;agriculture, railways,
               mining&mdash;were forced to adapt foreign solutions to Indian conditions.
             </p>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "2rem" }}>
-              We set out to change that. Our founding team of aeronautical engineers and embedded systems 
-              designers committed to one principle: build everything in-house, for Indian conditions, 
+              We set out to change that. Our founding team of aeronautical engineers and embedded systems
+              designers committed to one principle: build everything in-house, for Indian conditions,
               with Indian talent.
             </p>
             <div className="gap-4" style={{ display: "flex", paddingTop: "2rem", borderTop: "1px solid #e5e5e5", flexWrap: "wrap" }}>
@@ -77,19 +77,19 @@ export default function AboutHub() {
             <div style={{ position: "absolute", top: "-40%", right: "-20%", width: "60%", height: "80%", background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)", borderRadius: "50%" }} />
             <div style={{ position: "relative", zIndex: 1 }}>
               <Rocket style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />
-            <blockquote style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.4, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
-              &ldquo;We didn&rsquo;t want to assemble drones. We wanted to invent the Indian way of building them.&rdquo;
-            </blockquote>
-            <div style={{ width: "4rem", height: "2px", background: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }} />
-            <div style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)" }}>Founding Ethos, Aeronica Advance Technologies</div>
+              <blockquote style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.4, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
+                &ldquo;We didn&rsquo;t want to assemble drones. We wanted to invent the Indian way of building them.&rdquo;
+              </blockquote>
+              <div style={{ width: "4rem", height: "2px", background: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }} />
+              <div style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)" }}>Founding Ethos, Aeronica Advance Technologies</div>
+            </div>
           </div>
-        </div>
         </div>
       </FadeIn>
 
       {/* Section 2 — Mission & Vision */}
-      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
               <span></span>Our Compass
@@ -105,8 +105,8 @@ export default function AboutHub() {
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
               <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7 }}>
-                Shaping a future where intelligent drones revolutionize the world—from 
-                the largest railway corridor to the smallest farm—by building indigenous, 
+                Shaping a future where intelligent drones revolutionize the world—from
+                the largest railway corridor to the smallest farm—by building indigenous,
                 DGCA-compliant drone ecosystems that are secure, reliable, and purpose-built.
               </p>
             </div>
@@ -116,8 +116,8 @@ export default function AboutHub() {
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
               <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7 }}>
-                To lead India&rsquo;s aerial intelligence revolution&mdash;becoming the most trusted name 
-                in indigenous UAV hardware, geospatial analytics, and autonomous flight 
+                To lead India&rsquo;s aerial intelligence revolution&mdash;becoming the most trusted name
+                in indigenous UAV hardware, geospatial analytics, and autonomous flight
                 operations from the Himalayas to the Indian Ocean.
               </p>
             </div>
@@ -126,7 +126,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 3 — The People */}
-      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div className="responsive-header" style={{ marginBottom: "4rem" }}>
           <div>
             <span className="section-title">
@@ -136,7 +136,7 @@ export default function AboutHub() {
               Built by engineers,<br />for engineers
             </h2>
           </div>
-          <Link href="/about/leadership-team" style={{ 
+          <Link href="/about/leadership-team" style={{
             display: "inline-flex", alignItems: "center", gap: "0.8rem",
             fontSize: "1.4rem", fontWeight: 600, color: "#009BFF", textDecoration: "none",
             borderBottom: "1px solid #009BFF", paddingBottom: "0.3rem",
@@ -147,8 +147,8 @@ export default function AboutHub() {
           </Link>
         </div>
         <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "4rem" }}>
-          Our team brings together decades of combined experience across aerospace engineering, 
-          embedded electronics, GIS analytics, and cloud infrastructure&mdash;all under one roof 
+          Our team brings together decades of combined experience across aerospace engineering,
+          embedded electronics, GIS analytics, and cloud infrastructure&mdash;all under one roof
           in Pune, Maharashtra.
         </p>
         <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
@@ -173,8 +173,8 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 4 — The Technology (Full-Stack Mastery) */}
-      <FadeIn as="section" className="section-py-lg" style={{ background: "#21389A", color: "#fff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#21389A", color: "#fff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div className="responsive-header" style={{ marginBottom: "4rem" }}>
             <div>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -184,7 +184,7 @@ export default function AboutHub() {
                 Full-Stack Mastery,&nbsp;<br style={{ display: "none" }} />Ground Up
               </h2>
             </div>
-            <Link href="/about/technology-stack" style={{ 
+            <Link href="/about/technology-stack" style={{
               display: "inline-flex", alignItems: "center", gap: "0.8rem",
               fontSize: "1.4rem", fontWeight: 600, color: "#fff", textDecoration: "none",
               borderBottom: "1px solid rgba(255,255,255,0.5)", paddingBottom: "0.3rem",
@@ -194,8 +194,8 @@ export default function AboutHub() {
             </Link>
           </div>
           <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: "60rem", marginBottom: "5rem" }}>
-            Unlike most drone companies that assemble off-the-shelf components, we own the entire 
-            technology chain&mdash;from the carbon fiber airframe to the cloud analytics dashboard. 
+            Unlike most drone companies that assemble off-the-shelf components, we own the entire
+            technology chain&mdash;from the carbon fiber airframe to the cloud analytics dashboard.
             This vertical integration is the foundation of our reliability.
           </p>
           <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
@@ -221,7 +221,7 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 5 — Trust & Proof (Clients, Certifications, Partners) */}
-      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "6rem" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Trust &amp; Recognition
@@ -238,7 +238,7 @@ export default function AboutHub() {
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>DGCA Certified</h3>
             <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-              Our Samrudhhi-10L is fully type-certified by DGCA. Every platform follows AS9100-ready 
+              Our Samrudhhi-10L is fully type-certified by DGCA. Every platform follows AS9100-ready
               production pipelines with full material traceability.
             </p>
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>View Certifications →</span>
@@ -250,19 +250,19 @@ export default function AboutHub() {
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Trusted Partners</h3>
             <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-              Partnered with IITs for composite research. Trusted by Central Railway, JSW Steel, 
+              Partnered with IITs for composite research. Trusted by Central Railway, JSW Steel,
               BASF, and IOCL for high-stakes spatial campaigns.
             </p>
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>Our Partners →</span>
           </Link>
 
-          <Link href="/about/about-aeronica" className="card-hover p-35" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", transition: "all 0.3s ease" }}>
+          <Link href="/about/why-aeronica" className="card-hover p-35" style={{ textDecoration: "none", color: "inherit", background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", transition: "all 0.3s ease" }}>
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <MapPin style={{ width: "2rem", height: "2rem" }} />
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Made in India</h3>
             <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-              DIPP-recognized startup. All R&amp;D, manufacturing, and flight operations based in 
+              DIPP-recognized startup. All R&amp;D, manufacturing, and flight operations based in
               Pune, Maharashtra&mdash;supporting missions across 12 Indian states.
             </p>
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>Company Profile →</span>
@@ -270,7 +270,7 @@ export default function AboutHub() {
         </div>
 
         {/* Stats bar */}
-        <div className="responsive-padding gap-3" style={{ 
+        <div className="responsive-padding gap-3" style={{
           background: "#21389A", borderRadius: "0.4rem",
           display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", textAlign: "center"
         }}>
@@ -289,8 +289,8 @@ export default function AboutHub() {
       </FadeIn>
 
       {/* Section 6 — Join the Mission */}
-      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff" }}>
-        <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center" }}>
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff", paddingLeft: 0, paddingRight: 0 }}>
+        <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", textAlign: "center" }}>
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Join Us
           </span>
@@ -298,8 +298,8 @@ export default function AboutHub() {
             Be part of India&rsquo;s drone story
           </h2>
           <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "60rem", margin: "0 auto 4rem" }}>
-            We&rsquo;re building the future of Indian aerospace&mdash;and we need the best engineers, 
-            designers, and operators to make it happen. If you want to work on technology that 
+            We&rsquo;re building the future of Indian aerospace&mdash;and we need the best engineers,
+            designers, and operators to make it happen. If you want to work on technology that
             actually flies, we want to hear from you.
           </p>
           <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>

@@ -25,7 +25,7 @@ const ClientsMarquee = () => {
 
   return (
     <section className="marquee-section">
-      <div style={{ maxWidth: "1440px", margin: "0 auto", textAlign: "center", padding: "0 var(--section-px)" }}>
+      <div style={{ maxWidth: "160rem", margin: "0 auto", textAlign: "center", padding: "0 var(--section-px)" }}>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#888", fontWeight: 600, display: "block", marginBottom: "5rem" }}>
           Trusted by Leading Organisations
         </span>

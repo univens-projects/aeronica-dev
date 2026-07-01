@@ -18,7 +18,7 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
     <section ref={sectionRef} className="page-hero" style={{ position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, background: "#21389A", zIndex: 0 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%)", zIndex: 1 }} />
-      <div style={{ position: "relative", zIndex: 2, padding: variant === "child" ? "140px var(--section-px) 60px" : "180px var(--section-px) 100px", maxWidth: "1440px", margin: "0 auto" }}>
+      <div style={{ position: "relative", zIndex: 2, padding: variant === "child" ? "140px var(--section-px) 60px" : "180px var(--section-px) 100px", maxWidth: "160rem", margin: "0 auto" }}>
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: variant === "child" ? "1.5rem" : "2.5rem", fontSize: "1.3rem", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-mono)" }}>
             {breadcrumbs.map((crumb, i) => (

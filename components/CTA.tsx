@@ -10,12 +10,17 @@ const CTA = () => {
       id="cta"
       style={{
         background: "#ffffff",
-        padding: "var(--section-py) var(--section-px)",
+        paddingTop: "var(--section-py)",
+        paddingBottom: "var(--section-py)",
+        paddingLeft: "var(--section-px)",
+        paddingRight: "var(--section-px)",
+        maxWidth: "160rem",
+        margin: "0 auto",
       }}
     >
       <div className="cta-inner"
         style={{
-          maxWidth: "1440px",
+          maxWidth: "160rem",
           margin: "0 auto",
           background: "#21389A",
           borderRadius: "0.8rem",

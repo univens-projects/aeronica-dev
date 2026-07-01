@@ -39,7 +39,7 @@ const metaIcons: Record<string, React.ElementType> = {
 
 export default function Portfolio() {
   return (
-    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="portfolio">
+    <section className="section-py" style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", color: "#1a1a1a" }} id="portfolio">
       <SectionHeader
         eyebrow="Our Work"
         title="Featured Projects"
@@ -84,7 +84,7 @@ export default function Portfolio() {
               <MotionParallax speed={0.3} style={{ position: "absolute", inset: "-30% 0" }}>
                 <div style={{
                   width: "100%", height: "100%",
-                  background: `${projectGradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg","pexels-quarry-site.jpg","pexels-pipeline.jpg"][index]}')`,
+                  background: `${projectGradient}, url('/assets/images/pexels/${["pexels-railway-tracks.jpg", "pexels-quarry-site.jpg", "pexels-pipeline.jpg"][index]}')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundBlendMode: "overlay",

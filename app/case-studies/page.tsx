@@ -17,7 +17,7 @@ export default function CaseStudiesHub() {
       />
 
       {/* Case Study Categories Grid */}
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", marginBottom: "10rem" }}>
           {[
             { title: "Government Projects", desc: "National security and strategic asset mapping for central and state agencies.", href: "/case-studies/government-projects", icon: FileText },

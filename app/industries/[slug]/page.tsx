@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
-import { 
-  Landmark, Building2, Tractor, HardHat, Mountain, Zap, Flame, 
+import {
+  Landmark, Building2, Tractor, HardHat, Mountain, Zap, Flame,
   Radio, Truck, Home, CheckCircle, Map, Users, Cpu, Award, Globe
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
@@ -301,7 +301,7 @@ export default function IndustryDetail() {
         ]}
       />
 
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "1000px", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {data.sections.map((section: any, idx: number) => (
             <div key={idx} className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
@@ -313,7 +313,7 @@ export default function IndustryDetail() {
                 )}
                 <h2 style={{ fontSize: "2.2rem", fontWeight: 600, letterSpacing: "-0.02em" }}>{section.heading}</h2>
               </div>
-              
+
               {section.text && (
                 <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, marginBottom: section.list ? "2.5rem" : "0" }}>
                   {section.text}

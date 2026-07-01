@@ -100,7 +100,7 @@ const Products = () => {
   const accentColor = "#21389a";
 
   return (
-    <section className="section-py" style={{ maxWidth: "1440px", margin: "0 auto", color: "#1a1a1a" }} id="products">
+    <section className="section-py" style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", color: "#1a1a1a" }} id="products">
       <FadeIn>
         <div className="responsive-header" style={{ marginBottom: "4rem" }}>
           <div>
