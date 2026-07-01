@@ -23,7 +23,8 @@ export default function OfficeLocations() {
       />
 
       <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", marginBottom: "6rem" }}>
+        {/* was: inline gridTemplateColumns 1fr 1fr — now responsive */}
+        <div className="offices-grid">
 
           {/* HQ Card */}
           <div className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", overflow: "hidden" }}>
@@ -45,7 +46,8 @@ export default function OfficeLocations() {
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+              {/* was: inline gridTemplateColumns 1fr 1fr — now .form-row */}
+              <div className="form-row">
                 <div style={{ display: "flex", gap: "1.5rem", alignItems: "start" }}>
                   <Phone style={{ width: "2rem", height: "2rem", color: "#888", flexShrink: 0, marginTop: "0.2rem" }} />
                   <div>

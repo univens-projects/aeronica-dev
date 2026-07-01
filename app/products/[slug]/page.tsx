@@ -296,7 +296,7 @@ export default function ProductDetailPage() {
 
         {/* Overview — 2-col: text + hero image (for products with heroImage) OR gradient spec card */}
         {product.heroImage ? (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "4rem", marginBottom: "5rem", alignItems: "center" }}>
+          <div className="product-overview-grid">
             <div>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>{product.category}</span>
               <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1rem", marginBottom: "2rem", lineHeight: 1.15 }}>
@@ -346,7 +346,7 @@ export default function ProductDetailPage() {
             </div>
           </div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "3rem", marginBottom: "5rem", alignItems: "start" }}>
+          <div className="product-spec-layout">
             <div>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>{product.category}</span>
               <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.6rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1rem", marginBottom: "2rem", lineHeight: 1.15 }}>
@@ -374,7 +374,7 @@ export default function ProductDetailPage() {
         {/* Image Showcase — only for products with certImage */}
         {product.certImage && (
           <div style={{ marginBottom: "5rem" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+            <div className="product-showcase-grid">
               {/* Front-facing certified shot */}
               <div style={{
                 background: product.name === "Flycra 2.0"
@@ -408,7 +408,7 @@ export default function ProductDetailPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
                 <div style={{ background: "#21389A", borderRadius: "1rem", padding: "3.5rem", color: "#fff", flex: 1 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "2rem" }}>
-                    <CheckCircle style={{ width: "3.2rem", height: "3.2rem", color: "#0CC820", flexShrink: 0 }} />
+                    <CheckCircle style={{ width: "3.2rem", height: "3.2rem", color: "white", flexShrink: 0 }} />
                     <div>
                       <div style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
                         {product.name === "Nitya FC" ? "Indigenous Design" : "Certified Platform"}
@@ -500,7 +500,7 @@ export default function ProductDetailPage() {
 
         <div style={{ background: "#21389A", borderRadius: "0.4rem", padding: "3.5rem", marginBottom: "4rem" }}>
           <div style={{ display: "flex", alignItems: "start", gap: "1.5rem" }}>
-            <CheckCircle style={{ width: "2.4rem", height: "2.4rem", color: "#0CC820", flexShrink: 0, marginTop: "0.2rem" }} />
+            <CheckCircle style={{ width: "2.4rem", height: "2.4rem", color: "white", flexShrink: 0, marginTop: "0.2rem" }} />
             <div>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, color: "#fff", marginBottom: "0.8rem" }}>Proven in the Field</h3>
               <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7 }}>{product.proof}</p>

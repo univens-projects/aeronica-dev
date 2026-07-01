@@ -47,7 +47,7 @@ const Footer = () => {
   return (
     <footer style={{ background: "#21389A", color: "#fff", overflow: "hidden" }}>
       <div style={{ maxWidth: "160rem", margin: "0 auto", padding: "6rem var(--section-px) 0" }}>
-        
+
         {/* Main Footer Directory */}
         <div className="footer-grid"
           style={{
@@ -75,7 +75,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            <a href="https://partners.aeronica.in/login" style={{
+            <Link href="/partners/login" style={{
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -96,7 +96,7 @@ const Footer = () => {
               onMouseLeave={(e) => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#21389A"; }}
             >
               Partner Login
-            </a>
+            </Link>
           </div>
 
           <div>
@@ -156,7 +156,7 @@ const Footer = () => {
                 { label: "Certifications", href: "/about/certifications" },
                 { label: "Partners & Alliances", href: "/about/partners-alliances" },
                 { label: "Research & R&D", href: "/research" },
-                { label: "Become a Partner", href: "https://partners.aeronica.in" },
+                { label: "Become a Partner", href: "/partners/become" },
                 { label: "Careers", href: "/about/careers" },
               ].map((item) => (
                 <li key={item.label}>
@@ -218,11 +218,11 @@ const Footer = () => {
             paddingBottom: "2rem",
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "rgba(255,255,255,0.7)" }}>
-              <ShieldCheck style={{ width: "2rem", height: "2rem", color: "#0CC820" }} />
+              <ShieldCheck style={{ width: "2rem", height: "2rem", color: "white" }} />
               <span style={{ fontSize: "1.3rem", fontWeight: 600 }}>DGCA Compliant</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "rgba(255,255,255,0.7)" }}>
-              <CheckCircle style={{ width: "2rem", height: "2rem", color: "#009BFF" }} />
+              <CheckCircle style={{ width: "2rem", height: "2rem", color: "white" }} />
               <span style={{ fontSize: "1.3rem", fontWeight: 600 }}>ISO Certified</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", color: "rgba(255,255,255,0.7)" }}>
@@ -239,7 +239,7 @@ const Footer = () => {
             gap: "1.5rem",
           }}>
             <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
-              &copy; {new Date().getFullYear()} Aeronica Advance Technologies Pvt. Ltd. All rights reserved. 
+              &copy; {new Date().getFullYear()} Aeronica Advance Technologies Pvt. Ltd. All rights reserved.
               DIPP Recognized Startup. Drone operations fully compliant with DGCA regulations. Data processed under ISO standards.
             </p>
             <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>

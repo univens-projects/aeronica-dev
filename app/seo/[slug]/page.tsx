@@ -174,7 +174,7 @@ export default function SEOLandingPage() {
 
       {/* Overview Block */}
       <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "4rem", alignItems: "start" }}>
+        <div className="seo-split-layout">
           <div>
             <span className="section-title">
               <span></span>Geospatial Expertise

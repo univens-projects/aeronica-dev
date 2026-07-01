@@ -384,7 +384,7 @@ export default function LegalPage() {
       />
 
       <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "5rem", alignItems: "start" }}>
+        <div className="seo-split-layout">
           {/* Main Content */}
           <div>
             {/* Last Updated Badge */}

@@ -18,9 +18,7 @@ const aboutCategories = [
   },
   {
     title: "Our People",
-    links: [
-      { label: "Leadership Team", href: "/about/leadership-team" },
-    ],
+    links: [{ label: "Leadership Team", href: "/about/leadership-team" }],
   },
   {
     title: "Capabilities",
@@ -42,15 +40,11 @@ const productCategories = [
   },
   {
     title: "Survey & Mapping",
-    links: [
-      { label: "Flycra 2.0", href: "/products/flycra-20" },
-    ],
+    links: [{ label: "Flycra 2.0", href: "/products/flycra-20" }],
   },
   {
     title: "Avionics",
-    links: [
-      { label: "Nitya FC", href: "/products/nitya-fc" },
-    ],
+    links: [{ label: "Nitya FC", href: "/products/nitya-fc" }],
   },
 ];
 
@@ -71,9 +65,7 @@ const solutionCategories = [
   },
   {
     title: "Technology",
-    links: [
-      { label: "AI Drone Intelligence", href: "/solutions/ai-drone-intelligence" },
-    ],
+    links: [{ label: "AI Drone Intelligence", href: "/solutions/ai-drone-intelligence" }],
   },
 ];
 
@@ -144,9 +136,7 @@ const resourceCategories = [
   },
   {
     title: "Research",
-    links: [
-      { label: "Research & R&D", href: "/research" },
-    ],
+    links: [{ label: "Research & R&D", href: "/research" }],
   },
 ];
 
@@ -168,21 +158,36 @@ const contactCategories = [
   },
 ];
 
-const aboutLinks = aboutCategories.flatMap(c => c.links);
-const productLinks = productCategories.flatMap(c => c.links);
-const solutionLinks = solutionCategories.flatMap(c => c.links);
-const industryLinks = industryCategories.flatMap(c => c.links);
-const caseStudyLinks = caseStudyCategories.flatMap(c => c.links);
-const resourceLinks = resourceCategories.flatMap(c => c.links);
-const contactLinks = contactCategories.flatMap(c => c.links);
+// Config-driven nav sections — keeps desktop + mobile in sync from ONE source
+const navSections = [
+  { key: "about", label: "About", basePath: "/about", categories: aboutCategories },
+  { key: "products", label: "Products", basePath: "/products", categories: productCategories, showAllLink: true },
+  { key: "solutions", label: "Solutions", basePath: "/solutions", categories: solutionCategories, showAllLink: true },
+  { key: "industries", label: "Industries", basePath: "/industries", categories: industryCategories, showAllLink: true },
+  { key: "case-studies", label: "Case Studies", basePath: "/case-studies", categories: caseStudyCategories, showAllLink: true },
+  {
+    key: "resources",
+    label: "Resources",
+    basePath: "/resources",
+    extraActivePath: "/research",
+    categories: resourceCategories,
+    showAllLink: true,
+  },
+];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  // Desktop hover-dropdowns (independent from mobile accordion)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  // Mobile accordion — its OWN state so it can never be closed by the
+  // desktop "click outside" listener below
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
+
   const pathname = usePathname();
   const router = useRouter();
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const desktopNavRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -192,10 +197,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Only closes DESKTOP dropdowns. Scoped strictly to desktopNavRef so it
+  // can never fire for taps inside the mobile overlay.
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null);
+      if (desktopNavRef.current && !desktopNavRef.current.contains(e.target as Node)) {
+        setActiveDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -203,33 +210,53 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (!isMobileMenuOpen) return;
-    const handleScroll = () => setIsMobileMenuOpen(false);
-    window.addEventListener("scroll", handleScroll, { passive: true, once: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobileMenuOpen]);
-
-  useEffect(() => {
     if (isMobileMenuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
     } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
+      // Reset accordion so it doesn't re-open on a stale section next time
+      setOpenMobileSection(null);
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+    };
   }, [isMobileMenuOpen]);
 
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   const showBackground = pathname !== "/" || isScrolled;
-  const isAboutActive = pathname.startsWith("/about");
-  const isProductsActive = pathname.startsWith("/products");
-  const isSolutionsActive = pathname.startsWith("/solutions");
-  const isIndustriesActive = pathname.startsWith("/industries");
-  const isCaseStudiesActive = pathname.startsWith("/case-studies");
-  const isResourcesActive = pathname.startsWith("/resources") || pathname.startsWith("/research");
+
+  const isSectionActive = (section: (typeof navSections)[number]) =>
+    pathname.startsWith(section.basePath) ||
+    (section.extraActivePath ? pathname.startsWith(section.extraActivePath) : false);
+
   const isContactActive = pathname.startsWith("/contact");
 
   return (
     <>
-      <div ref={dropdownRef} className={`navbar ${showBackground ? "is-scrolled" : ""} ${isMobileMenuOpen ? "overlay-open" : ""}`} id="navbar" suppressHydrationWarning>
+      <div
+        ref={desktopNavRef}
+        className={`navbar ${showBackground ? "is-scrolled" : ""} ${isMobileMenuOpen ? "overlay-open" : ""}`}
+        id="navbar"
+        suppressHydrationWarning
+      >
         <div className="navbar-container">
           <Link href="/" className="navbar-logo" aria-label="Aeronica">
             <Image
@@ -242,173 +269,63 @@ const Navbar = () => {
           </Link>
 
           <nav className="navbar-menu" id="navbarMenu">
-            <Link href="/" className={`navbar-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
+            <Link href="/" className={`navbar-link ${pathname === "/" ? "active" : ""}`}>
+              Home
+            </Link>
 
-            <div
-              className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("about")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className={`navbar-link navbar-dropdown-trigger ${isAboutActive ? "active" : ""}`} onClick={() => router.push("/about")}>
-                About <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-              </button>
-              <div className={`navbar-dropdown-menu ${openDropdown === "about" ? "is-open" : ""}`}>
-                <div className="navbar-dropdown-grid">
-                  {aboutCategories.map((cat) => (
-                    <div key={cat.title} className="navbar-dropdown-col">
-                      <span className="navbar-dropdown-heading">{cat.title}</span>
-                      {cat.links.map((link) => (
-                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
+            {navSections.map((section) => (
+              <div
+                key={section.key}
+                className="navbar-dropdown"
+                onMouseEnter={() => setActiveDropdown(section.key)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button
+                  className={`navbar-link navbar-dropdown-trigger ${isSectionActive(section) ? "active" : ""}`}
+                  onClick={() => router.push(section.basePath)}
+                >
+                  {section.label}
+                  <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
+                </button>
+                <div className={`navbar-dropdown-menu ${activeDropdown === section.key ? "is-open" : ""}`}>
+                  <div className="navbar-dropdown-grid">
+                    {section.categories.map((cat) => (
+                      <div key={cat.title} className="navbar-dropdown-col">
+                        <span className="navbar-dropdown-heading">{cat.title}</span>
+                        {cat.links.map((link) => (
+                          <Link key={link.href} href={link.href} className="navbar-dropdown-link">
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div
-              className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("products")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className={`navbar-link navbar-dropdown-trigger ${isProductsActive ? "active" : ""}`} onClick={() => router.push("/products")}>
-                Products <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-              </button>
-              <div className={`navbar-dropdown-menu ${openDropdown === "products" ? "is-open" : ""}`}>
-                <div className="navbar-dropdown-grid">
-                  {productCategories.map((cat) => (
-                    <div key={cat.title} className="navbar-dropdown-col">
-                      <span className="navbar-dropdown-heading">{cat.title}</span>
-                      {cat.links.map((link) => (
-                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("solutions")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className={`navbar-link navbar-dropdown-trigger ${isSolutionsActive ? "active" : ""}`} onClick={() => router.push("/solutions")}>
-                Solutions <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-              </button>
-              <div className={`navbar-dropdown-menu ${openDropdown === "solutions" ? "is-open" : ""}`}>
-                <div className="navbar-dropdown-grid">
-                  {solutionCategories.map((cat) => (
-                    <div key={cat.title} className="navbar-dropdown-col">
-                      <span className="navbar-dropdown-heading">{cat.title}</span>
-                      {cat.links.map((link) => (
-                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("industries")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className={`navbar-link navbar-dropdown-trigger ${isIndustriesActive ? "active" : ""}`} onClick={() => router.push("/industries")}>
-                Industries <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-              </button>
-              <div className={`navbar-dropdown-menu ${openDropdown === "industries" ? "is-open" : ""}`}>
-                <div className="navbar-dropdown-grid">
-                  {industryCategories.map((cat) => (
-                    <div key={cat.title} className="navbar-dropdown-col">
-                      <span className="navbar-dropdown-heading">{cat.title}</span>
-                      {cat.links.map((link) => (
-                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("case-studies")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className={`navbar-link navbar-dropdown-trigger ${isCaseStudiesActive ? "active" : ""}`} onClick={() => router.push("/case-studies")}>
-                Case Studies <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-              </button>
-              <div className={`navbar-dropdown-menu ${openDropdown === "case-studies" ? "is-open" : ""}`}>
-                <div className="navbar-dropdown-grid">
-                  {caseStudyCategories.map((cat) => (
-                    <div key={cat.title} className="navbar-dropdown-col">
-                      <span className="navbar-dropdown-heading">{cat.title}</span>
-                      {cat.links.map((link) => (
-                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("resources")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <button className={`navbar-link navbar-dropdown-trigger ${isResourcesActive ? "active" : ""}`} onClick={() => router.push("/resources")}>
-                Resources <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-              </button>
-              <div className={`navbar-dropdown-menu ${openDropdown === "resources" ? "is-open" : ""}`}>
-                <div className="navbar-dropdown-grid">
-                  {resourceCategories.map((cat) => (
-                    <div key={cat.title} className="navbar-dropdown-col">
-                      <span className="navbar-dropdown-heading">{cat.title}</span>
-                      {cat.links.map((link) => (
-                        <Link key={link.href} href={link.href} className="navbar-dropdown-link">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            ))}
           </nav>
 
           <div className="navbar-actions">
-            <a
-              href="https://partners.aeronica.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="navbar-partner-link"
-            >
+            <Link href="/partners/become" className="navbar-partner-link">
               Become a Partner
-            </a>
+            </Link>
 
             <div
               className="navbar-dropdown"
-              onMouseEnter={() => setOpenDropdown("contact")}
-              onMouseLeave={() => setOpenDropdown(null)}
+              onMouseEnter={() => setActiveDropdown("contact")}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
               <button className={`navbar-cta-button ${isContactActive ? "active" : ""}`} onClick={() => router.push("/contact")}>
                 <span>Contact</span>
-                <ChevronDown style={{ width: "1.3rem", height: "1.3rem", marginLeft: "0.2rem" }} className="navbar-cta-chevron" />
+                <ChevronDown
+                  style={{ width: "1.3rem", height: "1.3rem", marginLeft: "0.2rem" }}
+                  className="navbar-cta-chevron"
+                />
               </button>
-              <div className={`navbar-dropdown-menu navbar-contact-dropdown ${openDropdown === "contact" ? "is-open" : ""}`} style={{ right: 0, left: "auto" }}>
+              <div
+                className={`navbar-dropdown-menu navbar-contact-dropdown ${activeDropdown === "contact" ? "is-open" : ""}`}
+                style={{ right: 0, left: "auto" }}
+              >
                 <div className="navbar-dropdown-grid">
                   {contactCategories.map((cat) => (
                     <div key={cat.title} className="navbar-dropdown-col">
@@ -426,7 +343,7 @@ const Navbar = () => {
 
             <button
               className={`navbar-toggle ${isMobileMenuOpen ? "is-active" : ""}`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setIsMobileMenuOpen((v) => !v)}
               aria-label="Toggle menu"
             >
               <span></span>
@@ -436,177 +353,72 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`nav-overlay ${isMobileMenuOpen ? "is-open" : ""}`} id="navOverlay" onClick={(e) => { const t = e.target as HTMLElement; if (t === e.currentTarget || t.classList.contains("nav-overlay-menu")) setIsMobileMenuOpen(false); }}>
+      <div
+        className={`nav-overlay ${isMobileMenuOpen ? "is-open" : ""}`}
+        id="navOverlay"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) closeMobileMenu();
+        }}
+      >
         <nav className="nav-overlay-menu">
-          <Link href="/" className={`nav-overlay-link ${pathname === "/" ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link href="/" className={`nav-overlay-link ${pathname === "/" ? "active" : ""}`} onClick={closeMobileMenu}>
+            Home
+          </Link>
 
-          <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/about" className={`nav-overlay-link ${isAboutActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-about" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-about" ? null : "mobile-about")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-about" ? "is-open" : ""}`}>
-              {aboutCategories.map((cat) => (
-                <div key={cat.title}>
-                  <span className="nav-overlay-subheading">{cat.title}</span>
-                  {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                      {link.label}
+          {navSections.map((section) => {
+            const isOpen = openMobileSection === section.key;
+            return (
+              <div className="nav-overlay-group" key={section.key}>
+                <button
+                  className={`nav-overlay-group-trigger ${isOpen ? "is-open" : ""} ${isSectionActive(section) ? "active" : ""}`}
+                  onClick={() => setOpenMobileSection((prev) => (prev === section.key ? null : section.key))}
+                >
+                  {section.label} <ChevronDown style={{ width: "2rem", height: "2rem" }} />
+                </button>
+                <div className={`nav-overlay-sublinks ${isOpen ? "is-open" : ""}`}>
+                  {section.showAllLink && (
+                    <Link
+                      href={section.basePath}
+                      className="nav-overlay-sublink nav-overlay-sublink-all"
+                      onClick={closeMobileMenu}
+                    >
+                      All {section.label}
                     </Link>
+                  )}
+                  {section.categories.map((cat) => (
+                    <div key={cat.title} className="nav-overlay-subgroup">
+                      <span className="nav-overlay-subheading">{cat.title}</span>
+                      {cat.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="nav-overlay-sublink"
+                          onClick={closeMobileMenu}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            );
+          })}
 
+          {/* Contact */}
           <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/products" className={`nav-overlay-link ${isProductsActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-products" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-products" ? null : "mobile-products")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-products" ? "is-open" : ""}`}>
-              {productCategories.map((cat) => (
-                <div key={cat.title}>
-                  <span className="nav-overlay-subheading">{cat.title}</span>
-                  {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/solutions" className={`nav-overlay-link ${isSolutionsActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-solutions" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-solutions" ? null : "mobile-solutions")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-solutions" ? "is-open" : ""}`}>
-              {solutionCategories.map((cat) => (
-                <div key={cat.title}>
-                  <span className="nav-overlay-subheading">{cat.title}</span>
-                  {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/industries" className={`nav-overlay-link ${isIndustriesActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-industries" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-industries" ? null : "mobile-industries")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-industries" ? "is-open" : ""}`}>
-              {industryCategories.map((cat) => (
-                <div key={cat.title}>
-                  <span className="nav-overlay-subheading">{cat.title}</span>
-                  {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/case-studies" className={`nav-overlay-link ${isCaseStudiesActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-case-studies" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-case-studies" ? null : "mobile-case-studies")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-case-studies" ? "is-open" : ""}`}>
-              {caseStudyCategories.map((cat) => (
-                <div key={cat.title}>
-                  <span className="nav-overlay-subheading">{cat.title}</span>
-                  {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/resources" className={`nav-overlay-link ${isResourcesActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Resources</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-resources" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-resources" ? null : "mobile-resources")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-resources" ? "is-open" : ""}`}>
-              {resourceCategories.map((cat) => (
-                <div key={cat.title}>
-                  <span className="nav-overlay-subheading">{cat.title}</span>
-                  {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="nav-overlay-group">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-              <Link href="/contact" className={`nav-overlay-link ${isContactActive ? "active" : ""}`} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-              <button
-                className={`nav-overlay-group-trigger ${openDropdown === "mobile-contact" ? "is-open" : ""}`}
-                onClick={() => setOpenDropdown(openDropdown === "mobile-contact" ? null : "mobile-contact")}
-                style={{ padding: "0.5rem", display: "flex", alignItems: "center", background: "none", border: "none", cursor: "pointer", color: "inherit" }}
-              >
-                <ChevronDown style={{ width: "1.4rem", height: "1.4rem" }} />
-              </button>
-            </div>
-            <div className={`nav-overlay-sublinks ${openDropdown === "mobile-contact" ? "is-open" : ""}`}>
+            <button
+              className={`nav-overlay-group-trigger ${openMobileSection === "contact" ? "is-open" : ""} ${isContactActive ? "active" : ""}`}
+              onClick={() => setOpenMobileSection((prev) => (prev === "contact" ? null : "contact"))}
+            >
+              Contact <ChevronDown style={{ width: "2rem", height: "2rem" }} />
+            </button>
+            <div className={`nav-overlay-sublinks ${openMobileSection === "contact" ? "is-open" : ""}`}>
               {contactCategories.map((cat) => (
-                <div key={cat.title}>
+                <div key={cat.title} className="nav-overlay-subgroup">
                   <span className="nav-overlay-subheading">{cat.title}</span>
                   {cat.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link key={link.href} href={link.href} className="nav-overlay-sublink" onClick={closeMobileMenu}>
                       {link.label}
                     </Link>
                   ))}
@@ -615,16 +427,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          <a
-            href="https://partners.aeronica.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-overlay-cta"
-            style={{ marginTop: "1rem", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Become a Partner <DotArrowRight size={12} />
-          </a>
+          <div className="nav-overlay-cta-group">
+            <Link href="/partners/become" className="nav-overlay-cta-contact" onClick={closeMobileMenu}>
+              Become a Partner <DotArrowRight size={14} />
+            </Link>
+          </div>
         </nav>
       </div>
     </>

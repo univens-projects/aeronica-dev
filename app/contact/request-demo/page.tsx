@@ -31,7 +31,8 @@ export default function RequestDemo() {
       />
 
       <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+        {/* was: inline gridTemplateColumns 1fr 1fr — now a responsive class */}
+        <div className="demo-grid">
           <div>
             <span className="section-title">
               <span></span>See Aeronica Fly
@@ -86,7 +87,8 @@ export default function RequestDemo() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.8rem" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                {/* was: inline gridTemplateColumns 1fr 1fr — now uses your existing .form-row class */}
+                <div className="form-row">
                   <div>
                     <label style={{ display: "block", fontSize: "1.2rem", fontWeight: 500, color: "#555", marginBottom: "0.5rem" }}>Name *</label>
                     <input type="text" required style={{ width: "100%", padding: "1rem", border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontSize: "1.4rem" }} />
@@ -97,7 +99,7 @@ export default function RequestDemo() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div className="form-row">
                   <div>
                     <label style={{ display: "block", fontSize: "1.2rem", fontWeight: 500, color: "#555", marginBottom: "0.5rem" }}>Email *</label>
                     <input type="email" required style={{ width: "100%", padding: "1rem", border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontSize: "1.4rem" }} />
@@ -122,7 +124,7 @@ export default function RequestDemo() {
 
                 <div>
                   <label style={{ display: "block", fontSize: "1.2rem", fontWeight: 500, color: "#555", marginBottom: "0.5rem" }}>Demo Preference *</label>
-                  <div style={{ display: "flex", gap: "2rem", marginTop: "0.5rem" }}>
+                  <div style={{ display: "flex", gap: "2rem", marginTop: "0.5rem", flexWrap: "wrap" }}>
                     <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "1.35rem" }}>
                       <input type="radio" name="demo_pref" value="virtual" defaultChecked /> Virtual Walkthrough
                     </label>

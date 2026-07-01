@@ -121,7 +121,7 @@ const aboutPages: Record<string, any> = {
           {
             layer: "Ground Control Layer",
             icon: Radio,
-            color: "#32620E",
+            color: "#21389A",
             items: [
               { title: "Mission Planning Suite", desc: "Custom GCS application for autonomous waypoint mission planning, terrain-following altitude adjustment, and real-time telemetry monitoring." },
               { title: "Secure Data Link", desc: "900MHz + 2.4GHz dual-band encrypted control link with 15km range. Redundant communication ensures mission continuity in high-RF-interference environments." },
@@ -293,7 +293,7 @@ const aboutPages: Record<string, any> = {
           {
             category: "Technology Ecosystem",
             icon: Globe,
-            color: "#32620E",
+            color: "#21389A",
             partners: [
               {
                 name: "Microsoft Azure",

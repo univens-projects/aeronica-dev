@@ -31,7 +31,7 @@ export default function BookConsultation() {
       />
 
       <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+        <div className="contact-form-grid">
           <div>
             <span className="section-title">
               <span></span>Expert Advisory
@@ -84,7 +84,7 @@ export default function BookConsultation() {
             </div>
           </div>
 
-          <div style={{ background: "#ffffff", border: "1px solid #e5e5e5", padding: "4rem", borderRadius: "0.4rem", boxShadow: "var(--shadow-md)" }}>
+          <div className="form-card">
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "2rem" }}>Schedule Consultation</h3>
 
             {formSubmitted ? (
@@ -95,7 +95,7 @@ export default function BookConsultation() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.8rem" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div className="form-row">
                   <div>
                     <label style={{ display: "block", fontSize: "1.2rem", fontWeight: 500, color: "#555", marginBottom: "0.5rem" }}>Name *</label>
                     <input type="text" required style={{ width: "100%", padding: "1rem", border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontSize: "1.4rem" }} />
@@ -106,7 +106,7 @@ export default function BookConsultation() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div className="form-row">
                   <div>
                     <label style={{ display: "block", fontSize: "1.2rem", fontWeight: 500, color: "#555", marginBottom: "0.5rem" }}>Email *</label>
                     <input type="email" required style={{ width: "100%", padding: "1rem", border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontSize: "1.4rem" }} />
@@ -117,7 +117,7 @@ export default function BookConsultation() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div className="form-row">
                   <div>
                     <label style={{ display: "block", fontSize: "1.2rem", fontWeight: 500, color: "#555", marginBottom: "0.5rem" }}>Consultation Area *</label>
                     <select required style={{ width: "100%", padding: "1rem", border: "1px solid #e5e5e5", borderRadius: "0.4rem", fontSize: "1.4rem", background: "#fff" }}>
