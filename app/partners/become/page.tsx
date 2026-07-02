@@ -228,7 +228,7 @@ export default function BecomePartner() {
                       width: "100%", padding: "1.2rem 1.4rem",
                       border: "1px solid #e5e5e5", borderRadius: "0.4rem",
                       fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s",
-                      resize: "vertical"
+                      resize: "vertical", fontFamily: "var(--font-sans)",
                     }}
                     onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
                     onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}

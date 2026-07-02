@@ -91,7 +91,7 @@ export default function PartnerLogin() {
             borderRadius: "0.4rem",
             padding: "2rem",
           }}>
-            <ShieldCheck style={{ width: "3.2rem", height: "3.2rem", color: "#0CC820", flexShrink: 0 }} />
+            <ShieldCheck style={{ width: "3.2rem", height: "3.2rem", color: "white", flexShrink: 0 }} />
             <div>
               <h4 style={{ fontSize: "1.45rem", fontWeight: 600, margin: "0 0 0.4rem" }}>DGCA Compliant Portal</h4>
               <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.6)", margin: 0, lineHeight: 1.4 }}>

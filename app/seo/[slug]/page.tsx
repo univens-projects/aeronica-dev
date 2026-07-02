@@ -218,7 +218,7 @@ export default function SEOLandingPage() {
       <FadeIn as="section" className="section-py" style={{ background: "#ffffff", borderTop: "1px solid #e5e5e5", paddingLeft: 0, paddingRight: 0 }}>
         <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "4rem" }}>Frequently Asked Questions</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
+          <div className="faq-grid">
             {data.faqs.map((faq: any, i: number) => (
               <div key={i} className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
                 <h3 style={{ fontSize: "1.65rem", fontWeight: 600, marginBottom: "1rem", color: "#21389A" }}>{faq.q}</h3>
@@ -230,6 +230,21 @@ export default function SEOLandingPage() {
       </FadeIn>
 
       <CTA />
+
+      <style jsx>{`
+        .faq-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+          .faq-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }

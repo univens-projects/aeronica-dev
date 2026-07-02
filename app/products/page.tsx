@@ -13,11 +13,11 @@ const products = [
     slug: "samrudhhi-10l",
     name: "Samrudhhi-10L",
     tag: "DGCA Type Certified",
-    tagColor: "#0CC820",
+    tagColor: "#21389A",
     category: "Agricultural UAV",
     headline: "India's First DGCA Certified Agricultural Drone",
     desc: "The Samrudhhi-10L is our flagship agricultural UAV — built for precision spraying in Indian farming conditions. With a 10L payload capacity, centrifugal atomization system, and full DGCA type certification, it's the benchmark for agricultural drone operations in India.",
-    gradient: "linear-gradient(135deg, #0CC820 0%, #32620E 100%)",
+    gradient: "linear-gradient(135deg, #21389A 0%, #009BFF 100%)",
     specs: [
       { label: "Payload Capacity", value: "24.9 Kg MTOW" },
       { label: "Tank Capacity", value: "10 Litres" },
@@ -36,7 +36,7 @@ const products = [
     category: "Agricultural UAV — Heavy Lift",
     headline: "Extended Endurance for Large-Scale Campaigns",
     desc: "The Samrudhhi-10LH is the heavy-duty, hybrid-propulsion sibling of the Samrudhhi-10L, engineered for large-scale industrial agriculture and extended campaign coverage. Hybrid electric-combustion propulsion enables significantly longer flight times.",
-    gradient: "linear-gradient(135deg, #009BFF 0%, #32620E 100%)",
+    gradient: "linear-gradient(135deg, #009BFF 0%, #111a2d 100%)",
     specs: [
       { label: "Payload Capacity", value: "30 Kg" },
       { label: "Tank Capacity", value: "10 Litres" },
@@ -96,7 +96,7 @@ export default function ProductsHub() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }]}
       />
 
-      <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
+      <FadeIn as="section" className="section-py products-intro" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div style={{ marginBottom: "5rem" }}>
           <span className="section-title">
             <span></span>Hardware Portfolio
@@ -111,22 +111,17 @@ export default function ProductsHub() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           {products.map((product, index) => (
-            <div key={product.slug} className="card-hover" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem", overflow: "hidden", display: "grid", gridTemplateColumns: index % 2 === 0 ? "1fr 2fr" : "2fr 1fr" }}>
-              <div style={{
-                background: product.gradient,
-                padding: "4rem",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                minHeight: "30rem",
-                order: index % 2 === 0 ? 0 : 1,
-              }}>
+            <div
+              key={product.slug}
+              className={`card-hover product-card ${index % 2 === 0 ? "product-card--imgLeft" : "product-card--imgRight"}`}
+            >
+              <div className="product-card__visual" style={{ background: product.gradient }}>
                 <div>
                   <span style={{ fontSize: "1.1rem", padding: "0.4rem 1rem", background: "rgba(255,255,255,0.2)", borderRadius: "0.2rem", color: "#fff", fontWeight: 500, letterSpacing: "0.05em" }}>{product.tag}</span>
                   <h2 style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#fff", marginTop: "2rem", lineHeight: 1 }}>{product.name}</h2>
                   <p style={{ fontSize: "1.3rem", color: "rgba(255,255,255,0.6)", marginTop: "0.5rem", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>{product.category}</p>
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div className="product-card__specGrid">
                   {product.specs.slice(0, 4).map((spec, i) => (
                     <div key={i}>
                       <div style={{ fontSize: "1.7rem", fontWeight: 700, color: "#fff" }}>{spec.value}</div>
@@ -136,7 +131,7 @@ export default function ProductsHub() {
                 </div>
               </div>
 
-              <div style={{ padding: "4rem", display: "flex", flexDirection: "column", justifyContent: "space-between", order: index % 2 === 0 ? 1 : 0 }}>
+              <div className="product-card__body">
                 <div>
                   <h3 style={{ fontSize: "2rem", fontWeight: 600, letterSpacing: "-0.02em", marginBottom: "1.5rem", lineHeight: 1.2 }}>{product.headline}</h3>
                   <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, marginBottom: "2.5rem" }}>{product.desc}</p>
@@ -159,18 +154,18 @@ export default function ProductsHub() {
       </FadeIn>
 
       <FadeIn as="section" className="section-py" style={{ background: "#21389A" }}>
-        <div style={{ maxWidth: "160rem", margin: "0 auto", textAlign: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "3rem", flexWrap: "wrap", marginBottom: "4rem" }}>
+        <div className="products-cta" style={{ maxWidth: "160rem", margin: "0 auto", textAlign: "center" }}>
+          <div className="products-cta__badges" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "3rem", flexWrap: "wrap", marginBottom: "4rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
               <ShieldCheck style={{ width: "2.4rem", height: "2.4rem", color: "rgba(255,255,255,0.8)" }} />
               <span style={{ fontSize: "1.5rem", color: "#fff", fontWeight: 500 }}>DGCA Certified</span>
             </div>
-            <div style={{ width: "1px", height: "2.5rem", background: "rgba(255,255,255,0.2)" }} />
+            <div className="products-cta__divider" style={{ width: "1px", height: "2.5rem", background: "rgba(255,255,255,0.2)" }} />
             <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
               <Cpu style={{ width: "2.4rem", height: "2.4rem", color: "rgba(255,255,255,0.8)" }} />
               <span style={{ fontSize: "1.5rem", color: "#fff", fontWeight: 500 }}>Indigenous Design</span>
             </div>
-            <div style={{ width: "1px", height: "2.5rem", background: "rgba(255,255,255,0.2)" }} />
+            <div className="products-cta__divider" style={{ width: "1px", height: "2.5rem", background: "rgba(255,255,255,0.2)" }} />
             <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
               <Plane style={{ width: "2.4rem", height: "2.4rem", color: "rgba(255,255,255,0.8)" }} />
               <span style={{ fontSize: "1.5rem", color: "#fff", fontWeight: 500 }}>15,000+ Flight Hours</span>
@@ -189,6 +184,100 @@ export default function ProductsHub() {
       </FadeIn>
 
       <CTA />
+
+      <style jsx>{`
+        /* ---------- Product cards ---------- */
+        .product-card {
+          background: #fff;
+          border: 1px solid #e5e5e5;
+          border-radius: 0.4rem;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+        }
+        .product-card--imgRight {
+          grid-template-columns: 2fr 1fr;
+        }
+        .product-card--imgRight .product-card__visual {
+          order: 1;
+        }
+        .product-card--imgRight .product-card__body {
+          order: 0;
+        }
+
+        .product-card__visual {
+          padding: 4rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 30rem;
+        }
+
+        .product-card__specGrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+
+        .product-card__body {
+          padding: 4rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        /* Tablet: still 2 columns but tighter padding */
+        @media (max-width: 1024px) {
+          .product-card__visual,
+          .product-card__body {
+            padding: 3rem;
+          }
+        }
+
+        /* Mobile: stack visual on top of body, always in document order */
+        @media (max-width: 768px) {
+          .product-card,
+          .product-card--imgRight {
+            grid-template-columns: 1fr;
+          }
+          .product-card--imgRight .product-card__visual,
+          .product-card--imgRight .product-card__body,
+          .product-card .product-card__visual,
+          .product-card .product-card__body {
+            order: initial;
+          }
+          .product-card__visual,
+          .product-card__body {
+            padding: 2.5rem;
+            min-height: 0;
+          }
+          .product-card__specGrid {
+            gap: 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .product-card__specGrid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.5rem;
+          }
+          .product-card__visual,
+          .product-card__body {
+            padding: 2rem;
+          }
+        }
+
+        /* ---------- CTA badges row ---------- */
+        @media (max-width: 640px) {
+          .products-cta__badges {
+            flex-direction: column;
+            gap: 1.5rem !important;
+          }
+          .products-cta__divider {
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   );
 }
