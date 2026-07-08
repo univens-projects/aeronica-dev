@@ -34,8 +34,9 @@ const productCategories = [
   {
     title: "Agricultural UAVs",
     links: [
-      { label: "Samrudhhi-10L", href: "/products/samrudhhi-10l" },
       { label: "Samrudhhi-10LH", href: "/products/samrudhhi-10lh" },
+      { label: "Samrudhhi-10L", href: "/products/samrudhhi-10l" },
+
     ],
   },
   {

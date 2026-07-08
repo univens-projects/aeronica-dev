@@ -2,21 +2,18 @@
 
 import React from "react";
 import Link from "next/link";
-import { Map, Tractor, Scan, Shield, Plane, Monitor, Brain, Cpu } from "lucide-react";
+import { Map, Tractor, Scan, Shield, MapPin } from "lucide-react";
 import { DotArrowRight } from "@/components/DotIcons";
 import MotionReveal from "@/components/MotionReveal";
 
 const accentColor = "#21389a";
 
 const services = [
-  { title: "GIS Survey & Mapping", desc: "Sub-centimeter accuracy for railway corridors, mining, and infrastructure.", href: "/services/gis-survey-mapping", icon: Map },
-  { title: "Agriculture Spraying", desc: "Precision pesticide application with DGCA-certified drones.", href: "/services/agriculture-spraying", icon: Tractor },
-  { title: "Multispectral Scanning", desc: "Advanced crop health analytics and soil condition insights.", href: "/services/multispectral-scanning", icon: Scan },
-  { title: "Security Surveillance", desc: "Real-time monitoring & AI-powered anomaly detection.", href: "/services/security-surveillance", icon: Shield },
-  { title: "Samrudhhi-10L", desc: "The gold standard in agri-drone technology.", href: "/products/samrudhhi-10l", icon: Plane },
-  { title: "Unified Surveillance", desc: "Integrated command center for critical infrastructure.", href: "/solutions/uss", icon: Monitor },
-  { title: "Aeroni.AI", desc: "Smart data processing, analytics & automated reporting.", href: "/solutions/aeroni-ai", icon: Brain },
-  { title: "R&D & Custom UAV", desc: "Indigenous flight controllers & bespoke drone builds.", href: "/research", icon: Cpu },
+  { title: "Agriculture Spraying Drone", desc: "We provide drone spraying that targets exactly where it's needed — less waste, healthier crops.", href: "/services/agriculture-spraying", icon: Tractor },
+  { title: "GIS Survey and Mapping", desc: "We deliver sub centimeter accurate surveys and maps for railways, mines, and infrastructure projects.", href: "/services/gis-survey-mapping", icon: Map },
+  { title: "Multispectral Scanning", desc: "We scan your fields with advanced imaging to reveal crop stress and soil health before it's visible to the eye.", href: "/services/multispectral-scanning", icon: Scan },
+  { title: "Security and Surveillance", desc: "We monitor your site around the clock with AI-powered drones that flag anomalies in real time.", href: "/services/security-surveillance", icon: Shield },
+  { title: "DGPS Survey", desc: "We deliver centimeter-accurate DGPS surveys for topographic and cadastral mapping.", href: "/services/dgps-surveying", icon: MapPin },
 ];
 
 export default function Services() {
@@ -24,7 +21,7 @@ export default function Services() {
     <section className="section-py" style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)", color: "#1a1a1a" }} id="services">
       <div style={{ marginBottom: "5rem" }}>
         <span className="section-title" style={{ justifyContent: "flex-start" }}>
-          <span></span>What We Offer
+          <span></span>What we offers
         </span>
         <div className="responsive-header" style={{ marginBottom: "4rem" }}>
           <div>
@@ -32,7 +29,7 @@ export default function Services() {
               Our Services
             </h2>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "56rem", marginTop: "2rem" }}>
-              Precision-engineered UAV solutions tailored for industrial scale and operational excellence.
+              UAV solutions engineered for industrial scale — precise, dependable, built to perform where it counts.
             </p>
           </div>
           <Link href="/services" style={{

@@ -13,21 +13,21 @@ const projectGradient = "linear-gradient(135deg, #21389A 0%, #009BFF 100%)";
 const portfolio = [
   {
     title: "Central Railway Corridor Mapping",
-    desc: "High-resolution corridor mapping along key railway routes using RTK-enabled drones and LiDAR. Sub-centimeter accuracy for track alignment, embankments, drainage systems, and encroachment detection across 200+ km of rail network.",
+    desc: "We mapped over 200 km of rail network using RTK-enabled drones and LiDAR, capturing track alignment, embankments, drainage systems, and encroachment zones with sub-centimeter accuracy giving the railway a clearer, more reliable picture of its own corridor.",
     href: "/portfolio/central-railway-corridor-mapping",
-    meta: { Location: "Maharashtra, India", Industry: "Railways", Services: "GIS Survey & Mapping" }
+    // meta: { Location: "Maharashtra, India", Industry: "Railways", Services: "GIS Survey & Mapping" }
   },
   {
     title: "JSW Steel Mine Volumetric Survey",
-    desc: "Drone-based 3D mapping and volumetric analysis for JSW Steel's mining operations. Stockpile volume estimation, pit progression monitoring, and slope stability assessment using photogrammetry and GIS-integrated workflows.",
+    desc: "We mapped JSW Steel's mining operations in 3D, using photogrammetry and GIS-integrated workflows to estimate stockpile volumes, track pit progression, and assess slope stability across the site.",
     href: "/portfolio/jsw-mine-volumetric-survey",
-    meta: { Location: "Karnataka, India", Industry: "Mining", Services: "GIS Survey & Mapping" }
+    // meta: { Location: "Karnataka, India", Industry: "Mining", Services: "GIS Survey & Mapping" }
   },
   {
     title: "IOCL Pipeline Surveillance",
-    desc: "Deployment of Unified Surveillance System (USS) for IOCL's cross-country pipeline network. EO/IR sensors with AI-assisted anomaly detection for real-time intrusion alerts, leak detection, and right-of-way monitoring.",
+    desc: "We deployed our Unified Surveillance System across IOCL's cross-country pipeline network, using EO/IR sensors and AI-assisted detection to deliver real-time intrusion alerts, leak detection, and right-of-way monitoring.",
     href: "/portfolio/iocl-pipeline-surveillance",
-    meta: { Location: "Gujarat, India", Industry: "Oil & Gas", Services: "Security Surveillance" }
+    // meta: { Location: "Gujarat, India", Industry: "Oil & Gas", Services: "Security Surveillance" }
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Portfolio() {
             <div style={{ flexGrow: 1, padding: "2.5rem 3rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 600, marginBottom: "1rem", lineHeight: 1.3 }}>{project.title}</h3>
               <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.7, marginBottom: "1.5rem" }}>{project.desc}</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem 2rem" }}>
+              {/* <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem 2rem" }}>
                 {Object.entries(project.meta).map(([label, value]) => {
                   const MetaIcon = metaIcons[label] || Activity;
                   return (
@@ -108,7 +108,7 @@ export default function Portfolio() {
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
           </Link>
         ))}

@@ -16,127 +16,71 @@ import { DotArrowRight } from "@/components/DotIcons";
 const products: Record<string, any> = {
   "samrudhhi-10l": {
     name: "Samrudhhi-10L",
-    tagline: "India's First DGCA Type-Certified Agricultural UAV",
+    tagline: "DGCA Type-Certified Agricultural UAV",
     category: "Agricultural UAV",
     certification: "DGCA Type Certified",
     gradient: "linear-gradient(135deg, #0CC820 0%, #32620E 100%)",
     heroColor: "#32620E",
     heroImage: "/assets/images/products/samrudhhi-10l/Sam10L2.png",
     certImage: "/assets/images/products/samrudhhi-10l/SAM-10L.png",
-    overview: "The Samrudhhi-10L is Aeronica's flagship agricultural drone — the culmination of 4 years of R&D and the first UAV of its kind to receive full DGCA Type Certification in India. Designed specifically for Indian farming conditions, it delivers precision pesticide and fertilizer application across diverse crop types and terrain.",
-    useCases: [
-      "Precision pesticide application on rice, sugarcane, cotton, and horticulture crops",
-      "Fertilizer broadcasting with variable-rate capability based on NDVI prescription maps",
-      "Seed broadcasting for paddy transplanting and cover crop applications",
-      "Crop health monitoring using integrated multispectral sensors",
-    ],
+    overview: "The Samrudhhi-10L is a crop spraying drone built around three things: speed, safety, and efficiency — not as buzzwords, but as design goals we engineered around from day one.",
+    useCases: [],
     fullSpecs: [
       {
         category: "Performance", specs: [
           { label: "Max Takeoff Weight (MTOW)", value: "24.9 Kg" },
-          { label: "Tank Capacity", value: "10 Litres" },
-          { label: "Flight Time (Loaded)", value: "16 minutes" },
-          { label: "Coverage Rate", value: "2 acres / hour" },
-          { label: "Max Speed", value: "7 m/s (Spray Mode)" },
-          { label: "Operating Altitude", value: "1.5–3m AGL (Spray)" },
-        ]
-      },
-      {
-        category: "Propulsion & Airframe", specs: [
-          { label: "Propulsion", value: "Electric Multi-Rotor" },
-          { label: "Frame Material", value: "Carbon Fibre Composite" },
-          { label: "Waterproofing", value: "IP55 Rated" },
-          { label: "Foldability", value: "Fully Foldable Arms" },
-          { label: "Motor Configuration", value: "6-Motor Hexacopter" },
+          { label: "Tank Capacity", value: "10 L" },
+          { label: "Flight Time", value: "16 min" },
+          { label: "Coverage Rate", value: "20 Acres Per Day" },
+          { label: "Payload Capacity", value: "10 Kg" },
         ]
       },
       {
         category: "Spray System", specs: [
-          { label: "Atomization", value: "Centrifugal (Rotary Nozzle)" },
-          { label: "Droplet Size", value: "100–300 μm (Adjustable)" },
-          { label: "Spray Width", value: "4–6 meters" },
-          { label: "Flow Rate", value: "1.2–2.4 L/min" },
-          { label: "Nozzle Count", value: "4 Rotary Nozzles" },
-        ]
-      },
-      {
-        category: "Avionics & Communication", specs: [
-          { label: "Flight Controller", value: "Nitya FC (Indigenous)" },
-          { label: "GNSS", value: "GPS + GLONASS + BeiDou" },
-          { label: "Control Range", value: "3 Km" },
-          { label: "Telemetry Encryption", value: "256-bit AES" },
-          { label: "Obstacle Avoidance", value: "Forward + Downward Radar" },
-          { label: "RTK Support", value: "Optional" },
+          { label: "Spray Type", value: "Flat Jet Spray" },
+          { label: "Spray Width", value: "6 Feet" },
+          { label: "Flow Rate", value: "5 L/min" },
+          { label: "Nozzle Count", value: "4" },
         ]
       },
     ],
-    highlights: [
-      { icon: ShieldCheck, title: "DGCA Type Certificate", desc: "India's first agricultural drone to achieve full DGCA Type Certification. Enables unrestricted commercial agricultural operations across India." },
-      { icon: Zap, title: "Centrifugal Atomization", desc: "Rotary nozzle system produces consistent 100–300 μm droplets regardless of operating speed — ensuring uniform coverage with 30% less chemical usage." },
-      { icon: Cpu, title: "Nitya FC Avionics", desc: "Indigenous flight controller with triple-redundant IMU, terrain-following capabilities, and obstacle avoidance for safe operations in complex field environments." },
-      { icon: Globe, title: "Prescription Map Compatible", desc: "Aeroni.AI integration enables variable-rate spraying based on NDVI prescription maps — applying chemicals only where needed, saving costs and reducing environmental impact." },
-    ],
+    highlights: [],
     proof: "Tested on 10,000+ acres across Maharashtra, Karnataka, and Madhya Pradesh. Average 18% yield improvement and 30% reduction in chemical costs reported by partner farmers.",
   },
   "samrudhhi-10lh": {
     name: "Samrudhhi-10LH",
-    tagline: "Heavy Lift Hybrid UAV for Large-Scale Agricultural Campaigns",
+    tagline: "Super Sturdy Agriculture Spraying Drone",
     category: "Agricultural UAV — Heavy Lift",
-    certification: "Commercial Operations",
+    certification: "DGCA Compliant",
     gradient: "linear-gradient(135deg, #009BFF 0%, #32620E 100%)",
     heroColor: "#0a4a20",
     heroImage: "/assets/images/products/samrudhhi-10l/Sam10L2.png",
     certImage: "/assets/images/products/samrudhhi-10l/SAM-10L.png",
-    overview: "The Samrudhhi-10LH is the heavy-lift, hybrid-propulsion sibling of the Samrudhhi-10L. Engineered for large-scale industrial agricultural operations and extended campaign durations, its hybrid electric-combustion propulsion system provides significantly longer endurance than pure electric platforms — making it ideal for large farms and commercial agricultural service operators.",
-    useCases: [
-      "Large-scale precision spraying across 100+ acre blocks in a single deployment",
-      "Industrial crop protection for plantation crops — banana, oil palm, rubber",
-      "Extended multi-hour agricultural campaigns with minimal battery swap downtime",
-      "Heavy payload delivery including granular fertilizers and specialty inputs",
-    ],
+    overview: "Built for large-scale farming operations that demand more from every pass. The Samrudhhi 10LH offers effective spraying with wider crop coverage, helping you treat more acreage in less time.",
+    useCases: [],
     fullSpecs: [
       {
         category: "Performance", specs: [
-          { label: "Max Takeoff Weight (MTOW)", value: "30 Kg" },
-          { label: "Tank Capacity", value: "10 Litres" },
-          { label: "Flight Time (Hybrid)", value: "20+ minutes" },
-          { label: "Coverage Rate", value: "2.5 acres / hour" },
-          { label: "Payload Capacity", value: "12 Kg usable payload" },
-        ]
-      },
-      {
-        category: "Propulsion System", specs: [
-          { label: "Propulsion Type", value: "Hybrid Electric-Combustion" },
-          { label: "Engine", value: "Brushless Electric + ICE Generator" },
-          { label: "Frame Material", value: "High-Modulus Carbon Fibre" },
-          { label: "Motor Configuration", value: "6-Motor Hexacopter" },
-          { label: "Fuel Capacity", value: "2 Litres (Generator)" },
+          { label: "Max Takeoff Weight (MTOW)", value: "31.5 Kg" },
+          { label: "Tank Capacity", value: "10 L" },
+          { label: "Flight Time (Hybrid)", value: "24 min" },
+          { label: "Coverage Rate", value: "25 Acres Per Day" },
+          { label: "Payload Capacity", value: "10 Kg" },
         ]
       },
       {
         category: "Spray System", specs: [
-          { label: "Atomization", value: "Centrifugal Rotary Nozzle" },
-          { label: "Spray Width", value: "5–7 meters" },
-          { label: "Flow Rate", value: "1.5–3.0 L/min" },
-          { label: "Nozzle Count", value: "4 Rotary Nozzles" },
-        ]
-      },
-      {
-        category: "Avionics", specs: [
-          { label: "Flight Controller", value: "Nitya FC (Indigenous)" },
-          { label: "GNSS", value: "GPS + GLONASS + BeiDou" },
-          { label: "Control Range", value: "5 Km" },
-          { label: "Telemetry", value: "Encrypted 256-bit AES" },
+          { label: "Spray Type", value: "Flat Jet / Centrifugal" },
+          { label: "Spray Width", value: "6 Feet" },
+          { label: "Flow Rate", value: "5 L/min" },
+          { label: "Nozzle Count", value: "4" },
         ]
       },
     ],
     highlights: [
-      { icon: Layers, title: "Hybrid Propulsion Advantage", desc: "The onboard ICE generator continuously charges flight batteries in-flight — delivering 20+ minute endurance compared to 12–15 minutes for pure electric equivalents at the same payload weight." },
-      { icon: Target, title: "Large Campaign Efficiency", desc: "With 30Kg MTOW and extended flight time, the 10LH completes large field blocks with fewer landings — reducing turnaround time and operational cost for commercial spraying operators." },
-      { icon: Cpu, title: "Indigenous Nitya FC", desc: "Same certified avionics platform as the Samrudhhi-10L — ensuring mission reliability, encrypted telemetry, and full compatibility with Aeroni.AI mission planning." },
-      { icon: Award, title: "Commercial Grade Build", desc: "IP55-rated against moisture and dust. All-carbon-fibre composite airframe built in our Khed Shivapur facility with the same quality controls used for DGCA-certified platforms." },
+      { icon: Radio, title: "Sensor System", desc: "The Samrudhhi-10LH is equipped with an advanced suite of sensors, including GPS, IMU, and flow rate monitoring, ensuring precise and reliable operation in every mission." },
     ],
-    proof: "Deployed with commercial agricultural service operators in Maharashtra and Tamil Nadu for large-scale plantation operations. Delivers 40% higher daily coverage versus pure electric alternatives.",
+    proof: "Field-proven across thousands of acres in Maharashtra and Tamil Nadu. Commercial operators report 25+ acres of daily coverage with reduced turnaround time compared to pure-electric platforms.",
   },
   "flycra-20": {
     name: "Flycra 2.0",
@@ -148,60 +92,29 @@ const products: Record<string, any> = {
     heroImage: "/assets/images/products/flycra-20/1.png",
     certImage: "/assets/images/products/flycra-20/91.png",
     overview: "The Flycra 2.0 is Aeronica's precision survey and mapping platform — a compact, high-endurance fixed-wing UAV designed for GIS surveys, railway corridor mapping, and large-area volumetric analysis. With a 45-minute flight time and 7km control range, it covers up to 15km of linear corridor per flight at sub-centimeter ground accuracy.",
-    useCases: [
-      "Railway corridor topographic surveys and alignment verification",
-      "Highway route feasibility surveys and detailed project reporting",
-      "Large-area agricultural mapping for NDVI prescription generation",
-      "Mining site volumetric analysis and stockpile measurement",
-      "Coastal and reservoir bathymetric survey integration",
-      "Urban planning orthomosaic and 3D model generation",
-    ],
+    useCases: [],
     fullSpecs: [
       {
-        category: "Flight Performance", specs: [
-          { label: "MTOW", value: "9.6 Kg" },
-          { label: "Flight Time", value: "45 minutes" },
-          { label: "Control Range", value: "7 Km" },
-          { label: "Max Speed", value: "90 km/h" },
-          { label: "Cruise Speed", value: "65 km/h" },
-          { label: "Max Wind Resistance", value: "12 m/s" },
-          { label: "Operating Altitude", value: "Up to 4,000m ASL" },
-        ]
-      },
-      {
-        category: "Survey Capability", specs: [
-          { label: "GSD at 120m AGL", value: "2.5 cm/pixel" },
-          { label: "Relative Ground Accuracy", value: "Sub-centimeter (with GCPs)" },
-          { label: "Coverage per Flight", value: "Up to 500 acres" },
-          { label: "Corridor Coverage", value: "Up to 15 km/flight" },
-          { label: "Overlap (Front/Side)", value: "80% / 70% (Configurable)" },
+        category: "Performance", specs: [
+          { label: "MTOW", value: "2.4 Kg" },
+          { label: "Flight Time", value: "50 minutes" },
+          { label: "Control Range", value: "Up to 2 Km" },
+          { label: "Cruise Speed", value: "36 km/h" },
+          { label: "Max Wind Resistance", value: "10 m/s" },
+          { label: "Max Operating Altitude", value: "Up to 3000m AMSL" },
         ]
       },
       {
         category: "Sensors & Payload", specs: [
-          { label: "Primary Camera", value: "42MP Sony Full-Frame" },
-          { label: "LiDAR", value: "Optional (Velodyne/Livox)" },
-          { label: "Multispectral", value: "Optional (5-band MicaSense)" },
+          { label: "Primary Camera", value: "24MP APS-C Sony CMOS sensor" },
+          { label: "LiDAR", value: "Optional" },
+          { label: "Multispectral", value: "Optional" },
           { label: "GNSS", value: "PPK + RTK Capable" },
-          { label: "IMU", value: "Industrial Grade, 200Hz" },
-        ]
-      },
-      {
-        category: "Avionics", specs: [
-          { label: "Flight Controller", value: "Nitya FC Fixed-Wing" },
-          { label: "Autopilot", value: "Custom PX4 (Aeronica)" },
-          { label: "Telemetry", value: "256-bit AES Encrypted" },
-          { label: "Takeoff Method", value: "Catapult Launch / Hand" },
-          { label: "Landing Method", value: "Belly Landing / Net" },
+          { label: "IMU", value: "Industrial Grade, 400Hz" },
         ]
       },
     ],
-    highlights: [
-      { icon: Target, title: "Sub-Centimeter Accuracy", desc: "PPK post-processing with ground control points delivers sub-centimeter relative ground accuracy — meeting the requirements of engineering surveys, legal demarcation, and volumetric analysis." },
-      { icon: Plane, title: "45-Minute Endurance", desc: "Fixed-wing efficiency enables 45 minutes of survey flight — covering 500+ acres or 15+ km of linear corridor in a single sortie. Dramatically reducing the number of flights needed versus multi-rotor platforms." },
-      { icon: Radio, title: "Multi-Sensor Integration", desc: "Interchangeable payload bay accommodates Sony full-frame RGB, Velodyne LiDAR, and MicaSense multispectral sensors — one airframe for every survey data type." },
-      { icon: Globe, title: "Aeroni.AI Processing", desc: "All Flycra 2.0 survey data integrates directly with Aeroni.AI for automated photogrammetry processing, point cloud generation, and DEM/orthomosaic delivery within 2 hours of landing." },
-    ],
+    highlights: [],
     proof: "450+ km of Central Railway corridor surveyed. Mining volumetrics delivered to JSW Steel and IOCL. 60% faster than traditional ground survey methods at ±1.5% volumetric accuracy.",
   },
   "nitya-fc": {
@@ -426,7 +339,11 @@ export default function ProductDetailPage() {
                   <div style={{ marginTop: "2.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
                     {(product.name === "Nitya FC"
                       ? [{ label: "Architecture", val: "Heterogeneous" }, { label: "Encryption", val: "AES-256-GCM" }, { label: "IMU Redundancy", val: "Triple" }, { label: "Interface", val: "CAN FD & UART" }]
-                      : [{ label: "Category", val: "Small Category" }, { label: "Compliance", val: "DGCA Compliant" }, { label: "Endurance", val: product.name === "Flycra 2.0" ? "45 mins" : "20 mins" }, { label: "MTOW", val: product.name === "Flycra 2.0" ? "9.6 Kg" : "30 Kg" }]
+                      : product.name === "Samrudhhi-10LH"
+                        ? [{ label: "Category", val: "Medium Category" }, { label: "Compliance", val: "DGCA Compliant" }, { label: "Endurance", val: "24 mins" }, { label: "MTOW", val: "30 Kg" }]
+                        : product.name === "Samrudhhi-10L"
+                          ? [{ label: "Category", val: "Small Category" }, { label: "Compliance", val: "DGCA Compliant" }, { label: "Endurance", val: "16 min" }, { label: "MTOW", val: "24.9 Kg" }]
+                          : [{ label: "Category", val: "Small Category" }, { label: "Compliance", val: "DGCA Compliant" }, { label: "Endurance", val: product.name === "Flycra 2.0" ? "50 min" : "20 mins" }, { label: "MTOW", val: product.name === "Flycra 2.0" ? "2.4 Kg" : "30 Kg" }]
                     ).map((item, i) => (
                       <div key={i}>
                         <div style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>{item.label}</div>
@@ -445,6 +362,7 @@ export default function ProductDetailPage() {
           </div>
         )}
 
+        {product.highlights.length > 0 && (
         <div style={{ marginBottom: "5rem" }}>
           <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "3rem" }}>Key Highlights</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
@@ -462,7 +380,9 @@ export default function ProductDetailPage() {
             })}
           </div>
         </div>
+        )}
 
+        {product.useCases.length > 0 && (
         <div style={{ marginBottom: "5rem" }}>
           <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "3rem" }}>Use Cases</h2>
           <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
@@ -476,6 +396,7 @@ export default function ProductDetailPage() {
             </ul>
           </div>
         </div>
+        )}
 
         <div style={{ marginBottom: "5rem" }}>
           <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "3rem" }}>Full Technical Specifications</h2>

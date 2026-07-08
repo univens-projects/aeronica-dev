@@ -25,10 +25,10 @@ const StatNumber = ({ target, animated }: { target: number; animated: boolean })
 };
 
 const stats = [
-  { value: 120, suffix: "+", label: "Cities Covered" },
-  { value: 25000, suffix: "+", label: "Acres Surveyed" },
+  { value: 355289, suffix: "+", label: "Area Scanned (Acres)" },
+  { value: 23732, suffix: "+", label: "Area Sprayed (Acres)" },
   { value: 98, suffix: "%", label: "Mapping Accuracy" },
-  { value: 4, suffix: "+", label: "DGCA Certifications" },
+  { value: 1874, suffix: "+", label: "Clients" },
 ];
 
 const Stats = () => {

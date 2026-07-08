@@ -16,14 +16,14 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <ClientsMarquee />
       <Stats />
+      <Products />
       <Services />
       <Technology />
       <Process />
-      <Products />
-      <Portfolio />
       <Industries />
+      <Portfolio />
+      <ClientsMarquee />
       <Testimonials />
       <News />
       <CTA />

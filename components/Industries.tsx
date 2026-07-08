@@ -27,7 +27,7 @@ export default function Industries() {
           Industries We Serve
         </h2>
         <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7, maxWidth: "56rem", marginTop: "2rem" }}>
-          Domain expertise across six key sectors — delivering tailored drone solutions where precision matters most.
+          Six sectors, one standard: precision drone solutions built for where it matters most.
         </p>
       </div>
 

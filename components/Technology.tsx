@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Cpu, ShieldCheck, Wifi, Combine } from "lucide-react";
+import { Cpu, ShieldCheck, Wifi, Combine, Shield } from "lucide-react";
 import { DotArrowRight, DotBullet } from "@/components/DotIcons";
 import Link from "next/link";
 import MotionReveal from "@/components/MotionReveal";
@@ -10,27 +10,22 @@ const techPillars = [
   {
     icon: Cpu,
     title: "Nitya Flight Controller",
-    desc: "Indigenously designed triple-redundant flight controller with 256-bit encrypted telemetry, secure boot, and custom PX4 firmware.",
+    desc: "An Made in Indian flight controller that delivers safe, stable, and intelligent drone performance.",
     specs: ["STM32MP1 Dual-Core", "Triple IMU Redundancy", "256-bit AES Encryption"],
   },
   {
     icon: ShieldCheck,
     title: "Aeroni.AI Engine",
-    desc: "Cloud-native AI pipeline that processes raw aerial data into centimeter-accurate 3D models, NDVI maps, and automated defect reports in minutes.",
+    desc: "A powerful AI platform built for smart, secure, and scalable drone operations insights .",
     specs: ["Deep Learning Pipeline", "Real-time Inference", "Automated Reporting"],
   },
   {
-    icon: Combine,
-    title: "Integrated Ecosystem",
-    desc: "From airframe design to cloud dashboard — every layer built in-house. No third-party dependencies means seamless integration and total reliability.",
-    specs: ["Full Vertical Stack", "API-first Architecture", "Custom Integration"],
+    icon: Shield,
+    title: "Unified Surveillance",
+    desc: "We provide AI-powered UAV surveillance for oil & gas pipelines Detect, Decide, Deliver.",
+    specs: ["Multi-sensor Integration", "Automated Threat Detection", "Real-time Alerts"],
   },
-  {
-    icon: Wifi,
-    title: "Command & Control",
-    desc: "Real-time telemetry, live video streaming, and fleet management from a single pane of glass. Multi-mission coordination with enterprise role-based access.",
-    specs: ["Live Telemetry Feed", "Fleet Management", "Multi-user Access"],
-  },
+
 ];
 
 export default function Technology() {
@@ -99,7 +94,7 @@ export default function Technology() {
                   </p>
                 </div>
 
-                <div style={{ padding: "1.5rem 2rem 2rem", borderTop: "1px solid rgba(0,0,0,0.04)" }}>
+                {/* <div style={{ padding: "1.5rem 2rem 2rem", borderTop: "1px solid rgba(0,0,0,0.04)" }}>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                     {pillar.specs.map((spec, j) => (
                       <div key={j} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
@@ -108,7 +103,7 @@ export default function Technology() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             );
           })}
