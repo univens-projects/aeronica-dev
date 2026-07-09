@@ -127,6 +127,7 @@ const Products = () => {
 
       {/* ===== Slide viewport ===== */}
       <div
+        className="prod-viewport"
         style={{
           position: "relative", overflow: "hidden",
           background: "#fff",
@@ -140,10 +141,9 @@ const Products = () => {
         <button
           onClick={goPrev}
           disabled={activeIndex === 0}
-          className="prod-nav-arrow"
+          className="prod-nav-arrow prod-nav-arrow-left"
           style={{
             position: "absolute", left: "var(--section-px)", top: "50%", transform: "translateY(-50%)", zIndex: 10,
-
             width: "3.6rem", height: "3.6rem", borderRadius: "50%", border: "1px solid #e5e5e5",
             background: "#fff", color: activeIndex === 0 ? "#ccc" : "#111",
             display: "flex", alignItems: "center", justifyContent: "center",
@@ -157,7 +157,7 @@ const Products = () => {
         <button
           onClick={goNext}
           disabled={activeIndex === products.length - 1}
-          className="prod-nav-arrow"
+          className="prod-nav-arrow prod-nav-arrow-right"
           style={{
             position: "absolute", right: "var(--section-px)", top: "50%", transform: "translateY(-50%)", zIndex: 10,
             width: "3.6rem", height: "3.6rem", borderRadius: "50%", border: "1px solid #e5e5e5",
@@ -208,31 +208,14 @@ const Products = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{
-              position: "relative", zIndex: 2, width: "100%", maxWidth: "64rem",
-              display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
-            }}
+            className="product-layout"
+            
           >
-            {/* Title — centered, arrows moved outside AnimatePresence */}
-            <div style={{ textAlign: "center" }}>
-              <span style={{
-                fontFamily: "var(--font-mono)", fontSize: "0.95rem", textTransform: "uppercase",
-                letterSpacing: "0.16em", color: "#888",
-              }}>
-                {product.tag}
-              </span>
-              <h3 style={{
-                fontSize: "clamp(2.2rem, 3.4vw, 3rem)", fontWeight: 700, letterSpacing: "-0.02em",
-                color: accentColor, marginTop: "0.3rem",
-              }}>
-                {product.title}
-              </h3>
-            </div>
-
-            {/* Floating image — bigger, sitting on a blue panel */}
+            {/* Image — left side (top, centered on mobile) */}
             <div
+              className="prod-slide-image"
               style={{
-                position: "relative", width: "100%", maxWidth: "32rem", aspectRatio: "1 / 1", margin: "1.4rem 0",
+                flex: "0 0 auto", width: "32rem", aspectRatio: "1 / 1",
                 background: `linear-gradient(135deg, ${accentColor} 0%, #009BFF 100%)`,
                 borderRadius: "1rem",
                 display: "flex", alignItems: "center", justifyContent: "center",
@@ -251,47 +234,60 @@ const Products = () => {
               </MotionParallax>
             </div>
 
-            <div style={{ width: "1px", height: "1.6rem", background: `linear-gradient(to bottom, ${accentColor}80, transparent)` }} />
-            <div style={{
-              width: "0.7rem", height: "0.7rem", borderRadius: "50%", marginTop: "-0.1rem", marginBottom: "1rem",
-              background: "#c8ff4d", boxShadow: "0 0 12px 2px rgba(200,255,77,0.7)",
-            }} />
+            {/* Details — right side (below image on mobile) */}
+            <div className="prod-slide-details" style={{ flex: "1 1 0%" }}>
+              <span style={{
+                fontFamily: "var(--font-mono)", fontSize: "0.95rem", textTransform: "uppercase",
+                letterSpacing: "0.16em", color: "#888",
+              }}>
+                {product.tag}
+              </span>
+              <h3 style={{
+                fontSize: "clamp(2.2rem, 3.4vw, 3rem)", fontWeight: 700, letterSpacing: "-0.02em",
+                color: accentColor, marginTop: "0.3rem", marginBottom: "1.6rem",
+              }}>
+                {product.title}
+              </h3>
 
-            <p style={{ fontSize: "1.2rem", color: "#555", lineHeight: 1.5, maxWidth: "46rem", marginBottom: "1.6rem" }}>
-              {product.desc}
-            </p>
+              <p className="prod-slide-desc" style={{ fontSize: "1.2rem", color: "#555", lineHeight: 1.5, maxWidth: "46rem", marginBottom: "1.6rem" }}>
+                {product.desc}
+              </p>
 
-            {/* Feature row — horizontal, space-between */}
-            <div style={{
-              display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center",
-              width: "100%", gap: "3.2rem", marginBottom: "2.4rem",
-              borderTop: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5", padding: "2rem 0",
-            }}>
-              {product.specs.map((spec) => {
-                const Icon = getSpecIcon(spec.label);
-                return (
-                  <div key={spec.label} style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                    <Icon size={16} color={accentColor} style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: "1.1rem", letterSpacing: "0.03em", textTransform: "uppercase", color: "#111" }}>
-                      {spec.value} <span style={{ color: "#888" }}>{spec.label}</span>
-                    </span>
-                  </div>
-                );
-              })}
+              {/* Feature row — horizontal, space-between */}
+              <div className="prod-spec-row" style={{
+                display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center",
+                width: "100%", gap: "3.2rem", marginBottom: "2.4rem",
+                borderTop: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5", padding: "2rem 0",
+              }}>
+                {product.specs.map((spec) => {
+                  const Icon = getSpecIcon(spec.label);
+                  return (
+                    <div key={spec.label} className="prod-spec-item" style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
+                      <Icon size={16} color={accentColor} style={{ flexShrink: 0 }} />
+                      <span style={{ fontSize: "1.1rem", letterSpacing: "0.03em", textTransform: "uppercase", color: "#111" }}>
+                        {spec.value} <span style={{ color: "#888" }}>{spec.label}</span>
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <Link
+                href={product.href}
+                className="prod-more-info-btn"
+                style={{
+                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.8rem",
+                  fontSize: "1.2rem", fontWeight: 600, color: accentColor, textDecoration: "none",
+                  background: "transparent", padding: "1rem 2rem", borderRadius: "0.4rem",
+                  border: `1px solid transparent`,
+                  textTransform: "uppercase", letterSpacing: "0.04em", transition: "all 0.2s ease",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = accentColor; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "transparent"; }}
+              >
+                More Information
+              </Link>
             </div>
-
-            <Link
-              href={product.href}
-              className="prod-more-info-btn"
-              style={{
-                display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.8rem",
-                fontSize: "1.2rem", fontWeight: 600, color: "#fff", textDecoration: "none",
-                background: accentColor, padding: "1rem 2rem", borderRadius: "0.4rem",
-                textTransform: "uppercase", letterSpacing: "0.04em",
-              }}
-            >
-              More Information
-            </Link>
           </motion.div>
         </AnimatePresence>
 
@@ -315,6 +311,46 @@ const Products = () => {
           ))}
         </motion.div>
       </div>
+
+      <style >{`
+        .product-layout {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10rem;
+        }
+
+        .product-layout .prod-slide-details {
+          text-align: left;
+        }
+
+        @media (max-width: 768px) {
+          .product-layout {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+          }
+
+          .product-layout .prod-slide-image {
+            width: 22rem !important;
+            flex: none !important;
+          }
+
+          .product-layout .prod-slide-details {
+            text-align: center;
+          }
+
+          .product-layout .prod-slide-desc {
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+
+          .product-layout .prod-spec-row {
+            justify-content: center !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

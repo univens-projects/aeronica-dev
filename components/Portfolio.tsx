@@ -74,13 +74,15 @@ export default function Portfolio() {
             }}
           >
             <div className="portfolio-card-image"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                position: "relative",
-                overflow: "hidden",
-              }}>
+             style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+    overflow: "hidden",
+    height: "22rem",      // fixed, not min/max
+    flexShrink: 0,        // won't compress if row becomes flex
+  }}>
               <MotionParallax speed={0.3} style={{ position: "absolute", inset: "-30% 0" }}>
                 <div style={{
                   width: "100%", height: "100%",

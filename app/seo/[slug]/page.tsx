@@ -176,12 +176,6 @@ export default function SEOLandingPage() {
       <FadeIn as="section" className="section-py" style={{ maxWidth: "160rem", margin: "0 auto" }}>
         <div className="seo-split-layout">
           <div>
-            <span className="section-title">
-              <span></span>Geospatial Expertise
-            </span>
-            <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", marginBottom: "2rem", lineHeight: 1.2 }}>
-              Industry-Leading Accuracy, Proven in the Field
-            </h2>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8 }}>{data.overview}</p>
 
             <div style={{ marginTop: "4rem" }}>

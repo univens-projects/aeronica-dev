@@ -179,7 +179,6 @@ const Footer = () => {
           padding: "4rem 0",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}>
-          <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "2.5rem" }}>SEO Landing Pages</h4>
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",

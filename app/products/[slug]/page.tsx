@@ -436,7 +436,7 @@ export default function ProductDetailPage() {
           <Link href="/contact/request-demo" style={{ display: "inline-flex", alignItems: "center", gap: "1rem", padding: "1.2rem 2.5rem", background: "#21389A", color: "#fff", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none" }}>
             Request a Demo <DotArrowRight size={12} />
           </Link>
-          <Link href="/contact/get-quote" style={{ display: "inline-flex", alignItems: "center", gap: "1rem", padding: "1.2rem 2.5rem", background: "#fff", color: "#009BFF", border: "1px solid #009BFF", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none" }}>
+          <Link href="/contact/get-quote" style={{ display: "inline-flex", alignItems: "center", gap: "1rem", padding: "1.2rem 2.5rem", background: "#fff", color: "#21389A", border: "1px solid #21389A", borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none" }}>
             Get a Quote <DotArrowRight size={12} />
           </Link>
         </div>
