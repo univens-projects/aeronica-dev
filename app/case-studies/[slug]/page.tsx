@@ -172,6 +172,63 @@ const caseStudies: Record<string, any> = {
       },
     ],
   },
+  "locust-control-maharashtra": {
+    title: "Locust Control — Maharashtra",
+    subtitle: "Drone-based pesticide spraying to counter the 2020 locust attack in Vidarbha region.",
+    icon: Target,
+    stats: { value: "85%", label: "Locust Elimination Rate" },
+    sections: [
+      {
+        heading: "Locusts Attack & Counter Activities in Maharashtra: A Case Study",
+        text: "Maharashtra experienced locusts attack from May to June 2020, which was the main locust attack since 1993. Swarm of short-horned grasshoppers attacked six talukas in three districts. These were Amravati, Wardha, and Nagpur, in Vidarbha region. During the first attack that occurred between May 24 and June 2, twenty-six villages across these three districts were affected. Fortunately, the crop damage was less as the swarms mostly attacked high rise tree crowns. The main food crops were not under threat, but the fruit orchards and vegetable farms were affected. Between June 3 and 8, owing to a change in the wind direction due to Cyclone Nisarga, locusts got pushed towards Madhya Pradesh, according to the Locust Warning Organisation (LWO), an organization under the Union Agriculture ministry. According to the state agriculture department, the swarm was at least 10 km long and 2 km wide, which covered a distance of around 120 to 150 km in a day and could spread further. The species identified were migratory desert locusts (called as Locusta Migratoria), capable of rapidly reproducing crop-munching pests that feed on food equal to its weight (2 grams), and fly in swarms (of millions). The locusts can impact food production by destroying crops and fruit orchards. The main affected areas included 22 villages across Morshi and Warud talukas in Amravati; Ashti taluka in upper Wardha district; and Katol, Kalmeshwar, and Narkhed talukas in Nagpur. The invasion began with Katol. There were no major crop damages, as sowing in these areas usually commences in the first week of June. But, orange orchards got threatened by this invasion. The agriculture division reported an approximate loss of around 25% for the orchard owners. The swarms moved further, deeper into rural areas of Nagpur division. In Kalmeshwar taluka, they damaged vegetable crops across 5 to 6 hectares. According to the Locust Warning Organisation (LWO), Maharashtra witnessed such an invasion earlier in 1993, in Dhule district. Due to the changes in wind direction, the escaping population of desert locusts made their way from Madhya Pradesh into the Amravati district in the last week of May. The other reason was the presence of forest patches where they can grow and breed. We observed that these locusts breed up to six inches below the ground, and their growth is very fast (exponential). Due to the unusual behavior of the swarms, there was fear and panic among villagers and farmers. The Covid-19 pandemic underway with the hot weather in Vidarbha had worsened the locust outbreak situation.",
+      },
+      {
+        heading: "Measures Taken",
+        text: "The state department with the municipal authorities worked hard for awareness drives across all affected areas. The district officials, with the help of the fire department, carried out an operation to kill the locusts by spraying pesticides on the affected areas in all three districts. The behavior of the swarms was observed and noted. We learned that the swarms moved during the day and slept on the high rise and fruit-bearing citrus trees at night. An overnight extermination drive carried by our team resulted in thousands of dead insects. Apart from fire tenders, tankers, and other conventional methods, drone spraying was also used and proved to be the most effective method.",
+      },
+      {
+        heading: "Drone Spraying – Effective Method of Countering the Locusts Attack",
+        text: "Aeronica helped the state agriculture department by offering advanced technology drones for spraying pesticides on locust swarms and played a key role by deputing the team, along with two machines at Nagpur. These drones helped a lot, especially in those areas where it was not possible for the conventional means of spraying like fire tender and tractor-mounted pumps to reach. The pest which had flown out of Maharashtra had reached Balaghat in Madhya Pradesh and was spotted in the Pench tiger reserve. There was no spraying as it was a protected forest area. After exiting the forest, the swarm was spotted at Ajni village in Ramtek tehsil, where the spraying took place. The drones were very effective and could reach inaccessible areas. Spraying with drones was very much successful in minimizing the effect to the tune of 80 to 85%, as reported by the state agriculture department. The team evacuated the complete area before the commencement of spraying and also ensured that no living being was present in the area. The team also covered the fodder. Our team followed all the norms of SOP, as designed and suggested by the Central Insecticides Board (Directorate of Plant Protection, Quarantine & Storage). The team took utmost care as the pesticide solution used for spraying was extremely hazardous. The drone hovered and sprayed above a swarm of locust. The result was a maximum of them got killed, and a few of them scattered away. Our teams used to gear up for another round of spraying to tackle the issues until the end. They conducted the spraying when the locust had settled down after sunset or early in the morning. There were two teams: detection & spraying. The detection team used to detect the exact location of the locusts after sunset and communicate the same to the spraying team. The spraying team conducted the spraying operation between 4 – 10 AM. As Kharif sowing had not started, there was little risk to the crops. Since there was moisture in the atmosphere due to rains, it helped in killing the pest to a certain extent. The experts from the Centre for Sericulture and Biological Pest Management of Nagpur University were present to track the after-effects and implementation procedures. We believe that due to the moisture, the pesticide was likely to stay on the locust's body for a longer time.",
+      },
+      {
+        heading: "Pilot Project Details",
+        text: "",
+        list: [
+          "Region: Nagpur, Maharashtra",
+          "Districts covered: Nagpur, Gondia, and Bhandara",
+          "Total villages covered: Six (2 per district)",
+          "Spraying method: Drone-based intelligent spraying system (Using SkyKeeper-X2)",
+          "Project Duration: 15 to 17 days",
+          "Spraying duration (approx): 4 to 5 hours per day",
+          "Preferred Locust detection time zone: After sunset, late evening/midnight",
+          "Preferred spraying time zone: 4 AM to 10 AM",
+          "Approx. trees covered: 80 to 100 per day",
+          "Approx. area covered: 90 to 100 acres per day",
+          "Locust detection team size: 5 to 7",
+          "Spraying team size: 3",
+          "Spraying tank capacity: 10 liters",
+          "Single fly time (with full battery charged): 12 to 15 minutes",
+          "Max. height achieved by drone: 35 to 40 meters",
+          "Min. height: 10 meters",
+          "RTH feature: The drone could detect a low solution level in the tank and low battery. In the case of these low levels, the Return TO Home (RTH) feature is activated automatically, and the drone used to come back to its 'home' position.",
+        ],
+      },
+      {
+        heading: "Post-Spraying Effects & Results",
+        text: "After the pesticide spraying operations in Mohadi village of Nagpur's Mauda Tehsil, the locust swarms got split into two. One was smaller in size and entered the Bhandara district near Salai village in Mohadi tehsil. The other was marginally larger and got located at Tirora village in Gondia district. The spraying operations by the fire department and local authorities further pushed both swarms in the eastward direction – towards Madhya Pradesh, as reported by the Agriculture department authorities. The smaller swarm in Bhandara further entered MP, while 70% of the larger one got killed overnight due to our spraying operations. The remaining large swarm was spotted located closer to the Pujaritola dam near Bagh river. Eventually, all the districts in Vidarbha, excluding Gondia, were declared as locust free. Along with Maharashtra, the states of Rajasthan, Gujarat, Uttar Pradesh, and Madhya Pradesh also faced a locust invasion. Maharashtra was highly successful in controlling the attack through intense drone-based spraying operations. However, as per the Locust Warning Organisation (LWO), these pests were not affected by rain, and wet conditions aided their survival across greener patches.",
+      },
+      {
+        heading: "References",
+        text: "",
+        list: [
+          "https://www.hindustantimes.com/mumbai-news/locust-swarms-now-in-east-ofmaharashtra-attack-farms-in-gondia/story-Sru5sVoPwL1FD3oDPRtf0I.html",
+          "https://www.hindustantimes.com/mumbai-news/first-major-locust-attack-in-maharashtrasince-1993-3-districts-hit/story-hll1tdD0Hty70JvAlKAGXL.html",
+          "https://www.hindustantimes.com/india-news/swarms-of-locusts-enter-maharashtra/storyvo5yIsp9UUo3OL6GqX5d7N.html",
+          "https://timesofindia.indiatimes.com/city/nagpur/locusts-reappear-in-ramtek-sprayed-withdrones/articleshow/76310138.cms",
+        ],
+      },
+    ],
+  },
   "utility-projects": {
     title: "Utility Projects",
     subtitle: "Power line inspections and grid monitoring for seamless energy distribution.",
@@ -213,6 +270,7 @@ const iconMap: Record<string, any> = {
   "mining-projects": BarChart,
   "smart-city-projects": Users,
   "utility-projects": Award,
+  "locust-control-maharashtra": Target,
 };
 
 export default function CaseStudyDetail() {

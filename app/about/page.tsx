@@ -22,30 +22,50 @@ export default function AboutHub() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]}
       />
 
-      {/* Section 1 — The Origin Story */}
+      {/* Section 1 — About Us */}
       <FadeIn as="section" className="section-py-lg" style={{ maxWidth: "160rem", margin: "0 auto" }}>
-        <div className="ab-split">
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.2rem", color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                The Origin
-              </span>
-              <div style={{ flex: 1, height: "1px", background: "#e5e5e5" }} />
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "2.4rem", fontWeight: 700, color: "#111" }}>2020</span>
+        <div style={{ textAlign: "center", marginBottom: "5rem" }}>
+          <span className="section-title" style={{ justifyContent: "center" }}>
+            <span></span>About Us
+          </span>
+          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
+            Pioneering Indian UAV Innovation Since 2020
+          </h2>
+        </div>
+
+        <div className="ab-split" style={{ alignItems: "start" }}>
+          <div style={{ flex: 1.2 }}>
+            <p style={{ fontSize: "1.7rem", color: "#444", lineHeight: 1.9, marginBottom: "2rem", borderLeft: "4px solid #21389A", paddingLeft: "2rem" }}>
+              <strong>Aeronica Advance Technologies Pvt Ltd</strong>, Pune is one of the MSME, Start-up [DIPP55381] UAV/Drone manufacturing company in India (Authorized by DGCA), incorporated in 2020.
+            </p>
+
+            <h3 style={{ fontSize: "2rem", fontWeight: 600, color: "#111", marginBottom: "1.5rem", marginTop: "3rem" }}>Our Products &amp; Solutions</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.2rem", marginBottom: "2.5rem" }}>
+              {[
+                "Agriculture Spraying Drones",
+                "Mapping &amp; Surveillance Drones",
+                "Defence Application Drones",
+                "Commercial Industrial Drones",
+                "Cloud AI/ML Data Processing",
+                "UAV Ground Control Station",
+                "Firmware &amp; Flight Controllers",
+                "IoT Devices for Drones",
+              ].map((item, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.8rem", fontSize: "1.4rem", color: "#555" }}>
+                  <CheckCircle style={{ width: "1.6rem", height: "1.6rem", color: "#21389A", flexShrink: 0 }} />
+                  {item}
+                </div>
+              ))}
             </div>
-            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.15, marginBottom: "2rem" }}>
-              Born from a belief that India deserves its own aerial intelligence
-            </h2>
+
+            <h3 style={{ fontSize: "2rem", fontWeight: 600, color: "#111", marginBottom: "1.5rem" }}>R&amp;D &amp; Academic Partnerships</h3>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Aeronica was founded in Pune at a time when India&rsquo;s drone industry was dominated by imported,
-              generic hardware with zero after-sales support. Critical sectors&mdash;agriculture, railways,
-              mining&mdash;were forced to adapt foreign solutions to Indian conditions.
+              We have our own Research &amp; Development center at Pune (Khed Shivapur) with highly skilled manpower, State-of-the-art Manufacturing and GIS Data Processing facilities to cater the needs of the Drone eco-system.
             </p>
             <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "2rem" }}>
-              We set out to change that. Our founding team of aeronautical engineers and embedded systems
-              designers committed to one principle: build everything in-house, for Indian conditions,
-              with Indian talent.
+              Partnering with <strong>MIT-ADT University</strong> and <strong>PICT Engineering College</strong> for Sponsored Research and Development projects in Aeronautical, Defence and Electronic Devices areas.
             </p>
+
             <div className="gap-4" style={{ display: "flex", paddingTop: "2rem", borderTop: "1px solid #e5e5e5", flexWrap: "wrap" }}>
               <div>
                 <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>5+</div>
@@ -61,65 +81,75 @@ export default function AboutHub() {
               </div>
             </div>
           </div>
-          <div className="responsive-padding" style={{
-            borderRadius: "0.4rem",
-            color: "#fff",
-            position: "relative",
-            overflow: "hidden",
-          }}>
-            <MotionParallax speed={0.2} style={{ position: "absolute", inset: "-25% 0" }}>
-              <div style={{
-                width: "100%", height: "100%",
-                background: "linear-gradient(135deg, #21389A 0%, #21389A 100%), url('/assets/images/pexels/pexels-drone-tech.jpg')",
-                backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay",
-              }} />
-            </MotionParallax>
-            <div style={{ position: "absolute", top: "-40%", right: "-20%", width: "60%", height: "80%", background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)", borderRadius: "50%" }} />
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <Rocket style={{ width: "3.6rem", height: "3.6rem", marginBottom: "2.5rem", opacity: 0.8 }} />
-              <blockquote style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.4, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
-                &ldquo;We didn&rsquo;t want to assemble drones. We wanted to invent the Indian way of building them.&rdquo;
-              </blockquote>
-              <div style={{ width: "4rem", height: "2px", background: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }} />
-              <div style={{ fontSize: "1.4rem", color: "rgba(255,255,255,0.6)" }}>Founding Ethos, Aeronica Advance Technologies</div>
+
+          <div style={{ flex: 1 }}>
+            <div style={{ background: "#f8f9fa", borderRadius: "0.4rem", padding: "3rem", marginBottom: "2rem" }}>
+              <h3 style={{ fontSize: "2rem", fontWeight: 600, color: "#111", marginBottom: "1.5rem" }}>Why Aeronica?</h3>
+              <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                Our key competencies are powered by innovative, reasonably priced technologies across multiple industry sectors. We specialize in design &amp; manufacturing of low altitude Unmanned Aerial Vehicle family.
+              </p>
+              <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, marginBottom: 0 }}>
+                Aeronica is carving out a niche in the Indian drone ecosystem by combining affordable hardware, mapping analytics, and service support, with strong local innovation.
+              </p>
+            </div>
+
+            <div style={{ background: "#21389A", borderRadius: "0.4rem", padding: "3rem", color: "#fff" }}>
+              <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "1.5rem" }}>Make in India Initiative</h3>
+              <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                We aim expansion toward manufacturing and broader service deployment across agriculture, defense and industrial domains.
+              </p>
+              <p style={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, margin: 0 }}>
+                We are recognized under various central agencies and actively contribute to the government&rsquo;s &ldquo;Make in India&rdquo; and &ldquo;Drone Shakti&rdquo; initiatives.
+              </p>
             </div>
           </div>
         </div>
       </FadeIn>
 
-      {/* Section 2 — Mission & Vision */}
-      <FadeIn as="section" className="section-py-lg" style={{ background: "#ffffff", paddingLeft: 0, paddingRight: 0 }}>
+      {/* Section 2 — Vision & Mission */}
+      <FadeIn as="section" className="section-py-lg" style={{ background: "#f8f9fa", paddingLeft: 0, paddingRight: 0 }}>
         <div style={{ maxWidth: "160rem", margin: "0 auto", paddingLeft: "var(--section-px)", paddingRight: "var(--section-px)" }}>
           <div style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span className="section-title" style={{ justifyContent: "center" }}>
-              <span></span>Our Compass
+              <span></span>Our Purpose
             </span>
             <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
-              Purpose that drives every flight
+              Vision &amp; Mission
             </h2>
           </div>
+
           <div className="mv-split">
+            {/* Vision Card */}
+            <div className="card-hover p-4" style={{ background: "#21389A", border: "none", borderRadius: "0.4rem", color: "#fff" }}>
+              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "rgba(255,255,255,0.15)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
+                <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
+              </div>
+              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
+              <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.9)", lineHeight: 1.7 }}>
+                To become India&rsquo;s most trusted indigenous Drone Manufacturing, Automation &amp; Data Intelligence company.
+              </p>
+            </div>
+
+            {/* Mission Card */}
             <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
               <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Target style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
               <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
-              <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7 }}>
-                Shaping a future where intelligent drones revolutionize the world—from
-                the largest railway corridor to the smallest farm—by building indigenous,
-                DGCA-compliant drone ecosystems that are secure, reliable, and purpose-built.
-              </p>
-            </div>
-            <div className="card-hover p-4" style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem" }}>
-              <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
-                <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+                  <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} />
+                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>Build secure, Made-in-India UAV platforms</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+                  <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} />
+                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>Deliver Turnkey Automation with Actionable Intelligence</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+                  <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} />
+                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>Enable Safer, Faster, Compliant operations at scale</p>
+                </div>
               </div>
-              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
-              <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.7 }}>
-                To lead India&rsquo;s aerial intelligence revolution&mdash;becoming the most trusted name
-                in indigenous UAV hardware, geospatial analytics, and autonomous flight
-                operations from the Himalayas to the Indian Ocean.
-              </p>
             </div>
           </div>
         </div>

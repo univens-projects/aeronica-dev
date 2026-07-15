@@ -113,6 +113,7 @@ const caseStudyCategories = [
     title: "Featured",
     links: [
       { label: "Smart City Projects", href: "/case-studies/smart-city-projects" },
+      { label: "Locust Control — Maharashtra", href: "/case-studies/locust-control-maharashtra" },
       { label: "Project Gallery", href: "/case-studies/project-gallery" },
     ],
   },

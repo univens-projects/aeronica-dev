@@ -23,6 +23,7 @@ export default function CaseStudiesHub() {
             { title: "Government Projects", desc: "National security and strategic asset mapping for central and state agencies.", href: "/case-studies/government-projects", icon: FileText },
             { title: "Infrastructure Projects", desc: "Corridor surveys and structural audits for highways, bridges, and railways.", href: "/case-studies/infrastructure-projects", icon: FileText },
             { title: "Agriculture Projects", desc: "Precision spraying campaigns and crop health monitoring at scale.", href: "/case-studies/agriculture-projects", icon: FileText },
+            { title: "Locust Control — Maharashtra", desc: "Drone-based pesticide spraying to counter the 2020 locust attack in Vidarbha region.", href: "/case-studies/locust-control-maharashtra", icon: FileText },
             { title: "Mining Projects", desc: "Volumetric analysis and terrain mapping for open-cast mining operations.", href: "/case-studies/mining-projects", icon: FileText },
             { title: "Smart City Projects", desc: "Urban planning, digital twin creation, and city-wide infrastructure audits.", href: "/case-studies/smart-city-projects", icon: FileText },
             { title: "Utility Projects", desc: "Power line inspections and grid monitoring for seamless energy distribution.", href: "/case-studies/utility-projects", icon: FileText },
