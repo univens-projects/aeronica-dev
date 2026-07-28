@@ -33,7 +33,7 @@ const industries: Record<string, any> = {
       },
       {
         heading: "Why Government Agencies Trust Aeronica",
-        text: "Our Nitya flight controller's 256-bit AES encrypted telemetry ensures sensitive mission data remains secure. All operations are fully DGCA-compliant with type-certified hardware. Our indigenous manufacturing means zero dependency on foreign supply chains — a critical requirement for national security contracts.",
+        text: "Designed and manufactured in India, Nitya combines secure data protection, reliable redundant systems, and high-performance flight control.",
       },
     ],
   },

@@ -6,7 +6,9 @@ import Image from "next/image";
 import { useParams, notFound } from "next/navigation";
 import {
   CheckCircle, ChevronRight, Cpu, ShieldCheck, Globe, Zap, Plane,
-  Layers, Radio, Award, Target, ArrowLeft
+  Layers, Radio, Award, Target, ArrowLeft,
+  Droplets,
+  Mountain
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
@@ -78,7 +80,11 @@ const products: Record<string, any> = {
       },
     ],
     highlights: [
-      { icon: Radio, title: "Sensor System", desc: "The Samrudhhi-10LH is equipped with an advanced suite of sensors, including GPS, IMU, and flow rate monitoring, ensuring precise and reliable operation in every mission." },
+      // { icon: Radio, title: "Sensor System", desc: "The Samrudhhi-10LH is equipped with an advanced suite of sensors, including GPS, IMU, and flow rate monitoring, ensuring precise and reliable operation in every mission." },
+      { icon: Target, title: "Precision Spray System", desc: "Ensures precise application of crop protection and nutrition solutions." },
+      { icon: ShieldCheck, title: "Obstacle Sensing", desc: "Recognizes nearby objects to support safe flight." },
+      { icon: Mountain, title: "Auto Terrain Tracking", desc: "Keeps the drone at the right height over uneven fields." },
+      { icon: Droplets, title: "Consistent Flow Control", desc: "Regulates liquid output for uniform spraying." },
     ],
     proof: "Field-proven across thousands of acres in Maharashtra and Tamil Nadu. Commercial operators report 25+ acres of daily coverage with reduced turnaround time compared to pure-electric platforms.",
   },
@@ -126,7 +132,13 @@ const products: Record<string, any> = {
     heroColor: "#111a2d",
     heroImage: "/assets/images/products/nitya-fc/Front.png",
     certImage: "/assets/images/products/nitya-fc/Back.png",
-    overview: "The Nitya FC is Aeronica's fully indigenous flight controller — the result of 4 years of dedicated embedded systems R&D by our in-house team. Built on the STM32MP1 heterogeneous processor, it features triple-redundant IMU, military-grade 256-bit AES encrypted telemetry, and a custom PX4 firmware stack tailored for Aeronica's agricultural and survey platforms. The Nitya FC is the avionics core of every Aeronica product — and is now available as a standalone component for OEM integration.",
+    heroBadges: [
+      { label: "Processor", value: "STM32H7 microcontroller @ 480 MHz with FPU" },
+      { label: "Redundant Sensors", value: "Triple-redundant gyroscope & accelerometer units (3× IMUs)" },
+      { label: "Secure Storage & Logging", value: "Crypto chip, FRAM/EEPROM, and SD card support" },
+      { label: "Power & Interfaces", value: "Triple redundant power sources (5V–36V, up to 2A)" },
+    ],
+    overview: "The Nitya FC is Aeronica's fully indigenous flight controller — built from 4 years of dedicated embedded systems R&D by our in-house team. Powered by the STM32H7 microcontroller running at 480 MHz with FPU, it delivers triple-redundant IMU sensing, military-grade 256-bit AES encrypted telemetry, and a custom PX4 firmware stack purpose-built for Aeronica's agriculture and survey platforms.",
     useCases: [
       "Agricultural UAV flight control with precision spray mode automation",
       "Survey UAV autonomous waypoint navigation with terrain-following",
@@ -136,50 +148,22 @@ const products: Record<string, any> = {
     ],
     fullSpecs: [
       {
-        category: "Processing", specs: [
-          { label: "Processor", value: "STM32MP1 (Arm Cortex-A7 + M4)" },
-          { label: "Real-Time Core", value: "Cortex-M4 @ 209 MHz" },
-          { label: "Application Core", value: "Cortex-A7 @ 650 MHz" },
-          { label: "RAM", value: "512 MB DDR3L" },
-          { label: "Storage", value: "8 GB eMMC + SD Card" },
-        ]
-      },
-      {
-        category: "Sensors", specs: [
-          { label: "IMU Configuration", value: "Triple Redundant (3x ICM-42688)" },
-          { label: "Barometer", value: "Dual (MS5611)" },
-          { label: "Magnetometer", value: "Triple Axis (IST8310)" },
-          { label: "GNSS", value: "GPS/GLONASS/BeiDou/Galileo" },
-          { label: "Optical Flow", value: "Integrated Downward Camera" },
-        ]
-      },
-      {
-        category: "Communication", specs: [
-          { label: "Telemetry Encryption", value: "256-bit AES (MIL-grade)" },
-          { label: "RC Input", value: "SBUS, PPM, ELRS" },
-          { label: "Serial Ports", value: "6x UART" },
-          { label: "I2C / SPI", value: "4x I2C, 2x SPI" },
-          { label: "CAN Bus", value: "2x CAN FD" },
-          { label: "USB", value: "USB-C (DFU + Debug)" },
-        ]
-      },
-      {
-        category: "Security & Firmware", specs: [
-          { label: "Boot Security", value: "Secure Boot with TPM 2.0" },
-          { label: "Firmware", value: "Custom PX4 v1.15 (Aeronica Fork)" },
-          { label: "GCS Protocol", value: "MAVLink 2.0" },
-          { label: "OTA Updates", value: "Signed Firmware Updates" },
-          { label: "Data Logging", value: "ULog with AES-256 at rest" },
+        category: "Specification", specs: [
+          { label: "Processor", value: "STM32H7 microcontroller @ 480 MHz with FPU" },
+          { label: "Storage", value: "FRAM & EEPROM" },
+          { label: "Operating System", value: "Real-Time OS with failsafe and watchdog routines" },
         ]
       },
     ],
     highlights: [
-      { icon: Cpu, title: "STM32MP1 Heterogeneous SoC", desc: "The dual-core STM32MP1 runs Linux on the Cortex-A7 for mission planning and AI inference, while the Cortex-M4 hard real-time core runs the flight control loop at 1kHz — a architecture previously only found in defence-grade avionics." },
-      { icon: ShieldCheck, title: "256-bit AES Encrypted Telemetry", desc: "All command uplinks and telemetry downlinks are encrypted with AES-256-GCM — meeting or exceeding MIL-STD telemetry security requirements. Critical for government and defence client deployments." },
-      { icon: Layers, title: "Triple-Redundant IMU", desc: "Three independent ICM-42688 IMUs with voting logic ensure attitude estimation continues accurately even if one sensor fails or produces erroneous data — a key requirement for DGCA type certification." },
-      { icon: Globe, title: "OEM & Research Available", desc: "The Nitya FC is available for OEM integration into third-party UAV platforms. Academic and research institutions can access evaluation units and full firmware source access under a research partnership agreement." },
+      { icon: Cpu, title: "High-Performance Processor", desc: "480 MHz STM32H7 processor delivers real-time flight control. Built to handle demanding operations without compromise." },
+      { icon: Layers, title: "Triple-Redundant Safety", desc: "Three independent sensor units work together to ensure accuracy. If one fails, the others keep flying. That's the redundancy critical systems need." },
+      { icon: ShieldCheck, title: "Military-Grade Security", desc: "Dedicated encryption chip protects all data. Your operations stay secure, whether commercial or government." },
+      { icon: Globe, title: "Global Positioning", desc: "Supports GPS, GLONASS, Galileo, BeiDou, NavIC, and QZSS. Works reliably anywhere on Earth." },
+      { icon: Zap, title: "Multiple Power Options", desc: "Triple redundant power sources with wide voltage support (5V–36V). Flexibility built in." },
+      { icon: ShieldCheck, title: "Always Safe", desc: "Real-time OS with automatic failsafes. Keeps flying even when things go wrong." },
     ],
-    proof: "Deployed in 50+ commercial UAVs across India. Powers the DGCA Type-Certified Samrudhhi-10L. Used in Central Railway, JSW Steel, and IOCL drone operations. 15,000+ flight hours accumulated.",
+    proof: "Our flight controllers power DGCA-certified drones trusted by commercial and government operators. Real-world proven performance.",
   },
 };
 
@@ -218,7 +202,7 @@ export default function ProductDetailPage() {
               <p style={{ fontSize: "1.6rem", color: "#555", lineHeight: 1.8, marginBottom: "3rem" }}>{product.overview}</p>
               {/* Key spec badges */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "3rem" }}>
-                {product.fullSpecs[0]?.specs.slice(0, 4).map((spec: any, i: number) => (
+                {(product.heroBadges || product.fullSpecs[0]?.specs.slice(0, 4)).map((spec: any, i: number) => (
                   <div key={i} style={{ background: "#f5f5f5", border: "1px solid #e5e5e5", borderRadius: "0.4rem", padding: "0.8rem 1.5rem" }}>
                     <div style={{ fontSize: "1rem", color: "#888", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>{spec.label}</div>
                     <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "#111", marginTop: "0.2rem" }}>{spec.value}</div>
@@ -364,7 +348,7 @@ export default function ProductDetailPage() {
 
         {product.highlights.length > 0 && (
         <div style={{ marginBottom: "5rem" }}>
-          <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "3rem" }}>Key Highlights</h2>
+          <h2 style={{ fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.03em", marginBottom: "3rem" }}>{slug === "nitya-fc" ? "Capabilities" : "Key Highlights"}</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
             {product.highlights.map((h: any, i: number) => {
               const HIcon = h.icon;

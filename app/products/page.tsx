@@ -86,6 +86,39 @@ const products = [
     ],
     keyFeatures: ["100% India-designed and manufactured", "Triple-redundant IMU for fail-safe operation", "Military-grade 256-bit AES encrypted telemetry", "Custom PX4 firmware with Aeronica-specific flight modes"],
   },
+  {
+    slug: "flyura",
+    name: "Flyura",
+    tag: "Surveillance",
+    tagColor: "#1a237e",
+    category: "Surveillance UAV",
+    headline: "Advanced Surveillance UAV for Critical Operations",
+    desc: "When every second matters, having the right information at the right time can make all the difference. Flyura is Aeronica's advanced surveillance UAV, designed to deliver real-time aerial intelligence for defense, surveillance, and critical infrastructure monitoring.",
+    gradient: "linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)",
+    specs: [
+      { label: "Operational Range", value: "25 km" },
+      { label: "Max Take-Off Weight", value: "15 Kg" },
+      { label: "Flight Time", value: "120 min" },
+    ],
+    keyFeatures: ["Real-Time Intelligence — Live aerial footage", "Extended Operational Reach — 25 km range", "Rapid Response — Deploy quickly", "Reliable Mission Performance"],
+  },
+  {
+    slug: "uday-16",
+    name: "Uday 1.6",
+    tag: "Tactical",
+    tagColor: "#1a237e",
+    category: "Tactical Quadcopter",
+    headline: "Tactical Surveillance. Ready in Minutes.",
+    desc: "Compact, lightweight, and mission-ready, UDAY 1.6 is a tactical quadcopter built for rapid deployment, real-time reconnaissance, and reliable aerial surveillance. Designed for defence and security teams.",
+    gradient: "linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)",
+    specs: [
+      { label: "Flight Time", value: "Up to 30 min" },
+      { label: "MTOW", value: "1.6 kg" },
+      { label: "Payload Capacity", value: "150 g" },
+      { label: "Camera", value: "4K / 6× Zoom" },
+    ],
+    keyFeatures: ["Rapid Deployment — Ready in minutes", "Real-Time Intelligence — Live video", "Tactical Mobility — Compact & lightweight", "Quick-swap batteries for extended missions"],
+  },
 ];
 
 export default function ProductsHub() {

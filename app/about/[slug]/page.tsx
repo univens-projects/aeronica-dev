@@ -242,7 +242,7 @@ const aboutPages: Record<string, any> = {
             color: "#21389A",
             partners: [
               {
-                name: "IIT Bombay",
+                name: "IIT Indore",
                 type: "Research Partnership",
                 focus: "Advanced composite materials for UAV airframes — high-modulus carbon fibre layup design and testing",
               },
@@ -258,38 +258,7 @@ const aboutPages: Record<string, any> = {
               },
             ],
           },
-          {
-            category: "Industrial Clients & Alliances",
-            icon: Briefcase,
-            color: "#009BFF",
-            partners: [
-              {
-                name: "Central Railway (Indian Railways)",
-                type: "Long-Term Service Contract",
-                focus: "450+ km of railway corridor surveyed for alignment, drainage, and bridge inspection",
-              },
-              {
-                name: "JSW Steel",
-                type: "Volumetric Analytics Partner",
-                focus: "Open-cast mine volumetric analysis and stockpile management across multiple mining sites",
-              },
-              {
-                name: "Indian Oil Corporation Ltd. (IOCL)",
-                type: "Infrastructure Inspection",
-                focus: "Pipeline corridor surveillance and solar farm thermal inspection",
-              },
-              {
-                name: "BASF India",
-                type: "Agricultural Solutions Partner",
-                focus: "Precision drone-applied crop protection on large-scale commercial farms in Maharashtra",
-              },
-              {
-                name: "Maharashtra State Government",
-                type: "Government Partner",
-                focus: "Agricultural mapping and crop health monitoring programs across 10 districts",
-              },
-            ],
-          },
+
           {
             category: "Technology Ecosystem",
             icon: Globe,
@@ -384,13 +353,13 @@ const aboutPages: Record<string, any> = {
           {
             icon: ShieldCheck,
             title: "100% Indigenous. Zero Import Dependency.",
-            desc: "From the carbon fibre airframe to the flight controller firmware, every component is designed and built in India. This means no export control restrictions, no supply chain vulnerabilities, and full IP ownership. Critical for government and defence clients.",
+            desc: "Our drones are designed and manufactured in India, This means no export control restrictions, no supply chain vulnerabilities, and full IP ownership. Critical for government and defence clients.",
             proof: "DIPP Recognized | All IP India-Owned | Manufactured in Pune",
           },
           {
             icon: Award,
             title: "The Only DGCA Type-Certified Agricultural UAV",
-            desc: "The Samrudhhi-10L is India's first and only agricultural drone to receive DGCA Type Certification. This is not a self-declaration — it's independently verified airworthiness that enables commercial operations any client can rely on.",
+            desc: "The Samrudhhi-10L holds DGCA Type Certification for agricultural operations. This independent verification of airworthiness gives clients confidence in reliable, compliant commercial deployment.",
             proof: "DGCA Type Certificate Holder | First in Category",
           },
           {

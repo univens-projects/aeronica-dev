@@ -23,7 +23,7 @@ const solutions: Record<string, any> = {
     icon: Map,
     accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
-      stat: "500+",
+      stat: "2000+",
       statLabel: "Acres Surveyed per Day",
       text: "Aeronica's drone survey and mapping service delivers sub-centimeter accuracy orthomosaics, digital elevation models, and 3D point clouds for engineering, construction, and environmental projects. Our Flycra 2.0 platform combines 45-minute endurance with RTK GPS precision, enabling a single flight team to survey what would take ground crews days or weeks to complete.",
     },
@@ -182,7 +182,7 @@ const solutions: Record<string, any> = {
     icon: Eye,
     accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
-      stat: "50+",
+      stat: "300+",
       statLabel: "Km Inspected per Day",
       text: "Aeronica's infrastructure inspection service replaces dangerous manual climbs, traffic-disrupting ground surveys, and costly scaffold access with safe, rapid aerial inspections. Our platforms carry high-resolution RGB, thermal, and multispectral sensors, and our AI engine automatically detects, classifies, and reports defects weeks faster than traditional methods.",
     },
@@ -261,8 +261,8 @@ const solutions: Record<string, any> = {
     icon: Brain,
     accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
-      stat: "100K+",
-      statLabel: "AI Model Training Images",
+      stat: "200+",
+      statLabel: "Images Training",
       text: "Aeronica's AI Drone Intelligence service is the analytical engine behind every aerial mission. Our Aeroni.AI platform applies state-of-the-art computer vision and deep learning models to drone-captured imagery — automating the detection of defects, changes, and anomalies that human eyes would miss. Built on a foundation of 100,000+ labelled training images from Indian industrial environments, our models deliver production-ready accuracy from day one.",
     },
     capabilities: [
@@ -328,7 +328,7 @@ const solutions: Record<string, any> = {
       { name: "Mining", href: "/industries/mining", icon: Mountain },
     ],
     impact: [
-      { value: "95%+", label: "Detection accuracy" },
+      { value: "90%+", label: "Detection accuracy" },
       { value: "10x", label: "Faster than manual review" },
       { value: "100K+", label: "Training images processed" },
       { value: "24h", label: "Model fine-tuning turnaround" },
@@ -341,8 +341,8 @@ const solutions: Record<string, any> = {
     icon: LifeBuoy,
     accent: "linear-gradient(135deg, #009BFF, #21389A)",
     overview: {
-      stat: "< 30",
-      statLabel: "Minutes to Deploy",
+      stat: "Quick Deploy",
+      statLabel: "",
       text: "When disaster strikes, time is the most critical resource. Aeronica's emergency response service provides authorities and relief organisations with real-time aerial intelligence within minutes of deployment. Our rugged platforms operate in adverse weather, transmit live video to command centres, and deliver damage assessment maps before ground teams can even reach affected areas.",
     },
     capabilities: [

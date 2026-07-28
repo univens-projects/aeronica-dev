@@ -55,7 +55,7 @@ const Footer = () => {
             borderBottom: "1px solid rgba(255,255,255,0.06)",
           }}>
           <div>
-            <Image src="/assets/img/aeronica-logo.png" alt="Aeronica" width={200} height={50} style={{ width: "16rem", height: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem" }} />
+            <Image src="/assets/Footer Logo.svg" alt="Aeronica" width={200} height={50} style={{ height: "3.8rem", width: "auto", marginBottom: "1.5rem" }} />
             <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.7, maxWidth: "28rem" }}>
               Indigenous drone hardware, avionics, and GIS software solutions for agriculture, surveillance, and industrial applications.
             </p>
@@ -127,10 +127,11 @@ const Footer = () => {
             <h4 style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Products</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.7rem" }}>
               {[
-                { label: "Samrudhhi-10L", href: "/products/samrudhhi-10l" },
                 { label: "Samrudhhi-10LH", href: "/products/samrudhhi-10lh" },
                 { label: "Flycra 2.0", href: "/products/flycra-20" },
                 { label: "Nitya FC Module", href: "/products/nitya-fc" },
+                { label: "Flyura", href: "/products/flyura" },
+                { label: "Uday 1.6", href: "/products/uday-16" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} style={{

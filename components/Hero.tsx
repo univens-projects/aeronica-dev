@@ -20,33 +20,44 @@ interface Slide {
 const slides: Slide[] = [
   {
     image:
-      "/assets/images/Hero-Section/Sam 10L website image 1.png",
+      "/assets/images/Hero-Section/Sam 10LH website image 2.png",
     eyebrow: "Agriculture",
-    title: "Samrudhhi 10L",
+    title: "Samrudhhi 10LH",
     description:
-      "Where Innovation Meets Modern Farming",
+      "Improve farm productivity with the Samrudhhi-10L agriculture spraying drone. Designed for efficient pesticide and nutrient application across different crops.",
     ctaLabel: "Get in Touch",
     ctaHref: "/contact",
   },
+  
   {
     image:
-      "/assets/images/Hero-Section/Sam 10LH website image 2.png",
-    eyebrow: "Industrial",
-    title: "Samrudhhi 10LH",
+      "/assets/images/Website Hero Images/Flycra 2.0 Hero img.png",
+    eyebrow: "GIS & Mapping",
+    title: "Flycra 2.0",
     description:
-      "Built for Bigger Fields",
+      "Flycra 2.0 helps capture accurate aerial data for mapping, inspections, surveying, and surveillance across industrial and commercial projects.",
     ctaLabel: "View Products",
-    ctaHref: "/products",
+    ctaHref: "/products/flycra-20",
+  },
+   {
+    image:
+      "/assets/images/Website Hero Images/Flyura drone.png",
+    eyebrow: "Defence & Surveillance",
+    title: "Flyura",
+    description:
+      "Flyura is designed for surveillance across defence and critical infrastructure. Equipped with EO/IR imaging, laser rangefinder, and AI target detection.",
+    ctaLabel: "Learn More",
+    ctaHref: "/products/flyura",
   },
   {
     image:
-      "/assets/images/agriculture spraying.jpg",
-    eyebrow: "GIS & Mapping",
-    title: "Flycra 2.4",
+      "/assets/images/Website Hero Images/Uday 1.6 (2).png",
+    eyebrow: "Reconnaissance",
+    title: "Uday 1.6",
     description:
-      "See Beyond the Surfaces",
-    ctaLabel: "Learn More",
-    ctaHref: "/solutions/gis",
+      "UDAY 1.6 compact surveillance and reconnaissance drone. High-resolution aerial imaging capabilities for defence operations, border security, and critical infrastructure assessment.",
+    ctaLabel: "Contact Us",
+    ctaHref: "/products/uday-16",
   },
 ];
 

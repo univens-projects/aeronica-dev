@@ -36,6 +36,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: "Aeronica — Drones, built with Purpose! Flying with Precision!",
   description: "Aeronica Advance Technologies — indigenous drone solutions for agriculture, GIS, surveillance, and industrial applications. DGCA certified.",
+  icons: {
+    icon: "/assets/Favicon.svg",
+  },
 };
 
 export default function RootLayout({

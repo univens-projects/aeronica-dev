@@ -180,9 +180,9 @@ export default function SolutionsHub() {
             {
               icon: Tractor,
               title: "Precision Agriculture",
-              stat: "10,000+",
+              stat: "23732+",
               unit: "Acres Sprayed",
-              result: "30% reduction in pesticide usage with Samrudhhi-10L precision spraying. Farmers reported 18% higher yield in Kharif season trials.",
+              result: "30% reduction in pesticide usage with Samrudhhi-10LH precision spraying. Farmers reported 18% higher yield in season trials.",
               highlight: "DGCA Type-Certified Sprayer",
             },
             {

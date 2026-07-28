@@ -7,11 +7,12 @@ import { DotArrowLeft } from "@/components/DotIcons";
 interface PageHeroProps {
   title: string;
   subtitle?: string;
+  subtitle2?: string;
   breadcrumbs?: { label: string; href: string }[];
   variant?: "parent" | "child";
 }
 
-const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHeroProps) => {
+const PageHero = ({ title, subtitle, subtitle2, breadcrumbs, variant = "parent" }: PageHeroProps) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
@@ -55,6 +56,12 @@ const PageHero = ({ title, subtitle, breadcrumbs, variant = "parent" }: PageHero
         {variant === "parent" && subtitle && (
           <p style={{ fontSize: "clamp(1.6rem, 2vw, 2rem)", color: "rgba(255,255,255,0.8)", lineHeight: 1.6, maxWidth: "60rem" }}>
             {subtitle}
+          </p>
+        )}
+
+        {variant === "parent" && subtitle && (
+          <p style={{ fontSize: "clamp(1.6rem, 2vw, 2rem)", color: "rgba(255,255,255,0.8)", lineHeight: 1.6, maxWidth: "60rem" }}>
+            {subtitle2}
           </p>
         )}
       </div>

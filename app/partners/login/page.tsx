@@ -43,11 +43,11 @@ export default function PartnerLogin() {
         {/* Header */}
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "1rem", textDecoration: "none" }}>
           <Image
-            src="/assets/img/aeronica-logo.png"
+            src="/assets/Logo.svg"
             alt="Aeronica"
             width={140}
             height={56}
-            style={{ width: "12rem", height: "auto", filter: "brightness(0) invert(1)" }}
+            style={{ width: "12rem", height: "auto" }}
           />
         </Link>
 

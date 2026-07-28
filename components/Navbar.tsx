@@ -35,7 +35,7 @@ const productCategories = [
     title: "Agricultural UAVs",
     links: [
       { label: "Samrudhhi-10LH", href: "/products/samrudhhi-10lh" },
-      { label: "Samrudhhi-10L", href: "/products/samrudhhi-10l" },
+      
 
     ],
   },
@@ -46,6 +46,13 @@ const productCategories = [
   {
     title: "Avionics",
     links: [{ label: "Nitya FC", href: "/products/nitya-fc" }],
+  },
+  {
+    title: "Surveillance",
+    links: [
+      { label: "Flyura", href: "/products/flyura" },
+      { label: "Uday 1.6", href: "/products/uday-16" },
+    ],
   },
 ];
 
@@ -131,7 +138,7 @@ const resourceCategories = [
   {
     title: "Support",
     links: [
-      { label: "Drone Regulations", href: "/resources/drone-regulations" },
+      
       { label: "FAQs", href: "/resources/faqs" },
       { label: "Downloads", href: "/resources/downloads" },
     ],
@@ -262,7 +269,7 @@ const Navbar = () => {
         <div className="navbar-container">
           <Link href="/" className="navbar-logo" aria-label="Aeronica">
             <Image
-              src="/assets/img/aeronica-logo.png"
+              src="/assets/Logo.svg"
               alt="Aeronica Logo"
               width={160}
               height={64}

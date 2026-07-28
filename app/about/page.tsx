@@ -17,8 +17,9 @@ export default function AboutHub() {
   return (
     <div className="about-hub-wrapper" style={{ paddingTop: "0", paddingBottom: "0", color: "#1a1a1a" }}>
       <PageHero
-        title="Pioneering Indian UAV Innovation"
-        subtitle="Founded in 2020, Aeronica Advance Technologies Pvt. Ltd. is a technology startup specializing in indigenous Hardware-Software-IoT based aerial solutions."
+        title="Pioneering Indian UV Solution"
+        subtitle="Founded in Pune in 2020, Aeronica Advance Technologies is a DGCA authorised UAV manufacturer building drone technology made for India, by India. We design, engineer, and manufacture advanced drone platforms, intelligent automation, and AI-powered geospatial solutions entirely in-house."
+        subtitle2="Innovation, quality and durability drive us to build India’s drone ecosystem with technology suited for India’s conditions."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]}
       />
 
@@ -29,7 +30,7 @@ export default function AboutHub() {
             <span></span>About Us
           </span>
           <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
-            Pioneering Indian UAV Innovation Since 2020
+            Pioneering Indian UV Solution
           </h2>
         </div>
 
@@ -76,7 +77,7 @@ export default function AboutHub() {
                 <div style={{ fontSize: "1.3rem", color: "#888", marginTop: "0.3rem" }}>In-House Design</div>
               </div>
               <div>
-                <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>50+</div>
+                <div style={{ fontSize: "3.2rem", fontWeight: 700, letterSpacing: "-0.03em" }}>30+</div>
                 <div style={{ fontSize: "1.3rem", color: "#888", marginTop: "0.3rem" }}>Team Members</div>
               </div>
             </div>
@@ -124,9 +125,9 @@ export default function AboutHub() {
               <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "rgba(255,255,255,0.15)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Eye style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
-              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Vision</h3>
+              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}> Vision</h3>
               <p style={{ fontSize: "1.6rem", color: "rgba(255,255,255,0.9)", lineHeight: 1.7 }}>
-                To become India&rsquo;s most trusted indigenous Drone Manufacturing, Automation &amp; Data Intelligence company.
+                A future where Made-in-India drones lead global innovation — powering safer, smarter, and more efficient operations at scale.
               </p>
             </div>
 
@@ -135,20 +136,13 @@ export default function AboutHub() {
               <div style={{ width: "4.5rem", height: "4.5rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2.5rem" }}>
                 <Target style={{ width: "2.2rem", height: "2.2rem" }} />
               </div>
-              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Our Mission</h3>
+              <h3 style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: "1.5rem", letterSpacing: "-0.02em" }}>Mission</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-                  <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} />
-                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>Build secure, Made-in-India UAV platforms</p>
+                  {/* <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} /> */}
+                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>To be India's most trusted provider of indigenous drone technology — building reliable, mission-ready UAV systems that create real value for industries, governments, and communities.</p>
                 </div>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-                  <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} />
-                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>Deliver Turnkey Automation with Actionable Intelligence</p>
-                </div>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-                  <CheckCircle style={{ width: "1.8rem", height: "1.8rem", color: "#21389A", flexShrink: 0, marginTop: "0.2rem" }} />
-                  <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.6, margin: 0 }}>Enable Safer, Faster, Compliant operations at scale</p>
-                </div>
+
               </div>
             </div>
           </div>
@@ -211,7 +205,7 @@ export default function AboutHub() {
                 The Stack
               </span>
               <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15 }}>
-                Full-Stack Mastery,&nbsp;<br style={{ display: "none" }} />Ground Up
+                Engineered  &nbsp;<br style={{ display: "none" }} />End-to-End
               </h2>
             </div>
             <Link href="/about/technology-stack" style={{
@@ -230,10 +224,10 @@ export default function AboutHub() {
           </p>
           <div className="gap-2" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
             {[
-              { icon: Cpu, title: "Nitya Flight Controller", desc: "Indigenous STM32-based avionics with triple-redundant IMU and military-grade encrypted telemetry." },
-              { icon: ShieldCheck, title: "DGCA Type-Certified", desc: "Samrudhhi-10L is fully DGCA type-certified. Every platform meets stringent airworthiness standards." },
-              { icon: Building2, title: "Composite Airframes", desc: "High-modulus carbon fiber structures designed in-house using FEA simulation for maximum durability." },
-              { icon: Sparkles, title: "Aeroni.AI Engine", desc: "Cloud-native processing pipeline converting raw aerial data into 3D point clouds and NDVI maps in minutes." },
+              { icon: Cpu, title: "Nitya Flight Controller", desc: "STM32H7 @ 480MHz, triple-redundant IMUs, multi-constellation GNSS, and encrypted telemetry. Built for uncompromising reliability, precision, and mission-critical performance in the sky." },
+              { icon: ShieldCheck, title: "DGCA Type-Certified", desc: "Certified. Compliant. Combat-ready for the skies. The Samrudhhi-10LH holds full DGCA type certification, meeting the strictest airworthiness standards in the industry." },
+              { icon: Building2, title: "Composite Airframes", desc: "Our high-modulus carbon fiber airframes are designed in-house using advanced FEA simulation, giving every platform the strength and durability real-world missions demand." },
+              { icon: Sparkles, title: "Aeroni.AI", desc: "Aeronica's secure, enterprise-grade AI platform. Powered by deep learning and Intelligent Video Analytics, it delivers real-time intelligence with unmatched performance and effortless scalability." },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -268,8 +262,7 @@ export default function AboutHub() {
             </div>
             <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>DGCA Certified</h3>
             <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-              Our Samrudhhi-10L is fully type-certified by DGCA. Every platform follows AS9100-ready
-              production pipelines with full material traceability.
+              Trusted where it matters most in the field. The Samrudhhi-10LH, our flagship agriculture drone, is fully type-certified by DGCA, meeting the strictest airworthiness standards in Indian aviation.
             </p>
             <span style={{ fontSize: "1.3rem", fontWeight: 600, color: "#009BFF" }}>View Certifications →</span>
           </Link>
@@ -278,7 +271,7 @@ export default function AboutHub() {
             <div style={{ width: "4rem", height: "4rem", borderRadius: "0.4rem", background: "#21389A", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
               <Award style={{ width: "2rem", height: "2rem" }} />
             </div>
-            <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Trusted Partners</h3>
+            <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.8rem" }}>Trusted Clients</h3>
             <p style={{ fontSize: "1.4rem", color: "#555", lineHeight: 1.6, marginBottom: "1.5rem" }}>
               Partnered with IITs for composite research. Trusted by Central Railway, JSW Steel,
               BASF, and IOCL for high-stakes spatial campaigns.
@@ -305,9 +298,9 @@ export default function AboutHub() {
           display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", textAlign: "center"
         }}>
           {[
-            { value: "50+", label: "Projects Delivered" },
-            { value: "12", label: "Indian States Covered" },
-            { value: "15K+", label: "Flight Hours Logged" },
+            { value: "80+", label: "Projects Delivered" },
+            { value: "4", label: "Indian States Covered" },
+            { value: "10000+", label: "Flight Hours Logged" },
             { value: "100%", label: "DGCA Compliant" },
           ].map((stat, i) => (
             <div key={i}>

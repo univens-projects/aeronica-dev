@@ -286,6 +286,16 @@ html.cursor-h-scroll.cursor-on-link .custom-cursor-ring {
   background: rgba(33, 56, 154, 0.08);
 }
 
+/* Hide custom cursor when modal is open */
+html.modal-open .custom-cursor-dot,
+html.modal-open .custom-cursor-ring {
+  display: none !important;
+}
+
+html.modal-open,
+html.modal-open * {
+  cursor: auto !important;
+}
 
 
 /* ---------- Navigation ---------- */

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { DotArrowRight, DotArrowLeft } from "@/components/DotIcons";
@@ -11,6 +11,7 @@ import {
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
+import DownloadForm from "@/components/DownloadForm";
 
 function toSlug(text: string) {
   return text.toLowerCase().replace(/[–—,()]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -174,10 +175,11 @@ const resourceContent: Record<string, {
         heading: "Product Brochures",
         text: "Comprehensive overviews of our platforms, including specifications, features, and application guidance.",
         items: [
-          { label: "Samrudhhi-10L Brochure", desc: "Complete product guide for our flagship agricultural UAV. Payload specs, flight performance, and spraying system details.", href: "#" },
           { label: "Samrudhhi-10LH Brochure", desc: "Heavy-lift variant specifications. Payload capacity, industrial applications, and integration options.", href: "#" },
           { label: "Flycra 2.0 Brochure", desc: "Mapping drone technical specifications. Sensor compatibility, accuracy data, and survey workflow overview.", href: "#" },
           { label: "Nitya Flight Controller Datasheet", desc: "Technical datasheet covering processor specs, sensor suite, firmware compatibility, and I/O interfaces.", href: "#" },
+          { label: "Flyura Brochure", desc: "Advanced surveillance UAV specifications. EO/IR imaging, laser rangefinder, and AI target detection capabilities.", href: "#" },
+          { label: "Uday 1.6 Brochure", desc: "Tactical quadcopter specifications. Rapid deployment, real-time reconnaissance, and reliable aerial surveillance.", href: "#" },
         ],
       },
       {
@@ -199,11 +201,19 @@ export default function ResourcePage() {
   const slug = params.slug as string;
   const data = resourceContent[slug];
 
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedBrochure, setSelectedBrochure] = useState("");
+
   if (!data) {
     notFound();
   }
 
   const Icon = data.icon;
+
+  const handleDownloadClick = (label: string) => {
+    setSelectedBrochure(label);
+    setIsFormOpen(true);
+  };
 
   return (
     <div style={{ color: "#1a1a1a" }}>
@@ -229,6 +239,36 @@ export default function ResourcePage() {
                   {section.items.map((item, idx) => {
                     const subSlug = toSlug(item.label);
                     const subHref = `/resources/${slug}/${subSlug}`;
+                    const isDownload = slug === "downloads" && item.href === "#";
+                    const isWhitepaper = slug === "whitepapers" && item.href === "#";
+
+                    if (isDownload || isWhitepaper) {
+                      return (
+                        <div
+                          key={idx}
+                          onClick={() => handleDownloadClick(item.label)}
+                          style={{
+                            background: "#fff", border: "1px solid #e5e5e5", borderRadius: "0.4rem",
+                            padding: "2rem", height: "100%", display: "flex", flexDirection: "column",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <div className="responsive-header" style={{ marginBottom: "0.6rem" }}>
+                            <h3 style={{ fontSize: "1.5rem", fontWeight: 600, lineHeight: 1.3, color: "#111" }}>{item.label}</h3>
+                          </div>
+                          <p style={{ fontSize: "1.3rem", color: "#555", lineHeight: 1.6, flexGrow: 1 }}>{item.desc}</p>
+                          <div style={{ marginTop: "1.2rem" }}>
+                            <span style={{
+                              display: "inline-flex", alignItems: "center", gap: "0.4rem",
+                              fontSize: "1.2rem", fontWeight: 600, color: "#21389a",
+                            }}>
+                              {isWhitepaper ? "Download Whitepaper" : "Download"} <Download style={{ width: "1.4rem", height: "1.4rem" }} />
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    }
+
                     return (
                       <Link key={idx} href={subHref} style={{ textDecoration: "none", color: "inherit" }}>
                         <div style={{
@@ -279,6 +319,12 @@ export default function ResourcePage() {
       </div>
 
       <CTA />
+
+      <DownloadForm
+        isOpen={isFormOpen}
+        onClose={() => setIsFormOpen(false)}
+        brochureName={selectedBrochure}
+      />
     </div>
   );
 }

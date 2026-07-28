@@ -20,7 +20,7 @@ export default function Page() {
       <Products />
       <Services />
       <Technology />
-      <Process />
+
       <Industries />
       <Portfolio />
       <ClientsMarquee />
