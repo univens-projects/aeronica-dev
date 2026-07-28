@@ -261,6 +261,15 @@ const Footer = () => {
               ))}
             </div>
           </div>
+
+          <div style={{ textAlign: "center", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+            <p style={{ fontSize: "1.2rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
+              Built with <span style={{ color: "#ef4444" }}>♥</span> by{" "}
+              <a href="https://www.zeshagency.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                Zesh Agency
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
