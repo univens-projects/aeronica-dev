@@ -10,24 +10,13 @@ import FadeIn from "./FadeIn";
 import MotionParallax from "./MotionParallax";
 
 const products = [
-  {
-    title: "Samrudhhi-10L",
-    tag: "DGCA Certified",
-    desc: "A crop spraying drone designed for fast, safe, and efficient pesticide application on fields.",
-    href: "/products/samrudhhi-10l",
-    img: "/assets/img/Samrudhhi-10L.png",
-    specs: [
-      { label: "Payload", value: "24.9 Kg" },
-      { label: "Flight Time", value: "16 min" },
-      { label: "Frame", value: "Carbon Fibre" },
-    ],
-  },
+  
   {
     title: "Samrudhhi-10LH",
     tag: "Heavy Lift Hybrid",
     desc: "Built for large-scale farming, it allows for more effective crop spraying and coverage.",
     href: "/products/samrudhhi-10lh",
-    img: "/assets/img/Samrudhhi-10LH.png",
+    img: "/assets/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010LH.png",
     specs: [
       { label: "MTOW", value: "31.5 Kg" },
       { label: "Tank Capacity", value: "10 L" },
@@ -39,11 +28,11 @@ const products = [
     tag: "Mapping",
     desc: "A high-performance mapping drone that delivers sub-centimeter accuracy. Ideal for GIS surveys, construction monitoring, and infrastructure inspection.",
     href: "/products/flycra-2.0",
-    img: "/assets/img/Flycra 2.0.png",
+    img: "/assets/images/products/Flycra%202.0/Flycra%202.0%20(front%20view).png",
     specs: [
-      { label: "Range", value: "7 Km" },
-      { label: "Flight Time", value: "45 min" },
-      { label: "Weight", value: "9.6 Kg" },
+      { label: "Range", value: "Upto 2Km" },
+      { label: "Flight Time", value: "50 min" },
+      { label: "MTOW", value: "2.4 Kg" },
     ],
   },
   {
@@ -51,11 +40,35 @@ const products = [
     tag: "Flight Controller",
     desc: "An indigenous flight controller that provides unprecedented stability and interoperability with our own AI analytics platforms.",
     href: "/products/nitya-fc",
-    img: "/assets/img/Nitya Front.png",
+    img: "/assets/images/products/nitya-fc/Nitya%20FC.png",
     specs: [
-      { label: "Processor", value: "STM32" },
-      { label: "Sensors", value: "IMU + GPS" },
-      { label: "Firmware", value: "ArduPilot" },
+      { label: "Processor", value: "STM32H7 microcontroller @ 480 MHz with FPU" },
+      { label: "Storage", value: "FRAM & EEPROM" },
+      { label: "Operating System", value: "Real-Time OS with failsafe and watchdog routines" },
+    ],
+  },
+  {
+    title: "Flyura",
+    tag: "Surveillance",
+    desc: "Advanced surveillance UAV designed for defense and critical infrastructure monitoring with EO/IR imaging and AI target detection.",
+    href: "/products/flyura",
+    img: "/assets/images/products/Flyura%20images/ChatGPT%20Image%20Jul%2024,%202026,%2011_48_49%20AM.png",
+    specs: [
+      { label: "Range", value: "25 km" },
+      { label: "Flight Time", value: "120 min" },
+      { label: "MTOW", value: "15 Kg" },
+    ],
+  },
+  {
+    title: "Uday 1.6",
+    tag: "Tactical",
+    desc: "Compact tactical quadcopter built for rapid deployment, real-time reconnaissance, and reliable aerial surveillance.",
+    href: "/products/uday-16",
+    img: "/assets/images/products/Uday 1.6/P1, uday.png",
+    specs: [
+      { label: "Flight Time", value: "30 min" },
+      { label: "MTOW", value: "1.6 kg" },
+      { label: "Camera", value: "4K / 6× Zoom" },
     ],
   },
 ];
@@ -100,7 +113,7 @@ const Products = () => {
   }, []);
 
   const accentColor = "#21389a"; // only color already defined in the file
-  const product = products[activeIndex];
+  const product = products[activeIndex] || products[0];
 
   return (
     <section id="products" style={{ background: "#fff", color: "#1a1a1a" }}>
@@ -215,7 +228,7 @@ const Products = () => {
             <div
               className="prod-slide-image"
               style={{
-                flex: "0 0 auto", width: "32rem", aspectRatio: "1 / 1",
+                flex: "0 0 auto", width: "22rem", height: "22rem",
                 background: `linear-gradient(135deg, ${accentColor} 0%, #009BFF 100%)`,
                 borderRadius: "1rem",
                 display: "flex", alignItems: "center", justifyContent: "center",
@@ -228,7 +241,7 @@ const Products = () => {
                   alt={product.title}
                   width={400}
                   height={400}
-                  style={{ width: "100%", height: "100%", objectFit: "contain", filter: "drop-shadow(0 12px 28px rgba(0,0,0,0.35))" }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "0.6rem", filter: "drop-shadow(0 12px 28px rgba(0,0,0,0.35))" }}
                   priority={activeIndex < 2}
                 />
               </MotionParallax>
@@ -258,11 +271,12 @@ const Products = () => {
                 display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center",
                 width: "100%", gap: "3.2rem", marginBottom: "2.4rem",
                 borderTop: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5", padding: "2rem 0",
+                flexDirection: product.title === "Nitya FC" ? "column" : "row",
               }}>
                 {product.specs.map((spec) => {
                   const Icon = getSpecIcon(spec.label);
                   return (
-                    <div key={spec.label} className="prod-spec-item" style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
+                    <div key={spec.label} className="prod-spec-item" style={{ display: "flex", alignItems: "center", gap: "0.8rem", width: product.title === "Nitya FC" ? "100%" : "auto" }}>
                       <Icon size={16} color={accentColor} style={{ flexShrink: 0 }} />
                       <span style={{ fontSize: "1.1rem", letterSpacing: "0.03em", textTransform: "uppercase", color: "#111" }}>
                         {spec.value} <span style={{ color: "#888" }}>{spec.label}</span>

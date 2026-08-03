@@ -37,7 +37,7 @@ export default function AboutHub() {
         <div className="ab-split" style={{ alignItems: "start" }}>
           <div style={{ flex: 1.2 }}>
             <p style={{ fontSize: "1.7rem", color: "#444", lineHeight: 1.9, marginBottom: "2rem", borderLeft: "4px solid #21389A", paddingLeft: "2rem" }}>
-              <strong>Aeronica Advance Technologies Pvt Ltd</strong>, Pune is one of the MSME, Start-up [DIPP55381] UAV/Drone manufacturing company in India (Authorized by DGCA), incorporated in 2020.
+              <strong>Aeronica Advance Technologies Pvt Ltd</strong>, Pune is one of the MSME, Start-up UAV/Drone manufacturing company in India (Authorized by DGCA), incorporated in 2020.
             </p>
 
             <h3 style={{ fontSize: "2rem", fontWeight: 600, color: "#111", marginBottom: "1.5rem", marginTop: "3rem" }}>Our Products &amp; Solutions</h3>
@@ -84,7 +84,7 @@ export default function AboutHub() {
           </div>
 
           <div style={{ flex: 1 }}>
-            <div style={{ background: "#f8f9fa", borderRadius: "0.4rem", padding: "3rem", marginBottom: "2rem" }}>
+            {/* <div style={{ background: "#f8f9fa", borderRadius: "0.4rem", padding: "3rem", marginBottom: "2rem" }}>
               <h3 style={{ fontSize: "2rem", fontWeight: 600, color: "#111", marginBottom: "1.5rem" }}>Why Aeronica?</h3>
               <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, marginBottom: "1.5rem" }}>
                 Our key competencies are powered by innovative, reasonably priced technologies across multiple industry sectors. We specialize in design &amp; manufacturing of low altitude Unmanned Aerial Vehicle family.
@@ -92,7 +92,7 @@ export default function AboutHub() {
               <p style={{ fontSize: "1.5rem", color: "#555", lineHeight: 1.7, marginBottom: 0 }}>
                 Aeronica is carving out a niche in the Indian drone ecosystem by combining affordable hardware, mapping analytics, and service support, with strong local innovation.
               </p>
-            </div>
+            </div> */}
 
             <div style={{ background: "#21389A", borderRadius: "0.4rem", padding: "3rem", color: "#fff" }}>
               <h3 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "1.5rem" }}>Make in India Initiative</h3>
@@ -301,7 +301,7 @@ export default function AboutHub() {
             { value: "80+", label: "Projects Delivered" },
             { value: "4", label: "Indian States Covered" },
             { value: "10000+", label: "Flight Hours Logged" },
-            { value: "100%", label: "DGCA Compliant" },
+            // { value: "100%", label: "DGCA Compliant" },
           ].map((stat, i) => (
             <div key={i}>
               <div style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#fff" }}>{stat.value}</div>

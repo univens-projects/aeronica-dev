@@ -24,7 +24,7 @@ const slides: Slide[] = [
     eyebrow: "Agriculture",
     title: "Samrudhhi 10LH",
     description:
-      "Improve farm productivity with the Samrudhhi-10L agriculture spraying drone. Designed for efficient pesticide and nutrient application across different crops.",
+      "Improve farm productivity with the Samrudhhi-10LH agriculture spraying drone. Designed for efficient pesticide and nutrient application across different crops.",
     ctaLabel: "Get in Touch",
     ctaHref: "/contact",
   },

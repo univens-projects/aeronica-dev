@@ -141,7 +141,7 @@ const resourceContent: Record<string, {
         heading: "Platforms & Technology",
         text: "Common questions about our drone platforms and their capabilities.",
         items: [
-          { label: "What is the flight time of the Samrudhhi-10L?", desc: "The Samrudhhi-10L offers up to 16 minutes of flight time per battery charge, covering approximately 2 acres per flight in spraying operations." },
+          { label: "What is the flight time of the Samrudhhi-10LH?", desc: "The Samrudhhi-10LH offers up to 24 minutes of flight time per battery charge, covering approximately 3 acres per flight in spraying operations." },
           { label: "Are your drones DGCA certified?", desc: "Yes. The Samrudhhi-10L is fully DGCA type-certified. All our platforms meet stringent airworthiness and safety standards." },
           { label: "What is the maximum payload capacity?", desc: "The Samrudhhi-10L carries up to 24.9 kg, and the Samrudhhi-10LH handles up to 30 kg payload for industrial applications." },
         ],

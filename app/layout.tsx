@@ -4,6 +4,7 @@ import { Inter, JetBrains_Mono, Sora, IBM_Plex_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import CinematicEffects from "@/components/CinematicEffects";
 import ClientOnly from "@/components/ClientOnly";
 import CustomCursor from "@/components/CustomCursor";
@@ -60,6 +61,7 @@ export default function RootLayout({
                 <main>{children}</main>
               </SmoothScroll>
               <BackToTop />
+              <WhatsAppButton />
               <Footer />
             </CinematicEffects>
           </>

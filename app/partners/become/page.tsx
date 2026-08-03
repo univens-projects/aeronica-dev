@@ -3,25 +3,21 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, ArrowRight, ArrowLeft, Send } from "lucide-react";
-import FadeIn from "@/components/FadeIn";
+import { ShieldCheck, ArrowLeft, Send, X } from "lucide-react";
 
 export default function BecomePartner() {
   const [formData, setFormData] = useState({
-    companyName: "",
-    website: "",
-    contactName: "",
-    email: "",
+    name: "",
     phone: "",
-    domain: "agriculture",
-    message: "",
+    email: "",
+    city: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.companyName || !formData.contactName || !formData.email || !formData.phone) {
+    if (!formData.name || !formData.phone || !formData.email || !formData.city) {
       alert("Please fill out all required fields.");
       return;
     }
@@ -55,92 +51,61 @@ export default function BecomePartner() {
 
         <div style={{ width: "100%", maxWidth: "54rem" }}>
           {submitted ? (
-            <div style={{ textAlign: "center", padding: "4rem 0" }}>
+            <div style={{
+              position: "fixed", inset: 0, zIndex: 1000,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              background: "rgba(0,0,0,0.5)",
+            }}>
               <div style={{
-                width: "6rem", height: "6rem", borderRadius: "50%",
-                background: "#e6f9ed", color: "#0cc820",
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-                marginBottom: "2.5rem"
+                background: "#fff", borderRadius: "0.8rem", padding: "4rem",
+                maxWidth: "48rem", width: "90%", textAlign: "center",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
               }}>
-                <ShieldCheck style={{ width: "3.2rem", height: "3.2rem" }} />
+                <div style={{
+                  width: "6rem", height: "6rem", borderRadius: "50%",
+                  background: "#e6f9ed", color: "#0cc820",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  marginBottom: "2.5rem"
+                }}>
+                  <ShieldCheck style={{ width: "3.2rem", height: "3.2rem" }} />
+                </div>
+                <h2 style={{ fontSize: "2.8rem", fontWeight: 600, color: "#111", letterSpacing: "-0.03em", marginBottom: "1.5rem" }}>
+                  Form Submitted Successfully!
+                </h2>
+                <p style={{ fontSize: "1.55rem", color: "#555", lineHeight: 1.7, marginBottom: "3rem" }}>
+                  Someone from our team shall get back to you shortly.
+                </p>
+                <Link href="/" style={{
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  padding: "1.3rem 3rem", background: "#21389A", color: "#fff",
+                  borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none"
+                }}>
+                  Return to Homepage
+                </Link>
               </div>
-              <h2 style={{ fontSize: "3rem", fontWeight: 600, color: "#111", letterSpacing: "-0.03em", marginBottom: "1.5rem" }}>
-                Application Submitted!
-              </h2>
-              <p style={{ fontSize: "1.55rem", color: "#555", lineHeight: 1.7, marginBottom: "3rem" }}>
-                Thank you for applying to join the Aeronica Partner Network. Our partnership management division in Pune will review your business credentials and get in touch within 2-3 business days.
-              </p>
-              <Link href="/" style={{
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-                padding: "1.3rem 3rem", background: "#21389A", color: "#fff",
-                borderRadius: "0.4rem", fontWeight: 600, fontSize: "1.4rem", textDecoration: "none"
-              }}>
-                Return to Homepage
-              </Link>
             </div>
           ) : (
             <>
               <div style={{ marginBottom: "4rem", marginTop: "3rem" }}>
                 <h2 style={{ fontSize: "3rem", fontWeight: 600, color: "#111", letterSpacing: "-0.03em", marginBottom: "1rem" }}>
-                  Join the Partner Network
+                  Become a Partner
                 </h2>
                 <p style={{ fontSize: "1.45rem", color: "#555", lineHeight: 1.6 }}>
-                  Grow your business by offering India's leading indigenous UAV platforms, custom avionics modules, and AI photogrammetry pipelines.
+                  Fill in your details and our team will get in touch with you.
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-                {/* 2-col inputs */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                    <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                      Company Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.companyName}
-                      onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                      placeholder="Enterprise Pvt Ltd"
-                      style={{
-                        width: "100%", padding: "1.2rem 1.4rem",
-                        border: "1px solid #e5e5e5", borderRadius: "0.4rem",
-                        fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s"
-                      }}
-                      onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
-                      onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
-                    />
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                    <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                      Company Website
-                    </label>
-                    <input
-                      type="url"
-                      value={formData.website}
-                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                      placeholder="https://company.com"
-                      style={{
-                        width: "100%", padding: "1.2rem 1.4rem",
-                        border: "1px solid #e5e5e5", borderRadius: "0.4rem",
-                        fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s"
-                      }}
-                      onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
-                      onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
-                    />
-                  </div>
-                </div>
-
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                   <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                    Primary Contact Name *
+                    Name *
                   </label>
                   <input
                     type="text"
                     required
-                    value={formData.contactName}
-                    onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                    placeholder="Gourab Roy"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your full name"
                     style={{
                       width: "100%", padding: "1.2rem 1.4rem",
                       border: "1px solid #e5e5e5", borderRadius: "0.4rem",
@@ -152,25 +117,6 @@ export default function BecomePartner() {
                 </div>
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                    <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="gourab@company.com"
-                      style={{
-                        width: "100%", padding: "1.2rem 1.4rem",
-                        border: "1px solid #e5e5e5", borderRadius: "0.4rem",
-                        fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s"
-                      }}
-                      onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
-                      onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
-                    />
-                  </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                     <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                       Phone Number *
@@ -190,45 +136,41 @@ export default function BecomePartner() {
                       onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
                     />
                   </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                    <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                      Email ID *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="you@example.com"
+                      style={{
+                        width: "100%", padding: "1.2rem 1.4rem",
+                        border: "1px solid #e5e5e5", borderRadius: "0.4rem",
+                        fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s"
+                      }}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
+                    />
+                  </div>
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                   <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                    Primary Business Vertical
+                    City *
                   </label>
-                  <select
-                    value={formData.domain}
-                    onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
+                  <input
+                    type="text"
+                    required
+                    value={formData.city}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                    placeholder="Which city are you from?"
                     style={{
                       width: "100%", padding: "1.2rem 1.4rem",
                       border: "1px solid #e5e5e5", borderRadius: "0.4rem",
-                      fontSize: "1.35rem", outline: "none", background: "#fff", transition: "border-color 0.2s"
-                    }}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
-                  >
-                    <option value="agriculture">Agriculture & Precision Spraying</option>
-                    <option value="survey">GIS Land Surveying & Mapping</option>
-                    <option value="inspection">Industrial Facade & Thermal Inspection</option>
-                    <option value="defence">Defence & Government Contracts</option>
-                    <option value="oem">UAV Hardware OEM Integration</option>
-                  </select>
-                </div>
-
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                  <label style={{ fontSize: "1.2rem", fontWeight: 600, color: "#333", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                    Partnership Interest & Capabilities
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Briefly describe your field capabilities, active territories, and why you want to partner with Aeronica."
-                    style={{
-                      width: "100%", padding: "1.2rem 1.4rem",
-                      border: "1px solid #e5e5e5", borderRadius: "0.4rem",
-                      fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s",
-                      resize: "vertical", fontFamily: "var(--font-sans)",
+                      fontSize: "1.35rem", outline: "none", transition: "border-color 0.2s"
                     }}
                     onFocus={(e) => { e.currentTarget.style.borderColor = "#21389A"; }}
                     onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e5e5"; }}
@@ -257,7 +199,7 @@ export default function BecomePartner() {
                     marginTop: "1rem"
                   }}
                 >
-                  {isLoading ? "Submitting Application..." : "Submit Application"} <Send style={{ width: "1.6rem", height: "1.6rem" }} />
+                  {isLoading ? "Submitting..." : "Submit"} <Send style={{ width: "1.6rem", height: "1.6rem" }} />
                 </button>
               </form>
             </>
@@ -273,11 +215,11 @@ export default function BecomePartner() {
         {/* Header logo */}
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "1rem", textDecoration: "none" }}>
           <Image
-            src="/assets/Logo.svg"
+            src="/assets/Footer Logo.svg"
             alt="Aeronica"
             width={140}
             height={56}
-            style={{ width: "12rem", height: "auto" }}
+            style={{ width: "18rem", height: "auto" }}
           />
         </Link>
 
@@ -334,16 +276,6 @@ export default function BecomePartner() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Footer info */}
-        <div style={{ zIndex: 1 }}>
-          <p style={{ fontSize: "1.25rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
-            Already registered?{" "}
-            <Link href="/partners/login" style={{ color: "#ffffff", fontWeight: 600, textDecoration: "underline" }}>
-              Log In here
-            </Link>
-          </p>
         </div>
       </div>
     </div>

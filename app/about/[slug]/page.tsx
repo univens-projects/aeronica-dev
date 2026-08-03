@@ -395,7 +395,7 @@ const aboutPages: Record<string, any> = {
           { aspect: "Hardware Origin", aeronica: "100% India-Designed & Built", others: "Imported / Assembled" },
           { aspect: "DGCA Certification", aeronica: "Type Certificate (Agriculture)", others: "Self-Declaration / None" },
           { aspect: "Flight Controller", aeronica: "Indigenous Nitya FC", others: "Off-the-shelf Pixhawk/DJI" },
-          { aspect: "Data Processing", aeronica: "Proprietary Aeroni.AI", others: "Third-party software" },
+          { aspect: "Data Processing", aeronica: "USS Unified Surveillance System", others: "Third-party software" },
           { aspect: "After-Sales Support", aeronica: "Dedicated in-house team", others: "Limited / Outsourced" },
           { aspect: "Customisation", aeronica: "Full hardware & software", others: "None / Limited" },
         ],

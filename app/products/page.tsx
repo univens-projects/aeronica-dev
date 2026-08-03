@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { DotArrowRight } from "@/components/DotIcons";
 import FadeIn from "@/components/FadeIn";
 import PageHero from "@/components/PageHero";
@@ -9,28 +10,11 @@ import CTA from "@/components/CTA";
 import { ShieldCheck, Cpu, Plane, ChevronRight } from "lucide-react";
 
 const products = [
-  {
-    slug: "samrudhhi-10lh",
-    name: "Samrudhhi-10LH",
-    tag: "Super Sturdy",
-    tagColor: "#009BFF",
-    category: "Agricultural UAV — Heavy Lift",
-    headline: "Super Sturdy Agriculture Spraying Drone",
-    desc: "Built for large-scale farming operations that demand more from every pass. The Samrudhhi 10LH offers effective spraying with wider crop coverage, helping you treat more acreage in less time.",
-    gradient: "linear-gradient(135deg, #009BFF 0%, #111a2d 100%)",
-    specs: [
-      { label: "MTOW", value: "31.5 Kg" },
-      { label: "Tank Capacity", value: "10 L" },
-      { label: "Flight Time (Hybrid)", value: "24 min" },
-      { label: "Coverage Rate", value: "25 Acres/Day" },
-      { label: "Payload Capacity", value: "10 Kg" },
-      { label: "Spray Type", value: "Flat Jet / Centrifugal" },
-    ],
-    keyFeatures: ["31.5 Kg MTOW with 10 Kg payload capacity", "Hybrid propulsion — 24 min flight time", "25 Acres per day coverage rate", "DGCA Compliant — Medium Category platform"],
-  },
+  
   {
     slug: "samrudhhi-10l",
     name: "Samrudhhi-10L",
+    img: "/assets/img/Samrudhhi-10L.png",
     tag: "DGCA Type Certified",
     tagColor: "#21389A",
     category: "Agricultural UAV",
@@ -51,6 +35,7 @@ const products = [
   {
     slug: "flycra-20",
     name: "Flycra 2.0",
+    img: "/assets/images/products/Flycra%202.0/Flycra%202.0%20(front%20view).png",
     tag: "Survey & Mapping",
     tagColor: "#009BFF",
     category: "Mapping & Survey UAV",
@@ -70,6 +55,7 @@ const products = [
   {
     slug: "nitya-fc",
     name: "Nitya FC",
+    img: "/assets/images/products/nitya-fc/Nitya%20FC.png",
     tag: "Indigenous Avionics",
     tagColor: "#21389A",
     category: "Flight Controller",
@@ -89,6 +75,7 @@ const products = [
   {
     slug: "flyura",
     name: "Flyura",
+    img: "/assets/images/products/Flyura%20images/ChatGPT%20Image%20Jul%2024,%202026,%2011_48_49%20AM.png",
     tag: "Surveillance",
     tagColor: "#1a237e",
     category: "Surveillance UAV",
@@ -105,6 +92,7 @@ const products = [
   {
     slug: "uday-16",
     name: "Uday 1.6",
+    img: "/assets/images/products/Uday%201.6/P1, uday.png",
     tag: "Tactical",
     tagColor: "#1a237e",
     category: "Tactical Quadcopter",
@@ -150,6 +138,14 @@ export default function ProductsHub() {
               className={`card-hover product-card ${index % 2 === 0 ? "product-card--imgLeft" : "product-card--imgRight"}`}
             >
               <div className="product-card__visual" style={{ background: product.gradient }}>
+                <div style={{ width: "14rem", height: "14rem", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Image
+                    src={product.img}
+                    alt={product.name}
+                    fill
+                    style={{ objectFit: "cover", borderRadius: "0.4rem", filter: "drop-shadow(0 8px 20px rgba(0,0,0,0.3))" }}
+                  />
+                </div>
                 <div>
                   <span style={{ fontSize: "1.1rem", padding: "0.4rem 1rem", background: "rgba(255,255,255,0.2)", borderRadius: "0.2rem", color: "#fff", fontWeight: 500, letterSpacing: "0.05em" }}>{product.tag}</span>
                   <h2 style={{ fontSize: "3.6rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#fff", marginTop: "2rem", lineHeight: 1 }}>{product.name}</h2>

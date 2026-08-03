@@ -75,7 +75,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            <Link href="/partners/login" style={{
+            <Link href="/partners/become" style={{
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -90,12 +90,12 @@ const Footer = () => {
               textDecoration: "none",
               transition: "all 0.3s ease",
               border: "1px solid #ffffff",
-              width: "18rem",
+              width: "20rem",
             }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#ffffff"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#21389A"; }}
             >
-              Partner Login
+              Become a Partner
             </Link>
           </div>
 

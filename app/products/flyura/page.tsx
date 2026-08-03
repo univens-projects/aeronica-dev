@@ -90,7 +90,7 @@ export default function FlyuraPage() {
           <span className="section-title" style={{ justifyContent: "center" }}>
             <span></span>Designed for Critical Operations
           </span>
-          <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, maxWidth: "70rem", margin: "1.5rem auto 0" }}>
+            <h2 style={{ fontSize: "clamp(2.8rem, 4vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", marginTop: "1.5rem", lineHeight: 1.15, width: "100%", margin: "1.5rem 0 0" }}>
             From border security to disaster response, our drone solutions deliver the aerial intelligence that keeps critical operations ahead.
           </h2>
         </div>

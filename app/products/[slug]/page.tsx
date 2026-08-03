@@ -23,8 +23,8 @@ const products: Record<string, any> = {
     certification: "DGCA Type Certified",
     gradient: "linear-gradient(135deg, #0CC820 0%, #32620E 100%)",
     heroColor: "#32620E",
-    heroImage: "/assets/images/products/samrudhhi-10l/Sam10L2.png",
-    certImage: "/assets/images/products/samrudhhi-10l/SAM-10L.png",
+    heroImage: "/assets/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010LH%20(front).png",
+    certImage: "/assets/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010%20LH%20(Close%20up).png",
     overview: "The Samrudhhi-10L is a crop spraying drone built around three things: speed, safety, and efficiency — not as buzzwords, but as design goals we engineered around from day one.",
     useCases: [],
     fullSpecs: [
@@ -56,8 +56,8 @@ const products: Record<string, any> = {
     certification: "DGCA Compliant",
     gradient: "linear-gradient(135deg, #009BFF 0%, #32620E 100%)",
     heroColor: "#0a4a20",
-    heroImage: "/assets/images/products/samrudhhi-10l/Sam10L2.png",
-    certImage: "/assets/images/products/samrudhhi-10l/SAM-10L.png",
+    heroImage: "/assets/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010LH.png",
+    certImage: "/assets/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010LH%20(front).png",
     overview: "Built for large-scale farming operations that demand more from every pass. The Samrudhhi 10LH offers effective spraying with wider crop coverage, helping you treat more acreage in less time.",
     useCases: [],
     fullSpecs: [
@@ -95,8 +95,8 @@ const products: Record<string, any> = {
     certification: "Commercial Survey Operations",
     gradient: "linear-gradient(135deg, #009BFF 0%, #21389A 100%)",
     heroColor: "#21389A",
-    heroImage: "/assets/images/products/flycra-20/1.png",
-    certImage: "/assets/images/products/flycra-20/91.png",
+    heroImage: "/assets/images/products/Flycra%202.0/Flycra%202.0%20(front%20view).png",
+    certImage: "/assets/images/products/Flycra%202.0/Flycra%202.0%20Close-up).png",
     overview: "The Flycra 2.0 is Aeronica's precision survey and mapping platform — a compact, high-endurance fixed-wing UAV designed for GIS surveys, railway corridor mapping, and large-area volumetric analysis. With a 45-minute flight time and 7km control range, it covers up to 15km of linear corridor per flight at sub-centimeter ground accuracy.",
     useCases: [],
     fullSpecs: [
@@ -130,8 +130,8 @@ const products: Record<string, any> = {
     certification: "Used in DGCA Type-Certified Aircraft",
     gradient: "linear-gradient(135deg, #21389A 0%, #111a2d 100%)",
     heroColor: "#111a2d",
-    heroImage: "/assets/images/products/nitya-fc/Front.png",
-    certImage: "/assets/images/products/nitya-fc/Back.png",
+    heroImage: "/assets/images/products/nitya-fc/Nitya%20FC.png",
+    certImage: "/assets/images/products/nitya-fc/Nitya%20FC.png",
     heroBadges: [
       { label: "Processor", value: "STM32H7 microcontroller @ 480 MHz with FPU" },
       { label: "Redundant Sensors", value: "Triple-redundant gyroscope & accelerometer units (3× IMUs)" },
@@ -225,14 +225,19 @@ export default function ProductDetailPage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                minHeight: "38rem"
+                minHeight: "28rem"
               }}>
                 <Image
                   src={product.heroImage}
                   alt={`${product.name} — Showcase`}
-                  width={700}
-                  height={450}
-                  style={{ width: "100%", height: "auto", objectFit: "contain", filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.18))" }}
+                  width={450}
+                  height={300}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                    filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.18))",
+                  }}
                   priority
                 />
               </div>
@@ -284,13 +289,18 @@ export default function ProductDetailPage() {
                 display: "flex",
                 flexDirection: "column"
               }}>
-                <div style={{ padding: "4rem", display: "flex", alignItems: "center", justifyContent: "center", flex: 1, minHeight: "30rem" }}>
+                <div style={{ padding: "3rem", display: "flex", alignItems: "center", justifyContent: "center", flex: 1, minHeight: "22rem" }}>
                   <Image
                     src={product.certImage}
                     alt={`${product.name} — Secondary View`}
-                    width={500}
-                    height={380}
-                    style={{ width: "100%", height: "auto", objectFit: "contain", filter: "drop-shadow(0 8px 20px rgba(33,56,154,0.15))" }}
+                    width={350}
+                    height={260}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                      filter: "drop-shadow(0 8px 20px rgba(33,56,154,0.15))",
+                    }}
                   />
                 </div>
                 <div style={{ padding: "2rem 3rem", borderTop: "1px solid rgba(33,56,154,0.08)" }}>

@@ -1960,6 +1960,43 @@ html.modal-open * {
   }
 }
 
+/* ---------- WhatsApp Button ---------- */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 8rem;
+  right: 2rem;
+  z-index: 90;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s var(--ease-out-cubic), box-shadow 0.3s var(--ease-out-cubic);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 10rem;
+    right: 1.5rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  .whatsapp-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 /* ---------- FOOTER ---------- */
 
 @media (max-width: 768px) {
