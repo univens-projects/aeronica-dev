@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import {
   Users, Cpu, ShieldCheck, Award, Briefcase, Star, Rocket,
   CheckCircle, ArrowRight, MapPin, GraduationCap, Mail,
@@ -746,9 +744,12 @@ const renderSection = (section: any, idx: number) => {
   }
 };
 
-export default function AboutChildPage() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return Object.keys(aboutPages).map((slug) => ({ slug }));
+}
+
+export default async function AboutChildPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = aboutPages[slug];
 
   if (!data) {

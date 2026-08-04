@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import MotionReveal from "@/components/MotionReveal";
 
 const StatNumber = ({ target, animated }: { target: number; animated: boolean }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
 
   useEffect(() => {
     if (animated) {

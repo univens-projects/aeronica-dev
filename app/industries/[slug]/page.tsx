@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import {
   Landmark, Building2, Tractor, HardHat, Mountain, Zap, Flame,
   Radio, Truck, Home, CheckCircle, Map, Users, Cpu, Award, Globe
@@ -277,9 +275,12 @@ const iconMap: Record<string, any> = {
   "real-estate": Home,
 };
 
-export default function IndustryDetail() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return Object.keys(industries).map((slug) => ({ slug }));
+}
+
+export default async function IndustryDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = industries[slug];
 
   if (!data) {

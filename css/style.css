@@ -458,8 +458,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ---------- Staggered Reveal ---------- */
 .stagger-item {
-  opacity: 0;
-  transform: translateY(2rem);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stagger-item.is-visible {

@@ -1,5 +1,4 @@
-"use client";
-
+ 
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -215,7 +214,7 @@ export default function ProductsHub() {
 
       <CTA />
 
-      <style jsx>{`
+      <style >{`
         /* ---------- Product cards ---------- */
         .product-card {
           background: #fff;

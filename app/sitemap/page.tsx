@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import {
@@ -148,7 +146,7 @@ export default function Sitemap() {
                         flexDirection: "column",
                         gap: "0.4rem"
                       }}>
-                        <div style={{
+                        <div className="sitemap-link-label" style={{
                           fontSize: "1.5rem",
                           fontWeight: 600,
                           color: "#21389A",
@@ -157,8 +155,6 @@ export default function Sitemap() {
                           gap: "0.6rem",
                           transition: "color 0.2s"
                         }}
-                        onMouseEnter={(e) => { e.currentTarget.style.color = "#009BFF"; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.color = "#21389A"; }}
                         >
                           <Link2 style={{ width: "1.4rem", height: "1.4rem", opacity: 0.6 }} />
                           {link.label}
@@ -177,6 +173,8 @@ export default function Sitemap() {
       </FadeIn>
 
       <CTA />
+
+      <style>{`.sitemap-link-label:hover { color: #009BFF !important; }`}</style>
     </div>
   );
 }

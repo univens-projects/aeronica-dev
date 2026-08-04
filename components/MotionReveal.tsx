@@ -38,7 +38,7 @@ export default function MotionReveal({
     };
 
     const childVariants = {
-      hidden: { opacity: 0, y },
+      hidden: { opacity: 1, y: 0 },
       visible: {
         opacity: 1,
         y: 0,
@@ -51,7 +51,7 @@ export default function MotionReveal({
         className={className}
         style={style}
         variants={containerVariants}
-        initial="hidden"
+        initial="visible"
         whileInView="visible"
         viewport={{ once: true, margin: "-60px 0px" }}
       >
@@ -68,7 +68,7 @@ export default function MotionReveal({
     <Tag
       className={className}
       style={style}
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px 0px" }}
       transition={{ duration, delay, ease: [0.4, 0, 0.2, 1] }}

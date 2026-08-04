@@ -15,7 +15,7 @@ export default function FadeIn({ children, delay = 0, y = 40, className, style, 
   const Tag = as === "section" ? motion.section : motion.div;
   return (
     <Tag
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0, margin: "0px 0px -100px 0px" }}
       transition={{ duration: 0.55, ease: "easeOut", delay }}

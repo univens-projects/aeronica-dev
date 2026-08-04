@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { Building, Sparkles, MapPin, Phone, Mail, Clock, ArrowLeft, Landmark } from "lucide-react";

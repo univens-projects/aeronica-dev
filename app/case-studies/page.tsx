@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { FileText, Image as ImageIcon, PlayCircle, CheckCircle } from "lucide-react";

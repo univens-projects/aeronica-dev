@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import {
   CheckCircle, ShieldCheck, Zap, Award, Globe,
   Map, Target, ArrowRight, ClipboardList, Calendar
@@ -150,9 +148,8 @@ const seoPagesData: Record<string, any> = {
   }
 };
 
-export default function SEOLandingPage() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export default async function SEOLandingPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = seoPagesData[slug];
 
   if (!data) {
@@ -225,7 +222,7 @@ export default function SEOLandingPage() {
 
       <CTA />
 
-      <style jsx>{`
+      <style>{`
         .faq-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;

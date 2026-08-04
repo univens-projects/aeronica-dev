@@ -1,9 +1,7 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import {
   CheckCircle, ChevronRight, Cpu, ShieldCheck, Globe, Zap, Plane,
   Layers, Radio, Award, Target, ArrowLeft,
@@ -167,9 +165,12 @@ const products: Record<string, any> = {
   },
 };
 
-export default function ProductDetailPage() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return Object.keys(products).map((slug) => ({ slug }));
+}
+
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const product = products[slug];
 
   if (!product) {

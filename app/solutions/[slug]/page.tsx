@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { DotArrowRight, DotArrowLeft } from "@/components/DotIcons";
 import {
   Map, Globe, Eye, Brain, LifeBuoy,
@@ -416,9 +414,12 @@ const solutions: Record<string, any> = {
   },
 };
 
-export default function SolutionDetail() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return Object.keys(solutions).map((slug) => ({ slug }));
+}
+
+export default async function SolutionDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = solutions[slug];
 
   if (!data) {

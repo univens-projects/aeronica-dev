@@ -6,8 +6,6 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CinematicEffects from "@/components/CinematicEffects";
-import ClientOnly from "@/components/ClientOnly";
-import CustomCursor from "@/components/CustomCursor";
 import LoadingScreenWrapper from "@/components/LoadingScreenWrapper";
 import SmoothScroll from "@/components/SmoothScroll";
 
@@ -50,22 +48,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${sora.variable} ${ibmPlexSans.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <ClientOnly>
-          <>
-            <div className="film-grain"></div>
-            <CustomCursor />
-            <LoadingScreenWrapper />
-            <CinematicEffects>
-              <Navbar />
-              <SmoothScroll>
-                <main>{children}</main>
-              </SmoothScroll>
-              <BackToTop />
-              <WhatsAppButton />
-              <Footer />
-            </CinematicEffects>
-          </>
-        </ClientOnly>
+        <div className="film-grain"></div>
+        <LoadingScreenWrapper />
+        <CinematicEffects>
+          <Navbar />
+          <SmoothScroll>
+            <main>{children}</main>
+          </SmoothScroll>
+          <BackToTop />
+          <WhatsAppButton />
+          <Footer />
+        </CinematicEffects>
       </body>
     </html>
   );

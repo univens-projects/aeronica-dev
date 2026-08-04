@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { Weight, Timer, Layers, Radar, Cpu, Gauge } from "lucide-react";
 import { DotArrowLeft, DotArrowRight, DotIndicator } from "@/components/DotIcons";
 import FadeIn from "./FadeIn";
@@ -208,22 +207,7 @@ const Products = () => {
           ))}
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndex}
-            custom={dirRef.current}
-            variants={{
-              enter: (dir) => ({ x: dir > 0 ? "50%" : "-50%", opacity: 0 }),
-              center: { x: 0, opacity: 1 },
-              exit: (dir) => ({ x: dir > 0 ? "-50%" : "50%", opacity: 0 }),
-            }}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="product-layout"
-            
-          >
+        <div className="product-layout">
             {/* Image — left side (top, centered on mobile) */}
             <div
               className="prod-slide-image"
@@ -302,15 +286,10 @@ const Products = () => {
                 More Information
               </Link>
             </div>
-          </motion.div>
-        </AnimatePresence>
+        </div>
 
         {/* Pagination dots */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.4 }}
+        <div
           style={{ display: "flex", justifyContent: "center", gap: "0.6rem", marginTop: "1.2rem", position: "relative", zIndex: 2 }}
         >
           {products.map((_, index) => (
@@ -323,7 +302,7 @@ const Products = () => {
               <DotIndicator active={index === activeIndex} size={14} color={index === activeIndex ? accentColor : "#888"} />
             </button>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       <style >{`

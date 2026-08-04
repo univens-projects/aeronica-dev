@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { DotArrowRight, DotArrowLeft } from "@/components/DotIcons";
 import {
   Book, FileText, Newspaper, Scale, HelpCircle, Download,
@@ -196,9 +196,8 @@ const resourceContent: Record<string, {
   },
 };
 
-export default function ResourcePage() {
-  const params = useParams();
-  const slug = params.slug as string;
+export default function ResourcePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params) as { slug: string };
   const data = resourceContent[slug];
 
   const [isFormOpen, setIsFormOpen] = useState(false);

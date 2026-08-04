@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { 
   FileText, Image as ImageIcon, CheckCircle,
   Map, BarChart, Shield, Users, Target, Award
@@ -273,9 +271,12 @@ const iconMap: Record<string, any> = {
   "locust-control-maharashtra": Target,
 };
 
-export default function CaseStudyDetail() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return Object.keys(caseStudies).map((slug) => ({ slug }));
+}
+
+export default async function CaseStudyDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = caseStudies[slug];
 
   if (!data) {

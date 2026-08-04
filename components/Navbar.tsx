@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { DotArrowRight } from "@/components/DotIcons";
 
@@ -195,7 +195,6 @@ const Navbar = () => {
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
 
   const pathname = usePathname();
-  const router = useRouter();
   const desktopNavRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -289,13 +288,13 @@ const Navbar = () => {
                 onMouseEnter={() => setActiveDropdown(section.key)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
+                <Link
+                  href={section.basePath}
                   className={`navbar-link navbar-dropdown-trigger ${isSectionActive(section) ? "active" : ""}`}
-                  onClick={() => router.push(section.basePath)}
                 >
                   {section.label}
                   <ChevronDown style={{ width: "1.4rem", height: "1.4rem", marginLeft: "0.2rem" }} />
-                </button>
+                </Link>
                 <div className={`navbar-dropdown-menu ${activeDropdown === section.key ? "is-open" : ""}`}>
                   <div className="navbar-dropdown-grid">
                     {section.categories.map((cat) => (
@@ -324,13 +323,13 @@ const Navbar = () => {
               onMouseEnter={() => setActiveDropdown("contact")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className={`navbar-cta-button ${isContactActive ? "active" : ""}`} onClick={() => router.push("/contact")}>
+              <Link href="/contact" className={`navbar-cta-button ${isContactActive ? "active" : ""}`}>
                 <span>Contact</span>
                 <ChevronDown
                   style={{ width: "1.3rem", height: "1.3rem", marginLeft: "0.2rem" }}
                   className="navbar-cta-chevron"
                 />
-              </button>
+              </Link>
               <div
                 className={`navbar-dropdown-menu navbar-contact-dropdown ${activeDropdown === "contact" ? "is-open" : ""}`}
                 style={{ right: 0, left: "auto" }}

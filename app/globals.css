@@ -136,13 +136,11 @@ button {
 
 .custom-cursor-dot,
 .custom-cursor-ring {
-  position: fixed;
-  pointer-events: none;
-  border-radius: 50%;
-  will-change: transform;
-  z-index: 9999;
-  top: 0;
-  left: 0;
+  display: none !important;
+}
+
+body {
+  cursor: auto !important;
 }
 
 .custom-cursor-dot {
@@ -904,13 +902,14 @@ html.modal-open * {
 .loading-screen {
   position: fixed;
   inset: 0;
-  z-index: 3000;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  background: #fff;
+  background: transparent;
+  pointer-events: none;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
 }
 
@@ -1074,8 +1073,8 @@ html.modal-open * {
 
 /* ---------- Staggered Reveal ---------- */
 .stagger-item {
-  opacity: 0;
-  transform: translateY(2rem);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stagger-item.is-visible {
@@ -1084,8 +1083,8 @@ html.modal-open * {
 
 @keyframes stagger-in {
   0% {
-    opacity: 0;
-    transform: translateY(2rem);
+    opacity: 1;
+    transform: translateY(0);
   }
 
   100% {
@@ -2147,6 +2146,305 @@ html.modal-open * {
     position: static !important;
     margin-top: 4rem;
     width: 100% !important;
+  }
+}
+
+/* ============================================
+   Hero styles — must be here (not <style jsx>)
+   so they apply without JavaScript.
+   ============================================ */
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(3.2rem, 5.5vw, 6.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 2.4rem;
+  max-width: 56rem;
+  white-space: pre-line;
+}
+
+.hero-description {
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 52rem;
+  margin: 0 0 4rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.2rem 2.8rem;
+  border-radius: 4px;
+  background: #21389a;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-cta:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-bg-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.hero-arrow-left {
+  left: 1.6rem;
+}
+
+.hero-arrow-right {
+  right: 1.6rem;
+}
+
+.hero-controls {
+  position: absolute;
+  bottom: 2.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.hero-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .hero-text-wrap {
+    padding: 0 2rem;
+  }
+  .hero-controls {
+    left: 2rem;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.4rem);
+    color: #fff;
+    max-width: 100%;
+  }
+  .hero-description {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    padding: 1.4rem 2.8rem;
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    font-size: 1.4rem;
+  }
+  .hero-cta:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  .hero-arrow {
+    display: none;
+  }
+  .hero-controls {
+    bottom: 2rem;
+    left: 2rem;
+    gap: 0.8rem;
+  }
+}
+
+/* ============================================
+   Hero controls — slide indicators
+   ============================================ */
+
+.hero-control-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hero-control-index {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+}
+
+.hero-control-item.is-active .hero-control-index {
+  color: #fff;
+}
+
+.hero-control-track {
+  display: block;
+  width: 3.6rem;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.hero-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .hero-text-wrap {
+    min-height: 38rem;
+  }
+  .hero-title {
+    max-width: 100%;
+  }
+  .hero-description {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+  .hero-arrow {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+  .hero-controls {
+    gap: 1.4rem;
+    bottom: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .hero-control-track {
+    width: 2.4rem;
+  }
+  .hero-control-index {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section#hero {
+    min-height: 70vh;
+  }
+  .hero-text-wrap {
+    min-height: 30rem;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-controls {
+    gap: 1rem;
+  }
+  .hero-control-track {
+    width: 1.8rem;
+  }
+}
+
+/* ---------- No-JS Fallback for Mobile Navigation ---------- */
+@media (scripting: none) and (max-width: 1024px) {
+  .navbar-menu {
+    display: flex !important;
+    flex-direction: column;
+    position: static !important;
+    background: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+  .navbar-menu .navbar-dropdown {
+    position: static !important;
+  }
+  .navbar-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    display: block !important;
+  }
+  .nav-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .nav-overlay-sublinks {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+}
+
+/* ---------- No-JS Fallback for Hero and Products ---------- */
+@media (scripting: none) {
+  #hero img {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  #hero div[style*="position: absolute"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .product-layout {
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 

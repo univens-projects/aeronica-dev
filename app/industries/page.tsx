@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { Building2, Landmark, Tractor, HardHat, Mountain, Zap, Flame, Radio, Truck, Home } from "lucide-react";

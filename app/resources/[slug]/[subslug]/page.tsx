@@ -357,7 +357,7 @@ export default function ResourceSubPage() {
 
       {/* Article Content */}
       <motion.section
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
@@ -379,7 +379,7 @@ export default function ResourceSubPage() {
           {data.sections && data.sections.map((section, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
@@ -410,7 +410,7 @@ export default function ResourceSubPage() {
           {/* Key Topics / List */}
           {data.list && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -437,7 +437,7 @@ export default function ResourceSubPage() {
                 {data.list.map((item, i) => (
                   <motion.li
                     key={i}
-                    initial={{ opacity: 0, x: -15 }}
+                    initial={{ opacity: 1, x: 0 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.35, delay: i * 0.06, ease: "easeOut" }}
